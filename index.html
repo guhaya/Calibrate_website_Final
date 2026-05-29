@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CALIBRATE | Precision Performance Coaching by Guhayavarman</title>
+<meta name="description" content="The Calibration Protocol. A DMAIC-based precision coaching system for engineers, founders, and senior professionals. Your body is a process. Processes can be optimised.">
+<meta property="og:title" content="CALIBRATE | Precision Performance Coaching">
+<meta property="og:description" content="The Calibration Protocol. DMAIC-based precision coaching for high-performing professionals.">
+<meta property="og:type" content="website">
+<style>
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwL3I-JCGChYJ8VI-L6OO_au7B43LT31vytKgbaw.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxxL3I-JCGChYJ8VI-L6OO_au7B6xTru1H2lq0La6JN.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxxL3I-JCGChYJ8VI-L6OO_au7B6xTrk1D2lq0La6JN.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxxL3I-JCGChYJ8VI-L6OO_au7B6xTrb1X2lq0La6JN.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxxL3I-JCGChYJ8VI-L6OO_au7B6xTrT1T2lq0La6JN.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3_-gs51os.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/barlow/v12/7cHpv4kjgoGqM7E_DMs5.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3p-ks51os.woff2) format('woff2')}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/dmmono/v14/aFTU7PB1QTsUX8KYhh2aBYyMcKdK.woff2) format('woff2')}
+
+:root{
+  --gold:#ffcd00;--green:#3DD68C;--amber:#FFB020;--red:#FF4C4C;
+  --base:#030508;--card:#0a1018;--lift:#111a25;--border:#1a2a3d;
+  --t1:#f0f0f0;--t2:#94a3b8;--t3:#64748b;
+  --fh:'Barlow Condensed',sans-serif;--fb:'Barlow',sans-serif;--fm:'DM Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--base);color:var(--t1);font-family:var(--fb);font-weight:300;line-height:1.6;overflow-x:hidden}
+::selection{background:rgba(255,205,0,.25);color:#fff}
+a{text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+
+/* Grid bg */
+.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle at 1px 1px,rgba(255,205,0,.04) 1px,transparent 0);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,black 40%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,black 40%,transparent 100%)}
+
+/* Scanlines */
+.scanlines::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.015) 2px,rgba(0,0,0,.015) 4px)}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}
+.reveal.d3{transition-delay:.36s}.reveal.d4{transition-delay:.48s}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeLeft{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes hero-scan{0%{top:15%;opacity:0}8%{opacity:1}92%{opacity:1}100%{top:88%;opacity:0}}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+@keyframes logo-shine{0%{left:-100%}100%{left:200%}}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--base)}
+::-webkit-scrollbar-thumb{background:rgba(255,205,0,.2);border-radius:2px}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,205,0,.4)}
+
+/* Eyebrow line shared style */
+.eyebrow{font-family:var(--fm);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.eyebrow-bar{width:22px;height:1px;background:var(--gold);display:inline-block}
+.section-title{font-family:var(--fh);font-weight:900;font-size:clamp(38px,6vw,74px);letter-spacing:-.015em;text-transform:uppercase;line-height:.93}
+.gold-bar{width:36px;height:2px;background:var(--gold);margin:18px 0}
+.section-sub{font-size:clamp(14px,1.7vw,16px);font-weight:300;color:var(--t2);line-height:1.75;max-width:580px}
+
+/* IF/THEN boxes */
+.ifthen{border:1px solid var(--border)}
+.ifthen-if{background:rgba(255,176,32,.07);border-bottom:1px solid rgba(255,176,32,.22);padding:18px 22px;display:flex;gap:16px}
+.ifthen-then{background:rgba(61,214,140,.07);padding:18px 22px;display:flex;gap:16px}
+.ifthen-label{font-family:var(--fm);font-size:9px;letter-spacing:.18em;font-weight:500;flex-shrink:0;text-transform:uppercase}
+.ifthen-text{font-size:13px;font-weight:300;line-height:1.55}
+
+/* Nav hover */
+nav a:hover{color:var(--gold) !important}
+
+/* Responsive */
+/* Apply form */
+.form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fg{display:flex;flex-direction:column;gap:6px}
+.fg.full{grid-column:1/-1}
+.f-label{font-family:var(--fm);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--t2);}
+.f-inp,.f-sel,.f-area{background:var(--card);border:1px solid var(--border);padding:14px 16px;color:var(--t1);font-size:14px;font-weight:300;width:100%;outline:none;transition:border-color .2s;font-family:var(--fb);appearance:none;}
+.f-inp:focus,.f-sel:focus,.f-area:focus{border-color:var(--gold);}
+.f-inp::placeholder,.f-area::placeholder{color:var(--t3);}
+.f-sel{background-color:var(--card);cursor:pointer;}
+.f-sel option{background:#0a1018;}
+.f-area{resize:vertical;min-height:110px;}
+.f-inp.err,.f-sel.err{border-color:var(--red);}
+
+/* Team */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:48px}
+.team-card{background:var(--card);position:relative;overflow:hidden;transition:background .25s}
+.team-card:hover{background:var(--lift)}
+.team-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.team-card:hover::before{transform:scaleX(1)}
+.tc-avatar{width:100%;aspect-ratio:1;background:linear-gradient(135deg,var(--lift) 0%,#0d1824 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.tc-initials{font-family:var(--fh);font-weight:900;font-size:52px;color:rgba(255,205,0,.15);letter-spacing:-.02em;position:relative;z-index:1}
+.tc-body{padding:20px 22px}
+.tc-role{font-family:var(--fm);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
+.tc-name{font-family:var(--fh);font-weight:800;font-size:20px;text-transform:uppercase;color:var(--t1);letter-spacing:.02em;margin-bottom:10px}
+.tc-creds{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.tc-cred{font-family:var(--fm);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--border);color:var(--t3)}
+.tc-bio{font-size:12px;font-weight:300;color:var(--t2);line-height:1.7}
+
+@media(max-width:960px){
+  .nav-desktop{display:none !important}
+  .hamburger-btn{display:flex !important}
+  .hero-panel-wrapper{display:none !important}
+  .hero-grid{grid-template-columns:1fr !important}
+  .hero-corners{display:none !important}
+  .problem-cols{grid-template-columns:1fr !important}
+  .stats-grid{grid-template-columns:1fr 1fr !important}
+  .about-grid{grid-template-columns:1fr !important}
+  .pricing-grid{grid-template-columns:1fr !important}
+  .deliv-grid{grid-template-columns:1fr !important}
+  .footer-grid{grid-template-columns:1fr !important}
+  .audit-opts{grid-template-columns:1fr !important}
+  .dmaic-row{grid-template-columns:60px 1fr !important}
+  .form-grid-2{grid-template-columns:1fr !important}
+  .team-grid{grid-template-columns:1fr 1fr !important}
+}
+@media(max-width:560px){.team-grid{grid-template-columns:1fr !important}}
+@media(min-width:961px){.hamburger-btn{display:none !important}}
+</style>
+</head>
+<body class="scanlines">
+<div class="grid-bg"></div>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav id="main-nav" style="position:fixed;top:0;left:0;right:0;z-index:600;height:66px;padding:0 clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;background:transparent;border-bottom:1px solid transparent;backdrop-filter:blur(0);transition:all .35s;">
+  <a href="#hero" style="display:flex;align-items:center;gap:10px;">
+    <div style="width:30px;height:30px;border:2px solid var(--gold);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:900;font-size:15px;color:var(--gold);position:relative;overflow:hidden;flex-shrink:0;">
+      C
+      <div style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,205,0,.25),transparent);animation:logo-shine 3s infinite 1s;"></div>
+    </div>
+    <span style="font-family:var(--fh);font-weight:900;font-size:21px;letter-spacing:.1em;color:var(--t1);">CALIBRATE</span>
+  </a>
+  <ul class="nav-desktop" style="list-style:none;display:flex;align-items:center;gap:28px;">
+    <li><a href="#protocol" style="font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);">Protocol</a></li>
+    <li><a href="#offer" style="font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);">Offer</a></li>
+    <li><a href="#about" style="font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);">About</a></li>
+    <li><a href="#team" style="font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);">Team</a></li>
+    <li><a href="#pricing" style="font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);">Pricing</a></li>
+    <li><a href="#body-audit" style="font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);">Body Audit</a></li>
+    <li><a href="#faq" style="font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);">FAQ</a></li>
+    <li><a href="#apply" style="font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);">Apply</a></li>
+  </ul>
+  <a href="https://whatsform.com/a8wbfq" target="_blank" rel="noopener" class="nav-desktop" style="background:var(--gold);color:#030508;font-family:var(--fh);font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:10px 22px;">Apply Now</a>
+  <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Menu" style="display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px;">
+    <span id="h1" style="display:block;width:22px;height:1.5px;background:var(--t1);transition:all .3s;"></span>
+    <span id="h2" style="display:block;width:22px;height:1.5px;background:var(--t1);transition:all .3s;"></span>
+    <span id="h3" style="display:block;width:22px;height:1.5px;background:var(--t1);transition:all .3s;"></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mob-menu" style="display:none;position:fixed;inset:0;top:66px;z-index:590;background:rgba(3,5,8,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:28px;">
+  <a href="#protocol" onclick="closeMenu()" style="font-family:var(--fh);font-size:36px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--t1);">Protocol</a>
+  <a href="#offer" onclick="closeMenu()" style="font-family:var(--fh);font-size:36px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--t1);">Offer</a>
+  <a href="#about" onclick="closeMenu()" style="font-family:var(--fh);font-size:36px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--t1);">About</a>
+  <a href="#team" onclick="closeMenu()" style="font-family:var(--fh);font-size:36px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--t1);">Team</a>
+  <a href="#pricing" onclick="closeMenu()" style="font-family:var(--fh);font-size:36px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--t1);">Pricing</a>
+  <a href="#body-audit" onclick="closeMenu()" style="font-family:var(--fh);font-size:36px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--t1);">Body Audit</a>
+  <a href="#faq" onclick="closeMenu()" style="font-family:var(--fh);font-size:36px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--t1);">FAQ</a>
+  <a href="#apply" onclick="closeMenu()" style="font-family:var(--fh);font-size:36px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--t1);">Apply</a>
+  <a href="https://whatsform.com/a8wbfq" target="_blank" rel="noopener" onclick="closeMenu()" style="font-family:var(--fh);font-size:36px;font-weight:800;text-transform:uppercase;color:var(--gold);">Apply Now</a>
+</div>
+
+<!-- ═══════════ TICKER ═══════════ -->
+<div style="position:fixed;bottom:0;left:0;right:0;z-index:500;height:32px;background:rgba(3,5,8,.88);border-top:1px solid var(--border);display:flex;align-items:center;overflow:hidden;">
+  <span style="font-family:var(--fm);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding:0 16px;border-right:1px solid var(--border);white-space:nowrap;flex-shrink:0;">Calibrate &middot; Live</span>
+  <div style="display:flex;white-space:nowrap;animation:marquee 50s linear infinite;" id="ticker-track">
+  </div>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="hero" style="min-height:100vh;display:flex;align-items:center;padding:clamp(100px,12vw,160px) clamp(20px,6vw,80px) clamp(80px,8vw,100px);position:relative;overflow:hidden;">
+  <!-- Scanning line -->
+  <div style="position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(255,205,0,.5) 40%,rgba(255,205,0,.7) 50%,rgba(255,205,0,.5) 60%,transparent 100%);animation:hero-scan 5s ease-in-out infinite;pointer-events:none;"></div>
+  <!-- Corner brackets -->
+  <div class="hero-corners">
+    <div style="position:absolute;top:80px;left:clamp(20px,6vw,80px);width:24px;height:24px;border-top:1.5px solid rgba(255,205,0,.3);border-left:1.5px solid rgba(255,205,0,.3);"></div>
+    <div style="position:absolute;top:80px;right:clamp(20px,6vw,80px);width:24px;height:24px;border-top:1.5px solid rgba(255,205,0,.3);border-right:1.5px solid rgba(255,205,0,.3);"></div>
+    <div style="position:absolute;bottom:60px;left:clamp(20px,6vw,80px);width:24px;height:24px;border-bottom:1.5px solid rgba(255,205,0,.3);border-left:1.5px solid rgba(255,205,0,.3);"></div>
+    <div style="position:absolute;bottom:60px;right:clamp(20px,6vw,80px);width:24px;height:24px;border-bottom:1.5px solid rgba(255,205,0,.3);border-right:1.5px solid rgba(255,205,0,.3);"></div>
+  </div>
+
+  <div class="hero-grid" style="display:grid;grid-template-columns:1fr 360px;gap:clamp(40px,6vw,80px);align-items:center;width:100%;max-width:1280px;margin:0 auto;position:relative;z-index:1;">
+    <!-- Left -->
+    <div>
+      <p style="font-family:var(--fm);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:22px;opacity:0;animation:fadeUp .9s .1s forwards;">
+        <span style="width:32px;height:1px;background:var(--gold);display:inline-block;"></span>
+        Precision Performance Coaching &middot; Chennai &amp; Bangalore
+      </p>
+      <h1 style="font-family:var(--fh);font-weight:900;font-size:clamp(76px,13.5vw,178px);line-height:.86;letter-spacing:-.025em;text-transform:uppercase;opacity:0;animation:fadeUp .9s .25s forwards;">
+        CALIBRATE<br>
+        <span style="color:var(--gold);display:block;">YOUR</span>
+        BODY.
+      </h1>
+      <p style="font-size:clamp(14px,1.8vw,17px);font-weight:300;color:var(--t2);line-height:1.7;max-width:520px;margin:26px 0 38px;opacity:0;animation:fadeUp .9s .4s forwards;">
+        Your body is a process. Processes can be optimised. Stop treating this like a motivation problem. Start treating it like an execution problem.
+      </p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .9s .55s forwards;">
+        <a href="#body-audit" style="background:var(--gold);color:#030508;font-family:var(--fh);font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:16px 32px;display:inline-flex;align-items:center;gap:9px;transition:opacity .2s,transform .2s;">Start Your Body Audit &rarr;</a>
+        <a href="https://whatsform.com/a8wbfq" target="_blank" rel="noopener" style="background:transparent;color:var(--t1);font-family:var(--fh);font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:15px 32px;border:1px solid rgba(255,255,255,.14);display:inline-block;transition:border-color .2s,color .2s;">Apply for Coaching</a>
+        <a href="https://app.gvnfit.online" target="_blank" rel="noopener" style="background:transparent;color:var(--gold);font-family:var(--fh);font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:15px 32px;border:1px solid rgba(255,205,0,.35);display:inline-flex;align-items:center;gap:8px;transition:border-color .2s,background .2s;">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;animation:pulse-dot 2s infinite;"></span>
+          Client Login
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Dashboard Panel -->
+    <div class="hero-panel-wrapper" style="background:var(--card);border:1px solid var(--border);position:relative;opacity:0;animation:fadeLeft .9s .7s forwards;">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),rgba(255,205,0,.3));"></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--border);">
+        <span style="font-family:var(--fm);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--t2);">Protocol Dashboard &middot; Live</span>
+        <span style="display:flex;align-items:center;gap:6px;font-family:var(--fm);font-size:9px;letter-spacing:.1em;color:var(--green);">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse-dot 2s infinite;"></span> Active
+        </span>
+      </div>
+      <!-- Panel rows injected by JS -->
+      <div id="panel-rows"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ THE PROBLEM ═══════════ -->
+<section id="problem" style="padding:clamp(64px,9vw,110px) clamp(20px,6vw,80px);background:#050a10;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="reveal">
+      <p class="eyebrow"><span class="eyebrow-bar"></span>01 - The Problem</p>
+      <h2 class="section-title">Why Every<br>Other Program<br><span style="color:var(--gold);">Failed You</span></h2>
+      <div class="gold-bar"></div>
+      <p class="section-sub">Engineers debug systems. Founders track unit economics. Why would you treat your own body any differently? You didn't fail the program. The program wasn't built for you.</p>
+    </div>
+
+    <div class="reveal d1">
+      <div class="problem-cols" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:44px;">
+        <div style="padding:30px;background:#050a10;">
+          <p style="font-family:var(--fm);font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid rgba(255,76,76,.2);color:var(--red);">What you've tried</p>
+          <div class="prob-item" style="color:rgba(255,76,76,.8);">Generic calorie apps with no constraint mapping</div>
+          <div class="prob-item" style="color:rgba(255,76,76,.8);">Gym trainers selling motivation, not systems</div>
+          <div class="prob-item" style="color:rgba(255,76,76,.8);">YouTube plans built for a 22-year-old with 3 hours free daily</div>
+          <div class="prob-item" style="color:rgba(255,76,76,.8);">Nutrition advice with no compliance infrastructure</div>
+          <div class="prob-item" style="color:rgba(255,76,76,.8);">Programs that collapse the moment a product launch hits</div>
+        </div>
+        <div style="padding:30px;background:#050a10;">
+          <p style="font-family:var(--fm);font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid rgba(255,176,32,.2);color:var(--amber);">What's actually missing</p>
+          <div class="prob-item" style="color:rgba(255,176,32,.8);">A constraint map built around your actual work schedule</div>
+          <div class="prob-item" style="color:rgba(255,176,32,.8);">Weekly data analysis instead of weekly motivation quotes</div>
+          <div class="prob-item" style="color:rgba(255,176,32,.8);">Root cause diagnosis when progress stalls at Week 5</div>
+          <div class="prob-item" style="color:rgba(255,176,32,.8);">Protocols that account for Chennai and Bangalore food culture</div>
+          <div class="prob-item" style="color:rgba(255,176,32,.8);">A coach who thinks in systems, feedback loops, and variables</div>
+        </div>
+        <div style="padding:30px;background:#050a10;">
+          <p style="font-family:var(--fm);font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid rgba(61,214,140,.2);color:var(--green);">What changes</p>
+          <div class="prob-item" style="color:rgba(61,214,140,.8);">A DMAIC protocol engineered around your real constraints</div>
+          <div class="prob-item" style="color:rgba(61,214,140,.8);">Weekly check-in analysis with actual numbers and decisions</div>
+          <div class="prob-item" style="color:rgba(61,214,140,.8);">Nutrition built for someone eating out 4 times a week</div>
+          <div class="prob-item" style="color:rgba(61,214,140,.8);">A system that self-corrects when travel or work derails it</div>
+          <div class="prob-item" style="color:rgba(61,214,140,.8);">Results you track on a dashboard, not a feeling you chase</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal d2" style="margin-top:28px;">
+      <div class="ifthen">
+        <div class="ifthen-if"><span class="ifthen-label" style="color:var(--amber);">IF</span><span class="ifthen-text" style="color:rgba(255,176,32,.85);">You have tried 3 or more fitness programs in the last 2 years AND you still haven't hit your target body composition</span></div>
+        <div class="ifthen-then"><span class="ifthen-label" style="color:var(--green);">THEN</span><span class="ifthen-text" style="color:rgba(61,214,140,.85);">The variable that changed each time was the program, not you. You don't need more discipline. You need a system with the right input data, feedback loops, and a coach who adjusts the variables when the output drifts.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>.prob-item{display:flex;align-items:flex-start;gap:9px;font-size:13px;font-weight:300;line-height:1.55;margin-bottom:12px}.prob-item::before{content:'';width:4px;height:4px;border-radius:50%;background:currentColor;flex-shrink:0;margin-top:6px;display:inline-block}</style>
+
+<!-- ═══════════ STATS BAND ═══════════ -->
+<div class="stats-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);">
+  <div class="reveal" style="background:var(--card);padding:36px 28px;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);"></div>
+    <p style="font-family:var(--fh);font-weight:900;font-size:clamp(52px,6.5vw,84px);line-height:1;letter-spacing:-.025em;margin-bottom:8px;color:var(--gold);"><span class="counter" data-target="8.4" data-dec="1" data-suffix="kg">0kg</span></p>
+    <p style="font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);line-height:1.5;">Avg fat loss<br>per completed protocol</p>
+    <p style="font-size:11px;color:rgba(244,244,244,.25);margin-top:6px;line-height:1.4;">Measured baseline to Week 12 average weight</p>
+  </div>
+  <div class="reveal d1" style="background:var(--card);padding:36px 28px;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--green);"></div>
+    <p style="font-family:var(--fh);font-weight:900;font-size:clamp(52px,6.5vw,84px);line-height:1;letter-spacing:-.025em;margin-bottom:8px;color:var(--green);"><span class="counter" data-target="94" data-suffix="%">0%</span></p>
+    <p style="font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);line-height:1.5;">Client adherence<br>rate across all protocols</p>
+    <p style="font-size:11px;color:rgba(244,244,244,.25);margin-top:6px;line-height:1.4;">Weekly check-in compliance, averaged across clients</p>
+  </div>
+  <div class="reveal d2" style="background:var(--card);padding:36px 28px;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--amber);"></div>
+    <p style="font-family:var(--fh);font-weight:900;font-size:clamp(52px,6.5vw,84px);line-height:1;letter-spacing:-.025em;margin-bottom:8px;color:var(--amber);"><span class="counter" data-target="14" data-suffix=" wks">0 wks</span></p>
+    <p style="font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);line-height:1.5;">Average timeline<br>to visible recomposition</p>
+    <p style="font-size:11px;color:rgba(244,244,244,.25);margin-top:6px;line-height:1.4;">Defined as measurable waist reduction and weight trend</p>
+  </div>
+  <div class="reveal d3" style="background:var(--card);padding:36px 28px;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);"></div>
+    <p style="font-family:var(--fh);font-weight:900;font-size:clamp(52px,6.5vw,84px);line-height:1;letter-spacing:-.025em;margin-bottom:8px;color:var(--gold);"><span class="counter" data-target="100" data-suffix="%">0%</span></p>
+    <p style="font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);line-height:1.5;">Client retention<br>beyond first 12 weeks</p>
+    <p style="font-size:11px;color:rgba(244,244,244,.25);margin-top:6px;line-height:1.4;">Zero clients have left mid-protocol without measurable results</p>
+  </div>
+</div>
+
+<!-- ═══════════ DMAIC PROTOCOL ═══════════ -->
+<section id="protocol" style="padding:clamp(64px,9vw,110px) clamp(20px,6vw,80px);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="reveal">
+      <p class="eyebrow"><span class="eyebrow-bar"></span>02 - The Calibration Protocol</p>
+      <h2 class="section-title">Built on<br><span style="color:var(--gold);">DMAIC.</span><br>Engineered for You.</h2>
+      <div class="gold-bar"></div>
+      <p class="section-sub">The same framework used to eliminate defects in aerospace and manufacturing. Applied to body recomposition. Every variable measured. Every deviation diagnosed.</p>
+    </div>
+    <div id="dmaic-list" style="margin-top:44px;"></div>
+  </div>
+</section>
+
+<!-- ═══════════ DELIVERABLES ═══════════ -->
+<section id="offer" style="padding:clamp(64px,9vw,110px) clamp(20px,6vw,80px);background:#050a10;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="reveal">
+      <p class="eyebrow"><span class="eyebrow-bar"></span>03 - What's Included</p>
+      <h2 class="section-title">Everything in<br>The <span style="color:var(--gold);">Protocol</span></h2>
+      <div class="gold-bar"></div>
+      <p class="section-sub">This is not a template program. Every deliverable is built from your data. No generic PDFs. No weekly motivation check-ins disguised as coaching.</p>
+    </div>
+    <div id="deliv-grid" class="deliv-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-top:44px;"></div>
+    <div class="reveal d1" style="padding:18px 22px;border-left:3px solid var(--gold);background:rgba(255,205,0,.08);margin-top:28px;">
+      <p style="font-family:var(--fm);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Note</p>
+      <p style="font-size:13px;font-weight:300;line-height:1.6;color:var(--t2);">Maximum 5 new clients accepted per quarter. This is not a marketing constraint. It is a quality constraint. Weekly analysis per client takes 30 to 60 minutes of focused work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section id="about" style="padding:clamp(64px,9vw,110px) clamp(20px,6vw,80px);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="about-grid" style="display:grid;grid-template-columns:1fr 380px;gap:60px;align-items:start;">
+      <div class="reveal">
+        <p class="eyebrow"><span class="eyebrow-bar"></span>04 - About the Coach</p>
+        <h2 class="section-title">Guhayavarman<br><span style="color:var(--gold);">Founder.</span><br>Head Coach.</h2>
+        <div class="gold-bar"></div>
+        <div style="font-size:clamp(14px,1.7vw,16px);font-weight:300;color:var(--t2);line-height:1.8;">
+          <p>I built Calibrate because I kept seeing the same pattern: smart, high-earning professionals who could optimise a product, run a P&amp;L, or debug a distributed system, completely failing at their own health. Not from laziness. From the wrong system.</p>
+          <p style="margin-top:16px;">Every program they tried was built for someone with unlimited time, no travel, and the motivation of a 22-year-old athlete. None of it was built for someone working 10-hour days, eating at corporate canteens, and trying to stay consistent through a product launch.</p>
+          <p style="margin-top:16px;">The Calibration Protocol was built specifically for that person. <strong style="color:var(--t1);font-weight:500;">Data in, protocol out. Deviation detected, adjustment made. No guesswork. No motivation speeches.</strong></p>
+          <p style="margin-top:16px;">My clients are engineers, product managers, consultants, and founders. They come to me because they want to be coached by someone who thinks the way they do: in systems, feedback loops, and measurable outputs. Not in transformation stories and before-after photos.</p>
+        </div>
+        <div class="ifthen" style="margin-top:28px;">
+          <div class="ifthen-if"><span class="ifthen-label" style="color:var(--amber);">IF</span><span class="ifthen-text" style="color:rgba(255,176,32,.85);">You want a coach who motivates you, tells you to stay consistent, and sends you inspiration quotes on bad weeks</span></div>
+          <div class="ifthen-then"><span class="ifthen-label" style="color:var(--green);">THEN</span><span class="ifthen-text" style="color:rgba(61,214,140,.85);">Calibrate is not the right fit. This is data, analysis, and protocol adjustments. Guhay will tell you what the numbers say and what changes. The rest is execution.</span></div>
+        </div>
+      </div>
+      <!-- Profile card -->
+      <div class="reveal d2" style="background:var(--card);border:1px solid var(--border);position:relative;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);"></div>
+        <div style="padding:26px 26px 20px;border-bottom:1px solid var(--border);">
+          <p style="font-family:var(--fh);font-weight:900;font-size:26px;text-transform:uppercase;letter-spacing:.02em;color:var(--t1);">Guhayavarman</p>
+          <p style="font-family:var(--fm);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:4px;">Founder &amp; Head Coach &middot; Calibrate</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);">
+          <div style="background:var(--lift);padding:16px 20px;"><p style="font-family:var(--fh);font-weight:800;font-size:26px;color:var(--gold);">10+</p><p style="font-family:var(--fm);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);margin-top:4px;">Active 1:1 Clients</p></div>
+          <div style="background:var(--lift);padding:16px 20px;"><p style="font-family:var(--fh);font-weight:800;font-size:26px;color:var(--gold);">5+</p><p style="font-family:var(--fm);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);margin-top:4px;">Years Coaching</p></div>
+          <div style="background:var(--lift);padding:16px 20px;"><p style="font-family:var(--fh);font-weight:800;font-size:26px;color:var(--gold);">DMAIC</p><p style="font-family:var(--fm);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);margin-top:4px;">Core Methodology</p></div>
+          <div style="background:var(--lift);padding:16px 20px;"><p style="font-family:var(--fh);font-weight:800;font-size:26px;color:var(--gold);">0</p><p style="font-family:var(--fm);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);margin-top:4px;">Mid-Protocol Dropouts</p></div>
+        </div>
+        <div style="padding:20px 26px;">
+          <div style="padding:18px 22px;border-left:3px solid var(--amber);background:rgba(255,176,32,.07);">
+            <p style="font-family:var(--fm);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:6px;">Approach</p>
+            <p style="font-size:13px;font-weight:300;line-height:1.6;color:var(--t2);">Every applicant goes through a 20-minute call before onboarding. Not a sales call. A diagnostic. If the constraints, goals, and commitment level aren't a match for this protocol, Guhay will say so directly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TEAM ═══════════ -->
+<section id="team" style="padding:clamp(64px,9vw,110px) clamp(20px,6vw,80px);background:#050a10;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="reveal">
+      <p class="eyebrow"><span class="eyebrow-bar"></span>05 - The Team</p>
+      <h2 class="section-title">Built to<br>Coach at<br><span style="color:var(--gold);">Every Layer.</span></h2>
+      <div class="gold-bar"></div>
+      <p class="section-sub">One head coach. Three certified trainers. Two on-call specialists. Every client gets access to the full team, structured by role and responsibility, not by availability.</p>
+    </div>
+
+    <div class="team-grid reveal d1">
+      <!-- Guhayavarman -->
+      <div class="team-card">
+        <div class="tc-avatar">
+          <span class="tc-initials">GV</span>
+        </div>
+        <div class="tc-body">
+          <p class="tc-role">Founder &amp; Head Coach</p>
+          <p class="tc-name">Guhayavarman</p>
+          <div class="tc-creds">
+            <span class="tc-cred">Head Coach</span>
+            <span class="tc-cred">Protocol Architect</span>
+            <span class="tc-cred">12+ Countries</span>
+          </div>
+          <p class="tc-bio">Architect of The Calibration Protocol. Oversees all client programs, conducts body audit calls, and leads root cause analysis for every active engagement across 12+ countries.</p>
+        </div>
+      </div>
+      <!-- Ashok -->
+      <div class="team-card">
+        <div class="tc-avatar">
+          <span class="tc-initials">AK</span>
+        </div>
+        <div class="tc-body">
+          <p class="tc-role">Certified Trainer &mdash; Strength &amp; Muscle</p>
+          <p class="tc-name">Ashok</p>
+          <div class="tc-creds">
+            <span class="tc-cred">Certified Trainer</span>
+            <span class="tc-cred">8+ Years</span>
+            <span class="tc-cred">Hypertrophy</span>
+          </div>
+          <p class="tc-bio">Specialises in strength training and hypertrophy programming. 8+ years building progressive overload protocols for clients in Chennai and Bangalore. Delivers live 1-on-1 virtual and in-person sessions.</p>
+        </div>
+      </div>
+      <!-- Rajavel -->
+      <div class="team-card">
+        <div class="tc-avatar">
+          <span class="tc-initials">RJ</span>
+        </div>
+        <div class="tc-body">
+          <p class="tc-role">Certified Trainer &mdash; Fat Loss &amp; Functional</p>
+          <p class="tc-name">Rajavel</p>
+          <div class="tc-creds">
+            <span class="tc-cred">Certified Trainer</span>
+            <span class="tc-cred">6+ Years</span>
+            <span class="tc-cred">Metabolic Conditioning</span>
+          </div>
+          <p class="tc-bio">Specialises in fat loss protocols and functional fitness programming. 6+ years in metabolic conditioning for high-output professionals. Covers Chennai, Hyderabad, and online globally.</p>
+        </div>
+      </div>
+      <!-- Balaji -->
+      <div class="team-card">
+        <div class="tc-avatar">
+          <span class="tc-initials">BJ</span>
+        </div>
+        <div class="tc-body">
+          <p class="tc-role">Certified Trainer &mdash; Mobility &amp; Rehab</p>
+          <p class="tc-name">Balaji</p>
+          <div class="tc-creds">
+            <span class="tc-cred">Certified Trainer</span>
+            <span class="tc-cred">7+ Years</span>
+            <span class="tc-cred">Corrective Exercise</span>
+          </div>
+          <p class="tc-bio">Specialises in mobility, corrective exercise, and injury prevention. 7+ years working with professionals managing chronic pain, postural issues, and desk-related movement deficits. Chennai, Coimbatore, and online.</p>
+        </div>
+      </div>
+      <!-- Naren -->
+      <div class="team-card">
+        <div class="tc-avatar">
+          <span class="tc-initials">NR</span>
+        </div>
+        <div class="tc-body">
+          <p class="tc-role">Nutritionist &mdash; On-Call Specialist</p>
+          <p class="tc-name">Naren</p>
+          <div class="tc-creds">
+            <span class="tc-cred">ISSN Certified</span>
+            <span class="tc-cred">Diploma Clinical Nutrition</span>
+          </div>
+          <p class="tc-bio">Certified Nutritionist (ISSN) with a Diploma in Clinical Nutrition. Designs all client nutrition protocols, macro frameworks, and medical nutrition therapy plans. Operates on consultancy basis across all active client programs.</p>
+        </div>
+      </div>
+      <!-- Karthika DS -->
+      <div class="team-card">
+        <div class="tc-avatar">
+          <span class="tc-initials">KD</span>
+        </div>
+        <div class="tc-body">
+          <p class="tc-role">Registered Dietician &mdash; On-Call Specialist</p>
+          <p class="tc-name">Karthika DS</p>
+          <div class="tc-creds">
+            <span class="tc-cred">Registered Dietician</span>
+            <span class="tc-cred">BSc Food Science</span>
+            <span class="tc-cred">Sports Nutrition</span>
+          </div>
+          <p class="tc-bio">Registered Dietician with a Bachelor in Food Science and Nutrition. Handles therapeutic diet planning, sports nutrition structuring, and supplementation guidance for clients with clinical considerations.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- How the team operates -->
+    <div class="reveal d2" style="margin-top:40px;border:1px solid var(--border);padding:28px 32px;background:var(--card);">
+      <p style="font-family:var(--fm);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">How the team operates</p>
+      <p style="font-size:14px;font-weight:300;color:var(--t2);line-height:1.7;max-width:720px;">All specialists operate within the Calibration Protocol framework. Trainers are assigned based on your phase, goal, and location. Nutrition specialists are activated for clients with clinical requirements or plateau investigations. Every decision routes through Guhayavarman. You do not manage multiple coaches. You have one point of contact, backed by a full specialist bench.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PRICING ═══════════ -->
+<section id="pricing" style="padding:clamp(64px,9vw,110px) clamp(20px,6vw,80px);background:var(--base);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto;">
+      <p style="font-family:var(--fm);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">06 - Investment</p>
+      <h2 class="section-title">One Offer.<br><span style="color:var(--gold);">Two Structures.</span></h2>
+      <div class="gold-bar" style="margin:18px auto;"></div>
+      <p class="section-sub" style="max-width:100%;">The Calibration Protocol is not available at a cheaper tier. The methodology requires the full system or none of it.</p>
+    </div>
+    <div class="pricing-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);max-width:900px;margin:44px auto 0;">
+      <!-- Monthly -->
+      <div class="reveal" style="background:var(--card);padding:38px;position:relative;">
+        <p style="font-family:var(--fh);font-weight:800;font-size:26px;text-transform:uppercase;color:var(--t1);margin-bottom:8px;">Monthly</p>
+        <p style="font-size:13px;font-weight:300;color:var(--t2);margin-bottom:26px;line-height:1.5;">Minimum 3-month commitment. Billed at the start of each month.</p>
+        <div style="margin-bottom:6px;">
+          <span style="font-family:var(--fm);font-size:14px;color:var(--t2);vertical-align:top;line-height:2;">&#8377;</span>
+          <span style="font-family:var(--fh);font-weight:900;font-size:clamp(48px,5.5vw,66px);color:var(--t1);line-height:1;" class="counter" data-target="25000">0</span>
+        </div>
+        <p style="font-family:var(--fm);font-size:10px;color:var(--t2);margin-bottom:24px;">per month &middot; minimum 3 months</p>
+        <div style="height:1px;background:var(--border);margin:20px 0;"></div>
+        <p style="font-family:var(--fm);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--t2);margin-bottom:14px;">Includes</p>
+        <div class="check-item">Calibration Assessment Report (Week 0)</div>
+        <div class="check-item">Custom Nutrition Protocol</div>
+        <div class="check-item">Training Program (4-week blocks)</div>
+        <div class="check-item">Weekly Check-In Analysis</div>
+        <div class="check-item">WhatsApp Support (weekdays, 4hr response)</div>
+        <div class="check-item">Monthly Bloodwork Review</div>
+        <a href="https://whatsform.com/a8wbfq" target="_blank" rel="noopener" style="display:block;text-align:center;margin-top:24px;padding:15px 32px;border:1px solid rgba(255,255,255,.14);font-family:var(--fh);font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--t1);">Apply for Monthly</a>
+      </div>
+      <!-- Quarterly -->
+      <div class="reveal d2" style="background:var(--lift);padding:38px;position:relative;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);"></div>
+        <span style="display:inline-block;font-family:var(--fm);font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:4px 12px;background:var(--gold);color:#030508;margin-bottom:18px;">Recommended</span>
+        <p style="font-family:var(--fh);font-weight:800;font-size:26px;text-transform:uppercase;color:var(--t1);margin-bottom:8px;">Quarterly</p>
+        <p style="font-size:13px;font-weight:300;color:var(--t2);margin-bottom:26px;line-height:1.5;">Pay once for 3 months. Includes quarterly re-calibration audit and monthly progress reports. Saves &#8377;10,000.</p>
+        <div style="margin-bottom:6px;">
+          <span style="font-family:var(--fm);font-size:14px;color:var(--t2);vertical-align:top;line-height:2;">&#8377;</span>
+          <span style="font-family:var(--fh);font-weight:900;font-size:clamp(48px,5.5vw,66px);color:var(--t1);line-height:1;" class="counter" data-target="65000">0</span>
+        </div>
+        <p style="font-family:var(--fm);font-size:10px;color:var(--t2);margin-bottom:24px;">per quarter &middot; saves &#8377;10,000</p>
+        <div style="height:1px;background:var(--border);margin:20px 0;"></div>
+        <p style="font-family:var(--fm);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--t2);margin-bottom:14px;">Everything in Monthly, plus</p>
+        <div class="check-item">Quarterly Re-Calibration Audit (Week 12)</div>
+        <div class="check-item">Monthly Progress Reports (formatted PDF)</div>
+        <div class="check-item">Priority scheduling for check-in analysis</div>
+        <div class="check-item">&#8377;10,000 savings vs monthly billing</div>
+        <a href="https://whatsform.com/a8wbfq" target="_blank" rel="noopener" style="display:block;text-align:center;margin-top:24px;padding:16px 32px;background:var(--gold);color:#030508;font-family:var(--fh);font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase;">Apply for Quarterly &rarr;</a>
+      </div>
+    </div>
+    <!-- Scarcity -->
+    <div class="reveal" style="max-width:900px;margin:2px auto 0;padding:14px 22px;background:rgba(255,76,76,.07);border:1px solid rgba(255,76,76,.22);font-family:var(--fm);font-size:10px;letter-spacing:.09em;text-align:center;color:var(--red);">
+      Q3 2026 &middot; 2 of 5 available slots remaining &middot; Next intake opens October 2026
+    </div>
+    <!-- Pricing IF/THEN -->
+    <div class="reveal" style="max-width:900px;margin:28px auto 0;">
+      <div class="ifthen">
+        <div class="ifthen-if"><span class="ifthen-label" style="color:var(--amber);">IF</span><span class="ifthen-text" style="color:rgba(255,176,32,.85);">You are comparing this to a gym membership at &#8377;3,000 per month or a one-time online program at &#8377;8,000</span></div>
+        <div class="ifthen-then"><span class="ifthen-label" style="color:var(--green);">THEN</span><span class="ifthen-text" style="color:rgba(61,214,140,.85);">You are not comparing the same product. A gym membership does not include weekly data analysis, protocol adjustments, or a coach who identifies exactly why your weight stalled in Week 6 and what to change. The analysis and the system are what you are paying for. Not sessions.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>.check-item{display:flex;align-items:flex-start;gap:9px;font-size:13px;font-weight:300;color:var(--t2);margin-bottom:9px;line-height:1.4}.check-item::before{content:'✓';color:var(--green);font-size:11px;flex-shrink:0;}</style>
+
+<!-- ═══════════ BODY AUDIT ═══════════ -->
+<section id="body-audit" style="padding:clamp(64px,9vw,110px) clamp(20px,6vw,80px);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto;">
+      <p style="font-family:var(--fm);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">07 - Free Self-Assessment</p>
+      <h2 class="section-title">The <span style="color:var(--gold);">Body Audit</span></h2>
+      <div class="gold-bar" style="margin:18px auto;"></div>
+      <p class="section-sub" style="max-width:100%;">A 4-question DMAIC self-assessment. Takes 2 minutes. Guhay reviews every submission and responds personally on WhatsApp within 24 hours.</p>
+    </div>
+    <div class="reveal" style="max-width:700px;margin:44px auto 0;">
+      <div id="audit-wrap"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section id="faq" style="padding:clamp(64px,9vw,110px) clamp(20px,6vw,80px);background:#050a10;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="reveal">
+      <p class="eyebrow"><span class="eyebrow-bar"></span>08 - Frequently Asked</p>
+      <h2 class="section-title">Common <span style="color:var(--gold);">Questions</span></h2>
+      <div class="gold-bar"></div>
+    </div>
+    <div class="reveal" style="max-width:780px;margin-top:44px;" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- ═══════════ APPLICATION ═══════════ -->
+<section id="apply" style="padding:clamp(64px,9vw,110px) clamp(20px,6vw,80px);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto;">
+      <p style="font-family:var(--fm);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">09 - Application</p>
+      <h2 class="section-title">Apply for<br><span style="color:var(--gold);">The Protocol</span></h2>
+      <div class="gold-bar" style="margin:18px auto;"></div>
+      <p class="section-sub" style="max-width:100%;">This is an application, not a contact form. Guhay reviews every submission personally. A match gets a response within 48 hours to schedule a 20-minute diagnostic call. Not a match gets an honest reply and a recommendation.</p>
+    </div>
+
+    <div class="reveal" style="max-width:740px;margin:44px auto 0;">
+      <div id="applyFields">
+        <div class="form-grid-2">
+          <div class="fg">
+            <label class="f-label">Full Name</label>
+            <input type="text" class="f-inp" id="ap-name" placeholder="Your full name">
+          </div>
+          <div class="fg">
+            <label class="f-label">WhatsApp Number</label>
+            <input type="tel" class="f-inp" id="ap-phone" placeholder="+91 98765 43210">
+          </div>
+          <div class="fg">
+            <label class="f-label">Email Address</label>
+            <input type="email" class="f-inp" id="ap-email" placeholder="you@company.com">
+          </div>
+          <div class="fg">
+            <label class="f-label">City</label>
+            <select class="f-sel" id="ap-city">
+              <option value="" disabled selected>Select city</option>
+              <option>Chennai</option>
+              <option>Bangalore</option>
+              <option>Hyderabad</option>
+              <option>Mumbai</option>
+              <option>Delhi / NCR</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label class="f-label">Your Profession</label>
+            <select class="f-sel" id="ap-profession">
+              <option value="" disabled selected>Select role</option>
+              <option>Software Engineer / Developer</option>
+              <option>Product Manager</option>
+              <option>Consultant</option>
+              <option>Founder / Entrepreneur</option>
+              <option>Finance / Banking</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label class="f-label">Primary Goal</label>
+            <select class="f-sel" id="ap-goal">
+              <option value="" disabled selected>Select goal</option>
+              <option>Fat Loss</option>
+              <option>Body Recomposition</option>
+              <option>Muscle Gain</option>
+              <option>General Performance</option>
+            </select>
+          </div>
+          <div class="fg full">
+            <label class="f-label">What have you tried before and why did it stop?</label>
+            <textarea class="f-area" id="ap-history" placeholder="Be specific. Programs, duration, what broke the consistency..."></textarea>
+          </div>
+          <div class="fg full">
+            <label class="f-label">Why is now the right time?</label>
+            <textarea class="f-area" id="ap-why" placeholder="What changed or what triggered you to reach out now..."></textarea>
+          </div>
+          <div class="fg full">
+            <label class="f-label">Preferred Payment Structure</label>
+            <select class="f-sel" id="ap-payment">
+              <option value="" disabled selected>Select preference</option>
+              <option>Monthly &mdash; &#8377;25,000/month (min 3 months)</option>
+              <option>Quarterly &mdash; &#8377;65,000 upfront (3 months)</option>
+              <option>Not decided &mdash; want to discuss on the call</option>
+            </select>
+          </div>
+        </div>
+        <button onclick="submitApply()" style="margin-top:20px;width:100%;background:var(--gold);color:#030508;font-family:var(--fh);font-weight:800;font-size:15px;letter-spacing:.12em;text-transform:uppercase;padding:18px;border:none;cursor:pointer;transition:opacity .2s;">Submit Application</button>
+      </div>
+      <div id="applyOk" style="display:none;text-align:center;padding:36px;background:rgba(61,214,140,.07);border:1px solid rgba(61,214,140,.22);margin-top:20px;">
+        <p style="font-family:var(--fh);font-weight:800;font-size:22px;text-transform:uppercase;color:var(--green);margin-bottom:8px;">Application Received</p>
+        <p style="font-size:13px;font-weight:300;color:var(--t2);">Guhay will review your application and respond within 48 hours. If there is a match, expect a WhatsApp message to schedule the 20-minute diagnostic call. If not, you will get an honest explanation and a recommendation for what makes more sense at this stage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer style="background:#020406;border-top:1px solid var(--border);padding:52px clamp(20px,6vw,80px) 80px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="footer-grid" style="display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--border);">
+      <div>
+        <p style="font-family:var(--fh);font-weight:900;font-size:26px;letter-spacing:.08em;color:var(--t1);margin-bottom:10px;">CALIBRATE</p>
+        <p style="font-size:13px;font-weight:300;color:var(--t2);line-height:1.65;max-width:280px;">Precision performance coaching for high-performing professionals. Your body is a process. Processes can be optimised.</p>
+        <a href="https://gvnfit.online" style="font-family:var(--fm);font-size:10px;letter-spacing:.1em;color:var(--gold);margin-top:16px;display:inline-block;border-bottom:1px solid rgba(255,205,0,.3);">gvnfit.online</a>
+      </div>
+      <div>
+        <p style="font-family:var(--fm);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--t2);margin-bottom:14px;">Navigate</p>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="#protocol" style="font-size:13px;font-weight:300;color:rgba(244,244,244,.25);">The Protocol</a>
+          <a href="#offer" style="font-size:13px;font-weight:300;color:rgba(244,244,244,.25);">What's Included</a>
+          <a href="#about" style="font-size:13px;font-weight:300;color:rgba(244,244,244,.25);">About Guhay</a>
+          <a href="#team" style="font-size:13px;font-weight:300;color:rgba(244,244,244,.25);">The Team</a>
+          <a href="#pricing" style="font-size:13px;font-weight:300;color:rgba(244,244,244,.25);">Pricing</a>
+          <a href="#body-audit" style="font-size:13px;font-weight:300;color:rgba(244,244,244,.25);">Body Audit (Free)</a>
+          <a href="#faq" style="font-size:13px;font-weight:300;color:rgba(244,244,244,.25);">FAQ</a>
+          <a href="#apply" style="font-size:13px;font-weight:300;color:rgba(244,244,244,.25);">Apply for the Protocol</a>
+          <a href="https://whatsform.com/a8wbfq" target="_blank" rel="noopener" style="font-size:13px;font-weight:300;color:rgba(244,244,244,.25);">Apply Now</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-family:var(--fm);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--t2);margin-bottom:14px;">Contact</p>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:22px;">
+          <a href="mailto:admin@gvnfit.online" style="font-size:13px;font-weight:300;color:rgba(244,244,244,.25);">admin@gvnfit.online</a>
+          <a href="https://www.instagram.com/fitguhay/" target="_blank" rel="noopener" style="font-size:13px;font-weight:300;color:rgba(244,244,244,.25);">@fitguhay on Instagram</a>
+        </div>
+        <p style="font-family:var(--fm);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--t2);margin-bottom:14px;">Base</p>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <span style="font-size:13px;font-weight:300;color:rgba(244,244,244,.25);">Chennai, Tamil Nadu</span>
+          <span style="font-size:13px;font-weight:300;color:rgba(244,244,244,.25);">Serving clients across India</span>
+          <span style="font-size:13px;font-weight:300;color:rgba(244,244,244,.25);">Parent: Lakchinna Digitals</span>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
+      <p style="font-family:var(--fm);font-size:9px;letter-spacing:.08em;color:rgba(244,244,244,.25);">&copy; 2026 Calibrate by Guhayavarman &middot; Lakchinna Digitals &middot; All rights reserved</p>
+      <div style="display:flex;gap:20px;">
+        <a href="https://www.instagram.com/fitguhay/" target="_blank" rel="noopener" style="font-family:var(--fm);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,244,244,.25);">Instagram</a>
+        <a href="mailto:admin@gvnfit.online" style="font-family:var(--fm);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,244,244,.25);">Email</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/919884824064?text=Hi%20Guhay%2C%20I%27d%20like%20to%20know%20more%20about%20The%20Calibration%20Protocol" target="_blank" rel="noopener" title="Chat on WhatsApp" style="position:fixed;bottom:46px;right:22px;z-index:450;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 22px rgba(37,211,102,.35);transition:transform .22s,box-shadow .22s;">
+  <svg viewBox="0 0 24 24" style="width:26px;height:26px;fill:white;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+/* ── Constants ── */
+const WA = 'https://wa.me/919884824064?text=Hi%20Guhay%2C%20I%27d%20like%20to%20know%20more%20about%20The%20Calibration%20Protocol';
+const APPLY = 'https://whatsform.com/a8wbfq';
+
+/* ── Nav scroll ── */
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('main-nav');
+  if (window.scrollY > 20) {
+    nav.style.background = 'rgba(3,5,8,0.92)';
+    nav.style.borderBottomColor = '#1a2a3d';
+    nav.style.backdropFilter = 'blur(24px)';
+  } else {
+    nav.style.background = 'transparent';
+    nav.style.borderBottomColor = 'transparent';
+    nav.style.backdropFilter = 'blur(0)';
+  }
+});
+
+/* ── Mobile menu ── */
+let menuOpen = false;
+function toggleMenu() {
+  menuOpen = !menuOpen;
+  const m = document.getElementById('mob-menu');
+  m.style.display = menuOpen ? 'flex' : 'none';
+  document.getElementById('h1').style.transform = menuOpen ? 'translateY(6.5px) rotate(45deg)' : '';
+  document.getElementById('h2').style.opacity = menuOpen ? '0' : '1';
+  document.getElementById('h3').style.transform = menuOpen ? 'translateY(-6.5px) rotate(-45deg)' : '';
+}
+function closeMenu() { menuOpen = false; toggleMenu(); toggleMenu(); menuOpen = false;
+  document.getElementById('mob-menu').style.display = 'none';
+  document.getElementById('h1').style.transform = '';
+  document.getElementById('h2').style.opacity = '1';
+  document.getElementById('h3').style.transform = '';
+}
+
+/* ── Ticker ── */
+const tickerData = [
+  ['Avg Fat Loss','8.4kg'],['Adherence Rate','94%'],['Protocol Duration','14 wks avg'],
+  ['Active Clients','10+'],['Q3 2026 Slots','2 remaining'],['Retention Rate','100%'],
+  ['Check-in Response','&lt;24 hrs'],['Protocols Delivered','25+'],['Method','DMAIC'],
+  ['Clients in Chennai','Active'],['Bloodwork Reviews','Monthly'],['Program Type','1:1 Only']
+];
+const track = document.getElementById('ticker-track');
+const tickAll = [...tickerData,...tickerData];
+track.innerHTML = tickAll.map(([k,v])=>`<span style="display:inline-flex;align-items:center;gap:8px;padding:0 28px;font-family:var(--fm);font-size:10px;letter-spacing:.09em;"><span style="text-transform:uppercase;font-size:9px;color:rgba(244,244,244,.2);">${k}</span><span style="color:var(--gold);">${v}</span><span style="color:rgba(255,255,255,.1);padding:0 4px;">&middot;</span></span>`).join('');
+
+/* ── Hero panel ── */
+const panelRows = [
+  {label:'Avg Fat Loss',value:'8.4',unit:'kg',color:'var(--gold)',barW:84},
+  {label:'Client Adherence',value:'94',unit:'%',color:'var(--green)',barW:94},
+  {label:'Avg Protocol Timeline',value:'14',unit:'wks',color:'rgba(244,244,244,0.9)',barW:70},
+  {label:'Q3 2026 Slots Left',value:'2',unit:'/ 5',color:'#FF4C4C',barW:40},
+  {label:'Check-in Response',value:'<24',unit:'hrs',color:'var(--green)',barW:97},
+  {label:'Client Retention Rate',value:'100',unit:'%',color:'var(--gold)',barW:100},
+];
+document.getElementById('panel-rows').innerHTML = panelRows.map((r,i)=>`
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 22px;${i<panelRows.length-1?'border-bottom:1px solid var(--border);':''}">
+    <span style="font-family:var(--fm);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,244,244,.25);">${r.label}</span>
+    <div>
+      <div style="font-family:var(--fh);font-weight:800;font-size:${r.unit==='hrs'?18:24}px;line-height:1;text-align:right;color:${r.color};">${r.value}<span style="font-size:12px;font-weight:400;margin-left:2px;">${r.unit}</span></div>
+      <div style="height:2px;background:rgba(255,255,255,.06);margin-top:5px;border-radius:1px;overflow:hidden;width:120px;">
+        <div class="mini-bar" data-width="${r.barW}" style="height:100%;width:0;border-radius:1px;background:${r.color==='rgba(244,244,244,0.9)'?'rgba(244,244,244,0.4)':r.color};transition:width 1.6s cubic-bezier(.22,1,.36,1);"></div>
+      </div>
+    </div>
+  </div>`).join('');
+
+/* ── DMAIC ── */
+const dmaic = [
+  {letter:'D',phase:'Define',desc:'Establish your complete baseline before a single variable is changed. Biometrics, bloodwork flags, lifestyle load, constraint map, eating patterns, training history, and sleep architecture. Success is defined in measurable terms, not adjectives.',tags:['Calibration Assessment','Constraint Mapping','Bloodwork Review','Goal Quantification']},
+  {letter:'M',phase:'Measure',desc:'Weekly data collection across every relevant variable. Bodyweight trends on a 7-day rolling average, waist measurements, training session quality, nutrition adherence percentage, sleep hours, step count, and biofeedback scores.',tags:['Weekly Check-Ins','7-Day Rolling Average','Adherence Tracking','Biofeedback Scoring']},
+  {letter:'A',phase:'Analyse',desc:'Separate signal from noise. Identify the root cause when progress stalls. Is it water retention, calorie accuracy, recovery debt, or training load? Most coaches guess. The Calibration Protocol diagnoses with data.',tags:['Root Cause Analysis','Signal vs Noise','Plateau Diagnosis','Bottleneck Identification']},
+  {letter:'I',phase:'Improve',desc:'Targeted protocol adjustments based on the analysis. Calorie shifts, training volume changes, recovery interventions, meal timing corrections. Every improvement has a hypothesis and a metric to validate it.',tags:['Protocol Adjustments','Variable Testing','Calorie Recalibration','Training Load Control']},
+  {letter:'C',phase:'Control',desc:'Build the systems that sustain your results after the protocol ends. Habit anchors, re-calibration triggers, maintenance targets, and a personal dashboard of the variables that matter for your physiology.',tags:['Maintenance Protocols','Re-calibration Triggers','Habit Architecture','Exit Planning']},
+];
+document.getElementById('dmaic-list').innerHTML = dmaic.map((d,i)=>`
+  <div class="reveal${i?` d${Math.min(i,4)}`:''}">
+    <div class="dmaic-row" style="display:grid;grid-template-columns:88px 1fr;gap:0;${i>0?'margin-top:2px;':''}">
+      <div style="background:var(--card);display:flex;flex-direction:column;align-items:center;padding:26px 0 22px;position:relative;">
+        <span style="font-family:var(--fh);font-weight:900;font-size:clamp(40px,5.5vw,62px);color:var(--gold);line-height:1;position:relative;z-index:1;">${d.letter}</span>
+        ${i<4?'<div style="position:absolute;top:80px;bottom:0;left:50%;width:1px;background:var(--border);transform:translateX(-50%);"></div>':''}
+      </div>
+      <div style="background:var(--lift);border-left:1px solid var(--border);padding:26px 32px;">
+        <p style="font-family:var(--fh);font-weight:800;font-size:clamp(20px,2.5vw,30px);text-transform:uppercase;letter-spacing:.03em;color:var(--t1);margin-bottom:8px;">${d.phase}</p>
+        <p style="font-size:clamp(13px,1.5vw,15px);font-weight:300;color:var(--t2);line-height:1.7;max-width:680px;">${d.desc}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;">
+          ${d.tags.map(t=>`<span style="font-family:var(--fm);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(255,255,255,.14);color:rgba(244,244,244,.25);">${t}</span>`).join('')}
+        </div>
+      </div>
+    </div>
+  </div>`).join('');
+
+/* ── Deliverables ── */
+const deliverables = [
+  {num:'01',cat:'Assessment',name:'Calibration Assessment Report',desc:'A full-system audit of your current state. Biometrics, bloodwork flags, lifestyle constraints, eating patterns, training history, sleep architecture. Delivered as a premium formatted report before Week 1 begins.'},
+  {num:'02',cat:'Nutrition',name:'Custom Nutrition Protocol',desc:'Built around your actual food environment. Calorie and protein targets, meal structure, eating-out rules for Chennai and Bangalore restaurants, weekend deviation allowances, and adjustment triggers.'},
+  {num:'03',cat:'Training',name:'Training Program (4-Week Blocks)',desc:'Periodised resistance training designed for your equipment, schedule, and training age. Progressive overload built in. Substitution tables. Fatigue management protocols.'},
+  {num:'04',cat:'Analysis',name:'Weekly Check-In Analysis',desc:'Every week: you submit your data, I analyse it. Weight trends, adherence breakdown, training quality, biofeedback scores. Written analysis and root cause diagnosis within 24 hours.'},
+  {num:'05',cat:'Support',name:'WhatsApp Support (Weekdays)',desc:'Direct access. Response within 4 hours on weekdays. One coach, one client, focused on your current protocol state. Questions answered with reasoning, not reassurance.'},
+  {num:'06',cat:'Bloodwork',name:'Monthly Bloodwork Review',desc:'HbA1c, fasting insulin, lipids, thyroid, Vitamin D, ferritin review in the context of your protocol. Flags noted. Protocol adjustments made where evidence supports it.'},
+  {num:'07',cat:'Quarterly',name:'Re-Calibration Audit (Q Plan)',desc:"Every 12 weeks: full system reset. Review what worked, what didn't, and why. New baselines established. Protocol updated for the next quarter."},
+  {num:'08',cat:'Reports',name:'Monthly Progress Reports',desc:'Data-rich formatted reports showing your progress trajectory. Trend analysis, comparison against targets, protocol performance summary.'},
+];
+document.getElementById('deliv-grid').innerHTML = deliverables.map((d,i)=>`
+  <div class="reveal${i%4?` d${i%4}`:''}">
+    <div style="background:var(--card);padding:30px;position:relative;overflow:hidden;height:100%;">
+      <div style="position:absolute;top:0;left:0;width:2px;height:100%;background:var(--gold);"></div>
+      <p style="font-family:var(--fm);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">${d.num} - ${d.cat}</p>
+      <p style="font-family:var(--fh);font-weight:700;font-size:clamp(17px,2.2vw,22px);text-transform:uppercase;color:var(--t1);margin-bottom:8px;">${d.name}</p>
+      <p style="font-size:13px;font-weight:300;color:var(--t2);line-height:1.65;">${d.desc}</p>
+    </div>
+  </div>`).join('');
+
+/* ── FAQ ── */
+const faqs = [
+  {q:"How is this different from hiring a regular personal trainer?",a:"A personal trainer is present during sessions and gives you exercises to do. The Calibration Protocol is a full system that covers nutrition, training, recovery, bloodwork, weekly data analysis, protocol adjustments, and exit planning. The coaching is continuous and data-driven, not session-based."},
+  {q:"Do I need to be in Chennai or Bangalore?",a:"No. The protocol is fully online. All communication is via WhatsApp and email. Check-ins are submitted through a structured form. The nutrition protocols are built for Indian food environments."},
+  {q:"I work a demanding job. Can I actually follow this?",a:"Yes. This protocol was built specifically for people working 10-hour days. The nutrition system does not require meal prepping. Training is 3 to 4 days per week under 60 minutes. The check-in takes about 5 minutes per week."},
+  {q:"What results can I expect?",a:"The average client sees 6 to 10 kg of measurable fat loss across a 12-week protocol with full adherence. Zero clients have completed a full protocol without measurable changes."},
+  {q:"What if I miss a week or go off-plan?",a:"Deviation is expected and built into the system. The protocol includes re-calibration triggers for when adherence drops. No guilt. No lectures. Data and a correction."},
+  {q:"Why only 5 clients per quarter?",a:"Weekly check-in analysis takes 30 to 60 minutes per client. WhatsApp support requires real-time response quality. The cap is a quality constraint, not a marketing tactic."},
+  {q:"Is there a refund if it doesn't work?",a:"There is no refund after the assessment report is delivered. This is why there is an application process and a 20-minute diagnostic call before onboarding. If the fit is not right, that gets identified before payment."},
+];
+let faqOpen = null;
+function renderFAQ() {
+  document.getElementById('faq-list').innerHTML = faqs.map((f,i)=>`
+    <div style="border-bottom:1px solid var(--border);">
+      <button onclick="toggleFAQ(${i})" style="display:flex;justify-content:space-between;align-items:center;padding:20px 0;width:100%;background:none;border:none;font-family:var(--fh);font-weight:700;font-size:clamp(15px,2vw,19px);text-transform:uppercase;letter-spacing:.02em;color:${faqOpen===i?'var(--gold)':'var(--t1)'};text-align:left;transition:color .2s;">
+        ${f.q}
+        <span style="width:24px;height:24px;border:1px solid ${faqOpen===i?'var(--gold)':'var(--border)'};display:flex;align-items:center;justify-content:center;font-size:16px;color:${faqOpen===i?'var(--gold)':'var(--t2)'};flex-shrink:0;margin-left:16px;transform:${faqOpen===i?'rotate(45deg)':'none'};transition:all .3s;">+</span>
+      </button>
+      <div style="max-height:${faqOpen===i?'400px':'0'};overflow:hidden;font-size:13px;font-weight:300;color:var(--t2);line-height:1.75;transition:max-height .4s ease,padding .3s ease;padding-bottom:${faqOpen===i?'20px':'0'};">${f.a}</div>
+    </div>`).join('');
+}
+function toggleFAQ(i) { faqOpen = faqOpen === i ? null : i; renderFAQ(); }
+renderFAQ();
+
+/* ── Body Audit ── */
+const auditQs = [
+  {q:'What is your primary goal right now?',opts:['Fat Loss','Body Recomposition','Muscle Gain','General Performance']},
+  {q:'How many fitness programs have you tried in the last 2 years?',opts:['None - first attempt','1 to 2 programs','3 to 5 programs','Too many to count']},
+  {q:'What is your biggest constraint right now?',opts:['Time - 10+ hour work days','Food - eating out most meals','Travel - inconsistent schedule','Recovery - chronic stress and poor sleep']},
+  {q:'Rate your adherence to your current health routine, if you have one.',opts:['No current routine','Low - 1 to 3 out of 10','Medium - 4 to 6 out of 10','High - 7 to 10 out of 10']},
+];
+let auditStep = 0, auditAnswers = {}, auditDone = false;
+let auditName = '', auditPhone = '', auditCity = '';
+
+function renderAudit() {
+  const wrap = document.getElementById('audit-wrap');
+  if (auditDone) {
+    wrap.innerHTML = `<div style="text-align:center;padding:48px 32px;background:var(--card);border:1px solid rgba(61,214,140,.22);">
+      <div style="font-size:36px;margin-bottom:14px;color:var(--green);">&#10003;</div>
+      <p style="font-family:var(--fh);font-weight:800;font-size:26px;text-transform:uppercase;color:var(--t1);margin-bottom:10px;">Audit Submitted</p>
+      <p style="font-size:13px;font-weight:300;color:var(--t2);line-height:1.65;">Guhay reviews every audit personally. Your Body Audit results will be on WhatsApp within 24 hours. No automated responses. No templates.</p>
+    </div>`;
+    return;
+  }
+
+  const totalSteps = auditQs.length + 1;
+  const dots = Array.from({length:totalSteps},(_,d)=>`<div style="height:2px;flex:1;background:${d<auditStep?'var(--green)':d===auditStep?'var(--gold)':'var(--border)'};transition:background .3s;"></div>`).join('');
+
+  let inner = '';
+  if (auditStep < auditQs.length) {
+    const q = auditQs[auditStep];
+    inner = `
+      <p style="font-family:var(--fm);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--t2);margin-bottom:10px;">Question ${String(auditStep+1).padStart(2,'0')} / 0${totalSteps}</p>
+      <p style="font-family:var(--fh);font-weight:800;font-size:clamp(22px,3.5vw,32px);text-transform:uppercase;color:var(--t1);margin-bottom:26px;line-height:1.1;">${q.q}</p>
+      <div class="audit-opts" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        ${q.opts.map(opt=>`<button onclick="pickAudit(${auditStep},'${opt.replace(/'/g,"\\'")}',this)" style="background:${auditAnswers[auditStep]===opt?'rgba(255,205,0,.08)':'var(--card)'};border:1px solid ${auditAnswers[auditStep]===opt?'var(--gold)':'var(--border)'};padding:15px 18px;text-align:left;font-size:13px;font-weight:300;color:${auditAnswers[auditStep]===opt?'var(--t1)':'var(--t2)'};transition:all .2s;">${auditAnswers[auditStep]===opt?'&#10003; ':''}${opt}</button>`).join('')}
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;">
+        ${auditStep>0?`<button onclick="auditBack()" style="font-family:var(--fh);font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:13px 26px;background:none;border:1px solid var(--border);color:var(--t2);">&larr; Back</button>`:'<div></div>'}
+        <button onclick="auditNext()" style="font-family:var(--fh);font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:13px 26px;background:var(--gold);color:#030508;border:none;">Next &rarr;</button>
+      </div>`;
+  } else {
+    inner = `
+      <p style="font-family:var(--fm);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--t2);margin-bottom:10px;">Question 05 / 05</p>
+      <p style="font-family:var(--fh);font-weight:800;font-size:clamp(22px,3.5vw,32px);text-transform:uppercase;color:var(--t1);margin-bottom:26px;line-height:1.1;">Where should your audit results go?</p>
+      <input id="a-name" type="text" placeholder="Your name" value="${auditName}" oninput="auditName=this.value" style="width:100%;background:var(--card);border:1px solid var(--border);padding:15px 18px;color:var(--t1);font-size:14px;font-weight:300;outline:none;margin-bottom:10px;font-family:var(--fb);">
+      <input id="a-phone" type="tel" placeholder="WhatsApp number (+91...)" value="${auditPhone}" oninput="auditPhone=this.value" style="width:100%;background:var(--card);border:1px solid var(--border);padding:15px 18px;color:var(--t1);font-size:14px;font-weight:300;outline:none;margin-bottom:10px;font-family:var(--fb);">
+      <input id="a-city" type="text" placeholder="Your city (Chennai / Bangalore / Other)" value="${auditCity}" oninput="auditCity=this.value" style="width:100%;background:var(--card);border:1px solid var(--border);padding:15px 18px;color:var(--t1);font-size:14px;font-weight:300;outline:none;margin-bottom:10px;font-family:var(--fb);">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;">
+        <button onclick="auditBack()" style="font-family:var(--fh);font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:13px 26px;background:none;border:1px solid var(--border);color:var(--t2);">&larr; Back</button>
+        <button onclick="submitAudit()" style="font-family:var(--fh);font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:13px 26px;background:var(--green);color:#030508;border:none;">Submit Audit</button>
+      </div>`;
+  }
+
+  wrap.innerHTML = `
+    <div style="display:flex;gap:4px;margin-bottom:28px;">${dots}</div>
+    <div style="animation:fadeUp .3s ease;">${inner}</div>`;
+}
+function pickAudit(idx, val) { auditAnswers[idx] = val; renderAudit(); }
+function auditNext() { if (auditStep < auditQs.length) { auditStep++; renderAudit(); } }
+function auditBack() { if (auditStep > 0) { auditStep--; renderAudit(); } }
+function submitAudit() {
+  if (!auditName.trim() || !auditPhone.trim()) {
+    alert('Please enter your name and WhatsApp number.');
+    return;
+  }
+  // Open WhatsApp with audit summary
+  const summary = auditQs.map((q,i)=>`${q.q}: ${auditAnswers[i]||'Skipped'}`).join('%0A');
+  const msg = `Hi Guhay! I just completed the Body Audit.%0A%0AName: ${encodeURIComponent(auditName)}%0APhone: ${encodeURIComponent(auditPhone)}%0ACity: ${encodeURIComponent(auditCity||'Not specified')}%0A%0A${summary}`;
+  window.open(`https://wa.me/919884824064?text=${msg}`, '_blank');
+  auditDone = true;
+  renderAudit();
+}
+renderAudit();
+
+/* ── Scroll Reveal ── */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ── Animated Counters ── */
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.target);
+  const dec = parseInt(el.dataset.dec || '0');
+  const suffix = el.dataset.suffix || '';
+  const dur = 1800, t0 = performance.now();
+  function tick(now) {
+    const p = Math.min((now - t0) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    const val = target * ease;
+    el.textContent = (dec ? val.toFixed(dec) : Math.floor(val)) + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); } });
+}, { threshold: 0.3 });
+document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+
+/* ── Mini Bars ── */
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.mini-bar').forEach(b => {
+        setTimeout(() => { b.style.width = b.dataset.width + '%'; }, 400);
+      });
+      barObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+const panel = document.querySelector('.hero-panel-wrapper');
+if (panel) barObs.observe(panel);
+// Trigger bars after animation completes if panel is in view on load
+setTimeout(() => {
+  document.querySelectorAll('.mini-bar').forEach(b => { b.style.width = b.dataset.width + '%'; });
+}, 1200);
+
+/* ── Apply form ── */
+function submitApply() {
+  const n = document.getElementById('ap-name').value.trim();
+  const p = document.getElementById('ap-phone').value.trim();
+  const e = document.getElementById('ap-email').value.trim();
+  let ok = true;
+  ['ap-name','ap-phone','ap-email'].forEach(id => document.getElementById(id).classList.remove('err'));
+  if (!n) { document.getElementById('ap-name').classList.add('err'); ok = false; }
+  if (!p) { document.getElementById('ap-phone').classList.add('err'); ok = false; }
+  if (!e) { document.getElementById('ap-email').classList.add('err'); ok = false; }
+  if (!ok) return;
+
+  const profession = document.getElementById('ap-profession').value || 'Not specified';
+  const goal = document.getElementById('ap-goal').value || 'Not specified';
+  const city = document.getElementById('ap-city').value || 'Not specified';
+  const history = document.getElementById('ap-history').value || '';
+  const why = document.getElementById('ap-why').value || '';
+  const payment = document.getElementById('ap-payment').value || 'Not decided';
+
+  const msg = `Hi Guhay! I'd like to apply for The Calibration Protocol.%0A%0AName: ${encodeURIComponent(n)}%0APhone: ${encodeURIComponent(p)}%0AEmail: ${encodeURIComponent(e)}%0ACity: ${encodeURIComponent(city)}%0AProfession: ${encodeURIComponent(profession)}%0AGoal: ${encodeURIComponent(goal)}%0APayment preference: ${encodeURIComponent(payment)}%0A%0ABackground: ${encodeURIComponent(history)}%0A%0AWhy now: ${encodeURIComponent(why)}`;
+  window.open(`https://wa.me/919884824064?text=${msg}`, '_blank');
+
+  document.getElementById('applyFields').style.display = 'none';
+  document.getElementById('applyOk').style.display = 'block';
+}
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.f-inp,.f-sel').forEach(el => {
+    el.addEventListener('input', () => el.classList.remove('err'));
+    el.addEventListener('change', () => el.classList.remove('err'));
+  });
+});
+</script>
+</body>
+</html>
