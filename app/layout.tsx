@@ -134,6 +134,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full">
+        <div className="hud-scanline" aria-hidden="true" />
         {children}
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {

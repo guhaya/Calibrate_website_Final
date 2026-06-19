@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import ParticleNetwork from "@/components/shared/ParticleNetwork";
 
 /* ── Animated weight-loss graph inside the phone ── */
 function WeightGraph() {
@@ -390,25 +391,33 @@ export default function Hero() {
         overflow: "hidden",
       }}
     >
-      {/* Background layers */}
+      {/* Particle network */}
+      <ParticleNetwork count={85} linkDist={160} style={{ opacity: 0.75 }} />
+
+      {/* Ambient gradient layers */}
       <div style={{
         position: "absolute", inset: 0,
-        background: "radial-gradient(ellipse 80% 60% at 20% 40%, rgba(212,175,55,0.07) 0%, transparent 60%)",
+        background: "radial-gradient(ellipse 70% 55% at 18% 42%, rgba(212,175,55,0.09) 0%, transparent 65%)",
         pointerEvents: "none"
       }} />
       <div style={{
         position: "absolute", inset: 0,
-        backgroundImage: "linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px)",
-        backgroundSize: "64px 64px",
+        background: "radial-gradient(ellipse 50% 40% at 85% 55%, rgba(14,30,60,0.5) 0%, transparent 70%)",
+        pointerEvents: "none"
+      }} />
+
+      {/* Blueprint grid — masked to left side */}
+      <div style={{
+        position: "absolute", inset: 0,
+        backgroundImage: "linear-gradient(rgba(212,175,55,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.04) 1px, transparent 1px)",
+        backgroundSize: "80px 80px",
         pointerEvents: "none",
-        maskImage: "radial-gradient(ellipse at 30% 50%, black 30%, transparent 80%)"
+        maskImage: "radial-gradient(ellipse 60% 80% at 25% 50%, black 10%, transparent 75%)",
+        WebkitMaskImage: "radial-gradient(ellipse 60% 80% at 25% 50%, black 10%, transparent 75%)",
       }} />
-      <div style={{
-        position: "absolute", top: "10%", right: "10%",
-        width: "500px", height: "500px",
-        background: "radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%)",
-        pointerEvents: "none"
-      }} />
+
+      {/* HUD corner brackets on hero */}
+      <div className="hud-corners hud-corners-inner" style={{ position: "absolute", inset: "20px", pointerEvents: "none" }} />
 
       <div style={{ maxWidth: "1160px", margin: "0 auto", width: "100%", position: "relative" }}>
         <div
