@@ -11,7 +11,8 @@ const footerLinks = {
     { label: "Pricing", href: "/pricing" },
     { label: "Book Free Call", href: "/book" },
   ],
-  Results: [
+  Company: [
+    { label: "Meet the Team", href: "/coaches" },
     { label: "Transformation Stories", href: "/success-stories" },
     { label: "Blog", href: "/blog" },
   ],
@@ -122,10 +123,13 @@ export default function Footer() {
             © {new Date().getFullYear()} CALIBRATE. All rights reserved.
           </p>
           <div style={{ display: "flex", gap: "24px" }}>
-            {["Privacy Policy", "Terms of Service"].map((item) => (
+            {[
+              { label: "Privacy Policy", href: "/privacy-policy" },
+              { label: "Terms of Service", href: "/terms" },
+            ].map((item) => (
               <Link
-                key={item}
-                href="#"
+                key={item.label}
+                href={item.href}
                 style={{
                   color: "#5A6475",
                   fontSize: "13px",
@@ -136,7 +140,7 @@ export default function Footer() {
                 onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#9AA4B2")}
                 onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#5A6475")}
               >
-                {item}
+                {item.label}
               </Link>
             ))}
           </div>
