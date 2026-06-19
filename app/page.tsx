@@ -3,7 +3,6 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import Metrics from "@/components/home/Metrics";
 import AppShowcase from "@/components/home/AppShowcase";
-import PrecisionData from "@/components/home/PrecisionData";
 import HomeProcess from "@/components/home/HomeProcess";
 import ProductEcosystem from "@/components/home/ProductEcosystem";
 import FeatureShowcase from "@/components/home/FeatureShowcase";
@@ -19,7 +18,6 @@ export default function HomePage() {
         <Hero />
         <Metrics />
         <AppShowcase />
-        <PrecisionData />
         <HomeProcess />
         <ProductEcosystem />
         <FeatureShowcase />
