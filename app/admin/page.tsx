@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import Logo from "@/components/layout/Logo";
 import Icon from "@/components/shared/Icon";
 
-const ADMIN_PASSWORD = "Calibrate2026!";
-
 type FaqItem = { q: string; a: string };
 type Testimonial = { name: string; result: string; duration: string; quote: string };
 type PricingTier = { name: string; price: string; features: string[] };
@@ -92,14 +90,24 @@ export default function AdminPage() {
     }
   }, []);
 
-  function handleLogin(e: React.FormEvent) {
+  async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
-    if (password === ADMIN_PASSWORD) {
-      setAuthenticated(true);
-      sessionStorage.setItem("calibrate_admin_auth", "true");
-      sessionStorage.setItem("calibrate_admin_pw", password);
-      setPasswordError(false);
-    } else {
+    try {
+      const res = await fetch("/api/admin/visitors", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password, limit: 1, offset: 0 }),
+      });
+      if (res.ok) {
+        setAuthenticated(true);
+        sessionStorage.setItem("calibrate_admin_auth", "true");
+        sessionStorage.setItem("calibrate_admin_pw", password);
+        setPasswordError(false);
+      } else {
+        setPasswordError(true);
+        setTimeout(() => setPasswordError(false), 2000);
+      }
+    } catch {
       setPasswordError(true);
       setTimeout(() => setPasswordError(false), 2000);
     }
