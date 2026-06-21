@@ -48,7 +48,22 @@ const DEFAULT_CONTENT: SiteContent = {
   ],
 };
 
-type Section = "overview" | "hero" | "faq" | "testimonials" | "pricing" | "contact" | "settings";
+type Section = "overview" | "hero" | "faq" | "testimonials" | "pricing" | "contact" | "settings" | "visitors";
+
+interface VisitorLog {
+  id: string;
+  ip: string;
+  country: string;
+  city: string;
+  region: string;
+  device_type: string;
+  browser: string;
+  os: string;
+  page: string;
+  referrer: string;
+  session_id: string;
+  created_at: string;
+}
 
 export default function AdminPage() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -59,10 +74,18 @@ export default function AdminPage() {
   const [saved, setSaved] = useState(false);
   const [editingFaq, setEditingFaq] = useState<number | null>(null);
   const [editingTestimonial, setEditingTestimonial] = useState<number | null>(null);
+  const [visitors, setVisitors] = useState<VisitorLog[]>([]);
+  const [visitorCount, setVisitorCount] = useState(0);
+  const [visitorPage, setVisitorPage] = useState(0);
+  const [visitorLoading, setVisitorLoading] = useState(false);
 
   useEffect(() => {
     const auth = sessionStorage.getItem("calibrate_admin_auth");
-    if (auth === "true") setAuthenticated(true);
+    if (auth === "true") {
+      setAuthenticated(true);
+      const saved = sessionStorage.getItem("calibrate_admin_pw");
+      if (saved) setPassword(saved);
+    }
     const stored = localStorage.getItem("calibrate_content");
     if (stored) {
       try { setContent(JSON.parse(stored)); } catch { /* ignore */ }
@@ -74,6 +97,7 @@ export default function AdminPage() {
     if (password === ADMIN_PASSWORD) {
       setAuthenticated(true);
       sessionStorage.setItem("calibrate_admin_auth", "true");
+      sessionStorage.setItem("calibrate_admin_pw", password);
       setPasswordError(false);
     } else {
       setPasswordError(true);
@@ -86,6 +110,38 @@ export default function AdminPage() {
     localStorage.setItem("calibrate_content", JSON.stringify(updated));
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
+  }
+
+  async function loadVisitors(page = 0) {
+    setVisitorLoading(true);
+    try {
+      const res = await fetch("/api/admin/visitors", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password, limit: 50, offset: page * 50 }),
+      });
+      const json = await res.json();
+      setVisitors(json.data || []);
+      setVisitorCount(json.count || 0);
+      setVisitorPage(page);
+    } catch { /* silent */ }
+    setVisitorLoading(false);
+  }
+
+  function exportVisitorsCSV() {
+    if (!visitors.length) return;
+    const headers = ["Time", "IP", "Country", "City", "Region", "Device", "Browser", "OS", "Page", "Referrer", "Session"];
+    const rows = visitors.map(v => [
+      new Date(v.created_at).toLocaleString(),
+      v.ip, v.country, v.city, v.region,
+      v.device_type, v.browser, v.os, v.page, v.referrer, v.session_id,
+    ]);
+    const csv = [headers, ...rows].map(r => r.map(c => `"${(c || "").replace(/"/g, '""')}"`).join(",")).join("\n");
+    const blob = new Blob([csv], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = "visitor-logs.csv"; a.click();
+    URL.revokeObjectURL(url);
   }
 
   function exportJSON() {
@@ -225,6 +281,7 @@ export default function AdminPage() {
 
   const navItems: { key: Section; label: string; icon: string }[] = [
     { key: "overview", label: "Overview", icon: "grid" },
+    { key: "visitors", label: "Visitor Logs", icon: "trending" },
     { key: "hero", label: "Hero Section", icon: "layout" },
     { key: "faq", label: "FAQ", icon: "faq" },
     { key: "testimonials", label: "Testimonials", icon: "quote" },
@@ -390,6 +447,126 @@ export default function AdminPage() {
       {/* Main content */}
       <main style={{ marginLeft: "220px", flex: 1, padding: "32px", minWidth: 0 }}>
         <div style={{ maxWidth: "800px" }}>
+          {/* Visitor Logs */}
+          {activeSection === "visitors" && (
+            <div>
+              <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "32px", gap: "16px", flexWrap: "wrap" }}>
+                <div>
+                  <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Visitor Logs</h1>
+                  <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                    IP addresses, locations, devices, and pages visited. {visitorCount > 0 && <span style={{ color: "#D4AF37" }}>{visitorCount.toLocaleString()} total records.</span>}
+                  </p>
+                </div>
+                <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+                  {visitors.length > 0 && (
+                    <button onClick={exportVisitorsCSV} style={{ padding: "9px 18px", background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.25)", borderRadius: "8px", color: "#D4AF37", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>
+                      Export CSV
+                    </button>
+                  )}
+                  <button
+                    onClick={() => loadVisitors(0)}
+                    disabled={visitorLoading}
+                    style={{ padding: "9px 18px", background: "linear-gradient(135deg,#D4AF37,#B8962E)", border: "none", borderRadius: "8px", color: "#0C1520", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, cursor: "pointer", opacity: visitorLoading ? 0.6 : 1 }}
+                  >
+                    {visitorLoading ? "Loading…" : visitors.length ? "Refresh" : "Load Logs"}
+                  </button>
+                </div>
+              </div>
+
+              {!visitors.length && !visitorLoading && (
+                <div style={{ ...cardStyle, textAlign: "center", padding: "48px 24px" }}>
+                  <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                    Click "Load Logs" to fetch visitor records from the database.
+                  </p>
+                </div>
+              )}
+
+              {visitors.length > 0 && (
+                <>
+                  {/* Summary stats */}
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "12px", marginBottom: "24px" }}>
+                    {[
+                      { label: "Total Visits", value: visitorCount.toLocaleString(), color: "#D4AF37" },
+                      { label: "Unique Sessions", value: new Set(visitors.map(v => v.session_id)).size, color: "#22C55E" },
+                      { label: "Mobile", value: visitors.filter(v => v.device_type === "Mobile").length, color: "#3B82F6" },
+                      { label: "Countries", value: new Set(visitors.map(v => v.country).filter(Boolean)).size, color: "#A855F7" },
+                    ].map(s => (
+                      <div key={s.label} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "10px", padding: "16px", textAlign: "center" }}>
+                        <p style={{ fontSize: "24px", fontFamily: "'Barlow Condensed', sans-serif", color: s.color, lineHeight: 1 }}>{s.value}</p>
+                        <p style={{ fontSize: "11px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: "4px" }}>{s.label}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Log table */}
+                  <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "12px", overflow: "hidden" }}>
+                    {/* Table header */}
+                    <div style={{ display: "grid", gridTemplateColumns: "140px 100px 130px 80px 80px 80px 1fr", gap: "0", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "10px 16px" }}>
+                      {["Time", "IP", "Location", "Device", "Browser", "OS", "Page"].map(h => (
+                        <span key={h} style={{ fontSize: "10px", fontWeight: 700, color: "#4E5A6A", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase" }}>{h}</span>
+                      ))}
+                    </div>
+
+                    {/* Rows */}
+                    {visitors.map((v, i) => {
+                      const dt = new Date(v.created_at);
+                      const location = [v.city, v.country].filter(Boolean).join(", ") || "—";
+                      const deviceColor = v.device_type === "Mobile" ? "#3B82F6" : v.device_type === "Tablet" ? "#A855F7" : "#22C55E";
+                      return (
+                        <div
+                          key={v.id}
+                          style={{
+                            display: "grid",
+                            gridTemplateColumns: "140px 100px 130px 80px 80px 80px 1fr",
+                            gap: "0",
+                            padding: "10px 16px",
+                            borderBottom: i < visitors.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none",
+                            background: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.01)",
+                          }}
+                        >
+                          <span style={{ fontSize: "11px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                            {dt.toLocaleDateString()} {dt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+                          </span>
+                          <span style={{ fontSize: "11px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", fontVariantNumeric: "tabular-nums" }}>
+                            {v.ip || "—"}
+                          </span>
+                          <span style={{ fontSize: "11px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                            {location}
+                          </span>
+                          <span style={{ fontSize: "11px", color: deviceColor, fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600 }}>
+                            {v.device_type || "—"}
+                          </span>
+                          <span style={{ fontSize: "11px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                            {v.browser || "—"}
+                          </span>
+                          <span style={{ fontSize: "11px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                            {v.os || "—"}
+                          </span>
+                          <span style={{ fontSize: "11px", color: "#D4AF37", fontFamily: "'Plus Jakarta Sans', sans-serif", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                            {v.page || "/"}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Pagination */}
+                  {visitorCount > 50 && (
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "16px" }}>
+                      <span style={{ fontSize: "12px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                        Showing {visitorPage * 50 + 1}–{Math.min((visitorPage + 1) * 50, visitorCount)} of {visitorCount}
+                      </span>
+                      <div style={{ display: "flex", gap: "8px" }}>
+                        <button disabled={visitorPage === 0} onClick={() => loadVisitors(visitorPage - 1)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#9AA4B2", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: visitorPage === 0 ? "default" : "pointer", opacity: visitorPage === 0 ? 0.4 : 1 }}>← Prev</button>
+                        <button disabled={(visitorPage + 1) * 50 >= visitorCount} onClick={() => loadVisitors(visitorPage + 1)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#9AA4B2", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: (visitorPage + 1) * 50 >= visitorCount ? "default" : "pointer", opacity: (visitorPage + 1) * 50 >= visitorCount ? 0.4 : 1 }}>Next →</button>
+                      </div>
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+          )}
+
           {/* Overview */}
           {activeSection === "overview" && (
             <div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import VisitorTracker from "@/components/shared/VisitorTracker";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://calibrate.gvnfit.online"),
@@ -135,6 +136,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full">
         <div className="hud-scanline" aria-hidden="true" />
+        <VisitorTracker />
         {children}
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
