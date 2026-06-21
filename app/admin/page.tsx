@@ -90,6 +90,13 @@ export default function AdminPage() {
     }
   }, []);
 
+  useEffect(() => {
+    if (activeSection === "visitors" && authenticated && password) {
+      loadVisitors(0);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeSection, authenticated]);
+
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
     try {
