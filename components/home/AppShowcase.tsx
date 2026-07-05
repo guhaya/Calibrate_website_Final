@@ -7,11 +7,11 @@ import { useState } from "react";
 //                      progress.png, messaging.png
 // Leave null to use the built-in mock UI for that screen.
 const APP_SCREENSHOTS: Record<string, string | null> = {
-  dashboard: null, // retake: current shot shows empty-state 0/100 "Needs Focus"
+  dashboard: "/app-screens/dashboard.jpg",
   workouts:  "/app-screens/workouts.png",
   nutrition: "/app-screens/nutrition.jpg",
-  progress:  null, // retake: same 0/100 empty-state block
-  messaging: null, // retake: need full portrait screenshot, not a crop
+  progress:  "/app-screens/progress.jpg",
+  messaging: null, // needs a full portrait screenshot — current file is a landscape crop
 };
 
 const screens = [
@@ -415,6 +415,18 @@ export default function AppShowcase() {
                   </div>
                 </div>
               </div>
+
+              {/* Sample-data disclaimer */}
+              <p style={{
+                textAlign: "center",
+                fontSize: "11px",
+                color: "#4E5A6A",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                marginTop: "14px",
+                letterSpacing: "0.02em",
+              }}>
+                Screens shown with sample client data
+              </p>
             </div>
           </div>
         </div>
