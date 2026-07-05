@@ -2,6 +2,18 @@
 
 import { useState } from "react";
 
+// ─── Drop your real app screenshots in /public/app-screens/ ───────────────
+// Filename convention: dashboard.png, workouts.png, nutrition.png,
+//                      progress.png, messaging.png
+// Leave null to use the built-in mock UI for that screen.
+const APP_SCREENSHOTS: Record<string, string | null> = {
+  dashboard: null, // retake: current shot shows empty-state 0/100 "Needs Focus"
+  workouts:  "/app-screens/workouts.png",
+  nutrition: "/app-screens/nutrition.jpg",
+  progress:  null, // retake: same 0/100 empty-state block
+  messaging: null, // retake: need full portrait screenshot, not a crop
+};
+
 const screens = [
   {
     id: "dashboard",
@@ -368,9 +380,23 @@ export default function AppShowcase() {
                     <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#22C55E" }} />
                   </div>
 
-                  {/* Dynamic content */}
-                  <div style={{ flex: 1, overflow: "hidden", transition: "opacity 0.3s ease" }}>
-                    {current.content}
+                  {/* Dynamic content — real screenshot or built-in mock */}
+                  <div style={{ flex: 1, overflow: "hidden", transition: "opacity 0.3s ease", position: "relative" }}>
+                    {APP_SCREENSHOTS[current.id] ? (
+                      <img
+                        src={APP_SCREENSHOTS[current.id]!}
+                        alt={`${current.label} screen`}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          objectPosition: "top",
+                          display: "block",
+                        }}
+                      />
+                    ) : (
+                      current.content
+                    )}
                   </div>
 
                   {/* Bottom nav */}
