@@ -11,7 +11,7 @@ const APP_SCREENSHOTS: Record<string, string | null> = {
   workouts:  "/app-screens/workouts.png",
   nutrition: "/app-screens/nutrition.jpg",
   progress:  "/app-screens/progress.jpg",
-  messaging: null, // needs a full portrait screenshot — current file is a landscape crop
+  messaging: "/app-screens/messaging.png", // portrait rebuild of the chat crop (bg extended + input bar)
 };
 
 const screens = [
