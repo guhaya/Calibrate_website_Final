@@ -7,14 +7,14 @@ const testimonials = [
     name: "Marcus T.",
     result: "Lost 14kg in 14 weeks",
     role: "Software Engineer, 34",
-    text: "I'd tried everything — gym membership, YouTube programs, two different apps. Nothing stuck. CALIBRATE was different from week one. My coach actually cared about my specific situation and adjusted my plan when I was travelling for work. I genuinely didn't think I could look like this.",
+    text: "I'd tried everything, gym membership, YouTube programs, two different apps. Nothing stuck. CALIBRATE was different from week one. My coach actually cared about my specific situation and adjusted my plan when I was travelling for work. I genuinely didn't think I could look like this.",
     metrics: { before: "97kg / 28% BF", after: "83kg / 16% BF", weeks: 14 },
   },
   {
     name: "Priya S.",
     result: "Body recomp, first time feeling confident",
     role: "Marketing Director, 29",
-    text: "I wasn't looking to lose a huge amount of weight — I just wanted to feel lean and strong. My coach designed a plan that built muscle while I leaned out. The weekly check-ins kept me honest without feeling like I was being judged. I genuinely look forward to my workouts now.",
+    text: "I wasn't looking to lose a huge amount of weight, I just wanted to feel lean and strong. My coach designed a plan that built muscle while I leaned out. The weekly check-ins kept me honest without feeling like I was being judged. I genuinely look forward to my workouts now.",
     metrics: { before: "65kg / 30% BF", after: "62kg / 22% BF", weeks: 16 },
   },
   {

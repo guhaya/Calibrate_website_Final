@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "How does WhatsApp support work?",
-    a: "Your coach is reachable via WhatsApp on weekdays with a maximum 4-hour response window — covering questions, adjustments, and anything between weekly check-ins.",
+    a: "Your coach is reachable via WhatsApp on weekdays with a maximum 4-hour response window, covering questions, adjustments, and anything between weekly check-ins.",
   },
   {
     q: "What is the maximum client capacity?",
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Is the diagnostic call really free?",
-    a: "Completely free. It's a 20-minute call — not a sales call. We review your situation and tell you honestly whether the programme fits your goals and timeline.",
+    a: "Completely free. It's a 20-minute call, not a sales call. We review your situation and tell you honestly whether the programme fits your goals and timeline.",
   },
 ];
 

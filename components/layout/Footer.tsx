@@ -59,7 +59,7 @@ export default function Footer() {
               Get the weekly protocol drop
             </p>
             <p style={{ color: "#B7B9C3", fontSize: "14px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              Training notes, nutrition breakdowns, and client results — straight to your inbox.
+              Training notes, nutrition breakdowns, and client results, straight to your inbox.
             </p>
           </div>
           <form
@@ -106,7 +106,7 @@ export default function Footer() {
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
-              DMAIC-based precision coaching for engineers, product managers, and consultants. Data-driven body recomposition built around your actual schedule — not a generic programme.
+              DMAIC-based precision coaching for engineers, product managers, and consultants. Data-driven body recomposition built around your actual schedule, not a generic programme.
             </p>
             <div style={{ marginTop: "24px", display: "flex", alignItems: "center", gap: "6px" }}>
               <div className="status-dot" />

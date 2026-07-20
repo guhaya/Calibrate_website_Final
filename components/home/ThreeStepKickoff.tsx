@@ -13,7 +13,7 @@ const steps = [
     number: "02",
     title: "Personalised Plan",
     duration: "Within 5 days",
-    description: "Your training programme and nutrition targets are built from scratch — no templates, no guesswork.",
+    description: "Your training programme and nutrition targets are built from scratch, no templates, no guesswork.",
   },
   {
     number: "03",
@@ -33,7 +33,7 @@ export default function ThreeStepKickoff() {
             Three steps to <span className="gold-text">your kickoff</span>
           </h2>
           <p style={{ fontSize: "17px", color: "#B7B9C3", maxWidth: "480px", margin: "0 auto", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-            From first conversation to your first week of training — here's exactly what happens.
+            From first conversation to your first week of training, here's exactly what happens.
           </p>
         </div>
 

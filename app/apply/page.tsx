@@ -15,7 +15,7 @@ import Footer from "@/components/layout/Footer";
 const FORM_URL = "https://app.gvnfit.online/forms";
 
 const steps = [
-  { num: "01", label: "Fill the form", detail: "6 sections covering your goals, schedule, and lifestyle — takes about 8 minutes." },
+  { num: "01", label: "Fill the form", detail: "6 sections covering your goals, schedule, and lifestyle, takes about 8 minutes." },
   { num: "02", label: "Personal review", detail: "Guhay reviews every application himself within 48 hours." },
   { num: "03", label: "Diagnostic call", detail: "A free 20-minute call to confirm fit and outline your exact protocol." },
   { num: "04", label: "Programme begins", detail: "Custom training and nutrition plan delivered within 48 hours of your call." },
@@ -96,7 +96,7 @@ export default function ApplyPage() {
             >
               <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#FFDE02", flexShrink: 0, boxShadow: "0 0 8px rgba(255,222,2,0.6)" }} />
               <span style={{ fontSize: "13px", fontWeight: 600, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                2 of 5 slots remaining — Q3 2026
+                2 of 5 slots remaining, Q3 2026
               </span>
             </div>
           </div>
@@ -171,7 +171,7 @@ export default function ApplyPage() {
             <p style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.65, marginBottom: "32px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               The form takes ~8 minutes. Not sure yet?{" "}
               <Link href="/book" style={{ color: "#FFDE02", textDecoration: "none" }}>Book a free 20-minute diagnostic call</Link>{" "}
-              first — no commitment required.
+              first, no commitment required.
             </p>
             <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
               <a

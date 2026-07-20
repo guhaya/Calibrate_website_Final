@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Coaching Team",
-  description: "Meet the CALIBRATE team — head coach Guhayavarman, certified trainers across Chennai, Bangalore, and Coimbatore, and on-call nutrition specialists. The people behind your protocol.",
+  description: "Meet the CALIBRATE team, head coach Guhayavarman, certified trainers across Chennai, Bangalore, and Coimbatore, and on-call nutrition specialists. The people behind your protocol.",
   openGraph: {
     title: "Coaching Team | CALIBRATE",
     description: "Guhayavarman and the full CALIBRATE coaching team. Certified trainers, nutrition specialists, and a head coach who reviews every application personally.",
@@ -18,8 +18,8 @@ const headCoach = {
   handle: "@fitguhay",
   role: "Founder & Head Coach",
   bio: [
-    "I started CALIBRATE because I kept seeing the same pattern: smart, motivated people failing to reach their goals — not from lack of effort, but from lack of the right system. Engineers, founders, product managers putting in the work but getting nowhere.",
-    "The fitness industry profits from confusion. CALIBRATE is built on the opposite principle — the same data-driven frameworks used in precision engineering, applied to body optimisation. Your body is a process. Processes can be optimised.",
+    "I started CALIBRATE because I kept seeing the same pattern: smart, motivated people failing to reach their goals, not from lack of effort, but from lack of the right system. Engineers, founders, product managers putting in the work but getting nowhere.",
+    "The fitness industry profits from confusion. CALIBRATE is built on the opposite principle, the same data-driven frameworks used in precision engineering, applied to body optimisation. Your body is a process. Processes can be optimised.",
   ],
   stats: [
     { value: "10+", label: "Active clients" },
@@ -43,7 +43,7 @@ const trainers = [
     experience: "10+ years",
     location: "Bangalore",
     specialisation: "Strength & Conditioning",
-    description: "Ashok brings over a decade of strength and conditioning expertise to CALIBRATE. As an online trainer, he designs progressive programming for clients across all levels — from foundational strength work to performance-focused conditioning cycles.",
+    description: "Ashok brings over a decade of strength and conditioning expertise to CALIBRATE. As an online trainer, he designs progressive programming for clients across all levels, from foundational strength work to performance-focused conditioning cycles.",
     color: "#FFDE02",
     initials: "A",
   },
@@ -53,7 +53,7 @@ const trainers = [
     experience: "8+ years",
     location: "Mumbai",
     specialisation: "Personal Training",
-    description: "Rajavel is a certified personal trainer with eight years of experience working with clients across diverse goals and backgrounds. His coaching is grounded in building sustainable habits and consistent progress — no extremes, no shortcuts.",
+    description: "Rajavel is a certified personal trainer with eight years of experience working with clients across diverse goals and backgrounds. His coaching is grounded in building sustainable habits and consistent progress, no extremes, no shortcuts.",
     color: "#22C55E",
     initials: "R",
   },
@@ -75,7 +75,7 @@ const specialists = [
     role: "Nutritionist & Fitness Data Analyst",
     credentials: "Nutritionist · Fitness Data Analyst · 10+ years",
     location: "Malaysia",
-    description: "Naren combines nutritional expertise with data-driven fitness analysis — a rare combination that lets him translate raw client metrics into precise dietary strategies. With over a decade of experience, he handles complex nutrition protocols and performance-level goals.",
+    description: "Naren combines nutritional expertise with data-driven fitness analysis, a rare combination that lets him translate raw client metrics into precise dietary strategies. With over a decade of experience, he handles complex nutrition protocols and performance-level goals.",
     color: "#A855F7",
     initials: "N",
   },
@@ -84,7 +84,7 @@ const specialists = [
     role: "Dietician & Clinical Health Analyst",
     credentials: "Registered Dietician · Clinical Health Analyst · 10+ years",
     location: "Malaysia",
-    description: "Karthika brings clinical-grade expertise to the team — managing medical dietary requirements, health risk analysis, and evidence-based nutrition intervention for clients who need specialist-level dietary support.",
+    description: "Karthika brings clinical-grade expertise to the team, managing medical dietary requirements, health risk analysis, and evidence-based nutrition intervention for clients who need specialist-level dietary support.",
     color: "#F97316",
     initials: "K",
   },
@@ -98,7 +98,7 @@ const values = [
   },
   {
     title: "Radical accountability",
-    description: "We track everything — not to judge, but because the data is what lets us make the right adjustments.",
+    description: "We track everything, not to judge, but because the data is what lets us make the right adjustments.",
     icon: "trending",
   },
   {
@@ -161,7 +161,7 @@ export default function AboutPage() {
                 your results.
               </h1>
               <p style={{ fontSize: "17px", color: "#B7B9C3", lineHeight: 1.7, marginBottom: "20px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                CALIBRATE isn&apos;t one coach with a template. It&apos;s a precision team — a head coach, certified trainers, and on-call specialists — all operating from the same data-driven protocol.
+                CALIBRATE isn&apos;t one coach with a template. It&apos;s a precision team, a head coach, certified trainers, and on-call specialists, all operating from the same data-driven protocol.
               </p>
               <p style={{ fontSize: "17px", color: "#B7B9C3", lineHeight: 1.7, marginBottom: "36px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                 Based across Chennai, Bangalore, Hyderabad, and Coimbatore. Serving clients across India.
@@ -465,7 +465,7 @@ export default function AboutPage() {
               Ready to work with the team?
             </h2>
             <p style={{ fontSize: "16px", color: "#B7B9C3", lineHeight: 1.65, marginBottom: "32px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              Guhay personally reviews every application. Book a free 20-minute diagnostic call — not a sales call.
+              Guhay personally reviews every application. Book a free 20-minute diagnostic call, not a sales call.
             </p>
             <Link href="/book" className="btn-primary" style={{ fontSize: "15px", padding: "14px 32px" }}>
               Book Free Consultation

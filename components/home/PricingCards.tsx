@@ -15,7 +15,7 @@ const plans = [
       "Weekly check-in & adjustments",
       "WhatsApp coach support",
     ],
-    cta: "Apply — Monthly",
+    cta: "Apply: Monthly",
     highlight: false,
   },
   {
@@ -30,7 +30,7 @@ const plans = [
       "Priority application review",
       "Saves ₹10,000 vs monthly",
     ],
-    cta: "Apply — Quarterly",
+    cta: "Apply: Quarterly",
     highlight: true,
   },
 ];
@@ -45,7 +45,7 @@ export default function PricingCards() {
             Two tiers. <span className="gold-text">One protocol.</span>
           </h2>
           <p style={{ fontSize: "17px", color: "#B7B9C3", maxWidth: "480px", margin: "0 auto", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-            Every plan includes the full CALIBRATE system — training, nutrition, weekly analysis, and direct coach access.
+            Every plan includes the full CALIBRATE system, training, nutrition, weekly analysis, and direct coach access.
           </p>
         </div>
 

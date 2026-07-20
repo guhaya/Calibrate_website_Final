@@ -3,7 +3,7 @@
 const pains = [
   {
     problem: "You've started over more times than you can count",
-    solution: "A protocol built to survive real life — travel, deadlines, bad weeks included.",
+    solution: "A protocol built to survive real life, travel, deadlines, bad weeks included.",
   },
   {
     problem: "Generic programmes don't account for your schedule",
@@ -30,7 +30,7 @@ export default function PainGrid() {
             <span className="gold-text">Nothing stuck.</span>
           </h2>
           <p style={{ fontSize: "17px", color: "#B7B9C3", maxWidth: "520px", margin: "0 auto", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-            It's not a willpower problem. It's a system problem — and it's fixable.
+            It's not a willpower problem. It's a system problem, and it's fixable.
           </p>
         </div>
 

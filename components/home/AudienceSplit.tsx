@@ -13,14 +13,14 @@ const paths = [
   {
     tag: "Build",
     title: "Muscle Gain",
-    description: "A structured hypertrophy programme with progressive overload tracked every session — no more guessing if you're actually growing.",
+    description: "A structured hypertrophy programme with progressive overload tracked every session, no more guessing if you're actually growing.",
     points: ["Progressive overload tracking", "Surplus calibrated to your metabolism", "Video form checks on request"],
     color: "#3B82F6",
   },
   {
     tag: "Recomp",
     title: "Body Recomposition",
-    description: "Lose fat and build muscle at the same time. The hardest goal to programme correctly — it's what CALIBRATE was built for.",
+    description: "Lose fat and build muscle at the same time. The hardest goal to programme correctly, it's what CALIBRATE was built for.",
     points: ["Nutrient timing around training", "Bi-weekly composition scans", "Slowest but most rewarding path"],
     color: "#22C55E",
   },

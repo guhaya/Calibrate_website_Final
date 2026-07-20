@@ -256,7 +256,7 @@ function CoachCard() {
         <div>
           <p style={{ fontSize: "10px", fontWeight: 700, color: "white", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Coach Guha</p>
           <p style={{ fontSize: "9px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.4, marginTop: "2px" }}>
-            Excellent week Alex! Protein is up — let's push intensity on Thursday.
+            Excellent week Alex! Protein is up, let's push intensity on Thursday.
           </p>
           <p style={{ fontSize: "8px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: "4px" }}>2m ago</p>
         </div>
@@ -429,7 +429,7 @@ export default function Hero() {
               opacity: mounted ? 1 : 0, transform: mounted ? "translateY(0)" : "translateY(16px)",
               transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
             }}>
-              Precision performance coaching for high-earning professionals. Data-driven protocols, weekly analysis, and automatic adjustments — built around your actual schedule.
+              Precision performance coaching for high-earning professionals. Data-driven protocols, weekly analysis, and automatic adjustments, built around your actual schedule.
             </p>
 
             <div style={{

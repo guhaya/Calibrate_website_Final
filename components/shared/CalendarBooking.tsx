@@ -116,7 +116,7 @@ export default function CalendarBooking() {
             margin: "0 auto 28px",
           }}
         >
-          Your booking calendar opened in a new tab. Pick any available slot — the call is 30 minutes and completely free.
+          Your booking calendar opened in a new tab. Pick any available slot, the call is 30 minutes and completely free.
         </p>
         <div style={{ display: "flex", flexDirection: "column", gap: "10px", alignItems: "center" }}>
           <a

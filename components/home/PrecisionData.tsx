@@ -297,7 +297,7 @@ export default function PrecisionData() {
             maxWidth: "480px", margin: "0 auto",
             fontFamily: "'Plus Jakarta Sans', sans-serif",
           }}>
-            Every variable tracked. Every metric analysed. Your protocol adjusts weekly — because real data, not assumptions, drives real results.
+            Every variable tracked. Every metric analysed. Your protocol adjusts weekly, because real data, not assumptions, drives real results.
           </p>
         </div>
 

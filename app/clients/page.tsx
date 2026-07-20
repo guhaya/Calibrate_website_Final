@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Current Clients — Portal",
+  title: "Current Clients | Portal",
   description: "CALIBRATE client portal. Access your protocol, track check-ins, and connect with your coach.",
   robots: { index: false, follow: false },
 };
@@ -28,7 +28,7 @@ const experiences = [
   {
     phase: "Week 5–8",
     title: "You hit your stride",
-    description: "By now you're not thinking about the plan — you're living it. Training feels natural. Nutrition is second nature. Your coach adjusts intensity and targets as your fitness improves. This is where the real progress accelerates.",
+    description: "By now you're not thinking about the plan, you're living it. Training feels natural. Nutrition is second nature. Your coach adjusts intensity and targets as your fitness improves. This is where the real progress accelerates.",
     icon: "lightning",
     color: "#3B82F6",
   },
@@ -44,7 +44,7 @@ const experiences = [
 const inclusions = [
   { icon: "lightning", title: "Custom Training Programme", desc: "Built for your goals, schedule, and equipment." },
   { icon: "leaf", title: "Nutrition Targets", desc: "Custom macros with flexible guidance for real life." },
-  { icon: "calendar", title: "Weekly Check-ins", desc: "Video or written — you decide what works for you." },
+  { icon: "calendar", title: "Weekly Check-ins", desc: "Video or written, you decide what works for you." },
   { icon: "message", title: "Direct Coach Access", desc: "Message anytime. Responses within 24 hours." },
   { icon: "trending", title: "Progress App", desc: "Log workouts, track body metrics, see your data." },
   { icon: "dumbbell", title: "Exercise Library", desc: "Video guidance on every movement in your plan." },
@@ -96,7 +96,7 @@ export default function ClientsPage() {
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
-              From day one to your final result — here's exactly what you get, what to expect, and how the process works.
+              From day one to your final result, here's exactly what you get, what to expect, and how the process works.
             </p>
           </div>
         </section>

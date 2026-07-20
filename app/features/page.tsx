@@ -12,15 +12,15 @@ const sections = [
     label: "Training",
     headline: "Your training programme, built from scratch",
     description:
-      "Not a template. Not a generic plan from the internet. Every session in your programme is written based on your goals, your body, and your available equipment — then updated every week based on your actual performance.",
+      "Not a template. Not a generic plan from the internet. Every session in your programme is written based on your goals, your body, and your available equipment, then updated every week based on your actual performance.",
     features: [
       {
         title: "Progressive overload baked in",
-        description: "Every session builds on the last. Your weights, reps, and volume increase systematically — the only way to guarantee consistent progress.",
+        description: "Every session builds on the last. Your weights, reps, and volume increase systematically, the only way to guarantee consistent progress.",
       },
       {
         title: "Works with any setup",
-        description: "Commercial gym, home gym, hotel gym, or bodyweight — your programme is written around what you have, not what we assume.",
+        description: "Commercial gym, home gym, hotel gym, or bodyweight, your programme is written around what you have, not what we assume.",
       },
       {
         title: "Exercise video library",
@@ -51,7 +51,7 @@ const sections = [
       },
       {
         title: "Eating out guidance",
-        description: "Strategies for restaurants, social events, and travel — so real life never becomes an excuse to fall off track.",
+        description: "Strategies for restaurants, social events, and travel, so real life never becomes an excuse to fall off track.",
       },
       {
         title: "Nutrition phase cycling",
@@ -93,11 +93,11 @@ const sections = [
     label: "Progress",
     headline: "Track everything. See everything.",
     description:
-      "Your transformation is measurable. Body weight, measurements, body fat estimates, strength records, energy, sleep — all logged and visible inside the CALIBRATE app so you can see exactly how far you've come.",
+      "Your transformation is measurable. Body weight, measurements, body fat estimates, strength records, energy, sleep, all logged and visible inside the CALIBRATE app so you can see exactly how far you've come.",
     features: [
       {
         title: "Bodyweight trend",
-        description: "Daily weigh-ins plotted as a 7-day average — the most accurate way to track true body weight change versus water fluctuation.",
+        description: "Daily weigh-ins plotted as a 7-day average, the most accurate way to track true body weight change versus water fluctuation.",
       },
       {
         title: "Strength records",

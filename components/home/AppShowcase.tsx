@@ -26,7 +26,7 @@ const screens = [
         <rect x="9" y="9" width="5" height="5" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
       </svg>
     ),
-    description: "Your complete coaching overview — weight trend, macros, upcoming sessions, and coach messages in one place.",
+    description: "Your complete coaching overview, weight trend, macros, upcoming sessions, and coach messages in one place.",
     content: (
       <div style={{ padding: "20px 18px", height: "100%", display: "flex", flexDirection: "column", gap: "10px" }}>
         {/* Greeting */}
@@ -189,7 +189,7 @@ const screens = [
         <circle cx="14" cy="3" r="1.5" fill="currentColor" />
       </svg>
     ),
-    description: "Every metric tracked and charted over time. Weight, body fat, strength records, and weekly check-in scores — all visible, all measurable.",
+    description: "Every metric tracked and charted over time. Weight, body fat, strength records, and weekly check-in scores, all visible, all measurable.",
     content: (
       <div style={{ padding: "16px 18px", height: "100%", display: "flex", flexDirection: "column", gap: "10px" }}>
         <p style={{ fontSize: "11px", fontWeight: 800, color: "white", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>12-Week Progress</p>
@@ -224,7 +224,7 @@ const screens = [
         <path d="M14 9.5a1.5 1.5 0 01-1.5 1.5H5l-3 3V3.5A1.5 1.5 0 013.5 2h9A1.5 1.5 0 0114 3.5v6z" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    description: "Direct messaging with your coach every day. Questions, check-ins, struggles, or wins — your coach is always reachable inside the app.",
+    description: "Direct messaging with your coach every day. Questions, check-ins, struggles, or wins, your coach is always reachable inside the app.",
     content: (
       <div style={{ padding: "16px 18px", height: "100%", display: "flex", flexDirection: "column" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px", paddingBottom: "10px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
@@ -292,7 +292,7 @@ export default function AppShowcase() {
             <span className="gold-text">experience</span>
           </h2>
           <p style={{ fontSize: "17px", color: "#B7B9C3", maxWidth: "520px", margin: "0 auto", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-            Everything you need to train, eat, and progress — in one beautifully designed app with your coach accessible at every step.
+            Everything you need to train, eat, and progress, in one beautifully designed app with your coach accessible at every step.
           </p>
         </div>
 
@@ -380,7 +380,7 @@ export default function AppShowcase() {
                     <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#22C55E" }} />
                   </div>
 
-                  {/* Dynamic content — real screenshot or built-in mock */}
+                  {/* Dynamic content: real screenshot or built-in mock */}
                   <div style={{ flex: 1, overflow: "hidden", transition: "opacity 0.3s ease", position: "relative" }}>
                     {APP_SCREENSHOTS[current.id] ? (
                       <img

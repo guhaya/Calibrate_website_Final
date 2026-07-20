@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "How It Works — The CALIBRATE Protocol",
-  description: "The DMAIC coaching process explained: Define, Measure, Analyse, Improve, Control — applied to body recomposition for busy professionals. From first call to transformed in 12–24 weeks.",
+  title: "How It Works | The CALIBRATE Protocol",
+  description: "The DMAIC coaching process explained: Define, Measure, Analyse, Improve, Control, applied to body recomposition for busy professionals. From first call to transformed in 12–24 weeks.",
   openGraph: {
     title: "How It Works | CALIBRATE",
-    description: "The DMAIC protocol applied to body recomposition. Custom training, weekly data analysis, and automatic adjustments — built around your actual schedule.",
+    description: "The DMAIC protocol applied to body recomposition. Custom training, weekly data analysis, and automatic adjustments, built around your actual schedule.",
   },
 };
 
@@ -18,14 +18,14 @@ const dmaic = [
     word: "Define",
     color: "#FFDE02",
     rgb: "255,222,2",
-    description: "Constraint mapping around your actual work schedule, lifestyle, and body. We don't fit you into a programme — we build the programme around you.",
+    description: "Constraint mapping around your actual work schedule, lifestyle, and body. We don't fit you into a programme, we build the programme around you.",
   },
   {
     letter: "M",
     word: "Measure",
     color: "#3B82F6",
     rgb: "59,130,246",
-    description: "Weekly data analysis with measurable metrics — bodyweight trends, training performance, nutrition compliance, energy, and sleep. No guessing.",
+    description: "Weekly data analysis with measurable metrics, bodyweight trends, training performance, nutrition compliance, energy, and sleep. No guessing.",
   },
   {
     letter: "A",
@@ -39,14 +39,14 @@ const dmaic = [
     word: "Improve",
     color: "#A855F7",
     rgb: "168,85,247",
-    description: "Protocol adjustments based on your actual feedback loop. Nutrition targets, training volume, recovery — everything gets tuned week by week.",
+    description: "Protocol adjustments based on your actual feedback loop. Nutrition targets, training volume, recovery, everything gets tuned week by week.",
   },
   {
     letter: "C",
     word: "Control",
     color: "#F97316",
     rgb: "249,115,22",
-    description: "Self-correcting systems built to handle life disruptions — travel, illness, schedule changes — without derailing months of progress.",
+    description: "Self-correcting systems built to handle life disruptions, travel, illness, schedule changes, without derailing months of progress.",
   },
 ];
 
@@ -56,9 +56,9 @@ const steps = [
     title: "Free Consultation Call",
     duration: "30 min",
     description:
-      "We start with a call to understand where you are, what you've tried, and what you actually want. I'll ask about your training history, nutrition habits, lifestyle, and goals — then tell you exactly what your program will look like.",
+      "We start with a call to understand where you are, what you've tried, and what you actually want. I'll ask about your training history, nutrition habits, lifestyle, and goals, then tell you exactly what your program will look like.",
     bullets: [
-      "No obligation — this is a conversation, not a sales call",
+      "No obligation, this is a conversation, not a sales call",
       "Understand your schedule, equipment, and starting point",
       "You'll know whether this is right for you by the end",
     ],
@@ -69,7 +69,7 @@ const steps = [
     title: "Your Custom Program Is Built",
     duration: "Within 48 hours",
     description:
-      "After we speak, I build your training and nutrition plan from scratch. Not a template. Every exercise, every calorie target, every macro split — written specifically for you.",
+      "After we speak, I build your training and nutrition plan from scratch. Not a template. Every exercise, every calorie target, every macro split, written specifically for you.",
     bullets: [
       "Custom training split based on your goals and schedule",
       "Nutrition targets built around your body and lifestyle",
@@ -95,7 +95,7 @@ const steps = [
     title: "Weekly Check-ins & Adjustments",
     duration: "Every week",
     description:
-      "Every week, you complete a check-in: how training felt, energy levels, sleep, compliance. I review everything and adjust the plan accordingly. No two weeks are exactly the same — your program evolves as you do.",
+      "Every week, you complete a check-in: how training felt, energy levels, sleep, compliance. I review everything and adjust the plan accordingly. No two weeks are exactly the same, your program evolves as you do.",
     bullets: [
       "Video or written check-in each week",
       "I review your data before every response",
@@ -108,7 +108,7 @@ const steps = [
     title: "Real Results. Lasting Change.",
     duration: "12-24 weeks",
     description:
-      "By the end of your program, you won't just look different — you'll know exactly how to train and eat for the rest of your life. Most clients continue beyond their first program because this becomes a new standard for them.",
+      "By the end of your program, you won't just look different, you'll know exactly how to train and eat for the rest of your life. Most clients continue beyond their first program because this becomes a new standard for them.",
     bullets: [
       "Body composition results you can measure",
       "Strength gains you can track week by week",
@@ -173,11 +173,11 @@ export default function HowItWorksPage() {
             <div style={{ textAlign: "center", marginBottom: "16px" }}>
               <div className="tag" style={{ marginBottom: "20px" }}>The Calibration Protocol</div>
               <h2 style={{ fontSize: "clamp(28px, 3.5vw, 48px)", color: "#FFFFFF", letterSpacing: "-0.02em", marginBottom: "16px" }}>
-                DMAIC — applied to{" "}
+                DMAIC, applied to{" "}
                 <span className="gold-text">body optimisation</span>
               </h2>
               <p style={{ fontSize: "16px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif", maxWidth: "580px", margin: "0 auto 56px" }}>
-                The same data-driven framework used in aerospace and precision engineering — adapted for body recomposition. Not motivation. Not guesswork. A process.
+                The same data-driven framework used in aerospace and precision engineering, adapted for body recomposition. Not motivation. Not guesswork. A process.
               </p>
             </div>
 
@@ -263,7 +263,7 @@ export default function HowItWorksPage() {
                   &ldquo;Your body is a process. Processes can be optimised.&rdquo;
                 </p>
                 <p style={{ fontSize: "13px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                  — Guhayavarman, Founder & Head Coach
+                 , Guhayavarman, Founder & Head Coach
                 </p>
               </div>
             </div>

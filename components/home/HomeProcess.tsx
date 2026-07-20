@@ -11,13 +11,13 @@ const steps = [
     color: "#FFDE02",
     rgb: "255,222,2",
     description:
-      "We start with a no-obligation call to understand where you are right now, what you've tried before, and exactly what you want to achieve. You'll leave with clarity — whether you move forward or not.",
+      "We start with a no-obligation call to understand where you are right now, what you've tried before, and exactly what you want to achieve. You'll leave with clarity, whether you move forward or not.",
     details: [
       "Current situation & history",
       "Goal clarification",
       "Lifestyle & schedule audit",
       "Nutrition habits baseline",
-      "Q&A — ask anything",
+      "Q&A: ask anything",
     ],
     outcome: "You'll know exactly what's holding you back.",
   },
@@ -36,7 +36,7 @@ const steps = [
       "Equipment & gym access check",
       "Recovery & sleep profile",
     ],
-    outcome: "Your data becomes your starting point — not a guess.",
+    outcome: "Your data becomes your starting point, not a guess.",
   },
   {
     number: "03",
@@ -45,7 +45,7 @@ const steps = [
     color: "#22C55E",
     rgb: "34,197,94",
     description:
-      "Your training programme and nutrition targets are built from scratch — no templates. Your plan is designed around your life, not the other way around.",
+      "Your training programme and nutrition targets are built from scratch, no templates. Your plan is designed around your life, not the other way around.",
     details: [
       "Custom training programme",
       "Macro targets & meal timing",
@@ -53,7 +53,7 @@ const steps = [
       "CALIBRATE app onboarding",
       "Supplement stack (if applicable)",
     ],
-    outcome: "A plan you can actually follow — built for you, not the internet.",
+    outcome: "A plan you can actually follow, built for you, not the internet.",
   },
   {
     number: "04",
@@ -155,7 +155,7 @@ export default function HomeProcess() {
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
-            From first conversation to lasting results — a structured process
+            From first conversation to lasting results, a structured process
             that removes all the guesswork.
           </p>
         </div>

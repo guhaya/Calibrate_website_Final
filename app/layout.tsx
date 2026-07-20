@@ -5,11 +5,11 @@ import VisitorTracker from "@/components/shared/VisitorTracker";
 export const metadata: Metadata = {
   metadataBase: new URL("https://calibrate.gvnfit.online"),
   title: {
-    default: "CALIBRATE — Precision Coaching for High-Performing Professionals",
+    default: "CALIBRATE, Precision Coaching for High-Performing Professionals",
     template: "%s | CALIBRATE",
   },
   description:
-    "Data-driven body recomposition coaching for engineers, PMs, consultants, and founders. DMAIC-based protocol — custom training, nutrition, and weekly analysis built around your actual schedule.",
+    "Data-driven body recomposition coaching for engineers, PMs, consultants, and founders. DMAIC-based protocol, custom training, nutrition, and weekly analysis built around your actual schedule.",
   keywords: [
     "online fitness coach India",
     "body recomposition coach India",
@@ -34,21 +34,21 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://calibrate.gvnfit.online",
     siteName: "CALIBRATE",
-    title: "CALIBRATE — Precision Coaching for High-Performing Professionals",
+    title: "CALIBRATE | Precision Coaching for High-Performing Professionals",
     description:
-      "Your body is a process. Processes can be optimised. DMAIC-based coaching for engineers, founders, and executives who want real results — without generic fitness programmes.",
+      "Your body is a process. Processes can be optimised. DMAIC-based coaching for engineers, founders, and executives who want real results, without generic fitness programmes.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "CALIBRATE — Precision Performance Coaching",
+        alt: "CALIBRATE | Precision Performance Coaching",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "CALIBRATE — Precision Coaching for High-Performing Professionals",
+    title: "CALIBRATE | Precision Coaching for High-Performing Professionals",
     description: "DMAIC-based body recomposition coaching for engineers, founders, and executives. Data-driven. Built around your schedule.",
     images: ["/og-image.png"],
   },
@@ -88,7 +88,7 @@ export default function RootLayout({
                 "@type": "ProfessionalService",
                 "@id": "https://calibrate.gvnfit.online/#business",
                 name: "CALIBRATE",
-                description: "Precision performance coaching for engineers, product managers, consultants, and founders. Data-driven body recomposition using the DMAIC framework — custom training, nutrition, and weekly analysis built around your actual schedule.",
+                description: "Precision performance coaching for engineers, product managers, consultants, and founders. Data-driven body recomposition using the DMAIC framework, custom training, nutrition, and weekly analysis built around your actual schedule.",
                 url: "https://calibrate.gvnfit.online",
                 email: "Admin@gvnfit.online",
                 foundingDate: "2024",
@@ -101,7 +101,7 @@ export default function RootLayout({
                     {
                       "@type": "Offer",
                       name: "Monthly Coaching",
-                      description: "Full CALIBRATE protocol — custom training, nutrition, weekly check-ins, WhatsApp support. Minimum 3-month commitment.",
+                      description: "Full CALIBRATE protocol, custom training, nutrition, weekly check-ins, WhatsApp support. Minimum 3-month commitment.",
                       price: "25000",
                       priceCurrency: "INR",
                       priceSpecification: { "@type": "UnitPriceSpecification", price: "25000", priceCurrency: "INR", unitText: "month" },

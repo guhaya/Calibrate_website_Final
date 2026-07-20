@@ -5,7 +5,7 @@ import { useState } from "react";
 const reviews = [
   { name: "Marcus T.", role: "Software Engineer", quote: "My coach actually cared about my specific situation and adjusted my plan when I was travelling for work. I didn't think I could look like this.", rating: 5 },
   { name: "Priya S.", role: "Marketing Director", quote: "The weekly check-ins kept me honest without feeling like I was being judged. I genuinely look forward to my workouts now.", rating: 5 },
-  { name: "James O.", role: "Teacher", quote: "Turns out my nutrition was completely off and my programming was basically random. CALIBRATE fixed both — every week, real progress.", rating: 5 },
+  { name: "James O.", role: "Teacher", quote: "Turns out my nutrition was completely off and my programming was basically random. CALIBRATE fixed both, every week, real progress.", rating: 5 },
   { name: "Ritika M.", role: "Consultant", quote: "I've done three other programmes before this. None of them adjusted around my travel schedule. This one actually did.", rating: 5 },
   { name: "Devan K.", role: "Product Manager", quote: "The app makes it stupid simple to know what to do every day. No more spreadsheets, no more guessing.", rating: 4 },
 ];

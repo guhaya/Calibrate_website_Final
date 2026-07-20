@@ -23,20 +23,20 @@ interface SiteContent {
 const DEFAULT_CONTENT: SiteContent = {
   acceptingClients: true,
   heroHeadline: "Transform your body with coaching that keeps you accountable.",
-  heroSubheadline: "Training, nutrition, habit coaching, progress tracking, and direct coach support — delivered through the CALIBRATE platform.",
+  heroSubheadline: "Training, nutrition, habit coaching, progress tracking, and direct coach support, delivered through the CALIBRATE platform.",
   contactEmail: "Admin@gvnfit.online",
   instagramHandle: "@fitguhay",
   responseTime: "24 hours",
   faq: [
     { q: "How does online coaching work?", a: "You get a custom training programme and nutrition targets through the CALIBRATE app with weekly check-ins and direct coach messaging." },
-    { q: "Do I need a gym?", a: "No. Your programme is built around whatever equipment you have — gym, home gym, or bodyweight." },
+    { q: "Do I need a gym?", a: "No. Your programme is built around whatever equipment you have, gym, home gym, or bodyweight." },
     { q: "How quickly will I see results?", a: "Most clients see meaningful changes within 4–6 weeks. Visible physical changes typically show clearly by weeks 8–12." },
     { q: "What's included in the free consultation?", a: "A 30-minute call covering your current situation, goals, lifestyle, and any questions. No pressure to sign up." },
     { q: "Are there contracts?", a: "No long-term contracts. Monthly billing, cancel anytime at the end of a period." },
   ],
   testimonials: [
     { name: "Marcus T.", result: "Lost 14kg in 14 weeks", duration: "14 weeks", quote: "I'd tried everything before. The difference was having a plan that actually changed every week based on my results." },
-    { name: "Priya S.", result: "Complete body recomposition", duration: "16 weeks", quote: "I wasn't just losing weight — I was building a completely different body. The nutrition approach finally made sense." },
+    { name: "Priya S.", result: "Complete body recomposition", duration: "16 weeks", quote: "I wasn't just losing weight, I was building a completely different body. The nutrition approach finally made sense." },
     { name: "James O.", result: "Went from skinny-fat to lean", duration: "20 weeks", quote: "The accountability was the missing piece. Knowing my coach was reviewing my data every week changed everything." },
   ],
   pricing: [
@@ -525,7 +525,7 @@ export default function AdminPage() {
                     {/* Rows */}
                     {visitors.map((v, i) => {
                       const dt = new Date(v.created_at);
-                      const location = [v.city, v.country].filter(Boolean).join(", ") || "—";
+                      const location = [v.city, v.country].filter(Boolean).join(", ") || "N/A";
                       const deviceColor = v.device_type === "Mobile" ? "#3B82F6" : v.device_type === "Tablet" ? "#A855F7" : "#22C55E";
                       return (
                         <div
@@ -543,19 +543,19 @@ export default function AdminPage() {
                             {dt.toLocaleDateString()} {dt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                           </span>
                           <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", fontVariantNumeric: "tabular-nums" }}>
-                            {v.ip || "—"}
+                            {v.ip || "N/A"}
                           </span>
                           <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                             {location}
                           </span>
                           <span style={{ fontSize: "11px", color: deviceColor, fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600 }}>
-                            {v.device_type || "—"}
+                            {v.device_type || "N/A"}
                           </span>
                           <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                            {v.browser || "—"}
+                            {v.browser || "N/A"}
                           </span>
                           <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                            {v.os || "—"}
+                            {v.os || "N/A"}
                           </span>
                           <span style={{ fontSize: "11px", color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                             {v.page || "/"}

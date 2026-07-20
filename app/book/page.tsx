@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Book a Free Diagnostic Call",
-  description: "Book a free 20-minute diagnostic call with Guhayavarman. Honest assessment of your situation — no sales pressure.",
+  description: "Book a free 20-minute diagnostic call with Guhayavarman. Honest assessment of your situation, no sales pressure.",
   openGraph: {
     title: "Book a Call | CALIBRATE",
     description: "20 minutes. Free. Guhay reviews your situation and tells you honestly whether CALIBRATE is the right fit.",
@@ -57,7 +57,7 @@ export default function BookPage() {
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
-              A free 30-minute call — no pressure, no pitch. We'll talk about where you are, where you want to be, and whether coaching is the right fit for you.
+              A free 30-minute call, no pressure, no pitch. We'll talk about where you are, where you want to be, and whether coaching is the right fit for you.
             </p>
           </div>
         </section>
@@ -82,7 +82,7 @@ export default function BookPage() {
                 {
                   step: "02",
                   title: "We find the right approach",
-                  desc: "I'll outline exactly what your coaching program would look like — training, nutrition, check-in structure.",
+                  desc: "I'll outline exactly what your coaching program would look like, training, nutrition, check-in structure.",
                 },
                 {
                   step: "03",

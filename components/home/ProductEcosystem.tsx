@@ -35,10 +35,10 @@ const pillars = [
     ),
     headline: "Nutrition That Actually Works",
     description:
-      "A custom nutrition plan that fits your lifestyle — not the other way around. You'll eat the foods you enjoy and still hit your physique goals.",
+      "A custom nutrition plan that fits your lifestyle, not the other way around. You'll eat the foods you enjoy and still hit your physique goals.",
     bullets: [
       "Custom macros built for your goal",
-      "Flexible — no rigid meal plans",
+      "Flexible, no rigid meal plans",
       "Eating out strategies included",
       "Supplement guidance if needed",
     ],
@@ -54,7 +54,7 @@ const pillars = [
     ),
     headline: "Accountability That Drives Results",
     description:
-      "Weekly check-ins, direct messaging with your coach, and real-time feedback mean you never feel alone — and you never stall without a solution.",
+      "Weekly check-ins, direct messaging with your coach, and real-time feedback mean you never feel alone, and you never stall without a solution.",
     bullets: [
       "Weekly video or written check-ins",
       "Direct messaging with your coach",
@@ -74,7 +74,7 @@ const pillars = [
     ),
     headline: "Visible, Measurable Progress",
     description:
-      "Every week, you can see the difference. Body weight, measurements, strength numbers, energy levels — all tracked so your results are undeniable.",
+      "Every week, you can see the difference. Body weight, measurements, strength numbers, energy levels, all tracked so your results are undeniable.",
     bullets: [
       "Weekly body metrics logged",
       "Strength progression charts",
@@ -293,7 +293,7 @@ export default function ProductEcosystem() {
               {current.id === "progress" && "Results you can see."}
             </p>
             <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.6 }}>
-              {current.id === "training" && "Workouts designed specifically for your body and goals — updated every week."}
+              {current.id === "training" && "Workouts designed specifically for your body and goals, updated every week."}
               {current.id === "nutrition" && "A flexible approach that gets you lean without feeling restricted."}
               {current.id === "accountability" && "Direct access to your coach. Real feedback. Real support."}
               {current.id === "progress" && "Every metric tracked so you can see exactly how far you've come."}

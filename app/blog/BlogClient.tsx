@@ -10,7 +10,7 @@ const posts = [
   {
     category: "Nutrition",
     title: "Why Tracking Macros Changed Everything (And How to Start Without Going Crazy)",
-    excerpt: "Most people overcomplicate nutrition. This is a practical guide to macro tracking that actually fits your life — no weighing every leaf of lettuce required.",
+    excerpt: "Most people overcomplicate nutrition. This is a practical guide to macro tracking that actually fits your life, no weighing every leaf of lettuce required.",
     readTime: "7 min read",
     date: "Jun 14, 2026",
     featured: true,
@@ -28,7 +28,7 @@ const posts = [
   {
     category: "Training",
     title: "Progressive Overload: The Simplest Principle Most People Completely Ignore",
-    excerpt: "If your workouts look the same as they did six months ago, you've stopped making progress. Here's why progressive overload is non-negotiable — and how to apply it.",
+    excerpt: "If your workouts look the same as they did six months ago, you've stopped making progress. Here's why progressive overload is non-negotiable, and how to apply it.",
     readTime: "6 min read",
     date: "May 30, 2026",
     featured: false,
@@ -37,7 +37,7 @@ const posts = [
   {
     category: "Mindset",
     title: "The Real Reason You Keep Starting Over (And How to Finally Break the Cycle)",
-    excerpt: "It's not willpower. It's not motivation. The reason most people restart the same programme every January comes down to one thing — and it's fixable.",
+    excerpt: "It's not willpower. It's not motivation. The reason most people restart the same programme every January comes down to one thing, and it's fixable.",
     readTime: "8 min read",
     date: "May 22, 2026",
     featured: false,
@@ -46,7 +46,7 @@ const posts = [
   {
     category: "Nutrition",
     title: "Eating Out Without Destroying Your Progress: A Complete Guide",
-    excerpt: "Restaurants don't have to be the enemy. Here's how to eat out socially, enjoy your food, and still hit your physique goals — week after week.",
+    excerpt: "Restaurants don't have to be the enemy. Here's how to eat out socially, enjoy your food, and still hit your physique goals, week after week.",
     readTime: "5 min read",
     date: "May 14, 2026",
     featured: false,
@@ -55,7 +55,7 @@ const posts = [
   {
     category: "Lifestyle",
     title: "How to Stay On Track When You're Travelling for Work",
-    excerpt: "Hotel gyms, business dinners, disrupted routines — travel is one of the most common reasons people stall. Here's the system that keeps CALIBRATE clients on track regardless.",
+    excerpt: "Hotel gyms, business dinners, disrupted routines, travel is one of the most common reasons people stall. Here's the system that keeps CALIBRATE clients on track regardless.",
     readTime: "6 min read",
     date: "May 6, 2026",
     featured: false,
@@ -64,7 +64,7 @@ const posts = [
   {
     category: "Training",
     title: "Home Gym vs Commercial Gym: Which Gets You Better Results?",
-    excerpt: "The honest answer might surprise you. The best gym is the one you consistently show up to — but there are real differences in what each enables.",
+    excerpt: "The honest answer might surprise you. The best gym is the one you consistently show up to, but there are real differences in what each enables.",
     readTime: "5 min read",
     date: "Apr 28, 2026",
     featured: false,
@@ -73,7 +73,7 @@ const posts = [
   {
     category: "Mindset",
     title: "What Accountability Actually Looks Like in Coaching (And Why It Works)",
-    excerpt: "Accountability isn't someone screaming at you to work harder. Here's what real coaching accountability looks like — and the data on why it drives results.",
+    excerpt: "Accountability isn't someone screaming at you to work harder. Here's what real coaching accountability looks like, and the data on why it drives results.",
     readTime: "7 min read",
     date: "Apr 20, 2026",
     featured: false,
@@ -126,7 +126,7 @@ export default function BlogClient() {
               <span className="gold-text">Transformation.</span>
             </h1>
             <p style={{ fontSize: "18px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              Practical guidance on training, nutrition, mindset, and building the body you want — written by coaches, not content marketers.
+              Practical guidance on training, nutrition, mindset, and building the body you want, written by coaches, not content marketers.
             </p>
           </div>
         </section>
@@ -230,7 +230,7 @@ export default function BlogClient() {
               <span className="gold-text">Every week.</span>
             </h2>
             <p style={{ color: "#B7B9C3", fontSize: "16px", lineHeight: 1.65, marginBottom: "32px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              Practical guidance on training, nutrition, and mindset — delivered to your inbox every week. No fluff.
+              Practical guidance on training, nutrition, and mindset, delivered to your inbox every week. No fluff.
             </p>
             {subscribed ? (
               <div style={{ padding: "16px 24px", background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.2)", borderRadius: "10px" }}>

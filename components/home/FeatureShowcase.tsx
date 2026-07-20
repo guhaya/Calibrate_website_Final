@@ -22,12 +22,12 @@ const benefits = [
   {
     icon: "message",
     title: "Direct Coach Access",
-    description: "Message your coach anytime inside the app. Questions, struggles, wins — your coach is always on the other side.",
+    description: "Message your coach anytime inside the app. Questions, struggles, wins, your coach is always on the other side.",
   },
   {
     icon: "trending",
     title: "Progress Tracking",
-    description: "Body weight, measurements, strength records, energy — all logged and visible in one place.",
+    description: "Body weight, measurements, strength records, energy, all logged and visible in one place.",
   },
   {
     icon: "dumbbell",
@@ -37,7 +37,7 @@ const benefits = [
   {
     icon: "refresh",
     title: "Plan Adjustments",
-    description: "Travel, injury, schedule change — your coach adapts the plan immediately so you never lose momentum.",
+    description: "Travel, injury, schedule change, your coach adapts the plan immediately so you never lose momentum.",
   },
   {
     icon: "brain",
@@ -77,7 +77,7 @@ export default function FeatureShowcase() {
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
-            Most people fail not because they lack effort — but because they lack the right system and support. CALIBRATE gives you both.
+            Most people fail not because they lack effort, but because they lack the right system and support. CALIBRATE gives you both.
           </p>
         </div>
 

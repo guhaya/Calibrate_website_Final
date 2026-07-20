@@ -13,7 +13,7 @@ const comparisons = [
   },
   {
     aspect: "Accountability",
-    alone: "Rely on willpower alone — often fails",
+    alone: "Rely on willpower alone, often fails",
     calibrate: "Weekly check-ins and direct coach access",
   },
   {
@@ -96,7 +96,7 @@ export default function ComparisonTable() {
             </div>
             <div style={{ padding: "16px 0", textAlign: "center", background: "rgba(255,222,2,0.06)" }} className="compare-us-cell">
               <span style={{ fontSize: "12px", fontWeight: 800, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-                Us — CALIBRATE
+                Us: CALIBRATE
               </span>
             </div>
             <div style={{ padding: "16px 0", textAlign: "center" }}>

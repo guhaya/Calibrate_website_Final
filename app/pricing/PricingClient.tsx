@@ -17,11 +17,11 @@ const plans = [
       "Custom training programme (4-week blocks)",
       "Personalised nutrition protocol",
       "Weekly check-in analysis & adjustments",
-      "WhatsApp support — weekdays, 4-hour response",
+      "WhatsApp support, weekdays, 4-hour response",
       "Monthly bloodwork review",
       "CALIBRATE app access",
     ],
-    cta: "Apply — Monthly",
+    cta: "Apply: Monthly",
     highlight: false,
   },
   {
@@ -36,7 +36,7 @@ const plans = [
       "Priority application review",
       "Saves ₹10,000 vs monthly billing",
     ],
-    cta: "Apply — Quarterly",
+    cta: "Apply: Quarterly",
     highlight: true,
   },
 ];
@@ -44,7 +44,7 @@ const plans = [
 const faqs = [
   {
     q: "Who is CALIBRATE built for?",
-    a: "Engineers, product managers, consultants, and founders who work 10+ hour days and have failed at generic fitness programmes before. The system is built around data, not motivation — specifically for people with demanding schedules and limited time.",
+    a: "Engineers, product managers, consultants, and founders who work 10+ hour days and have failed at generic fitness programmes before. The system is built around data, not motivation, specifically for people with demanding schedules and limited time.",
   },
   {
     q: "Why a 3-month minimum commitment?",
@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     q: "What does the Calibration Assessment Report include?",
-    a: "A full baseline analysis covering your body composition starting point, movement quality assessment, nutritional audit, and constraint mapping around your actual work schedule. This is Week 0 — before any training begins.",
+    a: "A full baseline analysis covering your body composition starting point, movement quality assessment, nutritional audit, and constraint mapping around your actual work schedule. This is Week 0, before any training begins.",
   },
   {
     q: "How does WhatsApp support work?",
@@ -60,15 +60,15 @@ const faqs = [
   },
   {
     q: "What is the maximum client capacity?",
-    a: "CALIBRATE takes a maximum of 5 new clients per quarter. This isn't artificial scarcity — it's the number that allows Guhay to personally review every application and maintain coaching quality across the team.",
+    a: "CALIBRATE takes a maximum of 5 new clients per quarter. This isn't artificial scarcity, it's the number that allows Guhay to personally review every application and maintain coaching quality across the team.",
   },
   {
     q: "Do I need a gym?",
-    a: "No. Programmes are built for gym, home gym, hotel gym, or bodyweight setups. Your training is written around what you have access to — not what we assume.",
+    a: "No. Programmes are built for gym, home gym, hotel gym, or bodyweight setups. Your training is written around what you have access to, not what we assume.",
   },
   {
     q: "Is the diagnostic call really free?",
-    a: "Completely free. It's a 20-minute call — not a sales call. Guhay reviews your situation and tells you honestly whether the programme is the right fit for your goals and timeline.",
+    a: "Completely free. It's a 20-minute call, not a sales call. Guhay reviews your situation and tells you honestly whether the programme is the right fit for your goals and timeline.",
   },
 ];
 
@@ -89,12 +89,12 @@ export default function PricingClient() {
               <span className="gold-text">serious professionals</span>
             </h1>
             <p style={{ fontSize: "17px", color: "#B7B9C3", lineHeight: 1.65, marginBottom: "32px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              Two tiers. One protocol. All include the full CALIBRATE system — custom training, nutrition, weekly analysis, and direct coach access.
+              Two tiers. One protocol. All include the full CALIBRATE system, custom training, nutrition, weekly analysis, and direct coach access.
             </p>
             <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "rgba(255,222,2,0.08)", border: "1px solid rgba(255,222,2,0.2)", borderRadius: "999px", padding: "8px 20px" }}>
               <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#FFDE02", flexShrink: 0, boxShadow: "0 0 8px rgba(255,222,2,0.6)" }} />
               <span style={{ fontSize: "13px", fontWeight: 600, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                2 of 5 slots remaining — Q3 2026
+                2 of 5 slots remaining, Q3 2026
               </span>
             </div>
           </div>
@@ -172,7 +172,7 @@ export default function PricingClient() {
               {[
                 { role: "Engineers & Developers", detail: "Complex problem-solvers who prefer systems over motivation." },
                 { role: "Product Managers", detail: "Detail-oriented professionals who want measurable outcomes." },
-                { role: "Consultants & Founders", detail: "High-travel, high-pressure — the protocol adapts to your schedule." },
+                { role: "Consultants & Founders", detail: "High-travel, high-pressure, the protocol adapts to your schedule." },
               ].map((p) => (
                 <div key={p.role} style={{ background: "rgba(23,23,23,0.6)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "24px" }}>
                   <p style={{ fontSize: "15px", fontWeight: 700, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>{p.role}</p>

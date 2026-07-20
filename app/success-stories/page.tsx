@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Client Transformations",
-  description: "Real results from CALIBRATE clients — engineers, product managers, and consultants who transformed their body with data-driven coaching. Detailed stories, metrics, and outcomes.",
+  description: "Real results from CALIBRATE clients, engineers, product managers, and consultants who transformed their body with data-driven coaching. Detailed stories, metrics, and outcomes.",
   openGraph: {
     title: "Client Transformations | CALIBRATE",
     description: "Real results from engineers, PMs, and founders who used the CALIBRATE protocol. Honest stories with before/after metrics.",
@@ -18,12 +18,12 @@ const stories = [
     age: 34,
     occupation: "Software Engineer",
     program: "Performance · 14 Weeks",
-    headline: "Lost 14kg while gaining strength — all without giving up his social life",
+    headline: "Lost 14kg while gaining strength, all without giving up his social life",
     story: [
-      "Marcus came to CALIBRATE exhausted by fitness content that promised everything and delivered nothing. He'd done gym programmes, downloaded apps, and even hired a trainer through a gym — but nothing had lasted more than six weeks.",
+      "Marcus came to CALIBRATE exhausted by fitness content that promised everything and delivered nothing. He'd done gym programmes, downloaded apps, and even hired a trainer through a gym, but nothing had lasted more than six weeks.",
       "The problem wasn't discipline. It was that nothing was built around his actual life: a demanding job, frequent travel, and a love of restaurants. Every previous programme fell apart the moment his schedule changed.",
       "We built Marcus a training structure that worked in hotel gyms and his home setup equally well. His nutrition plan had specific strategies for eating out without derailing progress. Weekly check-ins adapted when his travel weeks inevitably happened.",
-      "Fourteen weeks later, Marcus had lost 14kg — while actually getting stronger in every major lift. More importantly, he now knows exactly how to train and eat for the rest of his life.",
+      "Fourteen weeks later, Marcus had lost 14kg, while actually getting stronger in every major lift. More importantly, he now knows exactly how to train and eat for the rest of his life.",
     ],
     metrics: [
       { label: "Weight", before: "97kg", after: "83kg" },
@@ -37,12 +37,12 @@ const stories = [
     age: 29,
     occupation: "Marketing Director",
     program: "Performance · 16 Weeks",
-    headline: "Recomped from 30% to 22% body fat — without eating less food",
+    headline: "Recomped from 30% to 22% body fat, without eating less food",
     story: [
-      "Priya's goal wasn't to lose a lot of weight — she wanted to look lean and feel strong. She'd spent years doing cardio-heavy classes that left her tired but not visibly different. She came to CALIBRATE after seeing a friend's results.",
-      "The breakthrough came from understanding that Priya's issue was composition, not calories. She needed to build muscle and drop fat simultaneously — something that requires a very specific approach to training and nutrition that generic programmes miss entirely.",
+      "Priya's goal wasn't to lose a lot of weight, she wanted to look lean and feel strong. She'd spent years doing cardio-heavy classes that left her tired but not visibly different. She came to CALIBRATE after seeing a friend's results.",
+      "The breakthrough came from understanding that Priya's issue was composition, not calories. She needed to build muscle and drop fat simultaneously, something that requires a very specific approach to training and nutrition that generic programmes miss entirely.",
       "We prioritised resistance training, set her protein targets high, and gave her a calorie target that still let her enjoy meals with friends. No food was off-limits. Her body changed every single week.",
-      "By week 16, Priya had gone from 30% to 22% body fat while her scale weight had barely moved — the definition of a successful body recomposition.",
+      "By week 16, Priya had gone from 30% to 22% body fat while her scale weight had barely moved, the definition of a successful body recomposition.",
     ],
     metrics: [
       { label: "Body Fat", before: "30%", after: "22%" },
@@ -56,12 +56,12 @@ const stories = [
     age: 31,
     occupation: "Staff Engineer, Bangalore",
     program: "Quarterly Protocol · 20 Weeks",
-    headline: "From 'skinny fat' to genuinely lean — four years of training, fixed in 20 weeks",
+    headline: "From 'skinny fat' to genuinely lean, four years of training, fixed in 20 weeks",
     story: [
-      "Arjun had been training consistently for four years. He was disciplined, he showed up, and he genuinely enjoyed lifting. But he didn't look like he trained — the classic skinny fat trap. A layer of fat that never shifted despite months in the gym.",
+      "Arjun had been training consistently for four years. He was disciplined, he showed up, and he genuinely enjoyed lifting. But he didn't look like he trained, the classic skinny fat trap. A layer of fat that never shifted despite months in the gym.",
       "When we assessed his programme and nutrition, the problems were immediately visible: zero progressive overload structure (he'd been running the same split for nearly two years), and a calorie intake quietly sitting him in a surplus without him realising.",
       "We rebuilt everything around systematic progressive overload and restructured his nutrition to support body recomposition. Visible changes appeared by week three. Strength climbed every single week for the first four months.",
-      "Twenty weeks in, Arjun had the physique he'd been chasing since his mid-20s — and the understanding of why previous years hadn't worked and how to keep progressing independently.",
+      "Twenty weeks in, Arjun had the physique he'd been chasing since his mid-20s, and the understanding of why previous years hadn't worked and how to keep progressing independently.",
     ],
     metrics: [
       { label: "Weight", before: "76kg", after: "79kg" },
@@ -116,7 +116,7 @@ export default function SuccessStoriesPage() {
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
-              Not a highlight reel. These are client stories — honest, detailed, and representative of what coaching with CALIBRATE actually looks like.
+              Not a highlight reel. These are client stories, honest, detailed, and representative of what coaching with CALIBRATE actually looks like.
             </p>
           </div>
         </section>
@@ -274,7 +274,7 @@ export default function SuccessStoriesPage() {
                         fontFamily: "'Plus Jakarta Sans', sans-serif",
                       }}
                     >
-                      — {story.name}
+                     , {story.name}
                     </cite>
                   </blockquote>
                 </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "CALIBRATE privacy policy — how we collect, use, and protect your personal information.",
+  description: "CALIBRATE privacy policy, how we collect, use, and protect your personal information.",
   robots: { index: false, follow: false },
 };
 
@@ -23,30 +23,30 @@ For any privacy-related queries, contact us at: Admin@gvnfit.online`,
     content: `We collect the following categories of personal information:
 
 **Contact & Identity Information**
-— Full name, email address, phone number, and location when you apply or register for coaching.
+- Full name, email address, phone number, and location when you apply or register for coaching.
 
 **Health & Fitness Data**
-— Body measurements, weight history, fitness goals, dietary preferences, training history, and health conditions you voluntarily share with your coach. This is necessary to deliver your coaching programme.
+- Body measurements, weight history, fitness goals, dietary preferences, training history, and health conditions you voluntarily share with your coach. This is necessary to deliver your coaching programme.
 
 **Payment Information**
-— Billing name and payment details processed through our secure payment partners. We do not store full card numbers on our servers.
+- Billing name and payment details processed through our secure payment partners. We do not store full card numbers on our servers.
 
 **Usage Data**
-— Pages visited on this website, device type, browser, and general location (city/region level) collected via standard analytics tools.
+- Pages visited on this website, device type, browser, and general location (city/region level) collected via standard analytics tools.
 
 **Communication Records**
-— Messages, check-in submissions, and coach feedback exchanged through WhatsApp, email, or the CALIBRATE app.`,
+- Messages, check-in submissions, and coach feedback exchanged through WhatsApp, email, or the CALIBRATE app.`,
   },
   {
     title: "3. How We Use Your Information",
     content: `We use your personal data to:
 
-— Deliver, manage, and personalise your coaching programme
-— Communicate with you about your progress, check-ins, and programme adjustments
-— Process payments and maintain billing records
-— Send service-related notifications and updates
-— Improve our coaching methodology and website experience
-— Comply with applicable legal obligations
+- Deliver, manage, and personalise your coaching programme
+- Communicate with you about your progress, check-ins, and programme adjustments
+- Process payments and maintain billing records
+- Send service-related notifications and updates
+- Improve our coaching methodology and website experience
+- Comply with applicable legal obligations
 
 We do not sell, rent, or trade your personal information to any third party.`,
   },
@@ -54,20 +54,20 @@ We do not sell, rent, or trade your personal information to any third party.`,
     title: "4. Legal Basis for Processing",
     content: `We process your personal data on the following grounds:
 
-— **Contractual necessity** — to fulfil our coaching agreement with you
-— **Legitimate interest** — to operate, improve, and communicate about our services
-— **Consent** — where you have given explicit consent (e.g. marketing emails)
-— **Legal obligation** — where required by applicable Indian law`,
+- **Contractual necessity**: to fulfil our coaching agreement with you
+- **Legitimate interest**: to operate, improve, and communicate about our services
+- **Consent**: where you have given explicit consent (e.g. marketing emails)
+- **Legal obligation**: where required by applicable Indian law`,
   },
   {
     title: "5. Third-Party Services",
     content: `We use the following trusted third-party services to operate CALIBRATE. Each is bound by its own privacy policy:
 
-— **Supabase** — secure database and authentication infrastructure
-— **Vercel** — website hosting and delivery
-— **WhatsApp Business** — coach-client communication
-— **Payment processors** — Razorpay or similar gateways for billing
-— **Google Analytics** — anonymous website usage analytics
+- **Supabase**: secure database and authentication infrastructure
+- **Vercel**: website hosting and delivery
+- **WhatsApp Business**: coach-client communication
+- **Payment processors**: Razorpay or similar gateways for billing
+- **Google Analytics**: anonymous website usage analytics
 
 We do not grant third parties access to your health or fitness data without your explicit consent.`,
   },
@@ -81,12 +81,12 @@ Health and fitness data is deleted upon your written request, except where reten
     title: "7. Your Rights",
     content: `You have the right to:
 
-— **Access** the personal data we hold about you
-— **Correct** inaccurate or incomplete information
-— **Delete** your personal data (subject to legal obligations)
-— **Withdraw consent** at any time where processing is based on consent
-— **Object** to processing for direct marketing purposes
-— **Receive a copy** of your data in a portable format
+- **Access** the personal data we hold about you
+- **Correct** inaccurate or incomplete information
+- **Delete** your personal data (subject to legal obligations)
+- **Withdraw consent** at any time where processing is based on consent
+- **Object** to processing for direct marketing purposes
+- **Receive a copy** of your data in a portable format
 
 To exercise any of these rights, email us at Admin@gvnfit.online with the subject line "Data Rights Request". We will respond within 30 days.`,
   },
@@ -94,10 +94,10 @@ To exercise any of these rights, email us at Admin@gvnfit.online with the subjec
     title: "8. Data Security",
     content: `We take the security of your data seriously. We implement:
 
-— Encrypted data storage via Supabase with row-level security
-— HTTPS encryption across all website connections
-— Restricted staff access to personal and health data
-— Regular security reviews of our data infrastructure
+- Encrypted data storage via Supabase with row-level security
+- HTTPS encryption across all website connections
+- Restricted staff access to personal and health data
+- Regular security reviews of our data infrastructure
 
 No method of digital transmission is 100% secure. While we take all reasonable precautions, we cannot guarantee absolute security.`,
   },
@@ -202,17 +202,17 @@ export default function PrivacyPolicyPage() {
                         </p>
                       );
                     }
-                    if (line.startsWith("— **")) {
-                      const match = line.match(/— \*\*(.+?)\*\* — (.+)/);
+                    if (line.startsWith("- **")) {
+                      const match = line.match(/- \*\*(.+?)\*\*: (.+)/);
                       if (match) {
                         return (
                           <p key={li} style={{ marginBottom: "6px", paddingLeft: "12px" }}>
-                            — <span style={{ color: "#FFDE02", fontWeight: 600 }}>{match[1]}</span> — {match[2]}
+                            - <span style={{ color: "#FFDE02", fontWeight: 600 }}>{match[1]}</span>: {match[2]}
                           </p>
                         );
                       }
                     }
-                    if (line.startsWith("— ")) {
+                    if (line.startsWith("- ")) {
                       return <p key={li} style={{ marginBottom: "6px", paddingLeft: "12px" }}>{line}</p>;
                     }
                     if (line.trim() === "") return <br key={li} />;

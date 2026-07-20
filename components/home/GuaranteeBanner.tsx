@@ -31,7 +31,7 @@ export default function GuaranteeBanner() {
             The risk-free guarantee
           </p>
           <p style={{ fontSize: "14px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-            Follow the protocol for 30 days. If you don't see measurable progress in your check-in data, we rebuild your plan from scratch — free — until you do.
+            Follow the protocol for 30 days. If you don't see measurable progress in your check-in data, we rebuild your plan from scratch, free, until you do.
           </p>
         </div>
 

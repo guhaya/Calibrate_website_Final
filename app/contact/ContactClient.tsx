@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: "Do I need a gym membership?",
-    a: "No. Your programme is written around whatever equipment you have — commercial gym, home gym, hotel gym, or bodyweight only. We'll establish exactly what you have access to before writing anything.",
+    a: "No. Your programme is written around whatever equipment you have, commercial gym, home gym, hotel gym, or bodyweight only. We'll establish exactly what you have access to before writing anything.",
   },
   {
     q: "How quickly will I see results?",
@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "What's included in the free consultation?",
-    a: "A 30-minute call where we cover your current situation, what you've tried before, your goals, lifestyle, and any constraints. You'll leave with clarity on your path forward. No pressure to sign up — the call is genuinely about figuring out if we're a good fit.",
+    a: "A 30-minute call where we cover your current situation, what you've tried before, your goals, lifestyle, and any constraints. You'll leave with clarity on your path forward. No pressure to sign up, the call is genuinely about figuring out if we're a good fit.",
   },
   {
     q: "How is this different from following a YouTube programme?",
@@ -28,23 +28,23 @@ const faqs = [
   },
   {
     q: "What if I travel a lot or have an unpredictable schedule?",
-    a: "That's exactly what coaching is built for. Your programme is designed around your reality — including travel weeks, busy periods, and schedule changes. We adjust in real time rather than leaving you to figure it out alone.",
+    a: "That's exactly what coaching is built for. Your programme is designed around your reality, including travel weeks, busy periods, and schedule changes. We adjust in real time rather than leaving you to figure it out alone.",
   },
   {
     q: "Can I do this if I'm a complete beginner?",
-    a: "Absolutely. Some of our best transformations have come from complete beginners. You don't need experience — you need a structured starting point and someone to guide you through the early stages correctly.",
+    a: "Absolutely. Some of our best transformations have come from complete beginners. You don't need experience, you need a structured starting point and someone to guide you through the early stages correctly.",
   },
   {
     q: "How do I pay? Are there contracts?",
-    a: "Coaching is billed monthly. There are no long-term contracts — you can cancel at the end of any billing period. We also offer a quarterly option with a 14% saving for clients who want to commit to a full transformation block.",
+    a: "Coaching is billed monthly. There are no long-term contracts, you can cancel at the end of any billing period. We also offer a quarterly option with a 14% saving for clients who want to commit to a full transformation block.",
   },
   {
     q: "What app do you use?",
-    a: "CALIBRATE clients use a dedicated coaching app for training, nutrition tracking, progress photos, check-ins, and direct coach messaging. Everything is in one place — no juggling multiple apps.",
+    a: "CALIBRATE clients use a dedicated coaching app for training, nutrition tracking, progress photos, check-ins, and direct coach messaging. Everything is in one place, no juggling multiple apps.",
   },
   {
     q: "Is there a minimum commitment period?",
-    a: "We ask for a minimum of one month — enough time to go through the assessment, receive your plan, and complete your first full week. Real results take 8–12 weeks, but we'll never lock you into something you're not benefiting from.",
+    a: "We ask for a minimum of one month, enough time to go through the assessment, receive your plan, and complete your first full week. Real results take 8–12 weeks, but we'll never lock you into something you're not benefiting from.",
   },
 ];
 
@@ -104,7 +104,7 @@ export default function ContactClient() {
               }}
             >
               Have a question before booking? Want to know if coaching is right for you?
-              Reach out — every message gets a personal response within 24 hours.
+              Reach out, every message gets a personal response within 24 hours.
             </p>
             <Link href="/book" className="btn-primary" style={{ fontSize: "15px", padding: "14px 32px" }}>
               Book Free Consultation
@@ -204,7 +204,7 @@ export default function ContactClient() {
                 Send a message
               </h2>
               <p style={{ fontSize: "15px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px", lineHeight: 1.6 }}>
-                Prefer email? Fill this out and it opens your email client pre-filled — or just email directly.
+                Prefer email? Fill this out and it opens your email client pre-filled, or just email directly.
               </p>
 
               {formState.sent ? (

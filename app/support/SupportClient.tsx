@@ -12,11 +12,11 @@ const faqs = [
     questions: [
       {
         q: "What happens on the free consultation call?",
-        a: "We'll spend 30 minutes talking about your goals, where you are now, and what's held you back before. I'll ask about your training history, nutrition, lifestyle, and schedule — then tell you exactly what your programme would look like. No pitch, no pressure. You'll know if it's right for you by the end of the call.",
+        a: "We'll spend 30 minutes talking about your goals, where you are now, and what's held you back before. I'll ask about your training history, nutrition, lifestyle, and schedule, then tell you exactly what your programme would look like. No pitch, no pressure. You'll know if it's right for you by the end of the call.",
       },
       {
         q: "How quickly can I start?",
-        a: "If we're a good fit after the call, you can start within 48 hours. Your full programme — training, nutrition, and app access — will be ready for your first session.",
+        a: "If we're a good fit after the call, you can start within 48 hours. Your full programme, training, nutrition, and app access, will be ready for your first session.",
       },
       {
         q: "Do I need any equipment?",
@@ -37,7 +37,7 @@ const faqs = [
       },
       {
         q: "Can you accommodate dietary restrictions?",
-        a: "Yes — completely. Vegan, vegetarian, halal, gluten-free, food intolerances — all fully accommodated. Your nutrition plan is built around what you can and will eat.",
+        a: "Yes, completely. Vegan, vegetarian, halal, gluten-free, food intolerances, all fully accommodated. Your nutrition plan is built around what you can and will eat.",
       },
       {
         q: "What if I'm travelling or my schedule changes?",
@@ -45,7 +45,7 @@ const faqs = [
       },
       {
         q: "How are check-ins done?",
-        a: "You have the choice of video check-ins or written check-ins via the app. You'll complete a weekly check-in form covering training, nutrition, energy, sleep, and any questions — and receive detailed feedback from your coach.",
+        a: "You have the choice of video check-ins or written check-ins via the app. You'll complete a weekly check-in form covering training, nutrition, energy, sleep, and any questions, and receive detailed feedback from your coach.",
       },
     ],
   },
@@ -54,7 +54,7 @@ const faqs = [
     questions: [
       {
         q: "Is the free consultation really free?",
-        a: "Yes — completely free. No credit card required, no obligation. It's a conversation to see if we're a good fit.",
+        a: "Yes, completely free. No credit card required, no obligation. It's a conversation to see if we're a good fit.",
       },
       {
         q: "How long is the minimum commitment?",
