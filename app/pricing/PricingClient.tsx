@@ -81,19 +81,19 @@ export default function PricingClient() {
       <main>
         {/* Hero */}
         <section style={{ padding: "140px 24px 80px", textAlign: "center", position: "relative" }} className="grid-bg">
-          <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.05) 0%, transparent 60%)", pointerEvents: "none" }} />
+          <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.05) 0%, transparent 60%)", pointerEvents: "none" }} />
           <div style={{ maxWidth: "640px", margin: "0 auto", position: "relative" }}>
             <div className="tag" style={{ marginBottom: "24px" }}>Coaching Investment</div>
             <h1 style={{ fontSize: "clamp(40px, 5vw, 60px)", fontWeight: 600, color: "#FFFFFF", marginBottom: "20px", letterSpacing: "-0.02em" }}>
               Precision coaching for{" "}
               <span className="gold-text">serious professionals</span>
             </h1>
-            <p style={{ fontSize: "17px", color: "#9AA4B2", lineHeight: 1.65, marginBottom: "32px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <p style={{ fontSize: "17px", color: "#B7B9C3", lineHeight: 1.65, marginBottom: "32px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               Two tiers. One protocol. All include the full CALIBRATE system — custom training, nutrition, weekly analysis, and direct coach access.
             </p>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.2)", borderRadius: "999px", padding: "8px 20px" }}>
-              <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#D4AF37", flexShrink: 0, boxShadow: "0 0 8px rgba(212,175,55,0.6)" }} />
-              <span style={{ fontSize: "13px", fontWeight: 600, color: "#D4AF37", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "rgba(255,222,2,0.08)", border: "1px solid rgba(255,222,2,0.2)", borderRadius: "999px", padding: "8px 20px" }}>
+              <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#FFDE02", flexShrink: 0, boxShadow: "0 0 8px rgba(255,222,2,0.6)" }} />
+              <span style={{ fontSize: "13px", fontWeight: 600, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                 2 of 5 slots remaining — Q3 2026
               </span>
             </div>
@@ -108,28 +108,28 @@ export default function PricingClient() {
                 <div
                   key={i}
                   style={{
-                    background: plan.highlight ? "rgba(22,33,45,0.95)" : "rgba(22,33,45,0.6)",
-                    border: plan.highlight ? "1px solid rgba(212,175,55,0.3)" : "1px solid rgba(255,255,255,0.06)",
+                    background: plan.highlight ? "rgba(23,23,23,0.95)" : "rgba(23,23,23,0.6)",
+                    border: plan.highlight ? "1px solid rgba(255,222,2,0.3)" : "1px solid rgba(255,255,255,0.06)",
                     borderRadius: "20px", padding: "36px", position: "relative",
                   }}
                 >
                   {plan.highlight && (
-                    <div style={{ position: "absolute", top: "-1px", left: "50%", transform: "translateX(-50%)", background: "linear-gradient(90deg, #B8962E, #D4AF37)", color: "#0E1720", fontSize: "11px", fontWeight: 800, fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", padding: "5px 18px", borderRadius: "0 0 10px 10px", whiteSpace: "nowrap" }}>
+                    <div style={{ position: "absolute", top: "-1px", left: "50%", transform: "translateX(-50%)", background: "linear-gradient(90deg, #E6C700, #FFDE02)", color: "#07070A", fontSize: "11px", fontWeight: 800, fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", padding: "5px 18px", borderRadius: "0 0 10px 10px", whiteSpace: "nowrap" }}>
                       Best Value
                     </div>
                   )}
-                  <p style={{ fontSize: "11px", fontWeight: 700, color: plan.highlight ? "#D4AF37" : "#9AA4B2", letterSpacing: "0.08em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>
+                  <p style={{ fontSize: "11px", fontWeight: 700, color: plan.highlight ? "#FFDE02" : "#B7B9C3", letterSpacing: "0.08em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>
                     {plan.tagline}
                   </p>
                   <h2 style={{ fontSize: "28px", color: "#FFFFFF", marginBottom: "20px", letterSpacing: "-0.01em" }}>{plan.name}</h2>
                   <div style={{ marginBottom: "8px" }}>
                     <div style={{ display: "flex", alignItems: "baseline", gap: "2px" }}>
-                      <span style={{ fontSize: "22px", fontWeight: 700, color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1 }}>₹</span>
+                      <span style={{ fontSize: "22px", fontWeight: 700, color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1 }}>₹</span>
                       <span style={{ fontSize: "52px", fontWeight: 800, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1 }}>{plan.price.toLocaleString("en-IN")}</span>
                     </div>
                   </div>
-                  <p style={{ fontSize: "13px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "20px" }}>{plan.billingNote}</p>
-                  <p style={{ fontSize: "14px", color: "#9AA4B2", lineHeight: 1.65, marginBottom: "28px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{plan.description}</p>
+                  <p style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "20px" }}>{plan.billingNote}</p>
+                  <p style={{ fontSize: "14px", color: "#B7B9C3", lineHeight: 1.65, marginBottom: "28px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{plan.description}</p>
                   <Link href="/apply" className={plan.highlight ? "btn-primary" : "btn-secondary"} style={{ width: "100%", justifyContent: "center", marginBottom: "28px", fontSize: "14px" }}>
                     {plan.cta}
                   </Link>
@@ -137,8 +137,8 @@ export default function PricingClient() {
                     {plan.features.map((f) => (
                       <li key={f} style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "10px", fontSize: "14px", color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" style={{ marginTop: "1px", flexShrink: 0 }}>
-                          <circle cx="7.5" cy="7.5" r="6.5" fill="rgba(212,175,55,0.1)" />
-                          <path d="M4.5 7.5l2 2 4-4" stroke="#D4AF37" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                          <circle cx="7.5" cy="7.5" r="6.5" fill="rgba(255,222,2,0.1)" />
+                          <path d="M4.5 7.5l2 2 4-4" stroke="#FFDE02" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                         {f}
                       </li>
@@ -148,12 +148,12 @@ export default function PricingClient() {
               ))}
             </div>
 
-            <div style={{ marginTop: "24px", padding: "20px 28px", background: "rgba(22,33,45,0.4)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: "12px", display: "flex", alignItems: "center", gap: "14px" }}>
+            <div style={{ marginTop: "24px", padding: "20px 28px", background: "rgba(23,23,23,0.4)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: "12px", display: "flex", alignItems: "center", gap: "14px" }}>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0 }}>
-                <circle cx="8" cy="8" r="7" stroke="#D4AF37" strokeWidth="1.3" />
-                <path d="M8 5v4M8 11v.5" stroke="#D4AF37" strokeWidth="1.3" strokeLinecap="round" />
+                <circle cx="8" cy="8" r="7" stroke="#FFDE02" strokeWidth="1.3" />
+                <path d="M8 5v4M8 11v.5" stroke="#FFDE02" strokeWidth="1.3" strokeLinecap="round" />
               </svg>
-              <p style={{ fontSize: "13px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.5 }}>
+              <p style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.5 }}>
                 All applications are reviewed personally by Guhay within 48 hours. A free 20-minute diagnostic call precedes any commitment.
               </p>
             </div>
@@ -162,7 +162,7 @@ export default function PricingClient() {
         </section>
 
         {/* Target client */}
-        <section style={{ padding: "80px 24px", background: "rgba(12,18,26,0.5)" }}>
+        <section style={{ padding: "80px 24px", background: "rgba(9,9,11,0.5)" }}>
           <div style={{ maxWidth: "900px", margin: "0 auto", textAlign: "center" }}>
             <div className="tag" style={{ marginBottom: "20px" }}>Who This Is For</div>
             <h2 style={{ fontSize: "clamp(28px, 3vw, 40px)", color: "#FFFFFF", letterSpacing: "-0.01em", marginBottom: "48px" }}>
@@ -174,9 +174,9 @@ export default function PricingClient() {
                 { role: "Product Managers", detail: "Detail-oriented professionals who want measurable outcomes." },
                 { role: "Consultants & Founders", detail: "High-travel, high-pressure — the protocol adapts to your schedule." },
               ].map((p) => (
-                <div key={p.role} style={{ background: "rgba(22,33,45,0.6)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "24px" }}>
+                <div key={p.role} style={{ background: "rgba(23,23,23,0.6)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "24px" }}>
                   <p style={{ fontSize: "15px", fontWeight: 700, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>{p.role}</p>
-                  <p style={{ fontSize: "13px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.6 }}>{p.detail}</p>
+                  <p style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.6 }}>{p.detail}</p>
                 </div>
               ))}
             </div>
@@ -196,16 +196,16 @@ export default function PricingClient() {
                 <div key={i} style={{ borderBottom: i < faqs.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none" }}>
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    style={{ width: "100%", padding: "20px 24px", background: openFaq === i ? "rgba(22,33,45,0.9)" : "rgba(14,23,32,0.9)", border: "none", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", textAlign: "left" }}
+                    style={{ width: "100%", padding: "20px 24px", background: openFaq === i ? "rgba(23,23,23,0.9)" : "rgba(17,17,20,0.9)", border: "none", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", textAlign: "left" }}
                   >
                     <span style={{ fontSize: "15px", fontWeight: 600, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{faq.q}</span>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, transform: openFaq === i ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s ease" }}>
-                      <path d="M4 6l4 4 4-4" stroke="#9AA4B2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M4 6l4 4 4-4" stroke="#B7B9C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </button>
                   {openFaq === i && (
-                    <div style={{ padding: "0 24px 20px", background: "rgba(22,33,45,0.9)" }}>
-                      <p style={{ fontSize: "15px", color: "#9AA4B2", lineHeight: 1.7, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{faq.a}</p>
+                    <div style={{ padding: "0 24px 20px", background: "rgba(23,23,23,0.9)" }}>
+                      <p style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.7, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{faq.a}</p>
                     </div>
                   )}
                 </div>

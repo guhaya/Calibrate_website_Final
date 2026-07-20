@@ -38,7 +38,7 @@ export default function ComparisonTable() {
     <section
       style={{
         padding: "120px 24px",
-        background: "rgba(12,18,26,0.5)",
+        background: "rgba(9,9,11,0.5)",
       }}
     >
       <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
@@ -59,7 +59,7 @@ export default function ComparisonTable() {
           <p
             style={{
               fontSize: "17px",
-              color: "#9AA4B2",
+              color: "#B7B9C3",
               maxWidth: "480px",
               margin: "0 auto",
               lineHeight: 1.65,
@@ -82,22 +82,26 @@ export default function ComparisonTable() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr",
-              background: "rgba(22,33,45,0.9)",
+              gridTemplateColumns: "1.1fr 1fr 1fr",
+              background: "rgba(23,23,23,0.9)",
               borderBottom: "1px solid rgba(255,255,255,0.06)",
               padding: "0 24px",
             }}
             className="compare-row"
           >
-            <div style={{ padding: "16px 0" }} />
-            <div style={{ padding: "16px 0", textAlign: "center" }}>
-              <span style={{ fontSize: "12px", fontWeight: 700, color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-                Going Alone
+            <div style={{ padding: "16px 0" }}>
+              <span style={{ fontSize: "12px", fontWeight: 700, color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                What Matters
+              </span>
+            </div>
+            <div style={{ padding: "16px 0", textAlign: "center", background: "rgba(255,222,2,0.06)" }} className="compare-us-cell">
+              <span style={{ fontSize: "12px", fontWeight: 800, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                Us — CALIBRATE
               </span>
             </div>
             <div style={{ padding: "16px 0", textAlign: "center" }}>
-              <span style={{ fontSize: "12px", fontWeight: 700, color: "#D4AF37", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-                CALIBRATE Coaching
+              <span style={{ fontSize: "12px", fontWeight: 700, color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                Other / Alone
               </span>
             </div>
           </div>
@@ -108,9 +112,9 @@ export default function ComparisonTable() {
               key={i}
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1fr 1fr",
+                gridTemplateColumns: "1.1fr 1fr 1fr",
                 borderBottom: i < comparisons.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none",
-                background: i % 2 === 0 ? "rgba(14,23,32,0.7)" : "rgba(18,27,38,0.7)",
+                background: i % 2 === 0 ? "rgba(17,17,20,0.7)" : "rgba(19,19,19,0.7)",
                 padding: "0 24px",
               }}
               className="compare-row"
@@ -120,22 +124,22 @@ export default function ComparisonTable() {
                   {row.aspect}
                 </span>
               </div>
-              <div style={{ padding: "20px 16px", display: "flex", alignItems: "center", gap: "8px" }}>
+              <div style={{ padding: "20px 16px", display: "flex", alignItems: "center", gap: "8px", justifyContent: "center", background: "rgba(255,222,2,0.04)" }} className="compare-us-cell">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
-                  <circle cx="7" cy="7" r="6" fill="rgba(239,68,68,0.1)" />
-                  <path d="M4.5 4.5L9.5 9.5M9.5 4.5L4.5 9.5" stroke="#EF4444" strokeWidth="1.3" strokeLinecap="round" />
-                </svg>
-                <span style={{ fontSize: "14px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.5 }}>
-                  {row.alone}
-                </span>
-              </div>
-              <div style={{ padding: "20px 0 20px 16px", display: "flex", alignItems: "center", gap: "8px" }}>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
-                  <circle cx="7" cy="7" r="6" fill="rgba(212,175,55,0.1)" />
-                  <path d="M4 7l2 2 4-4" stroke="#D4AF37" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="7" cy="7" r="6" fill="rgba(255,222,2,0.14)" />
+                  <path d="M4 7l2 2 4-4" stroke="#FFDE02" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <span style={{ fontSize: "14px", color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.5, fontWeight: 500 }}>
                   {row.calibrate}
+                </span>
+              </div>
+              <div style={{ padding: "20px 0", display: "flex", alignItems: "center", gap: "8px", justifyContent: "center" }}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
+                  <circle cx="7" cy="7" r="6" fill="rgba(222,48,51,0.1)" />
+                  <path d="M4.5 4.5L9.5 9.5M9.5 4.5L4.5 9.5" stroke="#DE3033" strokeWidth="1.3" strokeLinecap="round" />
+                </svg>
+                <span style={{ fontSize: "14px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.5 }}>
+                  {row.alone}
                 </span>
               </div>
             </div>

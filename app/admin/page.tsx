@@ -182,7 +182,7 @@ export default function AdminPage() {
       <div
         style={{
           minHeight: "100vh",
-          background: "#0C1520",
+          background: "#07070A",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -218,7 +218,7 @@ export default function AdminPage() {
             <div
               style={{
                 background: "rgba(255,255,255,0.03)",
-                border: `1px solid ${passwordError ? "rgba(239,68,68,0.4)" : "rgba(255,255,255,0.08)"}`,
+                border: `1px solid ${passwordError ? "rgba(222,48,51,0.4)" : "rgba(255,255,255,0.08)"}`,
                 borderRadius: "16px",
                 padding: "32px",
                 transition: "border-color 0.3s",
@@ -248,7 +248,7 @@ export default function AdminPage() {
                   width: "100%",
                   padding: "14px 16px",
                   background: "rgba(255,255,255,0.04)",
-                  border: `1px solid ${passwordError ? "rgba(239,68,68,0.4)" : "rgba(255,255,255,0.08)"}`,
+                  border: `1px solid ${passwordError ? "rgba(222,48,51,0.4)" : "rgba(255,255,255,0.08)"}`,
                   borderRadius: "10px",
                   color: "#FFFFFF",
                   fontSize: "15px",
@@ -260,7 +260,7 @@ export default function AdminPage() {
                 }}
               />
               {passwordError && (
-                <p style={{ fontSize: "13px", color: "#EF4444", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "12px" }}>
+                <p style={{ fontSize: "13px", color: "#DE3033", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "12px" }}>
                   Incorrect password. Try again.
                 </p>
               )}
@@ -269,10 +269,10 @@ export default function AdminPage() {
                 style={{
                   width: "100%",
                   padding: "14px",
-                  background: "linear-gradient(135deg, #D4AF37, #B8962E)",
+                  background: "linear-gradient(135deg, #FFDE02, #E6C700)",
                   border: "none",
                   borderRadius: "10px",
-                  color: "#0C1520",
+                  color: "#07070A",
                   fontSize: "15px",
                   fontWeight: 700,
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -362,7 +362,7 @@ export default function AdminPage() {
             style={{
               marginTop: "8px",
               fontSize: "10px",
-              color: "#4E5A6A",
+              color: "#7E8395",
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               letterSpacing: "0.06em",
               textTransform: "uppercase",
@@ -383,9 +383,9 @@ export default function AdminPage() {
                 gap: "10px",
                 padding: "10px 12px",
                 borderRadius: "8px",
-                background: activeSection === item.key ? "rgba(212,175,55,0.1)" : "none",
-                border: activeSection === item.key ? "1px solid rgba(212,175,55,0.2)" : "1px solid transparent",
-                color: activeSection === item.key ? "#D4AF37" : "#6B7280",
+                background: activeSection === item.key ? "rgba(255,222,2,0.1)" : "none",
+                border: activeSection === item.key ? "1px solid rgba(255,222,2,0.2)" : "1px solid transparent",
+                color: activeSection === item.key ? "#FFDE02" : "#6B7280",
                 fontSize: "13px",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontWeight: activeSection === item.key ? 600 : 400,
@@ -424,10 +424,10 @@ export default function AdminPage() {
             style={{
               width: "100%",
               padding: "10px",
-              background: "rgba(212,175,55,0.08)",
-              border: "1px solid rgba(212,175,55,0.2)",
+              background: "rgba(255,222,2,0.08)",
+              border: "1px solid rgba(255,222,2,0.2)",
               borderRadius: "8px",
-              color: "#D4AF37",
+              color: "#FFDE02",
               fontSize: "12px",
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: 600,
@@ -469,19 +469,19 @@ export default function AdminPage() {
                 <div>
                   <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Visitor Logs</h1>
                   <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                    IP addresses, locations, devices, and pages visited. {visitorCount > 0 && <span style={{ color: "#D4AF37" }}>{visitorCount.toLocaleString()} total records.</span>}
+                    IP addresses, locations, devices, and pages visited. {visitorCount > 0 && <span style={{ color: "#FFDE02" }}>{visitorCount.toLocaleString()} total records.</span>}
                   </p>
                 </div>
                 <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
                   {visitors.length > 0 && (
-                    <button onClick={exportVisitorsCSV} style={{ padding: "9px 18px", background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.25)", borderRadius: "8px", color: "#D4AF37", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>
+                    <button onClick={exportVisitorsCSV} style={{ padding: "9px 18px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.25)", borderRadius: "8px", color: "#FFDE02", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>
                       Export CSV
                     </button>
                   )}
                   <button
                     onClick={() => loadVisitors(0)}
                     disabled={visitorLoading}
-                    style={{ padding: "9px 18px", background: "linear-gradient(135deg,#D4AF37,#B8962E)", border: "none", borderRadius: "8px", color: "#0C1520", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, cursor: "pointer", opacity: visitorLoading ? 0.6 : 1 }}
+                    style={{ padding: "9px 18px", background: "linear-gradient(135deg,#FFDE02,#E6C700)", border: "none", borderRadius: "8px", color: "#07070A", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, cursor: "pointer", opacity: visitorLoading ? 0.6 : 1 }}
                   >
                     {visitorLoading ? "Loading…" : visitors.length ? "Refresh" : "Load Logs"}
                   </button>
@@ -501,7 +501,7 @@ export default function AdminPage() {
                   {/* Summary stats */}
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "12px", marginBottom: "24px" }}>
                     {[
-                      { label: "Total Visits", value: visitorCount.toLocaleString(), color: "#D4AF37" },
+                      { label: "Total Visits", value: visitorCount.toLocaleString(), color: "#FFDE02" },
                       { label: "Unique Sessions", value: new Set(visitors.map(v => v.session_id)).size, color: "#22C55E" },
                       { label: "Mobile", value: visitors.filter(v => v.device_type === "Mobile").length, color: "#3B82F6" },
                       { label: "Countries", value: new Set(visitors.map(v => v.country).filter(Boolean)).size, color: "#A855F7" },
@@ -518,7 +518,7 @@ export default function AdminPage() {
                     {/* Table header */}
                     <div style={{ display: "grid", gridTemplateColumns: "140px 100px 130px 80px 80px 80px 1fr", gap: "0", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "10px 16px" }}>
                       {["Time", "IP", "Location", "Device", "Browser", "OS", "Page"].map(h => (
-                        <span key={h} style={{ fontSize: "10px", fontWeight: 700, color: "#4E5A6A", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase" }}>{h}</span>
+                        <span key={h} style={{ fontSize: "10px", fontWeight: 700, color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase" }}>{h}</span>
                       ))}
                     </div>
 
@@ -542,22 +542,22 @@ export default function AdminPage() {
                           <span style={{ fontSize: "11px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                             {dt.toLocaleDateString()} {dt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                           </span>
-                          <span style={{ fontSize: "11px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", fontVariantNumeric: "tabular-nums" }}>
+                          <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", fontVariantNumeric: "tabular-nums" }}>
                             {v.ip || "—"}
                           </span>
-                          <span style={{ fontSize: "11px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                          <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                             {location}
                           </span>
                           <span style={{ fontSize: "11px", color: deviceColor, fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600 }}>
                             {v.device_type || "—"}
                           </span>
-                          <span style={{ fontSize: "11px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                          <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                             {v.browser || "—"}
                           </span>
-                          <span style={{ fontSize: "11px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                          <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                             {v.os || "—"}
                           </span>
-                          <span style={{ fontSize: "11px", color: "#D4AF37", fontFamily: "'Plus Jakarta Sans', sans-serif", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                          <span style={{ fontSize: "11px", color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                             {v.page || "/"}
                           </span>
                         </div>
@@ -572,8 +572,8 @@ export default function AdminPage() {
                         Showing {visitorPage * 50 + 1}–{Math.min((visitorPage + 1) * 50, visitorCount)} of {visitorCount}
                       </span>
                       <div style={{ display: "flex", gap: "8px" }}>
-                        <button disabled={visitorPage === 0} onClick={() => loadVisitors(visitorPage - 1)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#9AA4B2", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: visitorPage === 0 ? "default" : "pointer", opacity: visitorPage === 0 ? 0.4 : 1 }}>← Prev</button>
-                        <button disabled={(visitorPage + 1) * 50 >= visitorCount} onClick={() => loadVisitors(visitorPage + 1)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#9AA4B2", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: (visitorPage + 1) * 50 >= visitorCount ? "default" : "pointer", opacity: (visitorPage + 1) * 50 >= visitorCount ? 0.4 : 1 }}>Next →</button>
+                        <button disabled={visitorPage === 0} onClick={() => loadVisitors(visitorPage - 1)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: visitorPage === 0 ? "default" : "pointer", opacity: visitorPage === 0 ? 0.4 : 1 }}>← Prev</button>
+                        <button disabled={(visitorPage + 1) * 50 >= visitorCount} onClick={() => loadVisitors(visitorPage + 1)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: (visitorPage + 1) * 50 >= visitorCount ? "default" : "pointer", opacity: (visitorPage + 1) * 50 >= visitorCount ? 0.4 : 1 }}>Next →</button>
                       </div>
                     </div>
                   )}
@@ -594,7 +594,7 @@ export default function AdminPage() {
 
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", marginBottom: "32px" }}>
                 {[
-                  { label: "FAQ Items", value: content.faq.length, color: "#D4AF37" },
+                  { label: "FAQ Items", value: content.faq.length, color: "#FFDE02" },
                   { label: "Testimonials", value: content.testimonials.length, color: "#22C55E" },
                   { label: "Pricing Tiers", value: content.pricing.length, color: "#3B82F6" },
                 ].map((stat) => (
@@ -615,9 +615,9 @@ export default function AdminPage() {
                 </h3>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                   <div>
-                    <p style={{ fontSize: "14px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                    <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                       Currently shown as:{" "}
-                      <strong style={{ color: content.acceptingClients ? "#22C55E" : "#EF4444" }}>
+                      <strong style={{ color: content.acceptingClients ? "#22C55E" : "#DE3033" }}>
                         {content.acceptingClients ? "Accepting new clients" : "Not accepting clients"}
                       </strong>
                     </p>
@@ -626,10 +626,10 @@ export default function AdminPage() {
                     onClick={() => saveContent({ ...content, acceptingClients: !content.acceptingClients })}
                     style={{
                       padding: "8px 20px",
-                      background: content.acceptingClients ? "rgba(239,68,68,0.1)" : "rgba(34,197,94,0.1)",
-                      border: `1px solid ${content.acceptingClients ? "rgba(239,68,68,0.3)" : "rgba(34,197,94,0.3)"}`,
+                      background: content.acceptingClients ? "rgba(222,48,51,0.1)" : "rgba(34,197,94,0.1)",
+                      border: `1px solid ${content.acceptingClients ? "rgba(222,48,51,0.3)" : "rgba(34,197,94,0.3)"}`,
                       borderRadius: "8px",
-                      color: content.acceptingClients ? "#EF4444" : "#22C55E",
+                      color: content.acceptingClients ? "#DE3033" : "#22C55E",
                       fontSize: "13px",
                       fontFamily: "'Plus Jakarta Sans', sans-serif",
                       fontWeight: 600,
@@ -657,7 +657,7 @@ export default function AdminPage() {
                         background: "rgba(255,255,255,0.03)",
                         border: "1px solid rgba(255,255,255,0.06)",
                         borderRadius: "8px",
-                        color: "#9AA4B2",
+                        color: "#B7B9C3",
                         fontSize: "13px",
                         fontFamily: "'Plus Jakarta Sans', sans-serif",
                         textDecoration: "none",
@@ -701,7 +701,7 @@ export default function AdminPage() {
                     style={{ ...inputStyle, resize: "vertical" }}
                   />
                 </div>
-                <button onClick={() => saveContent(content)} style={{ padding: "12px 28px", background: "linear-gradient(135deg,#D4AF37,#B8962E)", border: "none", borderRadius: "8px", color: "#0C1520", fontSize: "14px", fontWeight: 700, fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
+                <button onClick={() => saveContent(content)} style={{ padding: "12px 28px", background: "linear-gradient(135deg,#FFDE02,#E6C700)", border: "none", borderRadius: "8px", color: "#07070A", fontSize: "14px", fontWeight: 700, fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
                   Save Changes
                 </button>
               </div>
@@ -745,7 +745,7 @@ export default function AdminPage() {
                         />
                       </div>
                       <div style={{ display: "flex", gap: "8px" }}>
-                        <button onClick={() => { saveContent(content); setEditingFaq(null); }} style={{ padding: "8px 20px", background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.3)", borderRadius: "8px", color: "#D4AF37", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>Save</button>
+                        <button onClick={() => { saveContent(content); setEditingFaq(null); }} style={{ padding: "8px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>Save</button>
                         <button onClick={() => setEditingFaq(null)} style={{ padding: "8px 20px", background: "none", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", color: "#6B7280", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>Cancel</button>
                       </div>
                     </div>
@@ -756,13 +756,13 @@ export default function AdminPage() {
                         <p style={{ fontSize: "13px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.6 }}>{item.a}</p>
                       </div>
                       <div style={{ display: "flex", gap: "6px", flexShrink: 0 }}>
-                        <button onClick={() => setEditingFaq(i)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#9AA4B2", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>Edit</button>
+                        <button onClick={() => setEditingFaq(i)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>Edit</button>
                         <button
                           onClick={() => {
                             const updated = content.faq.filter((_, idx) => idx !== i);
                             saveContent({ ...content, faq: updated });
                           }}
-                          style={{ padding: "6px 14px", background: "rgba(239,68,68,0.05)", border: "1px solid rgba(239,68,68,0.15)", borderRadius: "6px", color: "#EF4444", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}
+                          style={{ padding: "6px 14px", background: "rgba(222,48,51,0.05)", border: "1px solid rgba(222,48,51,0.15)", borderRadius: "6px", color: "#DE3033", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}
                         >
                           Delete
                         </button>
@@ -778,7 +778,7 @@ export default function AdminPage() {
                   setContent({ ...content, faq: updated });
                   setEditingFaq(updated.length - 1);
                 }}
-                style={{ padding: "12px 24px", background: "rgba(212,175,55,0.08)", border: "1px dashed rgba(212,175,55,0.3)", borderRadius: "10px", color: "#D4AF37", fontSize: "14px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer", width: "100%" }}
+                style={{ padding: "12px 24px", background: "rgba(255,222,2,0.08)", border: "1px dashed rgba(255,222,2,0.3)", borderRadius: "10px", color: "#FFDE02", fontSize: "14px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer", width: "100%" }}
               >
                 + Add FAQ item
               </button>
@@ -814,7 +814,7 @@ export default function AdminPage() {
                         <textarea rows={3} value={t.quote} onChange={(e) => { const u = [...content.testimonials]; u[i] = { ...t, quote: e.target.value }; setContent({ ...content, testimonials: u }); }} style={{ ...inputStyle, resize: "vertical" }} />
                       </div>
                       <div style={{ display: "flex", gap: "8px" }}>
-                        <button onClick={() => { saveContent(content); setEditingTestimonial(null); }} style={{ padding: "8px 20px", background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.3)", borderRadius: "8px", color: "#D4AF37", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>Save</button>
+                        <button onClick={() => { saveContent(content); setEditingTestimonial(null); }} style={{ padding: "8px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>Save</button>
                         <button onClick={() => setEditingTestimonial(null)} style={{ padding: "8px 20px", background: "none", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", color: "#6B7280", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>Cancel</button>
                       </div>
                     </div>
@@ -822,12 +822,12 @@ export default function AdminPage() {
                     <div style={{ display: "flex", justifyContent: "space-between", gap: "16px" }}>
                       <div>
                         <p style={{ fontSize: "14px", fontWeight: 700, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{t.name}</p>
-                        <p style={{ fontSize: "13px", color: "#D4AF37", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "6px" }}>{t.result} · {t.duration}</p>
+                        <p style={{ fontSize: "13px", color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "6px" }}>{t.result} · {t.duration}</p>
                         <p style={{ fontSize: "13px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.6, fontStyle: "italic" }}>&ldquo;{t.quote}&rdquo;</p>
                       </div>
                       <div style={{ display: "flex", gap: "6px", flexShrink: 0 }}>
-                        <button onClick={() => setEditingTestimonial(i)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#9AA4B2", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>Edit</button>
-                        <button onClick={() => { const u = content.testimonials.filter((_, idx) => idx !== i); saveContent({ ...content, testimonials: u }); }} style={{ padding: "6px 14px", background: "rgba(239,68,68,0.05)", border: "1px solid rgba(239,68,68,0.15)", borderRadius: "6px", color: "#EF4444", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>Delete</button>
+                        <button onClick={() => setEditingTestimonial(i)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>Edit</button>
+                        <button onClick={() => { const u = content.testimonials.filter((_, idx) => idx !== i); saveContent({ ...content, testimonials: u }); }} style={{ padding: "6px 14px", background: "rgba(222,48,51,0.05)", border: "1px solid rgba(222,48,51,0.15)", borderRadius: "6px", color: "#DE3033", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>Delete</button>
                       </div>
                     </div>
                   )}
@@ -840,7 +840,7 @@ export default function AdminPage() {
                   setContent({ ...content, testimonials: u });
                   setEditingTestimonial(u.length - 1);
                 }}
-                style={{ padding: "12px 24px", background: "rgba(212,175,55,0.08)", border: "1px dashed rgba(212,175,55,0.3)", borderRadius: "10px", color: "#D4AF37", fontSize: "14px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer", width: "100%" }}
+                style={{ padding: "12px 24px", background: "rgba(255,222,2,0.08)", border: "1px dashed rgba(255,222,2,0.3)", borderRadius: "10px", color: "#FFDE02", fontSize: "14px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer", width: "100%" }}
               >
                 + Add testimonial
               </button>
@@ -896,7 +896,7 @@ export default function AdminPage() {
                       style={{ ...inputStyle, resize: "vertical" }}
                     />
                   </div>
-                  <button onClick={() => saveContent(content)} style={{ padding: "8px 20px", background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.3)", borderRadius: "8px", color: "#D4AF37", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>
+                  <button onClick={() => saveContent(content)} style={{ padding: "8px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>
                     Save {tier.name}
                   </button>
                 </div>
@@ -927,7 +927,7 @@ export default function AdminPage() {
                     />
                   </div>
                 ))}
-                <button onClick={() => saveContent(content)} style={{ padding: "12px 28px", background: "linear-gradient(135deg,#D4AF37,#B8962E)", border: "none", borderRadius: "8px", color: "#0C1520", fontSize: "14px", fontWeight: 700, fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
+                <button onClick={() => saveContent(content)} style={{ padding: "12px 28px", background: "linear-gradient(135deg,#FFDE02,#E6C700)", border: "none", borderRadius: "8px", color: "#07070A", fontSize: "14px", fontWeight: 700, fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
                   Save Contact Info
                 </button>
               </div>
@@ -942,14 +942,14 @@ export default function AdminPage() {
 
               <div style={cardStyle}>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", color: "#FFFFFF", marginBottom: "16px" }}>Data Management</h3>
-                <p style={{ fontSize: "14px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "16px", lineHeight: 1.6 }}>
+                <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "16px", lineHeight: 1.6 }}>
                   Content changes are saved to your browser&apos;s local storage. Use &quot;Export JSON&quot; in the sidebar to download your content, then send it to your developer to apply permanently to the site code.
                 </p>
                 <div style={{ display: "flex", gap: "12px" }}>
-                  <button onClick={exportJSON} style={{ padding: "10px 20px", background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.3)", borderRadius: "8px", color: "#D4AF37", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>
+                  <button onClick={exportJSON} style={{ padding: "10px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>
                     Export Content JSON
                   </button>
-                  <button onClick={resetToDefaults} style={{ padding: "10px 20px", background: "rgba(239,68,68,0.05)", border: "1px solid rgba(239,68,68,0.2)", borderRadius: "8px", color: "#EF4444", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
+                  <button onClick={resetToDefaults} style={{ padding: "10px 20px", background: "rgba(222,48,51,0.05)", border: "1px solid rgba(222,48,51,0.2)", borderRadius: "8px", color: "#DE3033", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
                     Reset to Defaults
                   </button>
                 </div>
@@ -957,10 +957,10 @@ export default function AdminPage() {
 
               <div style={cardStyle}>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", color: "#FFFFFF", marginBottom: "12px" }}>Password</h3>
-                <p style={{ fontSize: "14px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>
+                <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>
                   Current password is set in the site code. Contact your developer to change it.
                 </p>
-                <p style={{ fontSize: "12px", color: "#4E5A6A", fontFamily: "'Plus Jakarta Sans', sans-serif", fontStyle: "italic" }}>
+                <p style={{ fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", fontStyle: "italic" }}>
                   File: app/admin/page.tsx · const ADMIN_PASSWORD = &quot;...&quot;
                 </p>
               </div>
@@ -972,7 +972,7 @@ export default function AdminPage() {
       <style>{`
         * { box-sizing: border-box; }
         textarea, input { box-sizing: border-box; }
-        textarea:focus, input:focus { border-color: rgba(212,175,55,0.4) !important; outline: none; }
+        textarea:focus, input:focus { border-color: rgba(255,222,2,0.4) !important; outline: none; }
         ::placeholder { color: #3D4550; }
       `}</style>
     </div>

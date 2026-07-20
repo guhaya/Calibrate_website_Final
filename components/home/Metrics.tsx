@@ -86,7 +86,7 @@ export default function Metrics() {
                 fontWeight: 800,
                 lineHeight: 1,
                 marginBottom: "8px",
-                background: "linear-gradient(135deg, #D4AF37 0%, #F0D060 50%, #B8962E 100%)",
+                background: "linear-gradient(135deg, #FFDE02 0%, #FFF07A 50%, #E6C700 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -105,7 +105,7 @@ export default function Metrics() {
             >
               {m.label}
             </p>
-            <p style={{ fontSize: "13px", color: "#5A6475", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <p style={{ fontSize: "13px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               {m.description}
             </p>
           </div>

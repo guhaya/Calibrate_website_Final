@@ -90,7 +90,7 @@ export default function SuccessStoriesPage() {
             style={{
               position: "absolute",
               inset: 0,
-              background: "radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.05) 0%, transparent 60%)",
+              background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.05) 0%, transparent 60%)",
               pointerEvents: "none",
             }}
           />
@@ -111,7 +111,7 @@ export default function SuccessStoriesPage() {
             <p
               style={{
                 fontSize: "17px",
-                color: "#9AA4B2",
+                color: "#B7B9C3",
                 lineHeight: 1.65,
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
@@ -129,7 +129,7 @@ export default function SuccessStoriesPage() {
                 key={si}
                 style={{
                   marginBottom: si < stories.length - 1 ? "80px" : 0,
-                  background: "rgba(22,33,45,0.6)",
+                  background: "rgba(23,23,23,0.6)",
                   border: "1px solid rgba(255,255,255,0.06)",
                   borderRadius: "24px",
                   overflow: "hidden",
@@ -140,7 +140,7 @@ export default function SuccessStoriesPage() {
                   style={{
                     padding: "32px 40px",
                     borderBottom: "1px solid rgba(255,255,255,0.04)",
-                    background: "rgba(14,23,32,0.5)",
+                    background: "rgba(17,17,20,0.5)",
                     display: "flex",
                     alignItems: "flex-start",
                     justifyContent: "space-between",
@@ -155,13 +155,13 @@ export default function SuccessStoriesPage() {
                           width: "44px",
                           height: "44px",
                           borderRadius: "50%",
-                          background: "linear-gradient(135deg, #D4AF37, #B8962E)",
+                          background: "linear-gradient(135deg, #FFDE02, #E6C700)",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
                           fontSize: "18px",
                           fontWeight: 700,
-                          color: "#0E1720",
+                          color: "#07070A",
                           fontFamily: "'Plus Jakarta Sans', sans-serif",
                         }}
                       >
@@ -171,7 +171,7 @@ export default function SuccessStoriesPage() {
                         <p style={{ fontSize: "17px", fontWeight: 700, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                           {story.name}, {story.age}
                         </p>
-                        <p style={{ fontSize: "13px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                        <p style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                           {story.occupation}
                         </p>
                       </div>
@@ -208,21 +208,21 @@ export default function SuccessStoriesPage() {
                       <div
                         key={m.label}
                         style={{
-                          background: "rgba(14,23,32,0.7)",
+                          background: "rgba(17,17,20,0.7)",
                           borderRadius: "12px",
                           padding: "16px",
                           border: "1px solid rgba(255,255,255,0.05)",
                         }}
                       >
-                        <p style={{ fontSize: "11px", color: "#5A6475", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                        <p style={{ fontSize: "11px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.06em" }}>
                           {m.label}
                         </p>
                         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                          <span style={{ fontSize: "14px", fontWeight: 700, color: "#EF4444", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                          <span style={{ fontSize: "14px", fontWeight: 700, color: "#DE3033", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                             {m.before}
                           </span>
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                            <path d="M2.5 7H11.5M8 4L11.5 7L8 10" stroke="#9AA4B2" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M2.5 7H11.5M8 4L11.5 7L8 10" stroke="#B7B9C3" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                           <span style={{ fontSize: "14px", fontWeight: 700, color: "#22C55E", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                             {m.after}
@@ -239,7 +239,7 @@ export default function SuccessStoriesPage() {
                         key={pi}
                         style={{
                           fontSize: "15px",
-                          color: "#9AA4B2",
+                          color: "#B7B9C3",
                           lineHeight: 1.75,
                           marginBottom: "16px",
                           fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -253,7 +253,7 @@ export default function SuccessStoriesPage() {
                   {/* Quote */}
                   <blockquote
                     style={{
-                      borderLeft: "3px solid #D4AF37",
+                      borderLeft: "3px solid #FFDE02",
                       paddingLeft: "20px",
                       marginBottom: "40px",
                       fontFamily: "'Barlow Condensed', sans-serif",
@@ -270,7 +270,7 @@ export default function SuccessStoriesPage() {
                         marginTop: "8px",
                         fontSize: "13px",
                         fontStyle: "normal",
-                        color: "#9AA4B2",
+                        color: "#B7B9C3",
                         fontFamily: "'Plus Jakarta Sans', sans-serif",
                       }}
                     >
@@ -287,7 +287,7 @@ export default function SuccessStoriesPage() {
         <section
           style={{
             padding: "80px 24px 120px",
-            background: "rgba(12,18,26,0.5)",
+            background: "rgba(9,9,11,0.5)",
             textAlign: "center",
           }}
         >
@@ -305,7 +305,7 @@ export default function SuccessStoriesPage() {
             <p
               style={{
                 fontSize: "16px",
-                color: "#9AA4B2",
+                color: "#B7B9C3",
                 lineHeight: 1.65,
                 marginBottom: "32px",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",

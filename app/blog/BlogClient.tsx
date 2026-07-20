@@ -14,7 +14,7 @@ const posts = [
     readTime: "7 min read",
     date: "Jun 14, 2026",
     featured: true,
-    color: "#D4AF37",
+    color: "#FFDE02",
   },
   {
     category: "Transformation Stories",
@@ -50,7 +50,7 @@ const posts = [
     readTime: "5 min read",
     date: "May 14, 2026",
     featured: false,
-    color: "#D4AF37",
+    color: "#FFDE02",
   },
   {
     category: "Lifestyle",
@@ -83,18 +83,18 @@ const posts = [
 
 function getCategoryColor(category: string): string {
   const map: Record<string, string> = {
-    "Nutrition": "#D4AF37",
+    "Nutrition": "#FFDE02",
     "Training": "#3B82F6",
     "Mindset": "#A855F7",
     "Transformation Stories": "#22C55E",
     "Lifestyle": "#F59E0B",
   };
-  return map[category] || "#9AA4B2";
+  return map[category] || "#B7B9C3";
 }
 
 function getCategoryColorRGB(category: string): string {
   const map: Record<string, string> = {
-    "Nutrition": "212,175,55",
+    "Nutrition": "255,222,2",
     "Training": "59,130,246",
     "Mindset": "168,85,247",
     "Transformation Stories": "34,197,94",
@@ -118,14 +118,14 @@ export default function BlogClient() {
       <main>
         {/* Hero */}
         <section style={{ padding: "140px 24px 80px", position: "relative" }} className="grid-bg">
-          <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.05) 0%, transparent 60%)", pointerEvents: "none" }} />
+          <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.05) 0%, transparent 60%)", pointerEvents: "none" }} />
           <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center", position: "relative" }}>
             <div className="tag" style={{ marginBottom: "24px" }}>Blog</div>
             <h1 style={{ fontSize: "clamp(40px, 5vw, 56px)", fontWeight: 600, color: "#FFFFFF", marginBottom: "20px", letterSpacing: "-0.02em" }}>
               Training. Nutrition.{" "}
               <span className="gold-text">Transformation.</span>
             </h1>
-            <p style={{ fontSize: "18px", color: "#9AA4B2", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <p style={{ fontSize: "18px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               Practical guidance on training, nutrition, mindset, and building the body you want — written by coaches, not content marketers.
             </p>
           </div>
@@ -144,12 +144,12 @@ export default function BlogClient() {
                     aria-pressed={active}
                     style={{
                       padding: "8px 16px",
-                      background: active ? "rgba(212,175,55,0.1)" : "rgba(255,255,255,0.03)",
-                      border: `1px solid ${active ? "rgba(212,175,55,0.25)" : "rgba(255,255,255,0.06)"}`,
+                      background: active ? "rgba(255,222,2,0.1)" : "rgba(255,255,255,0.03)",
+                      border: `1px solid ${active ? "rgba(255,222,2,0.25)" : "rgba(255,255,255,0.06)"}`,
                       borderRadius: "999px",
                       fontSize: "13px",
                       fontWeight: 600,
-                      color: active ? "#D4AF37" : "#9AA4B2",
+                      color: active ? "#FFDE02" : "#B7B9C3",
                       cursor: "pointer",
                       fontFamily: "'Plus Jakarta Sans', sans-serif",
                       transition: "all 0.2s ease",
@@ -171,8 +171,8 @@ export default function BlogClient() {
                 <a
                   key={i}
                   href="#"
-                  style={{ textDecoration: "none", background: "rgba(22,33,45,0.6)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "16px", padding: "36px", display: "block", transition: "all 0.25s ease", position: "relative", overflow: "hidden" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,175,55,0.2)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
+                  style={{ textDecoration: "none", background: "rgba(23,23,23,0.6)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "16px", padding: "36px", display: "block", transition: "all 0.25s ease", position: "relative", overflow: "hidden" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,222,2,0.2)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.06)"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}
                 >
                   <div style={{ display: "inline-flex", alignItems: "center", padding: "3px 10px", background: `rgba(${getCategoryColorRGB(post.category)}, 0.1)`, border: `1px solid rgba(${getCategoryColorRGB(post.category)}, 0.2)`, borderRadius: "999px", fontSize: "11px", fontWeight: 600, color: getCategoryColor(post.category), marginBottom: "16px", letterSpacing: "0.04em", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
@@ -181,11 +181,11 @@ export default function BlogClient() {
                   <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "24px", fontWeight: 600, color: "#FFFFFF", lineHeight: 1.25, marginBottom: "12px", letterSpacing: "-0.01em" }}>
                     {post.title}
                   </h2>
-                  <p style={{ fontSize: "14px", color: "#9AA4B2", lineHeight: 1.65, marginBottom: "24px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.excerpt}</p>
+                  <p style={{ fontSize: "14px", color: "#B7B9C3", lineHeight: 1.65, marginBottom: "24px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.excerpt}</p>
                   <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-                    <span style={{ fontSize: "12px", color: "#5A6475", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.date}</span>
-                    <span style={{ fontSize: "12px", color: "#5A6475" }}>·</span>
-                    <span style={{ fontSize: "12px", color: "#5A6475", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.readTime}</span>
+                    <span style={{ fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.date}</span>
+                    <span style={{ fontSize: "12px", color: "#7E8395" }}>·</span>
+                    <span style={{ fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.readTime}</span>
                   </div>
                 </a>
               ))}
@@ -197,21 +197,21 @@ export default function BlogClient() {
                 <a
                   key={i}
                   href="#"
-                  style={{ textDecoration: "none", background: "#0E1720", padding: "24px 28px", display: "flex", alignItems: "flex-start", gap: "20px", transition: "background 0.2s ease" }}
+                  style={{ textDecoration: "none", background: "#07070A", padding: "24px 28px", display: "flex", alignItems: "flex-start", gap: "20px", transition: "background 0.2s ease" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#13202E"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#0E1720"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#07070A"; }}
                 >
                   <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: getCategoryColor(post.category), flexShrink: 0, marginTop: "8px" }} />
                   <div style={{ flex: 1 }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "6px", flexWrap: "wrap" }}>
                       <span style={{ fontSize: "11px", fontWeight: 600, color: getCategoryColor(post.category), letterSpacing: "0.04em", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.category}</span>
-                      <span style={{ fontSize: "11px", color: "#5A6475", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.date}</span>
-                      <span style={{ fontSize: "11px", color: "#5A6475", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.readTime}</span>
+                      <span style={{ fontSize: "11px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.date}</span>
+                      <span style={{ fontSize: "11px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.readTime}</span>
                     </div>
                     <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 600, color: "#FFFFFF", marginBottom: "6px", lineHeight: 1.3, letterSpacing: "-0.01em" }}>{post.title}</h3>
-                    <p style={{ fontSize: "13px", color: "#9AA4B2", lineHeight: 1.6, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.excerpt}</p>
+                    <p style={{ fontSize: "13px", color: "#B7B9C3", lineHeight: 1.6, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.excerpt}</p>
                   </div>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, marginTop: "4px", color: "#5A6475" }}>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, marginTop: "4px", color: "#7E8395" }}>
                     <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </a>
@@ -222,14 +222,14 @@ export default function BlogClient() {
         </section>
 
         {/* Subscribe */}
-        <section style={{ padding: "80px 24px 120px", background: "rgba(12,18,26,0.5)" }}>
+        <section style={{ padding: "80px 24px 120px", background: "rgba(9,9,11,0.5)" }}>
           <div style={{ maxWidth: "560px", margin: "0 auto", textAlign: "center" }}>
             <div className="tag" style={{ marginBottom: "20px" }}>Newsletter</div>
             <h2 style={{ fontSize: "clamp(26px, 3.5vw, 36px)", color: "#FFFFFF", marginBottom: "16px", letterSpacing: "-0.01em" }}>
               Training and nutrition insights.{" "}
               <span className="gold-text">Every week.</span>
             </h2>
-            <p style={{ color: "#9AA4B2", fontSize: "16px", lineHeight: 1.65, marginBottom: "32px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <p style={{ color: "#B7B9C3", fontSize: "16px", lineHeight: 1.65, marginBottom: "32px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               Practical guidance on training, nutrition, and mindset — delivered to your inbox every week. No fluff.
             </p>
             {subscribed ? (
@@ -246,13 +246,13 @@ export default function BlogClient() {
                     placeholder="your@email.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    style={{ flex: 1, padding: "12px 18px", background: "rgba(22,33,45,0.8)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "#FFFFFF", fontSize: "14px", fontFamily: "'Plus Jakarta Sans', sans-serif", outline: "none" }}
+                    style={{ flex: 1, padding: "12px 18px", background: "rgba(23,23,23,0.8)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "#FFFFFF", fontSize: "14px", fontFamily: "'Plus Jakarta Sans', sans-serif", outline: "none" }}
                   />
                   <button className="btn-primary" onClick={() => { if (email.includes("@")) setSubscribed(true); }}>
                     Subscribe
                   </button>
                 </div>
-                <p style={{ marginTop: "12px", fontSize: "12px", color: "#5A6475", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                <p style={{ marginTop: "12px", fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                   No spam. Unsubscribe anytime.
                 </p>
               </>

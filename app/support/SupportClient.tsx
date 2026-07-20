@@ -75,7 +75,7 @@ const contactMethods = [
     description: "Schedule a 30-minute consultation. No commitment, no pitch.",
     cta: "Book now",
     href: "#booking",
-    color: "#D4AF37",
+    color: "#FFDE02",
   },
   {
     icon: "message",
@@ -104,14 +104,14 @@ export default function SupportClient() {
       <main>
         {/* Hero */}
         <section style={{ padding: "140px 24px 80px", textAlign: "center", position: "relative" }} className="grid-bg">
-          <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.05) 0%, transparent 60%)", pointerEvents: "none" }} />
+          <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.05) 0%, transparent 60%)", pointerEvents: "none" }} />
           <div style={{ maxWidth: "700px", margin: "0 auto", position: "relative" }}>
             <div className="tag" style={{ marginBottom: "24px" }}>Contact & FAQ</div>
             <h1 style={{ fontSize: "clamp(40px, 5vw, 56px)", fontWeight: 600, color: "#FFFFFF", marginBottom: "20px", letterSpacing: "-0.02em" }}>
               We're here to{" "}
               <span className="gold-text">help you succeed</span>
             </h1>
-            <p style={{ fontSize: "17px", color: "#9AA4B2", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <p style={{ fontSize: "17px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               Questions about coaching, pricing, or getting started? Find answers below or reach out directly.
             </p>
           </div>
@@ -125,15 +125,15 @@ export default function SupportClient() {
                 <a
                   key={i}
                   href={method.href}
-                  style={{ textDecoration: "none", background: "rgba(22,33,45,0.6)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "16px", padding: "32px", display: "block", transition: "all 0.25s ease" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,175,55,0.2)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
+                  style={{ textDecoration: "none", background: "rgba(23,23,23,0.6)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "16px", padding: "32px", display: "block", transition: "all 0.25s ease" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,222,2,0.2)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.06)"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}
                 >
-                  <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: `rgba(${method.color === "#D4AF37" ? "212,175,55" : method.color === "#3B82F6" ? "59,130,246" : "34,197,94"}, 0.1)`, display: "flex", alignItems: "center", justifyContent: "center", color: method.color, marginBottom: "16px" }}>
+                  <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: `rgba(${method.color === "#FFDE02" ? "255,222,2" : method.color === "#3B82F6" ? "59,130,246" : "34,197,94"}, 0.1)`, display: "flex", alignItems: "center", justifyContent: "center", color: method.color, marginBottom: "16px" }}>
                     <Icon name={method.icon} size={20} />
                   </div>
                   <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#FFFFFF", marginBottom: "8px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{method.title}</h3>
-                  <p style={{ fontSize: "14px", color: "#9AA4B2", lineHeight: 1.6, marginBottom: "20px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{method.description}</p>
+                  <p style={{ fontSize: "14px", color: "#B7B9C3", lineHeight: 1.6, marginBottom: "20px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{method.description}</p>
                   <span style={{ fontSize: "13px", color: method.color, fontWeight: 600, fontFamily: "'Plus Jakarta Sans', sans-serif", display: "flex", alignItems: "center", gap: "5px" }}>
                     {method.cta}
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -146,18 +146,18 @@ export default function SupportClient() {
         </section>
 
         {/* Booking */}
-        <section id="booking" style={{ padding: "80px 24px", background: "rgba(12,18,26,0.5)" }}>
+        <section id="booking" style={{ padding: "80px 24px", background: "rgba(9,9,11,0.5)" }}>
           <div style={{ maxWidth: "680px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "48px" }}>
               <div className="tag" style={{ marginBottom: "20px" }}>Book a Call</div>
               <h2 style={{ fontSize: "clamp(28px, 3vw, 40px)", color: "#FFFFFF", marginBottom: "16px", letterSpacing: "-0.01em" }}>
                 Book your free <span className="gold-text">consultation</span>
               </h2>
-              <p style={{ color: "#9AA4B2", fontSize: "16px", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <p style={{ color: "#B7B9C3", fontSize: "16px", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                 30 minutes. We'll cover your goals, your situation, and exactly what coaching would look like for you.
               </p>
             </div>
-            <div style={{ background: "rgba(22,33,45,0.7)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "20px", padding: "40px" }}>
+            <div style={{ background: "rgba(23,23,23,0.7)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "20px", padding: "40px" }}>
               <CalendarBooking />
             </div>
           </div>
@@ -173,7 +173,7 @@ export default function SupportClient() {
 
             {faqs.map((section, si) => (
               <div key={si} style={{ marginBottom: "48px" }}>
-                <p style={{ fontWeight: 700, fontSize: "11px", color: "#D4AF37", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "16px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                <p style={{ fontWeight: 700, fontSize: "11px", color: "#FFDE02", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "16px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                   {section.category}
                 </p>
                 <div style={{ border: "1px solid rgba(255,255,255,0.06)", borderRadius: "12px", overflow: "hidden" }}>
@@ -184,16 +184,16 @@ export default function SupportClient() {
                       <div key={fi} style={{ borderBottom: fi < section.questions.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none" }}>
                         <button
                           onClick={() => setOpenFaq(isOpen ? null : key)}
-                          style={{ width: "100%", padding: "20px 24px", background: isOpen ? "rgba(22,33,45,0.9)" : "rgba(14,23,32,0.9)", border: "none", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", textAlign: "left", transition: "background 0.2s ease" }}
+                          style={{ width: "100%", padding: "20px 24px", background: isOpen ? "rgba(23,23,23,0.9)" : "rgba(17,17,20,0.9)", border: "none", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", textAlign: "left", transition: "background 0.2s ease" }}
                         >
                           <span style={{ fontWeight: 600, fontSize: "15px", color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{faq.q}</span>
                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s ease" }}>
-                            <path d="M4 6l4 4 4-4" stroke="#9AA4B2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M4 6l4 4 4-4" stroke="#B7B9C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </button>
                         {isOpen && (
-                          <div style={{ padding: "0 24px 20px", background: "rgba(22,33,45,0.9)" }}>
-                            <p style={{ fontSize: "15px", color: "#9AA4B2", lineHeight: 1.7, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{faq.a}</p>
+                          <div style={{ padding: "0 24px 20px", background: "rgba(23,23,23,0.9)" }}>
+                            <p style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.7, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{faq.a}</p>
                           </div>
                         )}
                       </div>

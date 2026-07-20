@@ -75,7 +75,7 @@ export default function ContactClient() {
             style={{
               position: "absolute",
               inset: 0,
-              background: "radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.06) 0%, transparent 65%)",
+              background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.06) 0%, transparent 65%)",
               pointerEvents: "none",
             }}
           />
@@ -97,7 +97,7 @@ export default function ContactClient() {
             <p
               style={{
                 fontSize: "17px",
-                color: "#9AA4B2",
+                color: "#B7B9C3",
                 lineHeight: 1.65,
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 marginBottom: "40px",
@@ -131,15 +131,15 @@ export default function ContactClient() {
                 style={{
                   borderRadius: "16px", padding: "32px 28px", textAlign: "center",
                   transition: "border-color 0.3s ease, transform 0.3s ease", cursor: "pointer",
-                  border: "1px solid rgba(212,175,55,0.12)",
+                  border: "1px solid rgba(255,222,2,0.12)",
                 }}
               >
-                <div style={{ width: "52px", height: "52px", borderRadius: "14px", background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
+                <div style={{ width: "52px", height: "52px", borderRadius: "14px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                    <path d="M3 6l8 5 8-5M3 6h16v12H3V6z" stroke="#D4AF37" strokeWidth="1.5" strokeLinejoin="round" />
+                    <path d="M3 6l8 5 8-5M3 6h16v12H3V6z" stroke="#FFDE02" strokeWidth="1.5" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <p style={{ fontSize: "12px", fontWeight: 700, color: "#D4AF37", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "8px" }}>Email Us</p>
+                <p style={{ fontSize: "12px", fontWeight: 700, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "8px" }}>Email Us</p>
                 <p style={{ fontSize: "15px", color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, marginBottom: "6px" }}>Admin@gvnfit.online</p>
                 <p style={{ fontSize: "13px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Response within 24 hours</p>
               </div>
@@ -203,7 +203,7 @@ export default function ContactClient() {
               <h2 style={{ fontSize: "clamp(28px, 3vw, 40px)", color: "#FFFFFF", marginBottom: "12px", letterSpacing: "-0.01em" }}>
                 Send a message
               </h2>
-              <p style={{ fontSize: "15px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px", lineHeight: 1.6 }}>
+              <p style={{ fontSize: "15px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px", lineHeight: 1.6 }}>
                 Prefer email? Fill this out and it opens your email client pre-filled — or just email directly.
               </p>
 
@@ -213,7 +213,7 @@ export default function ContactClient() {
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 11l4.5 4.5 8-9" stroke="#22C55E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </div>
                   <p style={{ fontSize: "16px", color: "#22C55E", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600 }}>Email client opened</p>
-                  <p style={{ fontSize: "14px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: "8px" }}>Hit send in your email app. We respond within 24 hours.</p>
+                  <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: "8px" }}>Hit send in your email app. We respond within 24 hours.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -222,7 +222,7 @@ export default function ContactClient() {
                     { label: "Email address", type: "email", key: "email", placeholder: "alex@email.com" },
                   ].map((field) => (
                     <div key={field.key}>
-                      <label style={{ display: "block", fontSize: "12px", fontWeight: 700, color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "8px" }}>
+                      <label style={{ display: "block", fontSize: "12px", fontWeight: 700, color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "8px" }}>
                         {field.label}
                       </label>
                       <input
@@ -232,13 +232,13 @@ export default function ContactClient() {
                         value={formState[field.key as "name" | "email"]}
                         onChange={(e) => setFormState((p) => ({ ...p, [field.key]: e.target.value }))}
                         style={{ width: "100%", padding: "14px 18px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "10px", color: "#FFFFFF", fontSize: "15px", fontFamily: "'Plus Jakarta Sans', sans-serif", outline: "none", boxSizing: "border-box" }}
-                        onFocus={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.4)")}
+                        onFocus={(e) => (e.target.style.borderColor = "rgba(255,222,2,0.4)")}
                         onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
                       />
                     </div>
                   ))}
                   <div>
-                    <label style={{ display: "block", fontSize: "12px", fontWeight: 700, color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "8px" }}>
+                    <label style={{ display: "block", fontSize: "12px", fontWeight: 700, color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "8px" }}>
                       Message
                     </label>
                     <textarea
@@ -248,7 +248,7 @@ export default function ContactClient() {
                       value={formState.message}
                       onChange={(e) => setFormState((p) => ({ ...p, message: e.target.value }))}
                       style={{ width: "100%", padding: "14px 18px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "10px", color: "#FFFFFF", fontSize: "15px", fontFamily: "'Plus Jakarta Sans', sans-serif", outline: "none", resize: "vertical", boxSizing: "border-box" }}
-                      onFocus={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.4)")}
+                      onFocus={(e) => (e.target.style.borderColor = "rgba(255,222,2,0.4)")}
                       onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
                     />
                   </div>
@@ -258,7 +258,7 @@ export default function ContactClient() {
                       <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </button>
-                  <p style={{ fontSize: "12px", color: "#4E5A6A", fontFamily: "'Plus Jakarta Sans', sans-serif", textAlign: "center" }}>
+                  <p style={{ fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", textAlign: "center" }}>
                     This opens your email client with a pre-filled message to Admin@gvnfit.online
                   </p>
                 </form>
@@ -270,7 +270,7 @@ export default function ContactClient() {
               <h2 style={{ fontSize: "clamp(28px, 3vw, 40px)", color: "#FFFFFF", marginBottom: "12px", letterSpacing: "-0.01em" }}>
                 Frequently asked
               </h2>
-              <p style={{ fontSize: "15px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "28px", lineHeight: 1.6 }}>
+              <p style={{ fontSize: "15px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "28px", lineHeight: 1.6 }}>
                 Most questions answered. If yours isn't here, just ask.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
@@ -278,8 +278,8 @@ export default function ContactClient() {
                   <div
                     key={i}
                     style={{
-                      background: openFaq === i ? "rgba(212,175,55,0.05)" : "rgba(255,255,255,0.02)",
-                      border: `1px solid ${openFaq === i ? "rgba(212,175,55,0.2)" : "rgba(255,255,255,0.06)"}`,
+                      background: openFaq === i ? "rgba(255,222,2,0.05)" : "rgba(255,255,255,0.02)",
+                      border: `1px solid ${openFaq === i ? "rgba(255,222,2,0.2)" : "rgba(255,255,255,0.06)"}`,
                       borderRadius: "12px", overflow: "hidden", transition: "all 0.25s ease",
                     }}
                   >
@@ -290,13 +290,13 @@ export default function ContactClient() {
                       <span style={{ fontSize: "14px", fontWeight: 600, color: openFaq === i ? "#FFFFFF" : "#C4CDD8", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.4 }}>
                         {faq.q}
                       </span>
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, transform: openFaq === i ? "rotate(45deg)" : "rotate(0deg)", transition: "transform 0.25s ease", color: openFaq === i ? "#D4AF37" : "#6B7280" }}>
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, transform: openFaq === i ? "rotate(45deg)" : "rotate(0deg)", transition: "transform 0.25s ease", color: openFaq === i ? "#FFDE02" : "#6B7280" }}>
                         <path d="M8 3v10M3 8h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                     </button>
                     {openFaq === i && (
                       <div style={{ padding: "0 20px 18px" }}>
-                        <p style={{ fontSize: "14px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.7 }}>{faq.a}</p>
+                        <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.7 }}>{faq.a}</p>
                       </div>
                     )}
                   </div>
@@ -308,15 +308,15 @@ export default function ContactClient() {
 
         {/* Bottom CTA */}
         <section style={{ padding: "80px 24px 120px", textAlign: "center" }}>
-          <div style={{ maxWidth: "600px", margin: "0 auto", padding: "56px 48px", background: "rgba(212,175,55,0.04)", border: "1px solid rgba(212,175,55,0.15)", borderRadius: "24px" }}>
-            <div style={{ width: "60px", height: "60px", borderRadius: "50%", background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px", animation: "pulse-gold 2s ease infinite" }}>
+          <div style={{ maxWidth: "600px", margin: "0 auto", padding: "56px 48px", background: "rgba(255,222,2,0.04)", border: "1px solid rgba(255,222,2,0.15)", borderRadius: "24px" }}>
+            <div style={{ width: "60px", height: "60px", borderRadius: "50%", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px", animation: "pulse-gold 2s ease infinite" }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="9" stroke="#D4AF37" strokeWidth="1.5" />
-                <path d="M12 6v6l4 2" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" />
+                <circle cx="12" cy="12" r="9" stroke="#FFDE02" strokeWidth="1.5" />
+                <path d="M12 6v6l4 2" stroke="#FFDE02" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </div>
             <h2 style={{ fontSize: "clamp(26px, 3vw, 36px)", color: "#FFFFFF", marginBottom: "14px", letterSpacing: "-0.01em" }}>Still deciding?</h2>
-            <p style={{ fontSize: "15px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.65, marginBottom: "28px" }}>
+            <p style={{ fontSize: "15px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.65, marginBottom: "28px" }}>
               The free consultation exists for this exact moment. 30 minutes, no pitch, no pressure. Just an honest conversation about whether coaching makes sense for you.
             </p>
             <Link href="/book" className="btn-primary" style={{ fontSize: "15px", padding: "14px 32px" }}>

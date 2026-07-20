@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-function Sparkline({ data, color = "#D4AF37" }: { data: number[]; color?: string }) {
+function Sparkline({ data, color = "#FFDE02" }: { data: number[]; color?: string }) {
   const w = 56, h = 22;
   const min = Math.min(...data), max = Math.max(...data);
   const range = max - min || 1;
@@ -71,7 +71,7 @@ function BodyFigure() {
         position: "absolute", bottom: "-16px", left: "50%",
         transform: "translateX(-50%)",
         width: "110px", height: "18px",
-        background: "radial-gradient(ellipse, rgba(212,175,55,0.55) 0%, transparent 70%)",
+        background: "radial-gradient(ellipse, rgba(255,222,2,0.55) 0%, transparent 70%)",
         filter: "blur(6px)",
         borderRadius: "50%",
       }} />
@@ -106,8 +106,8 @@ function BodyFigure() {
           </filter>
 
           <linearGradient id="body-fill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="rgba(212,175,55,0.12)" />
-            <stop offset="100%" stopColor="rgba(212,175,55,0.04)" />
+            <stop offset="0%" stopColor="rgba(255,222,2,0.12)" />
+            <stop offset="100%" stopColor="rgba(255,222,2,0.04)" />
           </linearGradient>
         </defs>
 
@@ -117,25 +117,25 @@ function BodyFigure() {
           {/* Horizontal grid lines */}
           {Array.from({ length: 24 }, (_, i) => (
             <line key={`h${i}`} x1="0" y1={i * 20} x2="160" y2={i * 20}
-              stroke="rgba(212,175,55,0.10)" strokeWidth="0.7" />
+              stroke="rgba(255,222,2,0.10)" strokeWidth="0.7" />
           ))}
           {/* Vertical grid lines */}
           {Array.from({ length: 9 }, (_, i) => (
             <line key={`v${i}`} x1={i * 20} y1="0" x2={i * 20} y2="450"
-              stroke="rgba(212,175,55,0.10)" strokeWidth="0.7" />
+              stroke="rgba(255,222,2,0.10)" strokeWidth="0.7" />
           ))}
           {/* Diagonal accent lines */}
           {Array.from({ length: 12 }, (_, i) => (
             <line key={`d${i}`}
               x1={-40 + i * 28} y1="0" x2={-40 + i * 28 + 200} y2="450"
-              stroke="rgba(212,175,55,0.04)" strokeWidth="0.6" />
+              stroke="rgba(255,222,2,0.04)" strokeWidth="0.6" />
           ))}
 
           {/* Scan line */}
           <rect x="0" y={`${scanPct}%`} width="160" height="6"
-            fill="rgba(212,175,55,0.18)" filter="url(#scan-glow)" />
+            fill="rgba(255,222,2,0.18)" filter="url(#scan-glow)" />
           <rect x="0" y={`${scanPct}%`} width="160" height="1.5"
-            fill="rgba(212,175,55,0.95)" />
+            fill="rgba(255,222,2,0.95)" />
           <rect x="0" y={`${scanPct}%`} width="160" height="0.5"
             fill="rgba(255,240,160,1)" />
         </g>
@@ -145,19 +145,19 @@ function BodyFigure() {
           <line key={i}
             x1={joints[a][0]} y1={joints[a][1]}
             x2={joints[b][0]} y2={joints[b][1]}
-            stroke="rgba(212,175,55,0.22)" strokeWidth="1"
+            stroke="rgba(255,222,2,0.22)" strokeWidth="1"
           />
         ))}
 
         {/* Center spine dashed */}
         <line x1="80" y1="76" x2="80" y2="255"
-          stroke="rgba(212,175,55,0.18)" strokeWidth="0.8" strokeDasharray="3 5" />
+          stroke="rgba(255,222,2,0.18)" strokeWidth="0.8" strokeDasharray="3 5" />
 
         {/* Measurement tick marks */}
         {[90, 165, 255, 345].map((y, i) => (
           <g key={i}>
-            <line x1="-8" y1={y} x2="10" y2={y} stroke="rgba(212,175,55,0.45)" strokeWidth="0.8" />
-            <line x1="150" y1={y} x2="168" y2={y} stroke="rgba(212,175,55,0.45)" strokeWidth="0.8" />
+            <line x1="-8" y1={y} x2="10" y2={y} stroke="rgba(255,222,2,0.45)" strokeWidth="0.8" />
+            <line x1="150" y1={y} x2="168" y2={y} stroke="rgba(255,222,2,0.45)" strokeWidth="0.8" />
           </g>
         ))}
 
@@ -165,30 +165,30 @@ function BodyFigure() {
         {joints.map(([cx, cy], i) => (
           <g key={i} filter="url(#joint-glow)">
             <circle cx={cx} cy={cy} r={i === 0 ? 0 : 4.5}
-              fill="rgba(212,175,55,0.12)" stroke="rgba(212,175,55,0.6)" strokeWidth="1" />
-            <circle cx={cx} cy={cy} r={i === 0 ? 0 : 1.8} fill="rgba(212,175,55,0.95)" />
+              fill="rgba(255,222,2,0.12)" stroke="rgba(255,222,2,0.6)" strokeWidth="1" />
+            <circle cx={cx} cy={cy} r={i === 0 ? 0 : 1.8} fill="rgba(255,222,2,0.95)" />
           </g>
         ))}
 
         {/* Body outline strokes */}
         <circle cx="80" cy="36" r="25" fill="none"
-          stroke="rgba(212,175,55,0.55)" strokeWidth="1.2" filter="url(#joint-glow)" />
+          stroke="rgba(255,222,2,0.55)" strokeWidth="1.2" filter="url(#joint-glow)" />
         <path d="M 46,78 Q 80,72 114,78 L 120,165 Q 110,240 100,255 L 60,255 Q 50,240 40,165 Z"
-          fill="none" stroke="rgba(212,175,55,0.45)" strokeWidth="1" />
+          fill="none" stroke="rgba(255,222,2,0.45)" strokeWidth="1" />
         <path d="M 46,82 L 32,88 L 18,162 L 16,228 L 30,228 L 34,164 L 48,94 Z"
-          fill="none" stroke="rgba(212,175,55,0.35)" strokeWidth="1" />
+          fill="none" stroke="rgba(255,222,2,0.35)" strokeWidth="1" />
         <path d="M 114,82 L 128,88 L 142,162 L 144,228 L 130,228 L 126,164 L 112,94 Z"
-          fill="none" stroke="rgba(212,175,55,0.35)" strokeWidth="1" />
+          fill="none" stroke="rgba(255,222,2,0.35)" strokeWidth="1" />
         <path d="M 46,252 L 68,252 L 66,350 L 62,430 L 46,430 L 44,350 Z"
-          fill="none" stroke="rgba(212,175,55,0.4)" strokeWidth="1" />
+          fill="none" stroke="rgba(255,222,2,0.4)" strokeWidth="1" />
         <path d="M 92,252 L 114,252 L 116,350 L 114,430 L 98,430 L 94,350 Z"
-          fill="none" stroke="rgba(212,175,55,0.4)" strokeWidth="1" />
+          fill="none" stroke="rgba(255,222,2,0.4)" strokeWidth="1" />
 
         {/* Platform ring */}
         <ellipse cx="80" cy="442" rx="52" ry="8"
-          fill="none" stroke="rgba(212,175,55,0.3)" strokeWidth="1" />
+          fill="none" stroke="rgba(255,222,2,0.3)" strokeWidth="1" />
         <ellipse cx="80" cy="442" rx="36" ry="5"
-          fill="none" stroke="rgba(212,175,55,0.2)" strokeWidth="0.8" />
+          fill="none" stroke="rgba(255,222,2,0.2)" strokeWidth="0.8" />
       </svg>
     </div>
   );
@@ -260,12 +260,12 @@ export default function PrecisionData() {
       {/* Section ambient */}
       <div style={{
         position: "absolute", inset: 0,
-        background: "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(212,175,55,0.04) 0%, transparent 70%)",
+        background: "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(255,222,2,0.04) 0%, transparent 70%)",
         pointerEvents: "none",
       }} />
       <div style={{
         position: "absolute", inset: 0,
-        backgroundImage: "linear-gradient(rgba(212,175,55,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.025) 1px, transparent 1px)",
+        backgroundImage: "linear-gradient(rgba(255,222,2,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,222,2,0.025) 1px, transparent 1px)",
         backgroundSize: "60px 60px",
         maskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black 10%, transparent 75%)",
         WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black 10%, transparent 75%)",
@@ -293,7 +293,7 @@ export default function PrecisionData() {
             <span className="gold-text">Composition Insights</span>
           </h2>
           <p style={{
-            fontSize: "17px", color: "#8A96A8", lineHeight: 1.65,
+            fontSize: "17px", color: "#B7B9C3", lineHeight: 1.65,
             maxWidth: "480px", margin: "0 auto",
             fontFamily: "'Plus Jakarta Sans', sans-serif",
           }}>
@@ -356,15 +356,15 @@ export default function PrecisionData() {
             <div key={b.label} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
               <div style={{
                 width: "48px", height: "48px", borderRadius: "50%",
-                background: "rgba(212,175,55,0.07)",
-                border: "1px solid rgba(212,175,55,0.22)",
+                background: "rgba(255,222,2,0.07)",
+                border: "1px solid rgba(255,222,2,0.22)",
                 display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: "20px", color: "#D4AF37",
+                fontSize: "20px", color: "#FFDE02",
               }}>
                 {b.symbol}
               </div>
               <span style={{
-                fontSize: "11px", color: "#8A96A8",
+                fontSize: "11px", color: "#B7B9C3",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase",
               }}>
@@ -423,7 +423,7 @@ function MetricCard({
       <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "14px" }}>
         <div>
           <p style={{
-            fontSize: "10px", color: "#5A6475",
+            fontSize: "10px", color: "#7E8395",
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "6px",
           }}>
@@ -436,7 +436,7 @@ function MetricCard({
             {metric.value}
           </p>
           <p style={{
-            fontSize: "11px", color: "#D4AF37", fontWeight: 700,
+            fontSize: "11px", color: "#FFDE02", fontWeight: 700,
             fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: "5px",
           }}>
             ↑ {metric.rating}
@@ -454,10 +454,10 @@ function MetricCard({
       }}>
         <div style={{
           height: "100%", borderRadius: "999px",
-          background: "linear-gradient(90deg, #9A7020, #D4AF37, #F0D060)",
+          background: "linear-gradient(90deg, #9A7020, #FFDE02, #FFF07A)",
           width: filled ? `${metric.pct * 100}%` : "0%",
           transition: "width 1.4s cubic-bezier(0.16,1,0.3,1)",
-          boxShadow: "0 0 8px rgba(212,175,55,0.4)",
+          boxShadow: "0 0 8px rgba(255,222,2,0.4)",
         }} />
       </div>
     </div>

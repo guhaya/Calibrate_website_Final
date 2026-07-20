@@ -34,7 +34,7 @@ export default function ApplyPage() {
           <div
             style={{
               position: "absolute", inset: 0,
-              background: "radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.06) 0%, transparent 60%)",
+              background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.06) 0%, transparent 60%)",
               pointerEvents: "none",
             }}
           />
@@ -54,7 +54,7 @@ export default function ApplyPage() {
             <p
               style={{
                 fontSize: "17px",
-                color: "#9AA4B2",
+                color: "#B7B9C3",
                 lineHeight: 1.65,
                 marginBottom: "40px",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -77,7 +77,7 @@ export default function ApplyPage() {
               </svg>
             </a>
 
-            <p style={{ marginTop: "16px", fontSize: "12px", color: "#4E5A6A", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <p style={{ marginTop: "16px", fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               Opens the secure application form · takes ~8 minutes
             </p>
 
@@ -87,15 +87,15 @@ export default function ApplyPage() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "10px",
-                background: "rgba(212,175,55,0.06)",
-                border: "1px solid rgba(212,175,55,0.18)",
+                background: "rgba(255,222,2,0.06)",
+                border: "1px solid rgba(255,222,2,0.18)",
                 borderRadius: "999px",
                 padding: "8px 20px",
                 marginTop: "28px",
               }}
             >
-              <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#D4AF37", flexShrink: 0, boxShadow: "0 0 8px rgba(212,175,55,0.6)" }} />
-              <span style={{ fontSize: "13px", fontWeight: 600, color: "#D4AF37", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#FFDE02", flexShrink: 0, boxShadow: "0 0 8px rgba(255,222,2,0.6)" }} />
+              <span style={{ fontSize: "13px", fontWeight: 600, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                 2 of 5 slots remaining — Q3 2026
               </span>
             </div>
@@ -103,7 +103,7 @@ export default function ApplyPage() {
         </section>
 
         {/* What happens next */}
-        <section style={{ padding: "80px 24px", background: "rgba(12,18,26,0.5)" }}>
+        <section style={{ padding: "80px 24px", background: "rgba(9,9,11,0.5)" }}>
           <div style={{ maxWidth: "860px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "52px" }}>
               <div className="tag" style={{ marginBottom: "20px" }}>What Happens Next</div>
@@ -116,7 +116,7 @@ export default function ApplyPage() {
                 <div
                   key={i}
                   style={{
-                    background: "rgba(22,33,45,0.7)",
+                    background: "rgba(23,23,23,0.7)",
                     border: "1px solid rgba(255,255,255,0.06)",
                     borderRadius: "16px",
                     padding: "28px 24px",
@@ -128,7 +128,7 @@ export default function ApplyPage() {
                       fontFamily: "'Barlow Condensed', sans-serif",
                       fontSize: "13px",
                       fontWeight: 800,
-                      color: "#D4AF37",
+                      color: "#FFDE02",
                       letterSpacing: "0.06em",
                       marginBottom: "12px",
                     }}
@@ -138,7 +138,7 @@ export default function ApplyPage() {
                   <p style={{ fontSize: "15px", fontWeight: 700, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "10px" }}>
                     {s.label}
                   </p>
-                  <p style={{ fontSize: "13px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.65 }}>
+                  <p style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.65 }}>
                     {s.detail}
                   </p>
                   {i < steps.length - 1 && (
@@ -150,7 +150,7 @@ export default function ApplyPage() {
                       zIndex: 1,
                     }}>
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M4 8h8M9 5l3 3-3 3" stroke="rgba(212,175,55,0.3)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M4 8h8M9 5l3 3-3 3" stroke="rgba(255,222,2,0.3)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
                   )}
@@ -168,9 +168,9 @@ export default function ApplyPage() {
             <h2 style={{ fontSize: "clamp(28px, 3.5vw, 42px)", color: "#FFFFFF", letterSpacing: "-0.02em", marginBottom: "16px" }}>
               Ready to apply?
             </h2>
-            <p style={{ fontSize: "15px", color: "#9AA4B2", lineHeight: 1.65, marginBottom: "32px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <p style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.65, marginBottom: "32px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               The form takes ~8 minutes. Not sure yet?{" "}
-              <Link href="/book" style={{ color: "#D4AF37", textDecoration: "none" }}>Book a free 20-minute diagnostic call</Link>{" "}
+              <Link href="/book" style={{ color: "#FFDE02", textDecoration: "none" }}>Book a free 20-minute diagnostic call</Link>{" "}
               first — no commitment required.
             </p>
             <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>

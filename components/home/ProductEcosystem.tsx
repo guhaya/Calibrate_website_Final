@@ -22,7 +22,7 @@ const pillars = [
       "Works with any equipment setup",
       "Video guidance on every exercise",
     ],
-    color: "#D4AF37",
+    color: "#FFDE02",
   },
   {
     id: "nutrition",
@@ -90,7 +90,7 @@ export default function ProductEcosystem() {
   const current = pillars.find((p) => p.id === active) || pillars[0];
 
   const colorRgb: Record<string, string> = {
-    "#D4AF37": "212,175,55",
+    "#FFDE02": "255,222,2",
     "#22C55E": "34,197,94",
     "#3B82F6": "59,130,246",
     "#A855F7": "168,85,247",
@@ -116,7 +116,7 @@ export default function ProductEcosystem() {
           <p
             style={{
               fontSize: "17px",
-              color: "#9AA4B2",
+              color: "#B7B9C3",
               maxWidth: "520px",
               margin: "0 auto",
               lineHeight: 1.65,
@@ -134,7 +134,7 @@ export default function ProductEcosystem() {
             gap: "8px",
             marginBottom: "40px",
             padding: "4px",
-            background: "rgba(22,33,45,0.7)",
+            background: "rgba(23,23,23,0.7)",
             borderRadius: "12px",
             border: "1px solid rgba(255,255,255,0.06)",
             overflowX: "auto",
@@ -159,10 +159,10 @@ export default function ProductEcosystem() {
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 transition: "all 0.2s ease",
                 background: active === p.id ? "rgba(255,255,255,0.08)" : "transparent",
-                color: active === p.id ? "#FFFFFF" : "#9AA4B2",
+                color: active === p.id ? "#FFFFFF" : "#B7B9C3",
               }}
             >
-              <span style={{ color: active === p.id ? p.color : "#9AA4B2" }}>{p.icon}</span>
+              <span style={{ color: active === p.id ? p.color : "#B7B9C3" }}>{p.icon}</span>
               {p.label}
             </button>
           ))}
@@ -208,7 +208,7 @@ export default function ProductEcosystem() {
             <p
               style={{
                 fontSize: "16px",
-                color: "#9AA4B2",
+                color: "#B7B9C3",
                 lineHeight: 1.7,
                 marginBottom: "28px",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -243,7 +243,7 @@ export default function ProductEcosystem() {
           {/* Visual card */}
           <div
             style={{
-              background: "rgba(22,33,45,0.7)",
+              background: "rgba(23,23,23,0.7)",
               border: `1px solid rgba(${colorRgb[current.color]}, 0.15)`,
               borderRadius: "20px",
               padding: "36px",
@@ -292,7 +292,7 @@ export default function ProductEcosystem() {
               {current.id === "accountability" && "Never do it alone."}
               {current.id === "progress" && "Results you can see."}
             </p>
-            <p style={{ fontSize: "14px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.6 }}>
+            <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.6 }}>
               {current.id === "training" && "Workouts designed specifically for your body and goals — updated every week."}
               {current.id === "nutrition" && "A flexible approach that gets you lean without feeling restricted."}
               {current.id === "accountability" && "Direct access to your coach. Real feedback. Real support."}

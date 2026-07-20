@@ -16,7 +16,7 @@ const experiences = [
     title: "You get your full programme",
     description: "Within 48 hours of your first call, your complete training and nutrition plan lands in the CALIBRATE app. Every session is already loaded, every meal target is set, every exercise has video guidance. You start with complete clarity.",
     icon: "target",
-    color: "#D4AF37",
+    color: "#FFDE02",
   },
   {
     phase: "Week 3–4",
@@ -70,7 +70,7 @@ export default function ClientsPage() {
             style={{
               position: "absolute",
               inset: 0,
-              background: "radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.05) 0%, transparent 60%)",
+              background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.05) 0%, transparent 60%)",
               pointerEvents: "none",
             }}
           />
@@ -91,7 +91,7 @@ export default function ClientsPage() {
             <p
               style={{
                 fontSize: "17px",
-                color: "#9AA4B2",
+                color: "#B7B9C3",
                 lineHeight: 1.65,
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
@@ -118,7 +118,7 @@ export default function ClientsPage() {
               <p
                 style={{
                   fontSize: "16px",
-                  color: "#9AA4B2",
+                  color: "#B7B9C3",
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                   lineHeight: 1.65,
                 }}
@@ -130,7 +130,7 @@ export default function ClientsPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {experiences.map((exp, i) => {
                 const colorRgb: Record<string, string> = {
-                  "#D4AF37": "212,175,55",
+                  "#FFDE02": "255,222,2",
                   "#22C55E": "34,197,94",
                   "#3B82F6": "59,130,246",
                   "#A855F7": "168,85,247",
@@ -143,7 +143,7 @@ export default function ClientsPage() {
                       display: "grid",
                       gridTemplateColumns: "160px 1fr",
                       gap: "0",
-                      background: "rgba(22,33,45,0.6)",
+                      background: "rgba(23,23,23,0.6)",
                       border: "1px solid rgba(255,255,255,0.06)",
                       borderRadius: "16px",
                       overflow: "hidden",
@@ -204,7 +204,7 @@ export default function ClientsPage() {
                       <p
                         style={{
                           fontSize: "15px",
-                          color: "#9AA4B2",
+                          color: "#B7B9C3",
                           lineHeight: 1.7,
                           fontFamily: "'Plus Jakarta Sans', sans-serif",
                         }}
@@ -225,7 +225,7 @@ export default function ClientsPage() {
         </section>
 
         {/* What's included */}
-        <section style={{ padding: "80px 24px", background: "rgba(12,18,26,0.5)" }}>
+        <section style={{ padding: "80px 24px", background: "rgba(9,9,11,0.5)" }}>
           <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
               <div className="tag" style={{ marginBottom: "20px" }}>All Inclusive</div>
@@ -251,7 +251,7 @@ export default function ClientsPage() {
                 <div
                   key={i}
                   style={{
-                    background: "rgba(22,33,45,0.6)",
+                    background: "rgba(23,23,23,0.6)",
                     border: "1px solid rgba(255,255,255,0.06)",
                     borderRadius: "14px",
                     padding: "24px",
@@ -259,7 +259,7 @@ export default function ClientsPage() {
                 >
                   <div
                     style={{
-                      color: "#D4AF37",
+                      color: "#FFDE02",
                       marginBottom: "12px",
                     }}
                   >
@@ -279,7 +279,7 @@ export default function ClientsPage() {
                   <p
                     style={{
                       fontSize: "13px",
-                      color: "#9AA4B2",
+                      color: "#B7B9C3",
                       lineHeight: 1.6,
                       fontFamily: "'Plus Jakarta Sans', sans-serif",
                     }}
@@ -312,7 +312,7 @@ export default function ClientsPage() {
             <p
               style={{
                 fontSize: "16px",
-                color: "#9AA4B2",
+                color: "#B7B9C3",
                 lineHeight: 1.65,
                 marginBottom: "32px",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",

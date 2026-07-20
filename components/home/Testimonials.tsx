@@ -30,7 +30,7 @@ function StarRating() {
   return (
     <div style={{ display: "flex", gap: "3px" }}>
       {[...Array(5)].map((_, i) => (
-        <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#D4AF37">
+        <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#FFDE02">
           <path d="M7 1l1.5 4.5h4.5l-3.5 2.5 1.5 4.5L7 10 3 12.5 4.5 8 1 5.5h4.5L7 1z" />
         </svg>
       ))}
@@ -61,7 +61,7 @@ export default function Testimonials() {
           <p
             style={{
               fontSize: "17px",
-              color: "#9AA4B2",
+              color: "#B7B9C3",
               maxWidth: "480px",
               margin: "0 auto",
               lineHeight: 1.65,
@@ -89,12 +89,12 @@ export default function Testimonials() {
               style={{
                 padding: "10px 20px",
                 borderRadius: "999px",
-                border: active === i ? "1px solid rgba(212,175,55,0.4)" : "1px solid rgba(255,255,255,0.08)",
-                background: active === i ? "rgba(212,175,55,0.08)" : "transparent",
+                border: active === i ? "1px solid rgba(255,222,2,0.4)" : "1px solid rgba(255,255,255,0.08)",
+                background: active === i ? "rgba(255,222,2,0.08)" : "transparent",
                 cursor: "pointer",
                 fontSize: "13px",
                 fontWeight: 600,
-                color: active === i ? "#D4AF37" : "#9AA4B2",
+                color: active === i ? "#FFDE02" : "#B7B9C3",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 transition: "all 0.2s ease",
               }}
@@ -107,7 +107,7 @@ export default function Testimonials() {
         {/* Card */}
         <div
           style={{
-            background: "rgba(22,33,45,0.7)",
+            background: "rgba(23,23,23,0.7)",
             border: "1px solid rgba(255,255,255,0.06)",
             borderRadius: "24px",
             padding: "48px",
@@ -139,13 +139,13 @@ export default function Testimonials() {
                   width: "42px",
                   height: "42px",
                   borderRadius: "50%",
-                  background: "linear-gradient(135deg, #D4AF37, #B8962E)",
+                  background: "linear-gradient(135deg, #FFDE02, #E6C700)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: "16px",
                   fontWeight: 700,
-                  color: "#0E1720",
+                  color: "#07070A",
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                 }}
               >
@@ -155,7 +155,7 @@ export default function Testimonials() {
                 <p style={{ fontSize: "15px", fontWeight: 700, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                   {testimonials[active].name}
                 </p>
-                <p style={{ fontSize: "13px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                <p style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                   {testimonials[active].role}
                 </p>
               </div>
@@ -180,7 +180,7 @@ export default function Testimonials() {
           {/* Metrics */}
           <div
             style={{
-              background: "rgba(14,23,32,0.7)",
+              background: "rgba(17,17,20,0.7)",
               borderRadius: "16px",
               padding: "28px 24px",
               minWidth: "180px",
@@ -191,7 +191,7 @@ export default function Testimonials() {
             <p
               style={{
                 fontSize: "10px",
-                color: "#5A6475",
+                color: "#7E8395",
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -201,13 +201,13 @@ export default function Testimonials() {
               Stats
             </p>
             <div style={{ marginBottom: "16px" }}>
-              <p style={{ fontSize: "11px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "4px" }}>Before</p>
-              <p style={{ fontSize: "15px", fontWeight: 700, color: "#EF4444", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <p style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "4px" }}>Before</p>
+              <p style={{ fontSize: "15px", fontWeight: 700, color: "#DE3033", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                 {testimonials[active].metrics.before}
               </p>
             </div>
             <div style={{ marginBottom: "16px" }}>
-              <p style={{ fontSize: "11px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "4px" }}>After</p>
+              <p style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "4px" }}>After</p>
               <p style={{ fontSize: "15px", fontWeight: 700, color: "#22C55E", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                 {testimonials[active].metrics.after}
               </p>
@@ -218,8 +218,8 @@ export default function Testimonials() {
                 paddingTop: "16px",
               }}
             >
-              <p style={{ fontSize: "11px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "4px" }}>Duration</p>
-              <p style={{ fontSize: "18px", fontWeight: 800, color: "#D4AF37", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <p style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "4px" }}>Duration</p>
+              <p style={{ fontSize: "18px", fontWeight: 800, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                 {testimonials[active].metrics.weeks} weeks
               </p>
             </div>

@@ -44,7 +44,7 @@ const trainers = [
     location: "Bangalore",
     specialisation: "Strength & Conditioning",
     description: "Ashok brings over a decade of strength and conditioning expertise to CALIBRATE. As an online trainer, he designs progressive programming for clients across all levels — from foundational strength work to performance-focused conditioning cycles.",
-    color: "#D4AF37",
+    color: "#FFDE02",
     initials: "A",
   },
   {
@@ -127,7 +127,7 @@ export default function AboutPage() {
             style={{
               position: "absolute",
               inset: 0,
-              background: "radial-gradient(ellipse at 30% 50%, rgba(212,175,55,0.05) 0%, transparent 55%)",
+              background: "radial-gradient(ellipse at 30% 50%, rgba(255,222,2,0.05) 0%, transparent 55%)",
               pointerEvents: "none",
             }}
           />
@@ -160,10 +160,10 @@ export default function AboutPage() {
                 <span className="gold-text">one obsession:</span>{" "}
                 your results.
               </h1>
-              <p style={{ fontSize: "17px", color: "#9AA4B2", lineHeight: 1.7, marginBottom: "20px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <p style={{ fontSize: "17px", color: "#B7B9C3", lineHeight: 1.7, marginBottom: "20px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                 CALIBRATE isn&apos;t one coach with a template. It&apos;s a precision team — a head coach, certified trainers, and on-call specialists — all operating from the same data-driven protocol.
               </p>
-              <p style={{ fontSize: "17px", color: "#9AA4B2", lineHeight: 1.7, marginBottom: "36px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <p style={{ fontSize: "17px", color: "#B7B9C3", lineHeight: 1.7, marginBottom: "36px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                 Based across Chennai, Bangalore, Hyderabad, and Coimbatore. Serving clients across India.
               </p>
               <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
@@ -179,14 +179,14 @@ export default function AboutPage() {
             {/* Right: philosophy card */}
             <div
               style={{
-                background: "rgba(22,33,45,0.7)",
-                border: "1px solid rgba(212,175,55,0.15)",
+                background: "rgba(23,23,23,0.7)",
+                border: "1px solid rgba(255,222,2,0.15)",
                 borderRadius: "20px",
                 padding: "40px",
               }}
             >
               <div style={{ marginBottom: "28px" }}>
-                <p style={{ fontSize: "11px", fontWeight: 700, color: "#D4AF37", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "12px" }}>Core Philosophy</p>
+                <p style={{ fontSize: "11px", fontWeight: 700, color: "#FFDE02", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "12px" }}>Core Philosophy</p>
                 <p style={{ fontSize: "22px", fontWeight: 700, color: "#FFFFFF", fontFamily: "'Barlow Condensed', sans-serif", lineHeight: 1.2, letterSpacing: "0.01em" }}>
                   &ldquo;Your body is a process.<br />Processes can be optimised.&rdquo;
                 </p>
@@ -195,8 +195,8 @@ export default function AboutPage() {
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
                 {headCoach.stats.map((s) => (
                   <div key={s.label}>
-                    <p style={{ fontSize: "28px", fontWeight: 800, color: "#D4AF37", fontFamily: "'Barlow Condensed', sans-serif", lineHeight: 1 }}>{s.value}</p>
-                    <p style={{ fontSize: "12px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: "4px" }}>{s.label}</p>
+                    <p style={{ fontSize: "28px", fontWeight: 800, color: "#FFDE02", fontFamily: "'Barlow Condensed', sans-serif", lineHeight: 1 }}>{s.value}</p>
+                    <p style={{ fontSize: "12px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: "4px" }}>{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -206,7 +206,7 @@ export default function AboutPage() {
         </section>
 
         {/* Head Coach */}
-        <section style={{ padding: "80px 24px", background: "rgba(12,18,26,0.5)" }}>
+        <section style={{ padding: "80px 24px", background: "rgba(9,9,11,0.5)" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
               <div className="tag" style={{ marginBottom: "20px" }}>Founder</div>
@@ -220,8 +220,8 @@ export default function AboutPage() {
                 gridTemplateColumns: "1fr 1.4fr",
                 gap: "40px",
                 alignItems: "start",
-                background: "rgba(22,33,45,0.6)",
-                border: "1px solid rgba(212,175,55,0.2)",
+                background: "rgba(23,23,23,0.6)",
+                border: "1px solid rgba(255,222,2,0.2)",
                 borderRadius: "20px",
                 overflow: "hidden",
               }}
@@ -231,17 +231,17 @@ export default function AboutPage() {
               <div
                 style={{
                   padding: "40px",
-                  background: "rgba(212,175,55,0.04)",
-                  borderRight: "1px solid rgba(212,175,55,0.1)",
+                  background: "rgba(255,222,2,0.04)",
+                  borderRight: "1px solid rgba(255,222,2,0.1)",
                   height: "100%",
                 }}
               >
                 <div
                   style={{
                     width: "72px", height: "72px", borderRadius: "50%",
-                    background: "linear-gradient(135deg, #D4AF37, #B8962E)",
+                    background: "linear-gradient(135deg, #FFDE02, #E6C700)",
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    fontSize: "28px", fontWeight: 800, color: "#0E1720",
+                    fontSize: "28px", fontWeight: 800, color: "#07070A",
                     fontFamily: "'Barlow Condensed', sans-serif",
                     marginBottom: "20px",
                   }}
@@ -251,7 +251,7 @@ export default function AboutPage() {
                 <h3 style={{ fontSize: "24px", color: "#FFFFFF", marginBottom: "4px", letterSpacing: "-0.01em" }}>
                   {headCoach.name}
                 </h3>
-                <p style={{ fontSize: "13px", color: "#D4AF37", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, marginBottom: "6px" }}>
+                <p style={{ fontSize: "13px", color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, marginBottom: "6px" }}>
                   {headCoach.role}
                 </p>
                 <p style={{ fontSize: "12px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "28px" }}>
@@ -262,8 +262,8 @@ export default function AboutPage() {
                   {headCoach.credentials.map((c) => (
                     <li key={c} style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "10px", fontSize: "13px", color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ marginTop: "1px", flexShrink: 0 }}>
-                        <circle cx="7" cy="7" r="6" fill="rgba(212,175,55,0.1)" />
-                        <path d="M4 7l2 2 4-4" stroke="#D4AF37" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                        <circle cx="7" cy="7" r="6" fill="rgba(255,222,2,0.1)" />
+                        <path d="M4 7l2 2 4-4" stroke="#FFDE02" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                       {c}
                     </li>
@@ -273,7 +273,7 @@ export default function AboutPage() {
               {/* Right panel */}
               <div style={{ padding: "40px" }}>
                 {headCoach.bio.map((para, i) => (
-                  <p key={i} style={{ fontSize: "16px", color: "#9AA4B2", lineHeight: 1.75, fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: i < headCoach.bio.length - 1 ? "20px" : "0" }}>
+                  <p key={i} style={{ fontSize: "16px", color: "#B7B9C3", lineHeight: 1.75, fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: i < headCoach.bio.length - 1 ? "20px" : "0" }}>
                     {para}
                   </p>
                 ))}
@@ -291,7 +291,7 @@ export default function AboutPage() {
               <h2 style={{ fontSize: "clamp(28px, 3.5vw, 44px)", color: "#FFFFFF", letterSpacing: "-0.02em", marginBottom: "12px" }}>
                 Certified Trainers
               </h2>
-              <p style={{ fontSize: "16px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", maxWidth: "520px", margin: "0 auto" }}>
+              <p style={{ fontSize: "16px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", maxWidth: "520px", margin: "0 auto" }}>
                 Each trainer specialises in a distinct domain. You get the right expertise for your specific goal.
               </p>
             </div>
@@ -300,13 +300,13 @@ export default function AboutPage() {
               className="trainers-grid"
             >
               {trainers.map((t) => {
-                const rgbMap: Record<string, string> = { "#D4AF37": "212,175,55", "#22C55E": "34,197,94", "#3B82F6": "59,130,246" };
+                const rgbMap: Record<string, string> = { "#FFDE02": "255,222,2", "#22C55E": "34,197,94", "#3B82F6": "59,130,246" };
                 const rgb = rgbMap[t.color];
                 return (
                   <div
                     key={t.name}
                     style={{
-                      background: "rgba(22,33,45,0.6)",
+                      background: "rgba(23,23,23,0.6)",
                       border: "1px solid rgba(255,255,255,0.06)",
                       borderRadius: "18px",
                       overflow: "hidden",
@@ -335,7 +335,7 @@ export default function AboutPage() {
                       </p>
                     </div>
                     <div style={{ padding: "20px 28px 28px" }}>
-                      <p style={{ fontSize: "14px", color: "#9AA4B2", lineHeight: 1.7, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                      <p style={{ fontSize: "14px", color: "#B7B9C3", lineHeight: 1.7, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                         {t.description}
                       </p>
                     </div>
@@ -355,7 +355,7 @@ export default function AboutPage() {
               <h2 style={{ fontSize: "clamp(26px, 3vw, 40px)", color: "#FFFFFF", letterSpacing: "-0.02em", marginBottom: "12px" }}>
                 On-Call Specialists
               </h2>
-              <p style={{ fontSize: "15px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", maxWidth: "480px", margin: "0 auto" }}>
+              <p style={{ fontSize: "15px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", maxWidth: "480px", margin: "0 auto" }}>
                 For clients who need clinical-level nutrition or complex dietary support, these specialists step in.
               </p>
             </div>
@@ -370,7 +370,7 @@ export default function AboutPage() {
                   <div
                     key={s.name}
                     style={{
-                      background: "rgba(22,33,45,0.5)",
+                      background: "rgba(23,23,23,0.5)",
                       border: "1px solid rgba(255,255,255,0.06)",
                       borderRadius: "16px",
                       padding: "32px",
@@ -400,7 +400,7 @@ export default function AboutPage() {
                       <p style={{ fontSize: "11px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "14px" }}>
                         {s.credentials} · {s.location}
                       </p>
-                      <p style={{ fontSize: "14px", color: "#9AA4B2", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                      <p style={{ fontSize: "14px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                         {s.description}
                       </p>
                     </div>
@@ -413,7 +413,7 @@ export default function AboutPage() {
         </section>
 
         {/* Values */}
-        <section style={{ padding: "80px 24px 120px", background: "rgba(12,18,26,0.5)" }}>
+        <section style={{ padding: "80px 24px 120px", background: "rgba(9,9,11,0.5)" }}>
           <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
               <div className="tag" style={{ marginBottom: "20px" }}>Philosophy</div>
@@ -429,7 +429,7 @@ export default function AboutPage() {
                 <div
                   key={i}
                   style={{
-                    background: "rgba(22,33,45,0.6)",
+                    background: "rgba(23,23,23,0.6)",
                     border: "1px solid rgba(255,255,255,0.06)",
                     borderRadius: "16px",
                     padding: "32px",
@@ -438,9 +438,9 @@ export default function AboutPage() {
                   <div
                     style={{
                       width: "44px", height: "44px", borderRadius: "12px",
-                      background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.15)",
+                      background: "rgba(255,222,2,0.08)", border: "1px solid rgba(255,222,2,0.15)",
                       display: "flex", alignItems: "center", justifyContent: "center",
-                      color: "#D4AF37", marginBottom: "16px",
+                      color: "#FFDE02", marginBottom: "16px",
                     }}
                   >
                     <Icon name={v.icon} size={20} />
@@ -448,7 +448,7 @@ export default function AboutPage() {
                   <h3 style={{ fontSize: "18px", color: "#FFFFFF", marginBottom: "10px", letterSpacing: "-0.01em" }}>
                     {v.title}
                   </h3>
-                  <p style={{ fontSize: "15px", color: "#9AA4B2", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <p style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                     {v.description}
                   </p>
                 </div>
@@ -464,7 +464,7 @@ export default function AboutPage() {
             <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", color: "#FFFFFF", marginBottom: "16px", letterSpacing: "-0.02em" }}>
               Ready to work with the team?
             </h2>
-            <p style={{ fontSize: "16px", color: "#9AA4B2", lineHeight: 1.65, marginBottom: "32px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <p style={{ fontSize: "16px", color: "#B7B9C3", lineHeight: 1.65, marginBottom: "32px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               Guhay personally reviews every application. Book a free 20-minute diagnostic call — not a sales call.
             </p>
             <Link href="/book" className="btn-primary" style={{ fontSize: "15px", padding: "14px 32px" }}>

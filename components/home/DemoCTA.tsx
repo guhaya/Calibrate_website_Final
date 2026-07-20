@@ -5,7 +5,7 @@ export default function DemoCTA() {
     <section
       style={{
         padding: "120px 24px",
-        background: "rgba(12,18,26,0.5)",
+        background: "rgba(9,9,11,0.5)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -19,7 +19,7 @@ export default function DemoCTA() {
           transform: "translate(-50%, -50%)",
           width: "600px",
           height: "300px",
-          background: "radial-gradient(ellipse, rgba(212,175,55,0.07) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(255,222,2,0.07) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -41,7 +41,7 @@ export default function DemoCTA() {
         <p
           style={{
             fontSize: "18px",
-            color: "#9AA4B2",
+            color: "#B7B9C3",
             lineHeight: 1.7,
             marginBottom: "40px",
             fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -70,9 +70,9 @@ export default function DemoCTA() {
           ].map((item) => (
             <div key={item} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2.5 7L5.5 10L11.5 4" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M2.5 7L5.5 10L11.5 4" stroke="#FFDE02" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span style={{ fontSize: "13px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{item}</span>
+              <span style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{item}</span>
             </div>
           ))}
         </div>

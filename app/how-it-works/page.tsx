@@ -16,8 +16,8 @@ const dmaic = [
   {
     letter: "D",
     word: "Define",
-    color: "#D4AF37",
-    rgb: "212,175,55",
+    color: "#FFDE02",
+    rgb: "255,222,2",
     description: "Constraint mapping around your actual work schedule, lifestyle, and body. We don't fit you into a programme — we build the programme around you.",
   },
   {
@@ -62,7 +62,7 @@ const steps = [
       "Understand your schedule, equipment, and starting point",
       "You'll know whether this is right for you by the end",
     ],
-    color: "#D4AF37",
+    color: "#FFDE02",
   },
   {
     number: "02",
@@ -114,7 +114,7 @@ const steps = [
       "Strength gains you can track week by week",
       "The knowledge and habits to maintain this forever",
     ],
-    color: "#D4AF37",
+    color: "#FFDE02",
   },
 ];
 
@@ -136,7 +136,7 @@ export default function HowItWorksPage() {
             style={{
               position: "absolute",
               inset: 0,
-              background: "radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.05) 0%, transparent 60%)",
+              background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.05) 0%, transparent 60%)",
               pointerEvents: "none",
             }}
           />
@@ -157,7 +157,7 @@ export default function HowItWorksPage() {
             <p
               style={{
                 fontSize: "17px",
-                color: "#9AA4B2",
+                color: "#B7B9C3",
                 lineHeight: 1.65,
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
@@ -168,7 +168,7 @@ export default function HowItWorksPage() {
         </section>
 
         {/* DMAIC Protocol */}
-        <section style={{ padding: "80px 24px", background: "rgba(12,18,26,0.5)" }}>
+        <section style={{ padding: "80px 24px", background: "rgba(9,9,11,0.5)" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "16px" }}>
               <div className="tag" style={{ marginBottom: "20px" }}>The Calibration Protocol</div>
@@ -176,7 +176,7 @@ export default function HowItWorksPage() {
                 DMAIC — applied to{" "}
                 <span className="gold-text">body optimisation</span>
               </h2>
-              <p style={{ fontSize: "16px", color: "#9AA4B2", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif", maxWidth: "580px", margin: "0 auto 56px" }}>
+              <p style={{ fontSize: "16px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif", maxWidth: "580px", margin: "0 auto 56px" }}>
                 The same data-driven framework used in aerospace and precision engineering — adapted for body recomposition. Not motivation. Not guesswork. A process.
               </p>
             </div>
@@ -190,7 +190,7 @@ export default function HowItWorksPage() {
                 <div
                   key={d.letter}
                   style={{
-                    background: "rgba(22,33,45,0.7)",
+                    background: "rgba(23,23,23,0.7)",
                     border: `1px solid rgba(${d.rgb}, 0.2)`,
                     borderRadius: "16px",
                     padding: "28px 20px",
@@ -230,7 +230,7 @@ export default function HowItWorksPage() {
                   <p style={{ fontSize: "11px", fontWeight: 700, color: d.color, letterSpacing: "0.08em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "10px" }}>
                     {d.word}
                   </p>
-                  <p style={{ fontSize: "13px", color: "#9AA4B2", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <p style={{ fontSize: "13px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                     {d.description}
                   </p>
                 </div>
@@ -242,8 +242,8 @@ export default function HowItWorksPage() {
               style={{
                 marginTop: "32px",
                 padding: "28px 36px",
-                background: "rgba(212,175,55,0.05)",
-                border: "1px solid rgba(212,175,55,0.15)",
+                background: "rgba(255,222,2,0.05)",
+                border: "1px solid rgba(255,222,2,0.15)",
                 borderRadius: "14px",
                 display: "flex",
                 alignItems: "center",
@@ -254,7 +254,7 @@ export default function HowItWorksPage() {
               <div
                 style={{
                   width: "4px", minHeight: "48px", borderRadius: "2px",
-                  background: "linear-gradient(to bottom, #D4AF37, transparent)",
+                  background: "linear-gradient(to bottom, #FFDE02, transparent)",
                   flexShrink: 0,
                 }}
               />
@@ -296,8 +296,8 @@ export default function HowItWorksPage() {
                       width: "60px",
                       height: "60px",
                       borderRadius: "16px",
-                      background: `rgba(${step.color === "#D4AF37" ? "212,175,55" : step.color === "#3B82F6" ? "59,130,246" : step.color === "#22C55E" ? "34,197,94" : step.color === "#A855F7" ? "168,85,247" : "212,175,55"}, 0.1)`,
-                      border: `1px solid rgba(${step.color === "#D4AF37" ? "212,175,55" : step.color === "#3B82F6" ? "59,130,246" : step.color === "#22C55E" ? "34,197,94" : step.color === "#A855F7" ? "168,85,247" : "212,175,55"}, 0.25)`,
+                      background: `rgba(${step.color === "#FFDE02" ? "255,222,2" : step.color === "#3B82F6" ? "59,130,246" : step.color === "#22C55E" ? "34,197,94" : step.color === "#A855F7" ? "168,85,247" : "255,222,2"}, 0.1)`,
+                      border: `1px solid rgba(${step.color === "#FFDE02" ? "255,222,2" : step.color === "#3B82F6" ? "59,130,246" : step.color === "#22C55E" ? "34,197,94" : step.color === "#A855F7" ? "168,85,247" : "255,222,2"}, 0.25)`,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -315,7 +315,7 @@ export default function HowItWorksPage() {
                       style={{
                         width: "1px",
                         flex: 1,
-                        background: "linear-gradient(to bottom, rgba(212,175,55,0.2), transparent)",
+                        background: "linear-gradient(to bottom, rgba(255,222,2,0.2), transparent)",
                         marginTop: "12px",
                         minHeight: "40px",
                       }}
@@ -326,7 +326,7 @@ export default function HowItWorksPage() {
                 {/* Right: content */}
                 <div
                   style={{
-                    background: "rgba(22,33,45,0.6)",
+                    background: "rgba(23,23,23,0.6)",
                     border: "1px solid rgba(255,255,255,0.06)",
                     borderRadius: "16px",
                     padding: "32px",
@@ -359,10 +359,10 @@ export default function HowItWorksPage() {
                         fontFamily: "'Plus Jakarta Sans', sans-serif",
                         letterSpacing: "0.06em",
                         textTransform: "uppercase",
-                        background: `rgba(${step.color === "#D4AF37" ? "212,175,55" : step.color === "#3B82F6" ? "59,130,246" : step.color === "#22C55E" ? "34,197,94" : step.color === "#A855F7" ? "168,85,247" : "212,175,55"}, 0.1)`,
+                        background: `rgba(${step.color === "#FFDE02" ? "255,222,2" : step.color === "#3B82F6" ? "59,130,246" : step.color === "#22C55E" ? "34,197,94" : step.color === "#A855F7" ? "168,85,247" : "255,222,2"}, 0.1)`,
                         padding: "4px 10px",
                         borderRadius: "999px",
-                        border: `1px solid rgba(${step.color === "#D4AF37" ? "212,175,55" : step.color === "#3B82F6" ? "59,130,246" : step.color === "#22C55E" ? "34,197,94" : step.color === "#A855F7" ? "168,85,247" : "212,175,55"}, 0.2)`,
+                        border: `1px solid rgba(${step.color === "#FFDE02" ? "255,222,2" : step.color === "#3B82F6" ? "59,130,246" : step.color === "#22C55E" ? "34,197,94" : step.color === "#A855F7" ? "168,85,247" : "255,222,2"}, 0.2)`,
                         flexShrink: 0,
                       }}
                     >
@@ -372,7 +372,7 @@ export default function HowItWorksPage() {
                   <p
                     style={{
                       fontSize: "15px",
-                      color: "#9AA4B2",
+                      color: "#B7B9C3",
                       lineHeight: 1.7,
                       marginBottom: "20px",
                       fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -395,7 +395,7 @@ export default function HowItWorksPage() {
                         }}
                       >
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ marginTop: "2px", flexShrink: 0 }}>
-                          <path d="M2.5 7L5.5 10L11.5 4" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M2.5 7L5.5 10L11.5 4" stroke="#FFDE02" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                         {b}
                       </li>
@@ -412,7 +412,7 @@ export default function HowItWorksPage() {
           style={{
             padding: "80px 24px 120px",
             textAlign: "center",
-            background: "rgba(12,18,26,0.5)",
+            background: "rgba(9,9,11,0.5)",
           }}
         >
           <div style={{ maxWidth: "560px", margin: "0 auto" }}>
@@ -429,7 +429,7 @@ export default function HowItWorksPage() {
             <p
               style={{
                 fontSize: "16px",
-                color: "#9AA4B2",
+                color: "#B7B9C3",
                 lineHeight: 1.65,
                 marginBottom: "32px",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",

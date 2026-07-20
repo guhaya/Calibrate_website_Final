@@ -31,7 +31,7 @@ const sections = [
         description: "Log every session in the app. Your coach reviews performance data weekly and adjusts accordingly.",
       },
     ],
-    color: "#D4AF37",
+    color: "#FFDE02",
     icon: "lightning",
   },
   {
@@ -135,7 +135,7 @@ export default function FeaturesPage() {
             style={{
               position: "absolute",
               inset: 0,
-              background: "radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.05) 0%, transparent 60%)",
+              background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.05) 0%, transparent 60%)",
               pointerEvents: "none",
             }}
           />
@@ -156,7 +156,7 @@ export default function FeaturesPage() {
             <p
               style={{
                 fontSize: "17px",
-                color: "#9AA4B2",
+                color: "#B7B9C3",
                 lineHeight: 1.65,
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
@@ -169,7 +169,7 @@ export default function FeaturesPage() {
         {/* Sections */}
         {sections.map((section, si) => {
           const colorRgb: Record<string, string> = {
-            "#D4AF37": "212,175,55",
+            "#FFDE02": "255,222,2",
             "#22C55E": "34,197,94",
             "#3B82F6": "59,130,246",
             "#A855F7": "168,85,247",
@@ -182,7 +182,7 @@ export default function FeaturesPage() {
               id={section.id}
               style={{
                 padding: "100px 24px",
-                background: si % 2 === 1 ? "rgba(12,18,26,0.5)" : "transparent",
+                background: si % 2 === 1 ? "rgba(9,9,11,0.5)" : "transparent",
               }}
             >
               <div
@@ -231,7 +231,7 @@ export default function FeaturesPage() {
                   <p
                     style={{
                       fontSize: "16px",
-                      color: "#9AA4B2",
+                      color: "#B7B9C3",
                       lineHeight: 1.7,
                       marginBottom: "32px",
                       fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -250,7 +250,7 @@ export default function FeaturesPage() {
                       <div
                         key={f.title}
                         style={{
-                          background: "rgba(22,33,45,0.6)",
+                          background: "rgba(23,23,23,0.6)",
                           border: "1px solid rgba(255,255,255,0.06)",
                           borderRadius: "12px",
                           padding: "20px 24px",
@@ -267,7 +267,7 @@ export default function FeaturesPage() {
                           <p style={{ fontSize: "15px", fontWeight: 700, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "4px" }}>
                             {f.title}
                           </p>
-                          <p style={{ fontSize: "14px", color: "#9AA4B2", lineHeight: 1.6, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                          <p style={{ fontSize: "14px", color: "#B7B9C3", lineHeight: 1.6, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                             {f.description}
                           </p>
                         </div>

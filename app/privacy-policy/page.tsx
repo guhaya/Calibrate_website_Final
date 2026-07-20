@@ -133,7 +133,7 @@ export default function PrivacyPolicyPage() {
           <div
             style={{
               position: "absolute", inset: 0,
-              background: "radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.05) 0%, transparent 60%)",
+              background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.05) 0%, transparent 60%)",
               pointerEvents: "none",
             }}
           />
@@ -150,7 +150,7 @@ export default function PrivacyPolicyPage() {
             >
               Privacy Policy
             </h1>
-            <p style={{ fontSize: "14px", color: "#5A6475", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <p style={{ fontSize: "14px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               Last updated: {LAST_UPDATED}
             </p>
           </div>
@@ -160,14 +160,14 @@ export default function PrivacyPolicyPage() {
           <div style={{ maxWidth: "720px", margin: "0 auto" }}>
             <div
               style={{
-                background: "rgba(212,175,55,0.06)",
-                border: "1px solid rgba(212,175,55,0.18)",
+                background: "rgba(255,222,2,0.06)",
+                border: "1px solid rgba(255,222,2,0.18)",
                 borderRadius: "12px",
                 padding: "20px 24px",
                 marginBottom: "48px",
               }}
             >
-              <p style={{ fontSize: "14px", color: "#9AA4B2", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.7 }}>
+              <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.7 }}>
                 This Privacy Policy explains how CALIBRATE (operated by GVN Fit) collects, uses, and protects your personal information when you use our website or coaching services. Please read it carefully.
               </p>
             </div>
@@ -193,7 +193,7 @@ export default function PrivacyPolicyPage() {
                 >
                   {section.title}
                 </h2>
-                <div style={{ fontSize: "15px", color: "#9AA4B2", lineHeight: 1.8, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                <div style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.8, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                   {section.content.split("\n").map((line, li) => {
                     if (line.startsWith("**") && line.endsWith("**")) {
                       return (
@@ -207,7 +207,7 @@ export default function PrivacyPolicyPage() {
                       if (match) {
                         return (
                           <p key={li} style={{ marginBottom: "6px", paddingLeft: "12px" }}>
-                            — <span style={{ color: "#D4AF37", fontWeight: 600 }}>{match[1]}</span> — {match[2]}
+                            — <span style={{ color: "#FFDE02", fontWeight: 600 }}>{match[1]}</span> — {match[2]}
                           </p>
                         );
                       }

@@ -9,7 +9,7 @@ interface Particle {
 }
 
 export default function ParticleNetwork({
-  color = "212,175,55",
+  color = "255,222,2",
   count = 72,
   linkDist = 155,
   style = {},

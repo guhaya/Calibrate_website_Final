@@ -53,8 +53,8 @@ export default function CalendarBooking() {
   };
 
   function handleFocus(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
-    e.target.style.borderColor = "rgba(212,175,55,0.5)";
-    e.target.style.boxShadow = "0 0 0 3px rgba(212,175,55,0.08)";
+    e.target.style.borderColor = "rgba(255,222,2,0.5)";
+    e.target.style.boxShadow = "0 0 0 3px rgba(255,222,2,0.08)";
   }
   function handleBlur(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     e.target.style.borderColor = "rgba(255,255,255,0.09)";
@@ -107,7 +107,7 @@ export default function CalendarBooking() {
         </h3>
         <p
           style={{
-            color: "#9AA4B2",
+            color: "#B7B9C3",
             fontSize: "15px",
             lineHeight: 1.65,
             fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -131,7 +131,7 @@ export default function CalendarBooking() {
               <path d="M2 12L12 2M7 2h5v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
-          <p style={{ fontSize: "12px", color: "#4E5A6A", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+          <p style={{ fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
             Confirmation sent to {data.email || "your email"} · Admin@gvnfit.online
           </p>
         </div>
@@ -178,13 +178,13 @@ export default function CalendarBooking() {
         <select
           value={data.goal}
           onChange={(e) => setData({ ...data, goal: e.target.value })}
-          style={{ ...inputStyle, color: data.goal ? "#FFFFFF" : "#4E5A6A" }}
+          style={{ ...inputStyle, color: data.goal ? "#FFFFFF" : "#7E8395" }}
           onFocus={handleFocus}
           onBlur={handleBlur}
         >
-          <option value="" style={{ background: "#0C1520" }}>Select your goal</option>
+          <option value="" style={{ background: "#07070A" }}>Select your goal</option>
           {goals.map((g) => (
-            <option key={g} value={g} style={{ background: "#0C1520" }}>{g}</option>
+            <option key={g} value={g} style={{ background: "#07070A" }}>{g}</option>
           ))}
         </select>
       </div>
@@ -242,14 +242,14 @@ export default function CalendarBooking() {
               key={t}
               style={{
                 fontSize: "11px",
-                color: "#4E5A6A",
+                color: "#7E8395",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 display: "flex",
                 alignItems: "center",
                 gap: "5px",
               }}
             >
-              <svg width="5" height="5" viewBox="0 0 5 5" fill="none"><circle cx="2.5" cy="2.5" r="2" fill="#D4AF37"/></svg>
+              <svg width="5" height="5" viewBox="0 0 5 5" fill="none"><circle cx="2.5" cy="2.5" r="2" fill="#FFDE02"/></svg>
               {t}
             </span>
           ))}
@@ -258,7 +258,7 @@ export default function CalendarBooking() {
 
       <style>{`
         @media (max-width: 560px) { .booking-2col { grid-template-columns: 1fr !important; } }
-        select option { background: #0C1520; }
+        select option { background: #07070A; }
         input::placeholder, textarea::placeholder { color: #3D4550; }
         @keyframes spin { to { transform: rotate(360deg); } }
       `}</style>

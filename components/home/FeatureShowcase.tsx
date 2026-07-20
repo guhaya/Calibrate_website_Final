@@ -51,7 +51,7 @@ export default function FeatureShowcase() {
     <section
       style={{
         padding: "120px 24px",
-        background: "rgba(12,18,26,0.5)",
+        background: "rgba(9,9,11,0.5)",
       }}
     >
       <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
@@ -72,7 +72,7 @@ export default function FeatureShowcase() {
           <p
             style={{
               fontSize: "17px",
-              color: "#9AA4B2",
+              color: "#B7B9C3",
               lineHeight: 1.65,
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
@@ -100,14 +100,14 @@ export default function FeatureShowcase() {
               key={i}
               style={{
                 padding: "32px 28px",
-                background: "rgba(14,23,32,0.8)",
+                background: "rgba(17,17,20,0.8)",
                 transition: "background 0.2s ease",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "rgba(22,33,45,0.95)";
+                (e.currentTarget as HTMLElement).style.background = "rgba(23,23,23,0.95)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "rgba(14,23,32,0.8)";
+                (e.currentTarget as HTMLElement).style.background = "rgba(17,17,20,0.8)";
               }}
             >
               <div
@@ -115,12 +115,12 @@ export default function FeatureShowcase() {
                   width: "40px",
                   height: "40px",
                   borderRadius: "10px",
-                  background: "rgba(212,175,55,0.08)",
-                  border: "1px solid rgba(212,175,55,0.15)",
+                  background: "rgba(255,222,2,0.08)",
+                  border: "1px solid rgba(255,222,2,0.15)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: "#D4AF37",
+                  color: "#FFDE02",
                   marginBottom: "16px",
                 }}
               >
@@ -138,7 +138,7 @@ export default function FeatureShowcase() {
               >
                 {b.title}
               </h3>
-              <p style={{ fontSize: "14px", color: "#9AA4B2", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <p style={{ fontSize: "14px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                 {b.description}
               </p>
             </div>
@@ -147,7 +147,7 @@ export default function FeatureShowcase() {
 
         {/* Bottom CTA */}
         <div style={{ textAlign: "center" }}>
-          <p style={{ fontSize: "16px", color: "#9AA4B2", marginBottom: "20px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+          <p style={{ fontSize: "16px", color: "#B7B9C3", marginBottom: "20px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
             Ready to find out what coaching can do for you?
           </p>
           <Link href="/book" className="btn-primary" style={{ fontSize: "15px", padding: "14px 32px" }}>

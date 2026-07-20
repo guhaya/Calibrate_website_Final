@@ -8,8 +8,8 @@ const steps = [
     number: "01",
     title: "Free Consultation",
     duration: "30 minutes",
-    color: "#D4AF37",
-    rgb: "212,175,55",
+    color: "#FFDE02",
+    rgb: "255,222,2",
     description:
       "We start with a no-obligation call to understand where you are right now, what you've tried before, and exactly what you want to achieve. You'll leave with clarity — whether you move forward or not.",
     details: [
@@ -109,7 +109,7 @@ export default function HomeProcess() {
         style={{
           position: "absolute",
           inset: 0,
-          background: "rgba(12,18,26,0.6)",
+          background: "rgba(9,9,11,0.6)",
           pointerEvents: "none",
         }}
       />
@@ -148,7 +148,7 @@ export default function HomeProcess() {
           <p
             style={{
               fontSize: "17px",
-              color: "#9AA4B2",
+              color: "#B7B9C3",
               maxWidth: "520px",
               margin: "0 auto",
               lineHeight: 1.65,
@@ -237,7 +237,7 @@ export default function HomeProcess() {
                   transition: "all 0.3s ease",
                   fontSize: "13px",
                   fontWeight: 700,
-                  color: i === activeStep ? "#0C1520" : i < activeStep ? s.color : "#6B7280",
+                  color: i === activeStep ? "#07070A" : i < activeStep ? s.color : "#6B7280",
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                 }}
               >
@@ -340,7 +340,7 @@ export default function HomeProcess() {
             <p
               style={{
                 fontSize: "16px",
-                color: "#9AA4B2",
+                color: "#B7B9C3",
                 lineHeight: 1.7,
                 marginBottom: "28px",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -467,7 +467,7 @@ export default function HomeProcess() {
                   borderRadius: "50%",
                   background: activeStep === 0 ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.08)",
                   border: "1px solid rgba(255,255,255,0.1)",
-                  color: activeStep === 0 ? "#3D4550" : "#9AA4B2",
+                  color: activeStep === 0 ? "#3D4550" : "#B7B9C3",
                   cursor: activeStep === 0 ? "not-allowed" : "pointer",
                   display: "flex",
                   alignItems: "center",

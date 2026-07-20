@@ -30,7 +30,7 @@ export default function BookPage() {
             style={{
               position: "absolute",
               inset: 0,
-              background: "radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.06) 0%, transparent 60%)",
+              background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.06) 0%, transparent 60%)",
               pointerEvents: "none",
             }}
           />
@@ -51,7 +51,7 @@ export default function BookPage() {
             <p
               style={{
                 fontSize: "17px",
-                color: "#9AA4B2",
+                color: "#B7B9C3",
                 lineHeight: 1.65,
                 marginBottom: "12px",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -93,7 +93,7 @@ export default function BookPage() {
                 <div
                   key={s.step}
                   style={{
-                    background: "rgba(22,33,45,0.6)",
+                    background: "rgba(23,23,23,0.6)",
                     border: "1px solid rgba(255,255,255,0.06)",
                     borderRadius: "14px",
                     padding: "28px",
@@ -104,7 +104,7 @@ export default function BookPage() {
                       fontFamily: "'Barlow Condensed', sans-serif",
                       fontSize: "28px",
                       fontWeight: 300,
-                      color: "rgba(212,175,55,0.4)",
+                      color: "rgba(255,222,2,0.4)",
                       marginBottom: "10px",
                     }}
                   >
@@ -121,7 +121,7 @@ export default function BookPage() {
                   >
                     {s.title}
                   </h3>
-                  <p style={{ fontSize: "14px", color: "#9AA4B2", lineHeight: 1.6, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <p style={{ fontSize: "14px", color: "#B7B9C3", lineHeight: 1.6, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                     {s.desc}
                   </p>
                 </div>
@@ -144,7 +144,7 @@ export default function BookPage() {
           <div style={{ maxWidth: "680px", margin: "0 auto" }}>
             <div
               style={{
-                background: "rgba(22,33,45,0.7)",
+                background: "rgba(23,23,23,0.7)",
                 border: "1px solid rgba(255,255,255,0.06)",
                 borderRadius: "20px",
                 padding: "40px",
