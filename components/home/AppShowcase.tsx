@@ -420,7 +420,7 @@ export default function AppShowcase() {
               <p style={{
                 textAlign: "center",
                 fontSize: "11px",
-                color: "#4E5A6A",
+                color: "#7E8395",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 marginTop: "14px",
                 letterSpacing: "0.02em",
