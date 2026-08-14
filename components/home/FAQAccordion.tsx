@@ -16,8 +16,8 @@ const faqs = [
     a: "Your coach is reachable via WhatsApp on weekdays with a maximum 4-hour response window, covering questions, adjustments, and anything between weekly check-ins.",
   },
   {
-    q: "What is the maximum client capacity?",
-    a: "CALIBRATE takes a maximum of 5 new clients per quarter. This allows every application to be personally reviewed and coaching quality to stay high.",
+    q: "How quickly can I start?",
+    a: "Applications are open to everyone and each one is personally reviewed, usually within 48 hours. Onboarding is paced so coaching quality stays high.",
   },
   {
     q: "Do I need a gym?",

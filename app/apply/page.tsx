@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Apply to CALIBRATE",
-  description: "Apply for CALIBRATE coaching. Maximum 5 clients per quarter. Applications reviewed personally by Guhayavarman within 48 hours.",
+  description: "Apply for CALIBRATE coaching. Applications are open to everyone and reviewed personally by Guhayavarman within 48 hours.",
   openGraph: {
     title: "Apply | CALIBRATE",
-    description: "Start your application for CALIBRATE coaching. Limited spots. Reviewed by the head coach personally.",
+    description: "Start your application for CALIBRATE coaching. Reviewed by the head coach personally.",
   },
 };
 
@@ -60,7 +60,7 @@ export default function ApplyPage() {
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
-              Reviewed personally by Guhay. Maximum 5 new clients per quarter. Fill in your details and you&apos;ll hear back within 48 hours.
+              Reviewed personally by Guhay. Fill in your details and you&apos;ll hear back within 48 hours.
             </p>
 
             {/* Primary CTA */}
@@ -96,7 +96,7 @@ export default function ApplyPage() {
             >
               <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#FFDE02", flexShrink: 0, boxShadow: "0 0 8px rgba(255,222,2,0.6)" }} />
               <span style={{ fontSize: "13px", fontWeight: 600, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                2 of 5 slots remaining, Q3 2026
+                Now accepting applications
               </span>
             </div>
           </div>
