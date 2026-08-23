@@ -287,10 +287,6 @@ export default function AdminPage() {
               </button>
             </div>
           </form>
-
-          <p style={{ textAlign: "center", fontSize: "12px", color: "#3D4550", fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: "20px" }}>
-            Default password: Calibrate2026!
-          </p>
         </div>
         <style>{`@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }`}</style>
       </div>
@@ -935,10 +931,10 @@ export default function AdminPage() {
               <div style={cardStyle}>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", color: "#FFFFFF", marginBottom: "12px" }}>Password</h3>
                 <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>
-                  Current password is set in the site code. Contact your developer to change it.
+                  The password is stored as the <code>ADMIN_PASSWORD</code> environment variable in Vercel, not in the site code.
                 </p>
                 <p style={{ fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", fontStyle: "italic" }}>
-                  File: app/admin/page.tsx · const ADMIN_PASSWORD = &quot;...&quot;
+                  Vercel Dashboard → this project → Settings → Environment Variables → ADMIN_PASSWORD. Changing it requires a redeploy to take effect.
                 </p>
               </div>
             </div>

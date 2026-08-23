@@ -79,6 +79,21 @@ create policy "public insert submissions"
   on form_submissions for insert
   with check (true);
 
+-- ─── Table-level grants ───────────────────────────────────────────────
+-- RLS policies only take effect once the role has the underlying SQL
+-- privilege. Tables created via the SQL Editor (unlike the dashboard
+-- table UI) don't get these by default, so grant them explicitly.
+
+grant usage on schema public to anon, authenticated, service_role;
+
+grant select on form_fields to anon, authenticated;
+grant select on pricing_rates to anon, authenticated;
+grant insert on form_submissions to anon, authenticated;
+
+grant all on form_fields to service_role;
+grant all on pricing_rates to service_role;
+grant all on form_submissions to service_role;
+
 -- ─── Seed data: current hardcoded intake questions and rates ─────────
 -- Guarded so re-running this migration never duplicates rows.
 insert into form_fields (order_index, section, label, help_text, field_type, options, placeholder, required, active)
