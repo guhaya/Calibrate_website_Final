@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import Logo from "@/components/layout/Logo";
 import Icon from "@/components/shared/Icon";
+import FormBuilder from "@/components/admin/FormBuilder";
+import RatesManager from "@/components/admin/RatesManager";
+import ApplicationsView from "@/components/admin/ApplicationsView";
 
 type FaqItem = { q: string; a: string };
 type Testimonial = { name: string; result: string; duration: string; quote: string };
@@ -46,7 +49,7 @@ const DEFAULT_CONTENT: SiteContent = {
   ],
 };
 
-type Section = "overview" | "hero" | "faq" | "testimonials" | "pricing" | "contact" | "settings" | "visitors";
+type Section = "overview" | "hero" | "faq" | "testimonials" | "pricing" | "form" | "applications" | "contact" | "settings" | "visitors";
 
 interface VisitorLog {
   id: string;
@@ -296,11 +299,13 @@ export default function AdminPage() {
 
   const navItems: { key: Section; label: string; icon: string }[] = [
     { key: "overview", label: "Overview", icon: "grid" },
+    { key: "form", label: "Intake Form", icon: "layout" },
+    { key: "applications", label: "Applications", icon: "faq" },
+    { key: "pricing", label: "Rates", icon: "pricing" },
     { key: "visitors", label: "Visitor Logs", icon: "trending" },
     { key: "hero", label: "Hero Section", icon: "layout" },
     { key: "faq", label: "FAQ", icon: "faq" },
     { key: "testimonials", label: "Testimonials", icon: "quote" },
-    { key: "pricing", label: "Pricing", icon: "pricing" },
     { key: "contact", label: "Contact Info", icon: "contact" },
     { key: "settings", label: "Settings", icon: "settings" },
   ];
@@ -850,57 +855,29 @@ export default function AdminPage() {
           {/* Pricing */}
           {activeSection === "pricing" && (
             <div>
-              <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Pricing</h1>
-              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>Update package names, prices, and features.</p>
+              <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Rates</h1>
+              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>
+                Add, edit, delete, and reorder coaching plans. Changes save straight to the database and appear instantly on the homepage and pricing page for every visitor.
+              </p>
+              <RatesManager password={password} />
+            </div>
+          )}
 
-              {content.pricing.map((tier, i) => (
-                <div key={i} style={cardStyle}>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginBottom: "16px" }}>
-                    <div>
-                      <label style={labelStyle}>Package Name</label>
-                      <input
-                        type="text"
-                        value={tier.name}
-                        onChange={(e) => {
-                          const u = [...content.pricing];
-                          u[i] = { ...tier, name: e.target.value };
-                          setContent({ ...content, pricing: u });
-                        }}
-                        style={inputStyle}
-                      />
-                    </div>
-                    <div>
-                      <label style={labelStyle}>Price</label>
-                      <input
-                        type="text"
-                        value={tier.price}
-                        onChange={(e) => {
-                          const u = [...content.pricing];
-                          u[i] = { ...tier, price: e.target.value };
-                          setContent({ ...content, pricing: u });
-                        }}
-                        style={inputStyle}
-                      />
-                    </div>
-                  </div>
-                  <div style={{ marginBottom: "12px" }}>
-                    <label style={labelStyle}>Features (one per line)</label>
-                    <textarea
-                      rows={5}
-                      value={tier.features.join("\n")}
-                      onChange={(e) => {
-                        const u = [...content.pricing];
-                        u[i] = { ...tier, features: e.target.value.split("\n").filter(Boolean) };
-                        setContent({ ...content, pricing: u });
-                      }}
-                      style={{ ...inputStyle, resize: "vertical" }}
-                    />
-                  </div>
-                  <button onClick={() => saveContent(content)} style={{ padding: "8px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>
-                    Save {tier.name}
-                  </button>
-                </div>
-              ))}
+          {activeSection === "form" && (
+            <div>
+              <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Intake Form</h1>
+              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>
+                Build the application form clients fill out at /apply. Add questions, edit or delete existing ones, toggle required/visible, and drag to reorder. Every change saves to the database and shows up live, no redeploy needed.
+              </p>
+              <FormBuilder password={password} />
+            </div>
+          )}
+
+          {activeSection === "applications" && (
+            <div>
+              <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Applications</h1>
+              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>Client submissions from the /apply form.</p>
+              <ApplicationsView password={password} />
             </div>
           )}
 
@@ -943,7 +920,7 @@ export default function AdminPage() {
               <div style={cardStyle}>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", color: "#FFFFFF", marginBottom: "16px" }}>Data Management</h3>
                 <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "16px", lineHeight: 1.6 }}>
-                  Content changes are saved to your browser&apos;s local storage. Use &quot;Export JSON&quot; in the sidebar to download your content, then send it to your developer to apply permanently to the site code.
+                  Intake Form, Rates, and Applications save straight to the database and go live for every visitor immediately. Hero, FAQ, Testimonials, and Contact Info below are saved to this browser&apos;s local storage only, use &quot;Export JSON&quot; in the sidebar to download those and send them to your developer to apply permanently to the site code.
                 </p>
                 <div style={{ display: "flex", gap: "12px" }}>
                   <button onClick={exportJSON} style={{ padding: "10px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>

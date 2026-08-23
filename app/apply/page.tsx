@@ -11,11 +11,10 @@ export const metadata: Metadata = {
 import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
-
-const FORM_URL = "https://app.gvnfit.online/forms";
+import ApplyForm from "@/components/apply/ApplyForm";
 
 const steps = [
-  { num: "01", label: "Fill the form", detail: "6 sections covering your goals, schedule, and lifestyle, takes about 8 minutes." },
+  { num: "01", label: "Fill the form", detail: "A few sections covering your goals, schedule, and lifestyle, takes a few minutes." },
   { num: "02", label: "Personal review", detail: "Guhay reviews every application himself within 48 hours." },
   { num: "03", label: "Diagnostic call", detail: "A free 20-minute call to confirm fit and outline your exact protocol." },
   { num: "04", label: "Programme begins", detail: "Custom training and nutrition plan delivered within 48 hours of your call." },
@@ -65,20 +64,18 @@ export default function ApplyPage() {
 
             {/* Primary CTA */}
             <a
-              href={FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#application-form"
               className="btn-primary"
               style={{ fontSize: "16px", padding: "16px 40px", display: "inline-flex" }}
             >
               Start Your Application
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M2 14L14 2M8 2h6v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
 
             <p style={{ marginTop: "16px", fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              Opens the secure application form · takes ~8 minutes
+              Takes a few minutes · reviewed personally within 48 hours
             </p>
 
             {/* Scarcity */}
@@ -162,34 +159,21 @@ export default function ApplyPage() {
           <style>{`@media (max-width: 480px) { .apply-steps-grid { grid-template-columns: 1fr !important; } }`}</style>
         </section>
 
-        {/* Bottom CTA */}
-        <section style={{ padding: "80px 24px 120px", textAlign: "center" }}>
-          <div style={{ maxWidth: "520px", margin: "0 auto" }}>
-            <h2 style={{ fontSize: "clamp(28px, 3.5vw, 42px)", color: "#FFFFFF", letterSpacing: "-0.02em", marginBottom: "16px" }}>
-              Ready to apply?
-            </h2>
-            <p style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.65, marginBottom: "32px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              The form takes ~8 minutes. Not sure yet?{" "}
-              <Link href="/book" style={{ color: "#FFDE02", textDecoration: "none" }}>Book a free 20-minute diagnostic call</Link>{" "}
-              first, no commitment required.
-            </p>
-            <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
-              <a
-                href={FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-                style={{ fontSize: "15px", padding: "14px 32px" }}
-              >
-                Open Application Form
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M2 12L12 2M7 2h5v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </a>
-              <Link href="/book" className="btn-secondary" style={{ fontSize: "15px", padding: "14px 32px" }}>
-                Free Diagnostic Call
-              </Link>
+        {/* Application form */}
+        <section id="application-form" style={{ padding: "80px 24px 120px", scrollMarginTop: "96px" }}>
+          <div style={{ maxWidth: "620px", margin: "0 auto" }}>
+            <div style={{ textAlign: "center", marginBottom: "48px" }}>
+              <div className="tag" style={{ marginBottom: "20px" }}>Your Application</div>
+              <h2 style={{ fontSize: "clamp(28px, 3.5vw, 42px)", color: "#FFFFFF", letterSpacing: "-0.02em", marginBottom: "16px" }}>
+                Tell us about you
+              </h2>
+              <p style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                Not sure yet?{" "}
+                <Link href="/book" style={{ color: "#FFDE02", textDecoration: "none" }}>Book a free 20-minute diagnostic call</Link>{" "}
+                first, no commitment required.
+              </p>
             </div>
+            <ApplyForm />
           </div>
         </section>
       </main>

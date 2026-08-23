@@ -1,17 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
+import type { PricingRate } from "@/lib/supabase";
 
-const plans = [
+const FALLBACK_PLANS: PricingRate[] = [
   {
+    id: "fallback-monthly",
+    order_index: 1,
     name: "Monthly",
     tagline: "Flexible commitment",
     price: 25000,
-    billingNote: "per month · minimum 3-month commitment",
-    description: "Full access to the CALIBRATE system with monthly flexibility. Ideal for professionals who want to start and assess results before committing to a longer cycle.",
+    currency: "INR",
+    billing_note: "per month · minimum 3-month commitment",
+    discount_label: null,
     features: [
       "Calibration Assessment Report (Week 0)",
       "Custom training programme (4-week blocks)",
@@ -21,25 +25,33 @@ const plans = [
       "Monthly bloodwork review",
       "CALIBRATE app access",
     ],
-    cta: "Apply: Monthly",
     highlight: false,
+    active: true,
   },
   {
+    id: "fallback-quarterly",
+    order_index: 2,
     name: "Quarterly",
-    tagline: "Best value · Save ₹10,000",
+    tagline: "Best value",
     price: 65000,
-    billingNote: "billed upfront · full 3-month programme",
-    description: "The complete Calibration Protocol at a single investment. Includes quarterly re-calibration audit and priority application review. Saves ₹10,000 versus monthly.",
+    currency: "INR",
+    billing_note: "billed upfront · full 3-month programme",
+    discount_label: "Save ₹10,000",
     features: [
       "Everything in Monthly",
       "Quarterly re-calibration audit",
       "Priority application review",
       "Saves ₹10,000 vs monthly billing",
     ],
-    cta: "Apply: Quarterly",
     highlight: true,
+    active: true,
   },
 ];
+
+function formatPrice(rate: PricingRate) {
+  if (rate.currency === "INR") return `₹${rate.price.toLocaleString("en-IN")}`;
+  return `${rate.currency} ${rate.price.toLocaleString()}`;
+}
 
 const faqs = [
   {
@@ -74,6 +86,16 @@ const faqs = [
 
 export default function PricingClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [plans, setPlans] = useState<PricingRate[]>(FALLBACK_PLANS);
+
+  useEffect(() => {
+    fetch("/api/form-data", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((json) => {
+        if (json.rates && json.rates.length > 0) setPlans(json.rates);
+      })
+      .catch(() => { /* keep fallback */ });
+  }, []);
 
   return (
     <>
@@ -103,10 +125,10 @@ export default function PricingClient() {
         {/* Plans */}
         <section style={{ padding: "0 24px 80px" }}>
           <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "20px", alignItems: "start" }} className="plans-grid">
-              {plans.map((plan, i) => (
+            <div style={{ display: "grid", gridTemplateColumns: `repeat(${Math.min(plans.length, 3) || 1}, 1fr)`, gap: "20px", alignItems: "start" }} className="plans-grid">
+              {plans.map((plan) => (
                 <div
-                  key={i}
+                  key={plan.id}
                   style={{
                     background: plan.highlight ? "rgba(23,23,23,0.95)" : "rgba(23,23,23,0.6)",
                     border: plan.highlight ? "1px solid rgba(255,222,2,0.3)" : "1px solid rgba(255,255,255,0.06)",
@@ -118,20 +140,22 @@ export default function PricingClient() {
                       Best Value
                     </div>
                   )}
-                  <p style={{ fontSize: "11px", fontWeight: 700, color: plan.highlight ? "#FFDE02" : "#B7B9C3", letterSpacing: "0.08em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>
-                    {plan.tagline}
-                  </p>
+                  {plan.tagline && (
+                    <p style={{ fontSize: "11px", fontWeight: 700, color: plan.highlight ? "#FFDE02" : "#B7B9C3", letterSpacing: "0.08em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>
+                      {plan.tagline}{plan.discount_label ? ` · ${plan.discount_label}` : ""}
+                    </p>
+                  )}
                   <h2 style={{ fontSize: "28px", color: "#FFFFFF", marginBottom: "20px", letterSpacing: "-0.01em" }}>{plan.name}</h2>
                   <div style={{ marginBottom: "8px" }}>
                     <div style={{ display: "flex", alignItems: "baseline", gap: "2px" }}>
-                      <span style={{ fontSize: "22px", fontWeight: 700, color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1 }}>₹</span>
-                      <span style={{ fontSize: "52px", fontWeight: 800, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1 }}>{plan.price.toLocaleString("en-IN")}</span>
+                      <span style={{ fontSize: "52px", fontWeight: 800, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1 }}>{formatPrice(plan)}</span>
                     </div>
                   </div>
-                  <p style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "20px" }}>{plan.billingNote}</p>
-                  <p style={{ fontSize: "14px", color: "#B7B9C3", lineHeight: 1.65, marginBottom: "28px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{plan.description}</p>
+                  {plan.billing_note && (
+                    <p style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "28px" }}>{plan.billing_note}</p>
+                  )}
                   <Link href="/apply" className={plan.highlight ? "btn-primary" : "btn-secondary"} style={{ width: "100%", justifyContent: "center", marginBottom: "28px", fontSize: "14px" }}>
-                    {plan.cta}
+                    Apply: {plan.name}
                   </Link>
                   <ul style={{ listStyle: "none" }}>
                     {plan.features.map((f) => (

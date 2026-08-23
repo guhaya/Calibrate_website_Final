@@ -1,13 +1,19 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import type { PricingRate } from "@/lib/supabase";
 
-const plans = [
+const FALLBACK_PLANS: PricingRate[] = [
   {
+    id: "fallback-monthly",
+    order_index: 1,
     name: "Monthly",
     tagline: "Flexible commitment",
     price: 25000,
-    billingNote: "per month · minimum 3-month commitment",
+    currency: "INR",
+    billing_note: "per month · minimum 3-month commitment",
+    discount_label: null,
     features: [
       "Calibration Assessment Report",
       "Custom training programme",
@@ -15,27 +21,46 @@ const plans = [
       "Weekly check-in & adjustments",
       "WhatsApp coach support",
     ],
-    cta: "Apply: Monthly",
     highlight: false,
+    active: true,
   },
   {
+    id: "fallback-quarterly",
+    order_index: 2,
     name: "Quarterly",
     tagline: "Best value",
-    discount: "Save ₹10,000",
     price: 65000,
-    billingNote: "billed upfront · full 3-month programme",
+    currency: "INR",
+    billing_note: "billed upfront · full 3-month programme",
+    discount_label: "Save ₹10,000",
     features: [
       "Everything in Monthly",
       "Quarterly re-calibration audit",
       "Priority application review",
       "Saves ₹10,000 vs monthly",
     ],
-    cta: "Apply: Quarterly",
     highlight: true,
+    active: true,
   },
 ];
 
+function formatPrice(rate: PricingRate) {
+  if (rate.currency === "INR") return `₹${rate.price.toLocaleString("en-IN")}`;
+  return `${rate.currency} ${rate.price.toLocaleString()}`;
+}
+
 export default function PricingCards() {
+  const [plans, setPlans] = useState<PricingRate[]>(FALLBACK_PLANS);
+
+  useEffect(() => {
+    fetch("/api/form-data", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((json) => {
+        if (json.rates && json.rates.length > 0) setPlans(json.rates);
+      })
+      .catch(() => { /* keep fallback */ });
+  }, []);
+
   return (
     <section style={{ padding: "120px 24px", background: "rgba(9,9,11,0.5)" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto" }}>
@@ -49,10 +74,10 @@ export default function PricingCards() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "20px", alignItems: "start" }} className="pricing-grid">
+        <div style={{ display: "grid", gridTemplateColumns: `repeat(${Math.min(plans.length, 3) || 1}, 1fr)`, gap: "20px", alignItems: "start" }} className="pricing-grid">
           {plans.map((plan) => (
             <div
-              key={plan.name}
+              key={plan.id}
               style={{
                 background: plan.highlight ? "rgba(23,23,23,0.95)" : "rgba(17,17,20,0.7)",
                 border: plan.highlight ? "1.5px solid rgba(255,222,2,0.4)" : "1px solid rgba(255,255,255,0.08)",
@@ -62,27 +87,30 @@ export default function PricingCards() {
                 boxShadow: plan.highlight ? "0 24px 64px rgba(255,222,2,0.10)" : "none",
               }}
             >
-              {plan.highlight && (
+              {plan.highlight && plan.discount_label && (
                 <div style={{
                   position: "absolute", top: "-1px", left: "50%", transform: "translateX(-50%)",
                   background: "#FFDE02", color: "#07070A", fontSize: "11px", fontWeight: 800,
                   fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.1em", textTransform: "uppercase",
                   padding: "6px 20px", borderRadius: "0 0 12px 12px", whiteSpace: "nowrap",
                 }}>
-                  {plan.discount}
+                  {plan.discount_label}
                 </div>
               )}
-              <p style={{ fontSize: "11px", fontWeight: 700, color: plan.highlight ? "#FFDE02" : "#7E8395", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "12px", marginTop: plan.highlight ? "12px" : 0 }}>
-                {plan.tagline}
-              </p>
+              {plan.tagline && (
+                <p style={{ fontSize: "11px", fontWeight: 700, color: plan.highlight ? "#FFDE02" : "#7E8395", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "12px", marginTop: plan.highlight && plan.discount_label ? "12px" : 0 }}>
+                  {plan.tagline}
+                </p>
+              )}
               <h3 style={{ fontFamily: "var(--font-display)", fontSize: "32px", color: "#FFFFFF", marginBottom: "20px", textTransform: "uppercase" }}>{plan.name}</h3>
               <div style={{ display: "flex", alignItems: "baseline", gap: "3px", marginBottom: "8px" }}>
-                <span style={{ fontSize: "22px", fontWeight: 700, color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>₹</span>
-                <span style={{ fontSize: "48px", fontWeight: 800, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1 }}>{plan.price.toLocaleString("en-IN")}</span>
+                <span style={{ fontSize: "48px", fontWeight: 800, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1 }}>{formatPrice(plan)}</span>
               </div>
-              <p style={{ fontSize: "13px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "28px" }}>{plan.billingNote}</p>
+              {plan.billing_note && (
+                <p style={{ fontSize: "13px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "28px" }}>{plan.billing_note}</p>
+              )}
               <Link href="/apply" className={plan.highlight ? "btn-primary" : "btn-secondary"} style={{ width: "100%", justifyContent: "center", marginBottom: "28px" }}>
-                {plan.cta}
+                Apply: {plan.name}
               </Link>
               <ul style={{ listStyle: "none" }}>
                 {plan.features.map((f) => (
