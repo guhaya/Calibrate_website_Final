@@ -71,8 +71,8 @@ const faqs = [
     a: "Your coach is reachable via WhatsApp on weekdays with a maximum 4-hour response window. This covers questions, adjustments, and anything that comes up between weekly check-ins.",
   },
   {
-    q: "What is the maximum client capacity?",
-    a: "CALIBRATE takes a maximum of 5 new clients per quarter. This isn't artificial scarcity, it's the number that allows Guhay to personally review every application and maintain coaching quality across the team.",
+    q: "How quickly can I start?",
+    a: "Applications are open to everyone and Guhay reviews each one personally, usually within 48 hours. Because coaching is one-to-one, onboarding is paced to keep every programme's quality high — if there's a short wait when you apply, we'll tell you upfront.",
   },
   {
     q: "Do I need a gym?",
@@ -116,7 +116,7 @@ export default function PricingClient() {
             <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "rgba(255,222,2,0.08)", border: "1px solid rgba(255,222,2,0.2)", borderRadius: "999px", padding: "8px 20px" }}>
               <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#FFDE02", flexShrink: 0, boxShadow: "0 0 8px rgba(255,222,2,0.6)" }} />
               <span style={{ fontSize: "13px", fontWeight: 600, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                2 of 5 slots remaining, Q3 2026
+                Now accepting applications
               </span>
             </div>
           </div>
