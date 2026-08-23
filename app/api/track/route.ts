@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
     );
 
-    await supabase.from("visitor_logs").insert({
+    const { error } = await supabase.from("visitor_logs").insert({
       ip,
       country,
       country_code: countryCode,
@@ -64,6 +64,11 @@ export async function POST(req: NextRequest) {
       referrer: body.referrer || "",
       session_id: body.sessionId || "",
     });
+
+    if (error) {
+      console.error("visitor_logs insert failed:", error.message);
+      return NextResponse.json({ ok: false }, { status: 500 });
+    }
 
     return NextResponse.json({ ok: true });
   } catch {
