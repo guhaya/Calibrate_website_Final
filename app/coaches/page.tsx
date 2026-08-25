@@ -12,83 +12,19 @@ import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import Icon from "@/components/shared/Icon";
+import { getTeamMembers } from "@/lib/team";
 
-const headCoach = {
-  name: "Guhayavarman",
-  handle: "@fitguhay",
-  role: "Founder & Head Coach",
-  bio: [
-    "I started CALIBRATE because I kept seeing the same pattern: smart, motivated people failing to reach their goals, not from lack of effort, but from lack of the right system. Engineers, founders, product managers putting in the work but getting nowhere.",
-    "The fitness industry profits from confusion. CALIBRATE is built on the opposite principle, the same data-driven frameworks used in precision engineering, applied to body optimisation. Your body is a process. Processes can be optimised.",
-  ],
-  stats: [
-    { value: "10+", label: "Active clients" },
-    { value: "5+", label: "Years coaching" },
-    { value: "12+", label: "Countries reached" },
-    { value: "200+", label: "Transformations" },
-  ],
-  credentials: [
-    "Level 4 Personal Training Certification",
-    "Sports Nutrition Specialist",
-    "DMAIC-certified performance protocol",
-    "Competitive athlete background",
-    "Based in Chennai, Tamil Nadu",
-  ],
-};
+// Reads live from Supabase on every request so edits made in /admin (Team)
+// show up here immediately instead of only after the next deploy.
+export const dynamic = "force-dynamic";
 
-const trainers = [
-  {
-    name: "Ashok",
-    role: "Personal Trainer · Certified Strength & Conditioning Coach",
-    experience: "10+ years",
-    location: "Bangalore",
-    specialisation: "Strength & Conditioning",
-    description: "Ashok brings over a decade of strength and conditioning expertise to CALIBRATE. As an online trainer, he designs progressive programming for clients across all levels, from foundational strength work to performance-focused conditioning cycles.",
-    color: "#FFDE02",
-    initials: "A",
-  },
-  {
-    name: "Rajavel",
-    role: "Certified Personal Trainer",
-    experience: "8+ years",
-    location: "Mumbai",
-    specialisation: "Personal Training",
-    description: "Rajavel is a certified personal trainer with eight years of experience working with clients across diverse goals and backgrounds. His coaching is grounded in building sustainable habits and consistent progress, no extremes, no shortcuts.",
-    color: "#22C55E",
-    initials: "R",
-  },
-  {
-    name: "Balaji",
-    role: "NASM CPT · Online Trainer",
-    experience: "5+ years",
-    location: "Coimbatore",
-    specialisation: "NASM Certified Training",
-    description: "Balaji is NASM-certified and specialises in online coaching, delivering structured, evidence-based programmes remotely. His methodical approach ensures clients get expert-level training regardless of where they're based.",
-    color: "#3B82F6",
-    initials: "B",
-  },
-];
-
-const specialists = [
-  {
-    name: "Naren",
-    role: "Nutritionist & Fitness Data Analyst",
-    credentials: "Nutritionist · Fitness Data Analyst · 10+ years",
-    location: "Malaysia",
-    description: "Naren combines nutritional expertise with data-driven fitness analysis, a rare combination that lets him translate raw client metrics into precise dietary strategies. With over a decade of experience, he handles complex nutrition protocols and performance-level goals.",
-    color: "#A855F7",
-    initials: "N",
-  },
-  {
-    name: "Karthika D'Souza",
-    role: "Dietician & Clinical Health Analyst",
-    credentials: "Registered Dietician · Clinical Health Analyst · 10+ years",
-    location: "Malaysia",
-    description: "Karthika brings clinical-grade expertise to the team, managing medical dietary requirements, health risk analysis, and evidence-based nutrition intervention for clients who need specialist-level dietary support.",
-    color: "#F97316",
-    initials: "K",
-  },
-];
+function hexToRgb(hex: string): string {
+  const clean = hex.replace("#", "");
+  const full = clean.length === 3 ? clean.split("").map((c) => c + c).join("") : clean;
+  const num = parseInt(full, 16);
+  if (Number.isNaN(num) || full.length !== 6) return "255,222,2";
+  return `${(num >> 16) & 255},${(num >> 8) & 255},${num & 255}`;
+}
 
 const values = [
   {
@@ -113,7 +49,16 @@ const values = [
   },
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const members = await getTeamMembers();
+  const headCoach = members.find((m) => m.category === "head_coach") ?? {
+    name: "Guhayavarman", handle: "@fitguhay", role: "Founder & Head Coach", location: "Chennai, TN",
+    bio: [] as string[], credentials: [] as string[], stats: [] as { value: string; label: string }[],
+    color: "#FFDE02", initials: "G",
+  };
+  const trainers = members.filter((m) => m.category === "trainer");
+  const specialists = members.filter((m) => m.category === "specialist");
+
   return (
     <>
       <Navigation />
@@ -193,7 +138,7 @@ export default function AboutPage() {
               </div>
               <div className="hr-gold" style={{ marginBottom: "28px" }} />
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
-                {headCoach.stats.map((s) => (
+                {(headCoach.stats ?? []).map((s) => (
                   <div key={s.label}>
                     <p style={{ fontSize: "28px", fontWeight: 800, color: "#FFDE02", fontFamily: "'Barlow Condensed', sans-serif", lineHeight: 1 }}>{s.value}</p>
                     <p style={{ fontSize: "12px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: "4px" }}>{s.label}</p>
@@ -246,7 +191,7 @@ export default function AboutPage() {
                     marginBottom: "20px",
                   }}
                 >
-                  G
+                  {headCoach.initials || headCoach.name.charAt(0)}
                 </div>
                 <h3 style={{ fontSize: "24px", color: "#FFFFFF", marginBottom: "4px", letterSpacing: "-0.01em" }}>
                   {headCoach.name}
@@ -255,11 +200,11 @@ export default function AboutPage() {
                   {headCoach.role}
                 </p>
                 <p style={{ fontSize: "12px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "28px" }}>
-                  {headCoach.handle} · Chennai, TN
+                  {[headCoach.handle, headCoach.location].filter(Boolean).join(" · ")}
                 </p>
                 <div className="hr-gold" style={{ marginBottom: "24px" }} />
                 <ul style={{ listStyle: "none" }}>
-                  {headCoach.credentials.map((c) => (
+                  {(headCoach.credentials ?? []).map((c) => (
                     <li key={c} style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "10px", fontSize: "13px", color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ marginTop: "1px", flexShrink: 0 }}>
                         <circle cx="7" cy="7" r="6" fill="rgba(255,222,2,0.1)" />
@@ -272,8 +217,8 @@ export default function AboutPage() {
               </div>
               {/* Right panel */}
               <div style={{ padding: "40px" }}>
-                {headCoach.bio.map((para, i) => (
-                  <p key={i} style={{ fontSize: "16px", color: "#B7B9C3", lineHeight: 1.75, fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: i < headCoach.bio.length - 1 ? "20px" : "0" }}>
+                {(headCoach.bio ?? []).map((para, i, arr) => (
+                  <p key={i} style={{ fontSize: "16px", color: "#B7B9C3", lineHeight: 1.75, fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: i < arr.length - 1 ? "20px" : "0" }}>
                     {para}
                   </p>
                 ))}
@@ -300,8 +245,8 @@ export default function AboutPage() {
               className="trainers-grid"
             >
               {trainers.map((t) => {
-                const rgbMap: Record<string, string> = { "#FFDE02": "255,222,2", "#22C55E": "34,197,94", "#3B82F6": "59,130,246" };
-                const rgb = rgbMap[t.color];
+                const color = t.color || "#FFDE02";
+                const rgb = hexToRgb(color);
                 return (
                   <div
                     key={t.name}
@@ -319,15 +264,15 @@ export default function AboutPage() {
                           background: `rgba(${rgb}, 0.15)`,
                           border: `1px solid rgba(${rgb}, 0.3)`,
                           display: "flex", alignItems: "center", justifyContent: "center",
-                          fontSize: "20px", fontWeight: 800, color: t.color,
+                          fontSize: "20px", fontWeight: 800, color,
                           fontFamily: "'Barlow Condensed', sans-serif",
                           marginBottom: "16px",
                         }}
                       >
-                        {t.initials}
+                        {t.initials || t.name.charAt(0)}
                       </div>
                       <h3 style={{ fontSize: "20px", color: "#FFFFFF", marginBottom: "4px" }}>{t.name}</h3>
-                      <p style={{ fontSize: "11px", fontWeight: 700, color: t.color, fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "4px" }}>
+                      <p style={{ fontSize: "11px", fontWeight: 700, color, fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "4px" }}>
                         {t.specialisation}
                       </p>
                       <p style={{ fontSize: "12px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
@@ -364,8 +309,8 @@ export default function AboutPage() {
               className="specialists-grid"
             >
               {specialists.map((s) => {
-                const rgbMap: Record<string, string> = { "#A855F7": "168,85,247", "#F97316": "249,115,22" };
-                const rgb = rgbMap[s.color];
+                const color = s.color || "#A855F7";
+                const rgb = hexToRgb(color);
                 return (
                   <div
                     key={s.name}
@@ -385,20 +330,20 @@ export default function AboutPage() {
                         background: `rgba(${rgb}, 0.12)`,
                         border: `1px solid rgba(${rgb}, 0.25)`,
                         display: "flex", alignItems: "center", justifyContent: "center",
-                        fontSize: "18px", fontWeight: 800, color: s.color,
+                        fontSize: "18px", fontWeight: 800, color,
                         fontFamily: "'Barlow Condensed', sans-serif",
                         flexShrink: 0,
                       }}
                     >
-                      {s.initials}
+                      {s.initials || s.name.charAt(0)}
                     </div>
                     <div>
                       <h3 style={{ fontSize: "18px", color: "#FFFFFF", marginBottom: "3px" }}>{s.name}</h3>
-                      <p style={{ fontSize: "12px", fontWeight: 700, color: s.color, fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.04em", marginBottom: "3px" }}>
+                      <p style={{ fontSize: "12px", fontWeight: 700, color, fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.04em", marginBottom: "3px" }}>
                         {s.role}
                       </p>
                       <p style={{ fontSize: "11px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "14px" }}>
-                        {s.credentials} · {s.location}
+                        {[s.credentials_line, s.location].filter(Boolean).join(" · ")}
                       </p>
                       <p style={{ fontSize: "14px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                         {s.description}

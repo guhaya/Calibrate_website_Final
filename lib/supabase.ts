@@ -45,3 +45,30 @@ export interface PricingRate {
   highlight: boolean;
   active: boolean;
 }
+
+export type TeamCategory = "head_coach" | "trainer" | "specialist";
+
+export interface TeamStat {
+  value: string;
+  label: string;
+}
+
+export interface TeamMember {
+  id: string;
+  category: TeamCategory;
+  order_index: number;
+  name: string;
+  handle: string | null;
+  role: string | null;
+  location: string | null;
+  experience: string | null;
+  specialisation: string | null;
+  credentials_line: string | null;
+  description: string | null;
+  bio: string[] | null;
+  credentials: string[] | null;
+  stats: TeamStat[] | null;
+  color: string | null;
+  initials: string | null;
+  active: boolean;
+}

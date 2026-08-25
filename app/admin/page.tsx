@@ -5,6 +5,7 @@ import Logo from "@/components/layout/Logo";
 import Icon from "@/components/shared/Icon";
 import FormBuilder from "@/components/admin/FormBuilder";
 import RatesManager from "@/components/admin/RatesManager";
+import TeamManager from "@/components/admin/TeamManager";
 import ApplicationsView from "@/components/admin/ApplicationsView";
 
 type FaqItem = { q: string; a: string };
@@ -49,7 +50,7 @@ const DEFAULT_CONTENT: SiteContent = {
   ],
 };
 
-type Section = "overview" | "hero" | "faq" | "testimonials" | "pricing" | "form" | "applications" | "contact" | "settings" | "visitors";
+type Section = "overview" | "hero" | "faq" | "testimonials" | "pricing" | "team" | "form" | "applications" | "contact" | "settings" | "visitors";
 
 interface VisitorLog {
   id: string;
@@ -340,6 +341,7 @@ export default function AdminPage() {
     { key: "form", label: "Intake Form", icon: "layout" },
     { key: "applications", label: "Applications", icon: "faq" },
     { key: "pricing", label: "Rates", icon: "pricing" },
+    { key: "team", label: "Team", icon: "contact" },
     { key: "visitors", label: "Visitor Logs", icon: "trending" },
     { key: "hero", label: "Hero Section", icon: "layout" },
     { key: "faq", label: "FAQ", icon: "faq" },
@@ -898,6 +900,17 @@ export default function AdminPage() {
                 Add, edit, delete, and reorder coaching plans. Changes save straight to the database and appear instantly on the homepage and pricing page for every visitor.
               </p>
               <RatesManager password={password} />
+            </div>
+          )}
+
+          {/* Team */}
+          {activeSection === "team" && (
+            <div>
+              <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Team</h1>
+              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>
+                Edit the head coach bio, certified trainers, and on-call specialists shown on the /coaches page. Changes save straight to the database and go live for every visitor immediately.
+              </p>
+              <TeamManager password={password} />
             </div>
           )}
 
