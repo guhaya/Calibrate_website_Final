@@ -79,6 +79,12 @@ export default function AdminPage() {
   const [visitorCount, setVisitorCount] = useState(0);
   const [visitorPage, setVisitorPage] = useState(0);
   const [visitorLoading, setVisitorLoading] = useState(false);
+  const [currentPw, setCurrentPw] = useState("");
+  const [newPw, setNewPw] = useState("");
+  const [confirmPw, setConfirmPw] = useState("");
+  const [pwSaving, setPwSaving] = useState(false);
+  const [pwError, setPwError] = useState("");
+  const [pwSuccess, setPwSuccess] = useState(false);
 
   useEffect(() => {
     const auth = sessionStorage.getItem("calibrate_admin_auth");
@@ -121,6 +127,42 @@ export default function AdminPage() {
       setPasswordError(true);
       setTimeout(() => setPasswordError(false), 2000);
     }
+  }
+
+  async function handleChangePassword(e: React.FormEvent) {
+    e.preventDefault();
+    setPwError("");
+    setPwSuccess(false);
+    if (newPw !== confirmPw) {
+      setPwError("New password and confirmation don't match");
+      return;
+    }
+    setPwSaving(true);
+    try {
+      const res = await fetch("/api/admin/change-password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ currentPassword: currentPw, newPassword: newPw }),
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        setPwError(json.error || "Something went wrong");
+      } else {
+        // Keep the session authenticated under the new password so every
+        // other admin API call (which sends this same `password` state)
+        // keeps working without forcing a re-login.
+        setPassword(newPw);
+        sessionStorage.setItem("calibrate_admin_pw", newPw);
+        setCurrentPw("");
+        setNewPw("");
+        setConfirmPw("");
+        setPwSuccess(true);
+        setTimeout(() => setPwSuccess(false), 3000);
+      }
+    } catch {
+      setPwError("Network error — please try again");
+    }
+    setPwSaving(false);
   }
 
   function saveContent(updated: SiteContent) {
@@ -929,13 +971,54 @@ export default function AdminPage() {
               </div>
 
               <div style={cardStyle}>
-                <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", color: "#FFFFFF", marginBottom: "12px" }}>Password</h3>
-                <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>
-                  The password is stored as the <code>ADMIN_PASSWORD</code> environment variable in Vercel, not in the site code.
+                <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", color: "#FFFFFF", marginBottom: "12px" }}>Change Password</h3>
+                <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "16px", lineHeight: 1.6 }}>
+                  Takes effect immediately, no redeploy needed.
                 </p>
-                <p style={{ fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", fontStyle: "italic" }}>
-                  Vercel Dashboard → this project → Settings → Environment Variables → ADMIN_PASSWORD. Changing it requires a redeploy to take effect.
-                </p>
+                <form onSubmit={handleChangePassword} style={{ display: "flex", flexDirection: "column", gap: "12px", maxWidth: "360px" }}>
+                  <input
+                    type="password"
+                    placeholder="Current password"
+                    value={currentPw}
+                    onChange={(e) => setCurrentPw(e.target.value)}
+                    autoComplete="current-password"
+                    required
+                    style={{ padding: "10px 14px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "#FFFFFF", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                  />
+                  <input
+                    type="password"
+                    placeholder="New password (min. 8 characters)"
+                    value={newPw}
+                    onChange={(e) => setNewPw(e.target.value)}
+                    autoComplete="new-password"
+                    minLength={8}
+                    required
+                    style={{ padding: "10px 14px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "#FFFFFF", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                  />
+                  <input
+                    type="password"
+                    placeholder="Confirm new password"
+                    value={confirmPw}
+                    onChange={(e) => setConfirmPw(e.target.value)}
+                    autoComplete="new-password"
+                    minLength={8}
+                    required
+                    style={{ padding: "10px 14px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "#FFFFFF", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                  />
+                  {pwError && (
+                    <p style={{ fontSize: "13px", color: "#DE3033", fontFamily: "'Plus Jakarta Sans', sans-serif", margin: 0 }}>{pwError}</p>
+                  )}
+                  {pwSuccess && (
+                    <p style={{ fontSize: "13px", color: "#4ADE80", fontFamily: "'Plus Jakarta Sans', sans-serif", margin: 0 }}>Password changed.</p>
+                  )}
+                  <button
+                    type="submit"
+                    disabled={pwSaving}
+                    style={{ padding: "10px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: pwSaving ? "default" : "pointer", opacity: pwSaving ? 0.6 : 1, alignSelf: "flex-start" }}
+                  >
+                    {pwSaving ? "Saving…" : "Update Password"}
+                  </button>
+                </form>
               </div>
             </div>
           )}

@@ -14,9 +14,6 @@ export function supabaseAdmin() {
   );
 }
 
-export function checkAdminPassword(password: string) {
-  return Boolean(process.env.ADMIN_PASSWORD) && password === process.env.ADMIN_PASSWORD;
-}
 
 export type FormFieldType =
   | "text" | "textarea" | "email" | "phone" | "number"
