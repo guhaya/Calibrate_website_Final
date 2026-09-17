@@ -19,6 +19,8 @@ export default function PolicyPage({ policy, policyType, intro }: {
     day: "numeric", month: "long", year: "numeric",
   });
   const otherLinks = OTHER_POLICIES.filter(p => p.type !== policyType);
+  const slugify = (title: string) =>
+    title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
   return (
     <>
@@ -45,9 +47,32 @@ export default function PolicyPage({ policy, policyType, intro }: {
             >
               {policy.title}
             </h1>
-            <p style={{ fontSize: "14px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <p style={{ fontSize: "14px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "28px" }}>
               Version {policy.versionNumber} · Last updated: {lastUpdated}
             </p>
+            {policy.sections.length > 1 && (
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                {policy.sections.map((section, i) => (
+                  <a
+                    key={i}
+                    href={`#${slugify(section.title)}`}
+                    style={{
+                      fontSize: "12px",
+                      fontWeight: 600,
+                      color: "#B7B9C3",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      textDecoration: "none",
+                      padding: "6px 14px",
+                      borderRadius: "999px",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      background: "rgba(255,255,255,0.03)",
+                    }}
+                  >
+                    {section.title}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
@@ -70,10 +95,12 @@ export default function PolicyPage({ policy, policyType, intro }: {
             {policy.sections.map((section, i) => (
               <div
                 key={i}
+                id={slugify(section.title)}
                 style={{
                   marginBottom: "40px",
                   paddingBottom: "40px",
                   borderBottom: i < policy.sections.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none",
+                  scrollMarginTop: "100px",
                 }}
               >
                 <h2
