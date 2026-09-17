@@ -26,6 +26,8 @@ function hexToRgb(hex: string): string {
   return `${(num >> 16) & 255},${(num >> 8) & 255},${num & 255}`;
 }
 
+const locations = ["Chennai", "Bangalore", "Hyderabad", "Coimbatore"];
+
 const values = [
   {
     title: "No generic programmes",
@@ -149,6 +151,26 @@ export default async function AboutPage() {
           </div>
           <style>{`@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr !important; } }`}</style>
         </section>
+
+        {/* Locations marquee */}
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(17,17,20,0.6)" }}>
+          <div className="marquee-viewport" style={{ padding: "22px 0" }}>
+            <div className="marquee-track">
+              {[...locations, ...locations, ...locations].map((city, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "0 30px" }}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 12.5S11.5 8.5 11.5 5.5a4.5 4.5 0 10-9 0c0 3 4.5 7 4.5 7z" stroke="#FFDE02" strokeWidth="1.2" strokeLinejoin="round" />
+                    <circle cx="7" cy="5.5" r="1.5" stroke="#FFDE02" strokeWidth="1.2" />
+                  </svg>
+                  <span style={{ fontSize: "12px", fontWeight: 700, color: "#B7B9C3", letterSpacing: "0.08em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                    {city}
+                  </span>
+                  <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "rgba(255,255,255,0.16)" }} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Head Coach */}
         <section style={{ padding: "80px 24px", background: "rgba(9,9,11,0.5)" }}>

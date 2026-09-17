@@ -101,6 +101,23 @@ export default function ClientsPage() {
           </div>
         </section>
 
+        {/* Inclusions marquee */}
+        <div style={{ marginBottom: "40px", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(17,17,20,0.6)" }}>
+          <div className="marquee-viewport" style={{ padding: "24px 0" }}>
+            <div className="marquee-track">
+              {[...inclusions, ...inclusions].map((inc, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "0 30px" }}>
+                  <span style={{ color: "#FFDE02" }}><Icon name={inc.icon} size={15} /></span>
+                  <span style={{ fontSize: "13px", fontWeight: 700, color: "#F5F3EE", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.02em" }}>
+                    {inc.title}
+                  </span>
+                  <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "rgba(255,255,255,0.16)" }} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Journey phases */}
         <section style={{ padding: "40px 24px 100px" }}>
           <div style={{ maxWidth: "880px", margin: "0 auto" }}>
