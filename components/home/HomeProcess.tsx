@@ -50,7 +50,7 @@ const steps = [
       "Custom training programme",
       "Macro targets & meal timing",
       "Exercise video library access",
-      "CALIBRATE app onboarding",
+      "Vemisis app onboarding",
       "Supplement stack (if applicable)",
     ],
     outcome: "A plan you can actually follow, built for you, not the internet.",

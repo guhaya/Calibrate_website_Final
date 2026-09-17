@@ -93,7 +93,7 @@ const sections = [
     label: "Progress",
     headline: "Track everything. See everything.",
     description:
-      "Your transformation is measurable. Body weight, measurements, body fat estimates, strength records, energy, sleep, all logged and visible inside the CALIBRATE app so you can see exactly how far you've come.",
+      "Your transformation is measurable. Body weight, measurements, body fat estimates, strength records, energy, sleep, all logged and visible inside the Vemisis app so you can see exactly how far you've come.",
     features: [
       {
         title: "Bodyweight trend",
@@ -165,6 +165,45 @@ export default function FeaturesPage() {
             </p>
           </div>
         </section>
+
+        {/* Quick-jump pillar strip */}
+        <div style={{ maxWidth: "720px", margin: "0 auto 40px", padding: "0 24px" }}>
+          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "10px" }}>
+            {sections.map((s) => {
+              const colorRgb: Record<string, string> = {
+                "#FFDE02": "255,222,2",
+                "#22C55E": "34,197,94",
+                "#3B82F6": "59,130,246",
+                "#A855F7": "168,85,247",
+              };
+              return (
+                <a
+                  key={s.id}
+                  href={`#${s.id}`}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    padding: "8px 16px",
+                    borderRadius: "999px",
+                    border: `1px solid rgba(${colorRgb[s.color]}, 0.22)`,
+                    background: `rgba(${colorRgb[s.color]}, 0.06)`,
+                    textDecoration: "none",
+                    transition: "all 0.2s ease",
+                  }}
+                >
+                  <Icon name={s.icon} size={13} style={{ color: s.color }} />
+                  <span style={{
+                    fontSize: "12px", fontWeight: 700, color: "#F5F3EE",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.04em", textTransform: "uppercase",
+                  }}>
+                    {s.label}
+                  </span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
 
         {/* Sections */}
         {sections.map((section, si) => {

@@ -23,7 +23,7 @@ const FALLBACK_PLANS: PricingRate[] = [
       "Weekly check-in analysis & adjustments",
       "WhatsApp support, weekdays, 4-hour response",
       "Monthly bloodwork review",
-      "CALIBRATE app access",
+      "Vemisis app access",
     ],
     highlight: false,
     active: true,

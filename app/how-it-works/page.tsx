@@ -82,7 +82,7 @@ const steps = [
     title: "You Start & We Track Everything",
     duration: "Week 1 onwards",
     description:
-      "You access your program inside the CALIBRATE app. Log your sessions, track your nutrition, and send me updates through the week. We use real data to make sure the program is working.",
+      "You access your program inside the Vemisis app. Log your sessions, track your nutrition, and send me updates through the week. We use real data to make sure the program is working.",
     bullets: [
       "Daily workout logging inside the app",
       "Nutrition tracking with your custom targets",
@@ -369,42 +369,83 @@ export default function HowItWorksPage() {
                       {step.duration}
                     </span>
                   </div>
-                  <p
+                  <div
                     style={{
-                      fontSize: "15px",
-                      color: "#B7B9C3",
-                      lineHeight: 1.7,
-                      marginBottom: "20px",
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      display: "grid",
+                      gridTemplateColumns: step.number === "03" ? "1fr 140px" : "1fr",
+                      gap: "24px",
+                      alignItems: "start",
                     }}
+                    className={step.number === "03" ? "step-with-preview" : undefined}
                   >
-                    {step.description}
-                  </p>
-                  <ul style={{ listStyle: "none" }}>
-                    {step.bullets.map((b) => (
-                      <li
-                        key={b}
+                    <div>
+                      <p
                         style={{
-                          display: "flex",
-                          alignItems: "flex-start",
-                          gap: "10px",
-                          marginBottom: "8px",
-                          fontSize: "14px",
-                          color: "#FFFFFF",
+                          fontSize: "15px",
+                          color: "#B7B9C3",
+                          lineHeight: 1.7,
+                          marginBottom: "20px",
                           fontFamily: "'Plus Jakarta Sans', sans-serif",
                         }}
                       >
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ marginTop: "2px", flexShrink: 0 }}>
-                          <path d="M2.5 7L5.5 10L11.5 4" stroke="#FFDE02" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
+                        {step.description}
+                      </p>
+                      <ul style={{ listStyle: "none" }}>
+                        {step.bullets.map((b) => (
+                          <li
+                            key={b}
+                            style={{
+                              display: "flex",
+                              alignItems: "flex-start",
+                              gap: "10px",
+                              marginBottom: "8px",
+                              fontSize: "14px",
+                              color: "#FFFFFF",
+                              fontFamily: "'Plus Jakarta Sans', sans-serif",
+                            }}
+                          >
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ marginTop: "2px", flexShrink: 0 }}>
+                              <path d="M2.5 7L5.5 10L11.5 4" stroke="#FFDE02" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    {step.number === "03" && (
+                      <div style={{ position: "relative" }}>
+                        <div style={{
+                          position: "absolute", inset: "-16px",
+                          background: "radial-gradient(circle, rgba(34,197,94,0.10) 0%, transparent 70%)",
+                          pointerEvents: "none",
+                        }} />
+                        <div style={{
+                          position: "relative", borderRadius: "14px", overflow: "hidden",
+                          border: "1px solid rgba(255,255,255,0.1)",
+                          boxShadow: "0 12px 32px rgba(0,0,0,0.4)",
+                        }}>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src="/app-screens/dashboard.jpg"
+                            alt="The Vemisis app dashboard"
+                            style={{ width: "100%", height: "auto", display: "block" }}
+                          />
+                        </div>
+                        <p style={{ fontSize: "10px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", textAlign: "center", marginTop: "8px" }}>
+                          The Vemisis app
+                        </p>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
+          <style>{`
+            @media (max-width: 640px) {
+              .step-with-preview { grid-template-columns: 1fr !important; }
+            }
+          `}</style>
         </section>
 
         {/* CTA */}

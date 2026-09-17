@@ -27,12 +27,12 @@ interface SiteContent {
 const DEFAULT_CONTENT: SiteContent = {
   acceptingClients: true,
   heroHeadline: "Transform your body with coaching that keeps you accountable.",
-  heroSubheadline: "Training, nutrition, habit coaching, progress tracking, and direct coach support, delivered through the CALIBRATE platform.",
+  heroSubheadline: "Training, nutrition, habit coaching, progress tracking, and direct coach support, delivered through the Vemisis platform.",
   contactEmail: "Admin@gvnfit.online",
   instagramHandle: "@fitguhay",
   responseTime: "24 hours",
   faq: [
-    { q: "How does online coaching work?", a: "You get a custom training programme and nutrition targets through the CALIBRATE app with weekly check-ins and direct coach messaging." },
+    { q: "How does online coaching work?", a: "You get a custom training programme and nutrition targets through the Vemisis app with weekly check-ins and direct coach messaging." },
     { q: "Do I need a gym?", a: "No. Your programme is built around whatever equipment you have, gym, home gym, or bodyweight." },
     { q: "How quickly will I see results?", a: "Most clients see meaningful changes within 4–6 weeks. Visible physical changes typically show clearly by weeks 8–12." },
     { q: "What's included in the free consultation?", a: "A 30-minute call covering your current situation, goals, lifestyle, and any questions. No pressure to sign up." },

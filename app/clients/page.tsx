@@ -14,7 +14,7 @@ const experiences = [
   {
     phase: "Week 1–2",
     title: "You get your full programme",
-    description: "Within 48 hours of your first call, your complete training and nutrition plan lands in the CALIBRATE app. Every session is already loaded, every meal target is set, every exercise has video guidance. You start with complete clarity.",
+    description: "Within 48 hours of your first call, your complete training and nutrition plan lands in the Vemisis app. Every session is already loaded, every meal target is set, every exercise has video guidance. You start with complete clarity.",
     icon: "target",
     color: "#FFDE02",
   },

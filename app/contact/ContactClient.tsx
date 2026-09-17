@@ -8,7 +8,7 @@ import Footer from "@/components/layout/Footer";
 const faqs = [
   {
     q: "How does online coaching actually work?",
-    a: "You get a custom training programme and nutrition targets delivered through the CALIBRATE app. Each week you complete a structured check-in covering your training, nutrition, energy, and sleep. Your coach reviews everything and responds with specific feedback and adjustments. You also have direct messaging access for questions between check-ins.",
+    a: "You get a custom training programme and nutrition targets delivered through the Vemisis app. Each week you complete a structured check-in covering your training, nutrition, energy, and sleep. Your coach reviews everything and responds with specific feedback and adjustments. You also have direct messaging access for questions between check-ins.",
   },
   {
     q: "Do I need a gym membership?",
