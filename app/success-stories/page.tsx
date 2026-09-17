@@ -12,6 +12,13 @@ import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 
+const highlights = [
+  { stat: "−14kg", label: "Marcus T. · 14 weeks" },
+  { stat: "30% → 22%", label: "Priya S. · body fat" },
+  { stat: "+60kg", label: "Arjun K. · deadlift" },
+  { stat: "0", label: "Generic templates used" },
+];
+
 const stories = [
   {
     name: "Marcus T.",
@@ -120,6 +127,25 @@ export default function SuccessStoriesPage() {
             </p>
           </div>
         </section>
+
+        {/* Results marquee */}
+        <div style={{ padding: "0 0 56px", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(17,17,20,0.6)" }}>
+          <div className="marquee-viewport" style={{ padding: "28px 0" }}>
+            <div className="marquee-track">
+              {[...highlights, ...highlights].map((h, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: "14px", padding: "0 36px" }}>
+                  <span style={{ fontFamily: "var(--font-display)", fontSize: "30px", color: "#FFDE02", letterSpacing: "0.01em", lineHeight: 1 }}>
+                    {h.stat}
+                  </span>
+                  <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: "12px", fontWeight: 700, color: "#B7B9C3", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                    {h.label}
+                  </span>
+                  <span style={{ width: "5px", height: "5px", borderRadius: "50%", background: "rgba(255,255,255,0.2)" }} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Stories */}
         <section style={{ padding: "40px 24px 120px" }}>

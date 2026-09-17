@@ -53,6 +53,15 @@ function formatPrice(rate: PricingRate) {
   return `${rate.currency} ${rate.price.toLocaleString()}`;
 }
 
+const inclusions = [
+  "Custom Training Programme",
+  "Personalised Nutrition",
+  "Weekly Check-In Analysis",
+  "Vemisis App Access",
+  "WhatsApp Coach Support",
+  "Monthly Bloodwork Review",
+];
+
 const faqs = [
   {
     q: "Who is CALIBRATE built for?",
@@ -121,6 +130,26 @@ export default function PricingClient() {
             </div>
           </div>
         </section>
+
+        {/* Inclusions marquee */}
+        <div style={{ marginBottom: "56px", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(17,17,20,0.6)" }}>
+          <div className="marquee-viewport" style={{ padding: "22px 0" }}>
+            <div className="marquee-track">
+              {[...inclusions, ...inclusions].map((item, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "0 28px" }}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle cx="7" cy="7" r="6.5" stroke="#FFDE02" strokeWidth="1.2" />
+                    <path d="M4.2 7.2l1.8 1.8 3.8-3.8" stroke="#FFDE02" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span style={{ fontSize: "13px", fontWeight: 700, color: "#F5F3EE", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.02em" }}>
+                    {item}
+                  </span>
+                  <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "rgba(255,255,255,0.16)" }} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Plans */}
         <section style={{ padding: "0 24px 80px" }}>
