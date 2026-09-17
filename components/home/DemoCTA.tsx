@@ -10,6 +10,30 @@ export default function DemoCTA() {
         overflow: "hidden",
       }}
     >
+      {/* Full-bleed dashboard backdrop */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url(/app-screens/dashboard.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center 15%",
+          opacity: 0.14,
+          filter: "blur(1px) saturate(0.7)",
+          maskImage: "radial-gradient(ellipse 90% 80% at 50% 40%, black 0%, transparent 75%)",
+          WebkitMaskImage: "radial-gradient(ellipse 90% 80% at 50% 40%, black 0%, transparent 75%)",
+          pointerEvents: "none",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "linear-gradient(180deg, rgba(7,7,10,0.4) 0%, rgba(7,7,10,0.85) 70%, #07070A 100%)",
+          pointerEvents: "none",
+        }}
+      />
       {/* Background glow */}
       <div
         style={{

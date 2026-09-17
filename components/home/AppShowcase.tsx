@@ -283,7 +283,7 @@ export default function AppShowcase() {
 
       <div style={{ maxWidth: "1160px", margin: "0 auto", padding: "0 24px", position: "relative" }}>
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: "64px" }}>
+        <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <div className="section-eyebrow" style={{ justifyContent: "center" }}>
             The Platform
           </div>
@@ -294,6 +294,24 @@ export default function AppShowcase() {
           <p style={{ fontSize: "17px", color: "#B7B9C3", maxWidth: "520px", margin: "0 auto", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
             Everything you need to train, eat, and progress, in one beautifully designed app with your coach accessible at every step.
           </p>
+        </div>
+
+        {/* Capability marquee */}
+        <div className="marquee-viewport" style={{ marginBottom: "64px" }}>
+          <div className="marquee-track">
+            {[...screens, ...screens].map((s, i) => (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "0 28px" }}>
+                <span style={{ color: "#FFDE02" }}>{s.icon}</span>
+                <span style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: "12px", fontWeight: 700,
+                  color: "#7E8395", letterSpacing: "0.08em", textTransform: "uppercase",
+                }}>
+                  {s.label}
+                </span>
+                <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "rgba(255,255,255,0.16)" }} />
+              </div>
+            ))}
+          </div>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }} className="showcase-grid">
@@ -346,6 +364,14 @@ export default function AppShowcase() {
           {/* Right: phone mockup */}
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div style={{ position: "relative" }}>
+              {/* Stage vignette */}
+              <div style={{ position: "absolute", inset: "-64px", background: "radial-gradient(ellipse 70% 70% at 50% 45%, rgba(255,222,2,0.10) 0%, transparent 70%)", pointerEvents: "none" }} />
+              <div style={{
+                position: "absolute", inset: "-40px", borderRadius: "32px",
+                border: "1px solid rgba(255,255,255,0.05)",
+                background: "linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 40%)",
+                pointerEvents: "none",
+              }} />
               {/* Glow */}
               <div style={{ position: "absolute", inset: "-20px", background: "radial-gradient(circle, rgba(255,222,2,0.08) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
 
