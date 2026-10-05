@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "./Logo";
+import FooterWord from "./FooterWord";
 
 const footerLinks: Record<string, { label: string; href: string }[]> = {
   Coaching: [
@@ -74,7 +75,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="ft-word" aria-hidden="true">CALIBRATE</div>
+        <FooterWord />
 
         <div className="ft-bottom">
           <div style={{ display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
@@ -117,17 +118,6 @@ export default function Footer() {
         .ft-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
         .ft-link { color: var(--text-muted); font-size: 14.5px; text-decoration: none; transition: color 0.2s ease; }
         .ft-link:hover { color: var(--accent); }
-        .ft-word {
-          font-family: var(--font-display);
-          font-size: clamp(64px, 17.5vw, 268px);
-          line-height: 0.82;
-          text-align: center;
-          margin: 72px 0 28px;
-          color: transparent;
-          -webkit-text-stroke: 1px rgba(255,255,255,0.14);
-          letter-spacing: 0.02em;
-          user-select: none;
-        }
         .ft-bottom {
           display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
           padding-top: 24px; border-top: 1px solid var(--line);
@@ -140,7 +130,6 @@ export default function Footer() {
         @media (max-width: 520px) {
           .ft { padding-top: 72px; }
           .ft-top { gap: 36px 24px; }
-          .ft-word { margin: 56px 0 20px; }
         }
       `}</style>
     </footer>
