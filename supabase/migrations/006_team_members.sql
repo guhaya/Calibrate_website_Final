@@ -60,7 +60,7 @@ SELECT $$head_coach$$, 0, $$Guhayavarman$$, $$@fitguhay$$, $$Founder & Head Coac
     $$Competitive athlete background$$,
     $$Based in Chennai, Tamil Nadu$$
   ],
-  $$[{"value":"10+","label":"Active clients"},{"value":"5+","label":"Years coaching"},{"value":"12+","label":"Countries reached"},{"value":"200+","label":"Transformations"}]$$::jsonb,
+  $$[{"value":"45","label":"Active clients"},{"value":"5+","label":"Years coaching"},{"value":"10","label":"Countries reached"},{"value":"5","label":"Continents"}]$$::jsonb,
   $$#FFDE02$$, $$G$$, true
 WHERE NOT EXISTS (SELECT 1 FROM team_members);
 

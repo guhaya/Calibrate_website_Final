@@ -1,5 +1,7 @@
 const stats = [
-  { value: "200+", label: "Clients transformed" },
+  { value: "45", label: "Clients coached" },
+  { value: "10", label: "Countries" },
+  { value: "5", label: "Continents" },
   { value: "98%", label: "Client satisfaction" },
   { value: "9.8kg", label: "Avg fat lost in 12 weeks" },
   { value: "4.9/5", label: "Average rating" },

@@ -57,7 +57,7 @@ export default function Hero() {
           <Stars />
           <span><strong>4.9/5</strong> average rating</span>
           <span className="hero-dot" />
-          <span><strong>200+</strong> clients transformed</span>
+          <span><strong>45</strong> clients across <strong>10</strong> countries</span>
         </div>
       </div>
 

@@ -39,7 +39,7 @@ Branch: `redesign/vemisis-2026` (committed locally, **not pushed**; pushing to `
 
 ## Please review before going live
 
-1. **Social proof carried over unchanged** from the old site: "200+ clients transformed", "98% satisfaction", "4.9/5", "9.8kg average fat lost", and the named transformations/testimonials. Confirm these are accurate; nothing new was invented.
+1. **Social proof**: client numbers now use the verified figures (45 clients, 10 countries, 5 continents). The named testimonials are confirmed real clients. Still unverified, carried over from the old site: "98% satisfaction", "4.9/5", "9.8kg average fat lost". "Arjun K." (Results page) shares identical numbers with "James O.".
 2. **Existing copy that disagrees with itself**:
    - "James O., Teacher" (homepage) and "Arjun K., Staff Engineer" (Results page) share identical before/after numbers.
    - The Vemisis coach chat screenshot itself shows "Replies usually within 24 hours" (in-app text, not website copy); the website now says 4 hours everywhere.
