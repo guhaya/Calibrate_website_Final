@@ -3,14 +3,16 @@ export const metadata: Metadata = {
   title: "Client Transformations",
   description: "Real results from CALIBRATE clients, engineers, product managers, and consultants who transformed their body with data-driven coaching. Detailed stories, metrics, and outcomes.",
   openGraph: {
-    title: "Client Transformations | CALIBRATE",
+    title: "Client Transformations | CALIBRATE by GVNFIT",
     description: "Real results from engineers, PMs, and founders who used the CALIBRATE protocol. Honest stories with before/after metrics.",
   },
 };
 
-import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
+import PageHero from "@/components/landing/PageHero";
+import FinalCta from "@/components/landing/FinalCta";
+import { CountUp, Hl } from "@/components/landing/ui";
 
 const highlights = [
   { stat: "−14kg", label: "Marcus T. · 14 weeks" },
@@ -79,280 +81,114 @@ const stories = [
   },
 ];
 
+function parse(v: string) {
+  const n = parseFloat(v.replace(/[^0-9.]/g, ""));
+  return Number.isFinite(n) ? n : 0;
+}
+
 export default function SuccessStoriesPage() {
   return (
     <>
       <Navigation />
       <main>
-        {/* Hero */}
-        <section
-          style={{
-            padding: "140px 24px 80px",
-            textAlign: "center",
-            position: "relative",
-          }}
-          className="grid-bg"
-        >
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.05) 0%, transparent 60%)",
-              pointerEvents: "none",
-            }}
-          />
-          <div style={{ maxWidth: "680px", margin: "0 auto", position: "relative" }}>
-            <div className="tag" style={{ marginBottom: "24px" }}>Transformations</div>
-            <h1
-              style={{
-                fontSize: "clamp(40px, 5vw, 60px)",
-                fontWeight: 600,
-                color: "#FFFFFF",
-                marginBottom: "20px",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Real results from{" "}
-              <span className="gold-text">real people</span>
-            </h1>
-            <p
-              style={{
-                fontSize: "17px",
-                color: "#B7B9C3",
-                lineHeight: 1.65,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-              }}
-            >
-              Not a highlight reel. These are client stories, honest, detailed, and representative of what coaching with CALIBRATE actually looks like.
-            </p>
-          </div>
+        <PageHero
+          compact
+          eyebrow="Verified results"
+          title={<>Real people. <Hl ink>Real numbers.</Hl></>}
+          lead="Engineers, product managers and founders who stopped guessing and started calibrating. Honest stories, measured outcomes, no filters."
+          ctas={[{ label: "Start your story", href: "/apply" }, { label: "Book a free call", href: "/book", variant: "secondary" }]}
+        />
+
+        <section className="wrap ss-highlights">
+          {highlights.map((h, i) => (
+            <div key={h.label} className="ss-hl rv" style={{ ["--d" as string]: `${i * 80}ms` }}>
+              <CountUp value={h.stat} className="ss-hl-v" />
+              <p className="mono c-muted">{h.label}</p>
+            </div>
+          ))}
         </section>
 
-        {/* Results marquee */}
-        <div style={{ padding: "0 0 56px", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(17,17,20,0.6)" }}>
-          <div className="marquee-viewport" style={{ padding: "28px 0" }}>
-            <div className="marquee-track">
-              {[...highlights, ...highlights].map((h, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: "14px", padding: "0 36px" }}>
-                  <span style={{ fontFamily: "var(--font-display)", fontSize: "30px", color: "#FFDE02", letterSpacing: "0.01em", lineHeight: 1 }}>
-                    {h.stat}
-                  </span>
-                  <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: "12px", fontWeight: 700, color: "#B7B9C3", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-                    {h.label}
-                  </span>
-                  <span style={{ width: "5px", height: "5px", borderRadius: "50%", background: "rgba(255,255,255,0.2)" }} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Stories */}
-        <section style={{ padding: "40px 24px 120px" }}>
-          <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-            {stories.map((story, si) => (
-              <div
-                key={si}
-                style={{
-                  marginBottom: si < stories.length - 1 ? "80px" : 0,
-                  background: "rgba(23,23,23,0.6)",
-                  border: "1px solid rgba(255,255,255,0.06)",
-                  borderRadius: "24px",
-                  overflow: "hidden",
-                }}
-              >
-                {/* Card header */}
-                <div
-                  style={{
-                    padding: "32px 40px",
-                    borderBottom: "1px solid rgba(255,255,255,0.04)",
-                    background: "rgba(17,17,20,0.5)",
-                    display: "flex",
-                    alignItems: "flex-start",
-                    justifyContent: "space-between",
-                    gap: "20px",
-                    flexWrap: "wrap",
-                  }}
-                >
-                  <div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
-                      <div
-                        style={{
-                          width: "44px",
-                          height: "44px",
-                          borderRadius: "50%",
-                          background: "linear-gradient(135deg, #FFDE02, #E6C700)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: "18px",
-                          fontWeight: 700,
-                          color: "#07070A",
-                          fontFamily: "'Plus Jakarta Sans', sans-serif",
-                        }}
-                      >
-                        {story.name[0]}
-                      </div>
-                      <div>
-                        <p style={{ fontSize: "17px", fontWeight: 700, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                          {story.name}, {story.age}
-                        </p>
-                        <p style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                          {story.occupation}
-                        </p>
-                      </div>
+        <section className="sec">
+          <div className="wrap ss-list">
+            {stories.map((s, idx) => (
+              <article key={s.name} className="panel ss-story rv">
+                <div className="ss-main">
+                  <div className="ss-meta">
+                    <span className="ss-av">{s.name[0]}</span>
+                    <div>
+                      <p style={{ fontWeight: 800, fontSize: 17 }}>{s.name} <span className="c-muted" style={{ fontWeight: 500 }}>· {s.age}</span></p>
+                      <p className="c-muted" style={{ fontSize: 13.5 }}>{s.occupation}</p>
                     </div>
+                    <span className="ss-prog">{s.program}</span>
                   </div>
-                  <div className="tag">{story.program}</div>
+                  <h2 className="ss-headline">{s.headline}</h2>
+                  <div className="ss-text">
+                    {s.story.map((p, k) => <p key={k}>{p}</p>)}
+                  </div>
                 </div>
 
-                {/* Headline */}
-                <div style={{ padding: "32px 40px 0" }}>
-                  <h2
-                    style={{
-                      fontSize: "clamp(20px, 2.5vw, 28px)",
-                      color: "#FFFFFF",
-                      marginBottom: "28px",
-                      letterSpacing: "-0.01em",
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    {story.headline}
-                  </h2>
-
-                  {/* Metrics */}
-                  <div
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns: "repeat(3, 1fr)",
-                      gap: "12px",
-                      marginBottom: "32px",
-                    }}
-                    className="metrics-row"
-                  >
-                    {story.metrics.map((m) => (
-                      <div
-                        key={m.label}
-                        style={{
-                          background: "rgba(17,17,20,0.7)",
-                          borderRadius: "12px",
-                          padding: "16px",
-                          border: "1px solid rgba(255,255,255,0.05)",
-                        }}
-                      >
-                        <p style={{ fontSize: "11px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                          {m.label}
-                        </p>
-                        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                          <span style={{ fontSize: "14px", fontWeight: 700, color: "#DE3033", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                            {m.before}
-                          </span>
-                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                            <path d="M2.5 7H11.5M8 4L11.5 7L8 10" stroke="#B7B9C3" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                          <span style={{ fontSize: "14px", fontWeight: 700, color: "#22C55E", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                            {m.after}
-                          </span>
+                <aside className="ss-side">
+                  <p className="mono c-accent">Story 0{idx + 1} · Measured results</p>
+                  <div className="ss-metrics">
+                    {s.metrics.map((m) => {
+                      const b = parse(m.before), a = parse(m.after), max = Math.max(a, b) || 1;
+                      return (
+                        <div key={m.label} className="ss-metric">
+                          <div className="ss-metric-top">
+                            <span style={{ fontWeight: 700 }}>{m.label}</span>
+                            <span><span className="c-muted">{m.before}</span> <span className="c-accent">→ {m.after}</span></span>
+                          </div>
+                          <div className="ss-bars">
+                            <span className="ss-bar ss-bar-b" style={{ width: `${(b / max) * 100}%` }} />
+                            <span className="ss-bar ss-bar-a" style={{ width: `${(a / max) * 100}%` }} />
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
-
-                  {/* Story paragraphs */}
-                  <div style={{ marginBottom: "28px" }}>
-                    {story.story.map((para, pi) => (
-                      <p
-                        key={pi}
-                        style={{
-                          fontSize: "15px",
-                          color: "#B7B9C3",
-                          lineHeight: 1.75,
-                          marginBottom: "16px",
-                          fontFamily: "'Plus Jakarta Sans', sans-serif",
-                        }}
-                      >
-                        {para}
-                      </p>
-                    ))}
-                  </div>
-
-                  {/* Quote */}
-                  <blockquote
-                    style={{
-                      borderLeft: "3px solid #FFDE02",
-                      paddingLeft: "20px",
-                      marginBottom: "40px",
-                      fontFamily: "'Barlow Condensed', sans-serif",
-                      fontSize: "20px",
-                      fontStyle: "italic",
-                      color: "#FFFFFF",
-                      lineHeight: 1.5,
-                    }}
-                  >
-                    "{story.quote}"
-                    <cite
-                      style={{
-                        display: "block",
-                        marginTop: "8px",
-                        fontSize: "13px",
-                        fontStyle: "normal",
-                        color: "#B7B9C3",
-                        fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      }}
-                    >
-                     , {story.name}
-                    </cite>
-                  </blockquote>
-                </div>
-              </div>
+                  <blockquote className="ss-quote">&ldquo;{s.quote}&rdquo;</blockquote>
+                </aside>
+              </article>
             ))}
           </div>
         </section>
 
-        {/* CTA */}
-        <section
-          style={{
-            padding: "80px 24px 120px",
-            background: "rgba(9,9,11,0.5)",
-            textAlign: "center",
-          }}
-        >
-          <div style={{ maxWidth: "560px", margin: "0 auto" }}>
-            <h2
-              style={{
-                fontSize: "clamp(28px, 4vw, 44px)",
-                color: "#FFFFFF",
-                marginBottom: "16px",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Your story starts with a call.
-            </h2>
-            <p
-              style={{
-                fontSize: "16px",
-                color: "#B7B9C3",
-                lineHeight: 1.65,
-                marginBottom: "32px",
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-              }}
-            >
-              Every transformation above started with a free 30-minute consultation. Yours can too.
-            </p>
-            <Link href="/apply" className="btn-primary" style={{ fontSize: "15px", padding: "14px 32px" }}>
-              Apply to CALIBRATE
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
-          </div>
-        </section>
+        <FinalCta />
       </main>
       <Footer />
 
       <style>{`
-        @media (max-width: 600px) {
-          .metrics-row { grid-template-columns: 1fr !important; }
+        .ss-highlights { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: -24px; }
+        .ss-hl { padding: 26px; border-radius: 24px; background: var(--surface-1); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; }
+        .ss-hl-v { font-family: var(--font-display); font-size: clamp(30px, 3vw, 46px); line-height: 1; color: var(--accent); white-space: nowrap; }
+        .ss-list { display: flex; flex-direction: column; gap: 24px; }
+        .ss-story { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: 0; }
+        .ss-main { padding: 48px; display: flex; flex-direction: column; gap: 22px; }
+        .ss-meta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+        .ss-av { width: 46px; height: 46px; border-radius: 50%; background: var(--accent); color: #050506; display: grid; place-items: center; font-weight: 800; font-size: 18px; flex-shrink: 0; }
+        .ss-prog { margin-left: auto; font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 12px; border-radius: 999px; color: var(--accent); background: rgba(255,222,2,0.08); border: 1px solid rgba(255,222,2,0.25); }
+        .ss-headline { font-family: var(--font-display); font-size: clamp(30px, 3vw, 46px); line-height: 1; text-wrap: balance; }
+        .ss-text { display: flex; flex-direction: column; gap: 14px; }
+        .ss-text p { font-size: 15.5px; line-height: 1.75; color: var(--text-secondary); }
+        .ss-side { padding: 48px 40px; background: linear-gradient(180deg, rgba(255,222,2,0.08), transparent 60%), #0A0A0C; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 26px; }
+        .ss-metrics { display: flex; flex-direction: column; gap: 22px; }
+        .ss-metric-top { display: flex; justify-content: space-between; gap: 12px; font-size: 14.5px; margin-bottom: 10px; }
+        .ss-bars { display: grid; gap: 6px; }
+        .ss-bar { display: block; height: 8px; border-radius: 8px; transform-origin: left; transform: scaleX(0); transition: transform 1.2s var(--ease-out) 0.3s; }
+        .ss-story.in-view .ss-bar { transform: scaleX(1); }
+        .ss-bar-b { background: rgba(255,255,255,0.22); }
+        .ss-bar-a { background: var(--accent); }
+        .ss-quote { margin-top: auto; padding: 22px; border-radius: 20px; background: var(--accent); color: #050506; font-weight: 700; font-size: 15.5px; line-height: 1.55; }
+        @media (max-width: 900px) {
+          .ss-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 0; }
+          .ss-hl { padding: 20px; }
+          .ss-hl-v { font-size: 28px; }
+          .ss-story { grid-template-columns: 1fr; }
+          .ss-side { border-left: none; border-top: 1px solid var(--line); }
+        }
+        @media (max-width: 560px) {
+          .ss-main, .ss-side { padding: 28px 22px; }
+          .ss-prog { margin-left: 0; }
         }
       `}</style>
     </>

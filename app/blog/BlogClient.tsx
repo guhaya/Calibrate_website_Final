@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Navigation from "@/components/layout/Navigation";
+import PageHero from "@/components/landing/PageHero";
+import { Hl } from "@/components/landing/ui";
 import Footer from "@/components/layout/Footer";
 
 const categories = ["All", "Nutrition", "Training", "Mindset", "Transformation Stories", "Lifestyle"];
@@ -32,7 +34,7 @@ const posts = [
     readTime: "6 min read",
     date: "May 30, 2026",
     featured: false,
-    color: "#3B82F6",
+    color: "#FFDE02",
   },
   {
     category: "Mindset",
@@ -41,7 +43,7 @@ const posts = [
     readTime: "8 min read",
     date: "May 22, 2026",
     featured: false,
-    color: "#A855F7",
+    color: "#FFDE02",
   },
   {
     category: "Nutrition",
@@ -77,15 +79,15 @@ const posts = [
     readTime: "7 min read",
     date: "Apr 20, 2026",
     featured: false,
-    color: "#A855F7",
+    color: "#FFDE02",
   },
 ];
 
 function getCategoryColor(category: string): string {
   const map: Record<string, string> = {
     "Nutrition": "#FFDE02",
-    "Training": "#3B82F6",
-    "Mindset": "#A855F7",
+    "Training": "#FFDE02",
+    "Mindset": "#FFDE02",
     "Transformation Stories": "#22C55E",
     "Lifestyle": "#F59E0B",
   };
@@ -95,8 +97,8 @@ function getCategoryColor(category: string): string {
 function getCategoryColorRGB(category: string): string {
   const map: Record<string, string> = {
     "Nutrition": "255,222,2",
-    "Training": "59,130,246",
-    "Mindset": "168,85,247",
+    "Training": "255,222,2",
+    "Mindset": "255,222,2",
     "Transformation Stories": "34,197,94",
     "Lifestyle": "245,158,11",
   };
@@ -117,19 +119,12 @@ export default function BlogClient() {
       <Navigation />
       <main>
         {/* Hero */}
-        <section style={{ padding: "140px 24px 80px", position: "relative" }} className="grid-bg">
-          <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.05) 0%, transparent 60%)", pointerEvents: "none" }} />
-          <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center", position: "relative" }}>
-            <div className="tag" style={{ marginBottom: "24px" }}>Blog</div>
-            <h1 style={{ fontSize: "clamp(40px, 5vw, 56px)", fontWeight: 600, color: "#FFFFFF", marginBottom: "20px", letterSpacing: "-0.02em" }}>
-              Training. Nutrition.{" "}
-              <span className="gold-text">Transformation.</span>
-            </h1>
-            <p style={{ fontSize: "18px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              Practical guidance on training, nutrition, mindset, and building the body you want, written by coaches, not content marketers.
-            </p>
-          </div>
-        </section>
+        <PageHero
+          compact
+          eyebrow="Blog"
+          title={<>Training. Nutrition. <Hl ink>Transformation.</Hl></>}
+          lead="Practical guidance on training, nutrition, mindset and building the body you want, written by coaches, not content marketers."
+        />
 
         {/* Categories */}
         <section style={{ padding: "0 24px 48px" }}>

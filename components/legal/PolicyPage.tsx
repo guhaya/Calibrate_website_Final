@@ -26,7 +26,7 @@ export default function PolicyPage({ policy, policyType, intro }: {
     <>
       <Navigation />
       <main>
-        <section style={{ padding: "140px 24px 80px", position: "relative" }} className="grid-bg">
+        <section style={{ padding: "168px 24px 72px", position: "relative" }} className="grid-bg">
           <div
             style={{
               position: "absolute", inset: 0,
@@ -38,8 +38,8 @@ export default function PolicyPage({ policy, policyType, intro }: {
             <div className="tag" style={{ marginBottom: "24px" }}>Legal</div>
             <h1
               style={{
-                fontSize: "clamp(36px, 5vw, 56px)",
-                fontWeight: 600,
+                fontSize: "clamp(44px, 6vw, 84px)",
+                fontWeight: 400,
                 color: "#FFFFFF",
                 marginBottom: "16px",
                 letterSpacing: "-0.02em",

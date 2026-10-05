@@ -1,154 +1,72 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Logo from "./Logo";
 
-const footerLinks = {
+const footerLinks: Record<string, { label: string; href: string }[]> = {
   Coaching: [
-    { label: "How It Works", href: "/how-it-works" },
-    { label: "Apply", href: "/apply" },
+    { label: "The CALIBRATE Method", href: "/how-it-works" },
+    { label: "Vemisis App", href: "/features" },
     { label: "Your Experience", href: "/clients" },
     { label: "Pricing", href: "/pricing" },
-    { label: "Book Free Call", href: "/book" },
+    { label: "Apply", href: "/apply" },
   ],
   Company: [
-    { label: "Meet the Team", href: "/coaches" },
-    { label: "Transformation Stories", href: "/success-stories" },
+    { label: "Meet the Coaches", href: "/coaches" },
+    { label: "Results", href: "/success-stories" },
     { label: "Blog", href: "/blog" },
+    { label: "Book a Free Call", href: "/book" },
   ],
   Support: [
     { label: "Contact", href: "/contact" },
+    { label: "Help Centre", href: "/support" },
     { label: "FAQ", href: "/contact#faq" },
-    { label: "Email Us", href: "mailto:Admin@gvnfit.online" },
-    { label: "Book a Call", href: "/book" },
+    { label: "Admin@gvnfit.online", href: "mailto:Admin@gvnfit.online" },
   ],
 };
 
+const legal = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Refund Policy", href: "/refund" },
+];
+
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
   return (
-    <footer
-      style={{
-        background: "rgba(9, 9, 11, 0.97)",
-        borderTop: "1px solid rgba(255,255,255,0.08)",
-        padding: "72px 24px 32px",
-      }}
-    >
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        {/* Email capture row */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: "24px",
-            padding: "32px",
-            marginBottom: "56px",
-            background: "rgba(255,222,2,0.06)",
-            border: "1px solid rgba(255,222,2,0.18)",
-            borderRadius: "20px",
-          }}
-          className="footer-capture"
-        >
-          <div>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: "26px", color: "#FFFFFF", marginBottom: "4px", letterSpacing: "0.01em" }}>
-              Get the weekly protocol drop
+    <footer className="ft">
+      <div className="wrap">
+        <div className="ft-top">
+          <div className="ft-brand">
+            <Logo size={38} />
+            <p className="body-sm" style={{ marginTop: 22, maxWidth: 340 }}>
+              CALIBRATE is the precision coaching methodology of GVNFIT (Guhayavarman Fitness). Data-driven body
+              recomposition, built around your real schedule and delivered day to day through the Vemisis app.
             </p>
-            <p style={{ color: "#B7B9C3", fontSize: "14px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              Training notes, nutrition breakdowns, and client results, straight to your inbox.
-            </p>
-          </div>
-          <form
-            onSubmit={(e) => { e.preventDefault(); if (email) setSubmitted(true); }}
-            style={{ display: "flex", gap: "8px", flexWrap: "wrap", minWidth: "300px" }}
-          >
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@email.com"
-              className="input-dark"
-              style={{ flex: 1, minWidth: "200px" }}
-              aria-label="Email address"
-            />
-            <button type="submit" className="btn-primary" style={{ padding: "13px 24px", fontSize: "13px" }}>
-              {submitted ? "Subscribed" : "Subscribe"}
-            </button>
-          </form>
-        </div>
-
-        {/* Top row */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr repeat(3, auto)",
-            gap: "48px",
-            marginBottom: "64px",
-          }}
-          className="footer-grid"
-        >
-          {/* Brand */}
-          <div>
-            <div style={{ marginBottom: "16px" }}>
-              <Logo size={30} showText={true} />
+            <div className="ft-status">
+              <span className="status-dot" />
+              <span>Currently accepting new clients</span>
             </div>
-            <p
-              style={{
-                color: "#7E8395",
-                fontSize: "14px",
-                lineHeight: 1.7,
-                maxWidth: "280px",
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-              }}
-            >
-              DMAIC-based precision coaching for engineers, product managers, and consultants. Data-driven body recomposition built around your actual schedule, not a generic programme.
-            </p>
-            <div style={{ marginTop: "24px", display: "flex", alignItems: "center", gap: "6px" }}>
-              <div className="status-dot" />
-              <span style={{ color: "#7E8395", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                Currently accepting new clients
-              </span>
+
+            <div className="ft-app">
+              <Image src="/media/brand/vemisis-app-icon.png" alt="Vemisis app icon" width={52} height={52} className="ft-app-icon" />
+              <div>
+                <p className="mono c-accent" style={{ marginBottom: 4 }}>The training app</p>
+                <p style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>Vemisis, included with every plan</p>
+                <p style={{ fontSize: 12.5, color: "var(--text-muted)" }}>Built for iPhone and Android</p>
+              </div>
             </div>
           </div>
 
-          {/* Link columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <p
-                style={{
-                  color: "#FFFFFF",
-                  fontSize: "11px",
-                  fontWeight: 700,
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  marginBottom: "16px",
-                }}
-              >
-                {category}
-              </p>
-              <ul style={{ listStyle: "none" }}>
+            <div key={category} className="ft-col">
+              <p className="mono" style={{ color: "#fff", marginBottom: 20 }}>{category}</p>
+              <ul>
                 {links.map((link) => (
-                  <li key={link.href} style={{ marginBottom: "10px" }}>
-                    <Link
-                      href={link.href}
-                      style={{
-                        color: "#7E8395",
-                        fontSize: "14px",
-                        textDecoration: "none",
-                        fontFamily: "'Plus Jakarta Sans', sans-serif",
-                        transition: "color 0.2s ease",
-                      }}
-                      onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#FFDE02")}
-                      onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#7E8395")}
-                    >
-                      {link.label}
-                    </Link>
+                  <li key={link.href}>
+                    {link.href.startsWith("mailto:") ? (
+                      <a href={link.href} className="ft-link">{link.label}</a>
+                    ) : (
+                      <Link href={link.href} className="ft-link">{link.label}</Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -156,61 +74,75 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom row */}
-        <div className="hr-gold" style={{ marginBottom: "24px" }} />
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: "12px",
-          }}
-        >
-          <p style={{ color: "#7E8395", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-            © {new Date().getFullYear()} CALIBRATE. All rights reserved.
-          </p>
-          <div style={{ display: "flex", gap: "24px" }}>
-            {[
-              { label: "Privacy Policy", href: "/privacy-policy" },
-              { label: "Terms of Service", href: "/terms" },
-              { label: "Refund Policy", href: "/refund" },
-            ].map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                style={{
-                  color: "#7E8395",
-                  fontSize: "13px",
-                  textDecoration: "none",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  transition: "color 0.2s ease",
-                }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#FFFFFF")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#7E8395")}
-              >
-                {item.label}
-              </Link>
+        <div className="ft-word" aria-hidden="true">CALIBRATE</div>
+
+        <div className="ft-bottom">
+          <div style={{ display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
+            <Image src="/media/brand/gvnfit-wordmark-white.png" alt="Guhayavarman Fitness" width={150} height={19} style={{ opacity: 0.7, height: "auto" }} />
+            <span className="c-muted" style={{ fontSize: 13 }}>
+              © {new Date().getFullYear()} GVNFIT. CALIBRATE and Vemisis are part of Guhayavarman Fitness.
+            </span>
+          </div>
+          <div className="ft-legal">
+            {legal.map((item) => (
+              <Link key={item.href} href={item.href} className="ft-link" style={{ fontSize: 13 }}>{item.label}</Link>
             ))}
           </div>
         </div>
       </div>
 
       <style>{`
-        @media (max-width: 768px) {
-          .footer-grid {
-            grid-template-columns: 1fr 1fr !important;
-          }
-          .footer-grid > div:first-child {
-            grid-column: 1 / -1;
-          }
-          .footer-capture {
-            flex-direction: column;
-            align-items: flex-start !important;
-          }
-          .footer-capture form {
-            width: 100%;
-          }
+        .ft {
+          position: relative;
+          padding: 96px 0 36px;
+          background: #08080A;
+          border-top: 1px solid var(--line);
+          overflow: hidden;
+        }
+        .ft::before {
+          content: ''; position: absolute; left: 50%; top: -260px; transform: translateX(-50%);
+          width: 900px; height: 420px; border-radius: 50%;
+          background: radial-gradient(closest-side, rgba(255,222,2,0.10), transparent);
+          pointer-events: none;
+        }
+        .ft-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; position: relative; }
+        .ft-status { margin-top: 22px; display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); }
+        .ft-app {
+          margin-top: 28px; display: flex; align-items: center; gap: 14px;
+          padding: 14px 18px 14px 14px; border-radius: 20px;
+          background: var(--surface-1); border: 1px solid var(--line);
+          max-width: 360px;
+        }
+        .ft-app-icon { border-radius: 14px; flex-shrink: 0; }
+        .ft-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .ft-link { color: var(--text-muted); font-size: 14.5px; text-decoration: none; transition: color 0.2s ease; }
+        .ft-link:hover { color: var(--accent); }
+        .ft-word {
+          font-family: var(--font-display);
+          font-size: clamp(64px, 17.5vw, 268px);
+          line-height: 0.82;
+          text-align: center;
+          margin: 72px 0 28px;
+          color: transparent;
+          -webkit-text-stroke: 1px rgba(255,255,255,0.14);
+          letter-spacing: 0.02em;
+          user-select: none;
+          background: linear-gradient(180deg, rgba(255,222,2,0.16), transparent 75%);
+          -webkit-background-clip: text; background-clip: text;
+        }
+        .ft-bottom {
+          display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+          padding-top: 24px; border-top: 1px solid var(--line);
+        }
+        .ft-legal { display: flex; gap: 24px; flex-wrap: wrap; }
+        @media (max-width: 960px) {
+          .ft-top { grid-template-columns: 1fr 1fr; }
+          .ft-brand { grid-column: 1 / -1; }
+        }
+        @media (max-width: 520px) {
+          .ft { padding-top: 72px; }
+          .ft-top { gap: 36px 24px; }
+          .ft-word { margin: 56px 0 20px; }
         }
       `}</style>
     </footer>

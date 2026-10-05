@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 };
 
 import Navigation from "@/components/layout/Navigation";
+import PageHero from "@/components/landing/PageHero";
+import { Hl } from "@/components/landing/ui";
 import Footer from "@/components/layout/Footer";
 import CalendarBooking from "@/components/shared/CalendarBooking";
 
@@ -18,49 +20,12 @@ export default function BookPage() {
       <Navigation />
       <main>
         {/* Hero */}
-        <section
-          style={{
-            padding: "140px 24px 80px",
-            textAlign: "center",
-            position: "relative",
-          }}
-          className="grid-bg"
-        >
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.06) 0%, transparent 60%)",
-              pointerEvents: "none",
-            }}
-          />
-          <div style={{ maxWidth: "640px", margin: "0 auto", position: "relative" }}>
-            <div className="tag" style={{ marginBottom: "24px" }}>Free Consultation</div>
-            <h1
-              style={{
-                fontSize: "clamp(36px, 5vw, 56px)",
-                fontWeight: 600,
-                color: "#FFFFFF",
-                marginBottom: "20px",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Let's talk about{" "}
-              <span className="gold-text">your goals</span>
-            </h1>
-            <p
-              style={{
-                fontSize: "17px",
-                color: "#B7B9C3",
-                lineHeight: 1.65,
-                marginBottom: "12px",
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-              }}
-            >
-              A free 30-minute call, no pressure, no pitch. We'll talk about where you are, where you want to be, and whether coaching is the right fit for you.
-            </p>
-          </div>
-        </section>
+        <PageHero
+          compact
+          eyebrow="Free consultation"
+          title={<>Let&apos;s talk about <Hl ink>your goals.</Hl></>}
+          lead="A free 30-minute call, no pressure, no pitch. We'll talk about where you are, where you want to be, and whether coaching is the right fit for you."
+        />
 
         {/* What to expect */}
         <section style={{ padding: "0 24px 60px" }}>

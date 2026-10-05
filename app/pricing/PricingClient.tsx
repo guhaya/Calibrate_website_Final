@@ -1,11 +1,14 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import Image from "next/image";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
+import PageHero from "@/components/landing/PageHero";
+import Pricing from "@/components/landing/Pricing";
+import Faq, { type FaqItem } from "@/components/landing/Faq";
+import FinalCta from "@/components/landing/FinalCta";
+import { Hl } from "@/components/landing/ui";
 import type { PricingRate } from "@/lib/supabase";
 
+// Shown only until /api/form-data responds. Live plans are managed in /admin (Rates).
 const FALLBACK_PLANS: PricingRate[] = [
   {
     id: "fallback-monthly",
@@ -48,224 +51,111 @@ const FALLBACK_PLANS: PricingRate[] = [
   },
 ];
 
-function formatPrice(rate: PricingRate) {
-  if (rate.currency === "INR") return `₹${rate.price.toLocaleString("en-IN")}`;
-  return `${rate.currency} ${rate.price.toLocaleString()}`;
-}
-
 const inclusions = [
-  "Custom Training Programme",
-  "Personalised Nutrition",
-  "Weekly Check-In Analysis",
-  "Vemisis App Access",
-  "WhatsApp Coach Support",
-  "Monthly Bloodwork Review",
+  "Custom training programme",
+  "Personalised nutrition",
+  "Weekly check-in analysis",
+  "Vemisis app access",
+  "WhatsApp coach support",
+  "Monthly bloodwork review",
 ];
 
-const faqs = [
+const profiles = [
+  { role: "Engineers & Developers", detail: "Complex problem-solvers who prefer systems over motivation.", img: "/media/life/me-coffee-laptop.webp" },
+  { role: "Product Managers", detail: "Detail-oriented professionals who want measurable outcomes.", img: "/media/life/me-tablet-review.webp" },
+  { role: "Consultants & Founders", detail: "High travel, high pressure. The protocol adapts to your schedule.", img: "/media/life/me-steps-watch.webp" },
+];
+
+const faqs: FaqItem[] = [
   {
     q: "Who is CALIBRATE built for?",
-    a: "Engineers, product managers, consultants, and founders who work 10+ hour days and have failed at generic fitness programmes before. The system is built around data, not motivation, specifically for people with demanding schedules and limited time.",
+    a: "Engineers, product managers, consultants and founders who work 10+ hour days and have failed at generic fitness programmes before. The system is built around data, not motivation, specifically for people with demanding schedules and limited time.",
   },
   {
     q: "Why a 3-month minimum commitment?",
-    a: "Real body recomposition takes time. The first month establishes baselines and builds the system. Months two and three are where the compounding effect of weekly adjustments produces visible, measurable results. One month isn't enough to see what the protocol can do.",
+    a: "Real body recomposition takes time. The first month establishes baselines and builds the system. Months two and three are where the compounding effect of weekly adjustments produces visible, measurable results.",
   },
   {
     q: "What does the Calibration Assessment Report include?",
-    a: "A full baseline analysis covering your body composition starting point, movement quality assessment, nutritional audit, and constraint mapping around your actual work schedule. This is Week 0, before any training begins.",
+    a: "A full baseline analysis covering your body composition starting point, movement quality assessment, nutritional audit and constraint mapping around your actual work schedule. This is Week 0, before any training begins.",
   },
   {
     q: "How does WhatsApp support work?",
-    a: "Your coach is reachable via WhatsApp on weekdays with a maximum 4-hour response window. This covers questions, adjustments, and anything that comes up between weekly check-ins.",
+    a: "Your coach is reachable via WhatsApp on weekdays with a maximum 4-hour response window. This covers questions, adjustments and anything that comes up between weekly check-ins.",
   },
   {
     q: "How quickly can I start?",
-    a: "Applications are open to everyone and Guhay reviews each one personally, usually within 48 hours. Because coaching is one-to-one, onboarding is paced to keep every programme's quality high — if there's a short wait when you apply, we'll tell you upfront.",
+    a: "Applications are open to everyone and Guhay reviews each one personally, usually within 48 hours. Because coaching is one-to-one, onboarding is paced to keep every programme's quality high. If there's a short wait when you apply, we'll tell you upfront.",
   },
   {
     q: "Do I need a gym?",
-    a: "No. Programmes are built for gym, home gym, hotel gym, or bodyweight setups. Your training is written around what you have access to, not what we assume.",
+    a: "No. Programmes are built for gym, home gym, hotel gym or bodyweight setups. Your training is written around what you have access to, not what we assume.",
   },
   {
-    q: "Is the diagnostic call really free?",
-    a: "Completely free. It's a 20-minute call, not a sales call. Guhay reviews your situation and tells you honestly whether the programme is the right fit for your goals and timeline.",
+    q: "Is the consultation call really free?",
+    a: "Completely free, and not a sales call. Guhay reviews your situation and tells you honestly whether the programme is the right fit for your goals and timeline.",
   },
 ];
 
 export default function PricingClient() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [plans, setPlans] = useState<PricingRate[]>(FALLBACK_PLANS);
-
-  useEffect(() => {
-    fetch("/api/form-data", { cache: "no-store" })
-      .then((r) => r.json())
-      .then((json) => {
-        if (json.rates && json.rates.length > 0) setPlans(json.rates);
-      })
-      .catch(() => { /* keep fallback */ });
-  }, []);
-
   return (
     <>
       <Navigation />
       <main>
-        {/* Hero */}
-        <section style={{ padding: "140px 24px 80px", textAlign: "center", position: "relative" }} className="grid-bg">
-          <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.05) 0%, transparent 60%)", pointerEvents: "none" }} />
-          <div style={{ maxWidth: "640px", margin: "0 auto", position: "relative" }}>
-            <div className="tag" style={{ marginBottom: "24px" }}>Coaching Investment</div>
-            <h1 style={{ fontSize: "clamp(40px, 5vw, 60px)", fontWeight: 600, color: "#FFFFFF", marginBottom: "20px", letterSpacing: "-0.02em" }}>
-              Precision coaching for{" "}
-              <span className="gold-text">serious professionals</span>
-            </h1>
-            <p style={{ fontSize: "17px", color: "#B7B9C3", lineHeight: 1.65, marginBottom: "32px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              Two tiers. One protocol. All include the full CALIBRATE system, custom training, nutrition, weekly analysis, and direct coach access.
-            </p>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "rgba(255,222,2,0.08)", border: "1px solid rgba(255,222,2,0.2)", borderRadius: "999px", padding: "8px 20px" }}>
-              <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#FFDE02", flexShrink: 0, boxShadow: "0 0 8px rgba(255,222,2,0.6)" }} />
-              <span style={{ fontSize: "13px", fontWeight: 600, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                Now accepting applications
-              </span>
+        <PageHero
+          compact
+          eyebrow="Coaching investment"
+          title={<>Invest in a <Hl ink>system,</Hl> not a guess.</>}
+          lead="Two tiers, one protocol. Every plan includes the full CALIBRATE method, the Vemisis app and direct access to your coach. Applications are reviewed personally within 48 hours."
+        />
+
+        <section className="ps" aria-label="Included in every plan" style={{ padding: "26px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", background: "#08080A" }}>
+          <div className="mq" style={{ ["--mq-dur" as string]: "38s" }}>
+            <div className="mq-track">
+              {[...inclusions, ...inclusions, ...inclusions].map((t, i) => (
+                <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 14, padding: "0 26px", fontFamily: "var(--font-display)", fontSize: 26, textTransform: "uppercase", whiteSpace: "nowrap" }}>
+                  {t}
+                  <svg width="16" height="16" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 C54 38 62 46 96 50 C62 54 54 62 50 96 C46 62 38 54 4 50 C38 46 46 38 50 4Z" fill="#FFDE02" /></svg>
+                </span>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Inclusions marquee */}
-        <div style={{ marginBottom: "56px", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(17,17,20,0.6)" }}>
-          <div className="marquee-viewport" style={{ padding: "22px 0" }}>
-            <div className="marquee-track">
-              {[...inclusions, ...inclusions].map((item, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "0 28px" }}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <circle cx="7" cy="7" r="6.5" stroke="#FFDE02" strokeWidth="1.2" />
-                    <path d="M4.2 7.2l1.8 1.8 3.8-3.8" stroke="#FFDE02" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  <span style={{ fontSize: "13px", fontWeight: 700, color: "#F5F3EE", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.02em" }}>
-                    {item}
-                  </span>
-                  <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "rgba(255,255,255,0.16)" }} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <Pricing fallback={FALLBACK_PLANS} showMoreLink={false} heading={false} />
 
-        {/* Plans */}
-        <section style={{ padding: "0 24px 80px" }}>
-          <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-            <div style={{ display: "grid", gridTemplateColumns: `repeat(${Math.min(plans.length, 3) || 1}, 1fr)`, gap: "20px", alignItems: "start" }} className="plans-grid">
-              {plans.map((plan) => (
-                <div
-                  key={plan.id}
-                  style={{
-                    background: plan.highlight ? "rgba(23,23,23,0.95)" : "rgba(23,23,23,0.6)",
-                    border: plan.highlight ? "1px solid rgba(255,222,2,0.3)" : "1px solid rgba(255,255,255,0.06)",
-                    borderRadius: "20px", padding: "36px", position: "relative",
-                  }}
-                >
-                  {plan.highlight && (
-                    <div style={{ position: "absolute", top: "-1px", left: "50%", transform: "translateX(-50%)", background: "linear-gradient(90deg, #E6C700, #FFDE02)", color: "#07070A", fontSize: "11px", fontWeight: 800, fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", padding: "5px 18px", borderRadius: "0 0 10px 10px", whiteSpace: "nowrap" }}>
-                      Best Value
-                    </div>
-                  )}
-                  {plan.tagline && (
-                    <p style={{ fontSize: "11px", fontWeight: 700, color: plan.highlight ? "#FFDE02" : "#B7B9C3", letterSpacing: "0.08em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>
-                      {plan.tagline}{plan.discount_label ? ` · ${plan.discount_label}` : ""}
-                    </p>
-                  )}
-                  <h2 style={{ fontSize: "28px", color: "#FFFFFF", marginBottom: "20px", letterSpacing: "-0.01em" }}>{plan.name}</h2>
-                  <div style={{ marginBottom: "8px" }}>
-                    <div style={{ display: "flex", alignItems: "baseline", gap: "2px" }}>
-                      <span style={{ fontSize: "52px", fontWeight: 800, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1 }}>{formatPrice(plan)}</span>
-                    </div>
+        <section className="sec-tight">
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="tag rv">Who this is for</span>
+              <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Built for <Hl>high performers.</Hl></h2>
+            </div>
+            <div className="pp-grid">
+              {profiles.map((p, i) => (
+                <article key={p.role} className="pp-card rv" style={{ ["--d" as string]: `${i * 100}ms` }}>
+                  <Image src={p.img} alt="" fill sizes="(max-width: 800px) 100vw, 400px" style={{ objectFit: "cover" }} />
+                  <div className="pp-shade" />
+                  <div className="pp-body">
+                    <h3 className="display-sm">{p.role}</h3>
+                    <p style={{ fontSize: 14.5, color: "#D7D9E0", lineHeight: 1.55 }}>{p.detail}</p>
                   </div>
-                  {plan.billing_note && (
-                    <p style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "28px" }}>{plan.billing_note}</p>
-                  )}
-                  <Link href="/apply" className={plan.highlight ? "btn-primary" : "btn-secondary"} style={{ width: "100%", justifyContent: "center", marginBottom: "28px", fontSize: "14px" }}>
-                    Apply: {plan.name}
-                  </Link>
-                  <ul style={{ listStyle: "none" }}>
-                    {plan.features.map((f) => (
-                      <li key={f} style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "10px", fontSize: "14px", color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" style={{ marginTop: "1px", flexShrink: 0 }}>
-                          <circle cx="7.5" cy="7.5" r="6.5" fill="rgba(255,222,2,0.1)" />
-                          <path d="M4.5 7.5l2 2 4-4" stroke="#FFDE02" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-
-            <div style={{ marginTop: "24px", padding: "20px 28px", background: "rgba(23,23,23,0.4)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: "12px", display: "flex", alignItems: "center", gap: "14px" }}>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0 }}>
-                <circle cx="8" cy="8" r="7" stroke="#FFDE02" strokeWidth="1.3" />
-                <path d="M8 5v4M8 11v.5" stroke="#FFDE02" strokeWidth="1.3" strokeLinecap="round" />
-              </svg>
-              <p style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.5 }}>
-                All applications are reviewed personally by Guhay within 48 hours. A free 20-minute diagnostic call precedes any commitment.
-              </p>
-            </div>
-          </div>
-          <style>{`@media (max-width: 700px) { .plans-grid { grid-template-columns: 1fr !important; } }`}</style>
-        </section>
-
-        {/* Target client */}
-        <section style={{ padding: "80px 24px", background: "rgba(9,9,11,0.5)" }}>
-          <div style={{ maxWidth: "900px", margin: "0 auto", textAlign: "center" }}>
-            <div className="tag" style={{ marginBottom: "20px" }}>Who This Is For</div>
-            <h2 style={{ fontSize: "clamp(28px, 3vw, 40px)", color: "#FFFFFF", letterSpacing: "-0.01em", marginBottom: "48px" }}>
-              Built for high-performers with demanding schedules
-            </h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", textAlign: "left" }} className="profile-grid">
-              {[
-                { role: "Engineers & Developers", detail: "Complex problem-solvers who prefer systems over motivation." },
-                { role: "Product Managers", detail: "Detail-oriented professionals who want measurable outcomes." },
-                { role: "Consultants & Founders", detail: "High-travel, high-pressure, the protocol adapts to your schedule." },
-              ].map((p) => (
-                <div key={p.role} style={{ background: "rgba(23,23,23,0.6)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "24px" }}>
-                  <p style={{ fontSize: "15px", fontWeight: 700, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>{p.role}</p>
-                  <p style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.6 }}>{p.detail}</p>
-                </div>
+                </article>
               ))}
             </div>
           </div>
-          <style>{`@media (max-width: 700px) { .profile-grid { grid-template-columns: 1fr !important; } }`}</style>
+          <style>{`
+            .pp-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+            .pp-card { position: relative; min-height: 420px; border-radius: 28px; overflow: hidden; border: 1px solid var(--line); isolation: isolate; }
+            .pp-card img { z-index: -2; transition: transform 1s var(--ease-out); }
+            .pp-card:hover img { transform: scale(1.05); }
+            .pp-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 30%, rgba(5,5,6,0.95) 82%); }
+            .pp-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px; display: flex; flex-direction: column; gap: 8px; }
+            @media (max-width: 800px) { .pp-grid { grid-template-columns: 1fr; } .pp-card { min-height: 360px; } }
+          `}</style>
         </section>
 
-        {/* FAQ */}
-        <section style={{ padding: "80px 24px 120px" }}>
-          <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-            <div style={{ textAlign: "center", marginBottom: "48px" }}>
-              <div className="tag" style={{ marginBottom: "20px" }}>FAQ</div>
-              <h2 style={{ fontSize: "clamp(28px, 3vw, 40px)", color: "#FFFFFF", letterSpacing: "-0.01em" }}>Questions before you commit</h2>
-            </div>
-            <div style={{ border: "1px solid rgba(255,255,255,0.06)", borderRadius: "12px", overflow: "hidden" }}>
-              {faqs.map((faq, i) => (
-                <div key={i} style={{ borderBottom: i < faqs.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none" }}>
-                  <button
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    style={{ width: "100%", padding: "20px 24px", background: openFaq === i ? "rgba(23,23,23,0.9)" : "rgba(17,17,20,0.9)", border: "none", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", textAlign: "left" }}
-                  >
-                    <span style={{ fontSize: "15px", fontWeight: 600, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{faq.q}</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, transform: openFaq === i ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s ease" }}>
-                      <path d="M4 6l4 4 4-4" stroke="#B7B9C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </button>
-                  {openFaq === i && (
-                    <div style={{ padding: "0 24px 20px", background: "rgba(23,23,23,0.9)" }}>
-                      <p style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.7, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{faq.a}</p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Faq items={faqs} title={<>Questions before you <Hl>commit.</Hl></>} />
+        <FinalCta />
       </main>
       <Footer />
     </>

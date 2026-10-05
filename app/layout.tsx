@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import VisitorTracker from "@/components/shared/VisitorTracker";
+import RevealObserver from "@/components/shared/RevealObserver";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://calibrate.gvnfit.online"),
   title: {
-    default: "CALIBRATE, Precision Coaching for High-Performing Professionals",
+    default: "CALIBRATE by GVNFIT | Precision Coaching, Delivered Through the Vemisis App",
     template: "%s | CALIBRATE",
   },
   description:
@@ -71,12 +72,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full" data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap&font-display=swap"
+          href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700;800&family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
         <script
@@ -135,27 +136,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full">
-        <div className="hud-scanline" aria-hidden="true" />
         <VisitorTracker />
         {children}
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function() {
-            var io = new IntersectionObserver(function(entries) {
-              entries.forEach(function(e) {
-                if (e.isIntersecting) { e.target.classList.add('in-view'); }
-              });
-            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-            function observe() {
-              document.querySelectorAll('.reveal-up,.reveal-left,.reveal-right,.reveal-scale,.reveal').forEach(function(el) {
-                io.observe(el);
-              });
-            }
-            if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', observe); }
-            else { observe(); }
-            var mo = new MutationObserver(observe);
-            mo.observe(document.body, { childList: true, subtree: true });
-          })();
-        `}} />
+        <RevealObserver />
       </body>
     </html>
   );

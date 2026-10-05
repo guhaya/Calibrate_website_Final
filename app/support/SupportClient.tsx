@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Navigation from "@/components/layout/Navigation";
+import PageHero from "@/components/landing/PageHero";
+import { Hl } from "@/components/landing/ui";
 import Footer from "@/components/layout/Footer";
 import Icon from "@/components/shared/Icon";
 import CalendarBooking from "@/components/shared/CalendarBooking";
@@ -83,7 +85,7 @@ const contactMethods = [
     description: "Send a message and we'll respond within 24 hours.",
     cta: "Email us",
     href: "mailto:Admin@gvnfit.online",
-    color: "#3B82F6",
+    color: "#FFDE02",
   },
   {
     icon: "star",
@@ -103,19 +105,12 @@ export default function SupportClient() {
       <Navigation />
       <main>
         {/* Hero */}
-        <section style={{ padding: "140px 24px 80px", textAlign: "center", position: "relative" }} className="grid-bg">
-          <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.05) 0%, transparent 60%)", pointerEvents: "none" }} />
-          <div style={{ maxWidth: "700px", margin: "0 auto", position: "relative" }}>
-            <div className="tag" style={{ marginBottom: "24px" }}>Contact & FAQ</div>
-            <h1 style={{ fontSize: "clamp(40px, 5vw, 56px)", fontWeight: 600, color: "#FFFFFF", marginBottom: "20px", letterSpacing: "-0.02em" }}>
-              We're here to{" "}
-              <span className="gold-text">help you succeed</span>
-            </h1>
-            <p style={{ fontSize: "17px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              Questions about coaching, pricing, or getting started? Find answers below or reach out directly.
-            </p>
-          </div>
-        </section>
+        <PageHero
+          compact
+          eyebrow="Contact & FAQ"
+          title={<>We&apos;re here to <Hl ink>help you succeed.</Hl></>}
+          lead="Questions about coaching, pricing or getting started? Find answers below or reach out directly."
+        />
 
         {/* Contact methods */}
         <section style={{ padding: "0 24px 80px" }}>
@@ -129,7 +124,7 @@ export default function SupportClient() {
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,222,2,0.2)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.06)"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}
                 >
-                  <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: `rgba(${method.color === "#FFDE02" ? "255,222,2" : method.color === "#3B82F6" ? "59,130,246" : "34,197,94"}, 0.1)`, display: "flex", alignItems: "center", justifyContent: "center", color: method.color, marginBottom: "16px" }}>
+                  <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: `rgba(${method.color === "#FFDE02" ? "255,222,2" : method.color === "#FFDE02" ? "255,222,2" : "34,197,94"}, 0.1)`, display: "flex", alignItems: "center", justifyContent: "center", color: method.color, marginBottom: "16px" }}>
                     <Icon name={method.icon} size={20} />
                   </div>
                   <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#FFFFFF", marginBottom: "8px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{method.title}</h3>
@@ -154,7 +149,7 @@ export default function SupportClient() {
                 Book your free <span className="gold-text">consultation</span>
               </h2>
               <p style={{ color: "#B7B9C3", fontSize: "16px", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                30 minutes. We'll cover your goals, your situation, and exactly what coaching would look like for you.
+                30 minutes. We&apos;ll cover your goals, your situation, and exactly what coaching would look like for you.
               </p>
             </div>
             <div style={{ background: "rgba(23,23,23,0.7)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "20px", padding: "40px" }}>

@@ -1,19 +1,17 @@
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
-import Hero from "@/components/home/Hero";
-import StatMarquee from "@/components/home/StatMarquee";
-import AudienceSplit from "@/components/home/AudienceSplit";
-import TransformationCarousel from "@/components/home/TransformationCarousel";
-import PainGrid from "@/components/home/PainGrid";
-import AppShowcase from "@/components/home/AppShowcase";
-import WeeklyPlanMockup from "@/components/home/WeeklyPlanMockup";
-import PricingCards from "@/components/home/PricingCards";
-import GuaranteeBanner from "@/components/home/GuaranteeBanner";
-import ComparisonTable from "@/components/home/ComparisonTable";
-import ThreeStepKickoff from "@/components/home/ThreeStepKickoff";
-import ReviewsCarousel from "@/components/home/ReviewsCarousel";
-import FAQAccordion from "@/components/home/FAQAccordion";
-import DemoCTA from "@/components/home/DemoCTA";
+import Hero from "@/components/landing/Hero";
+import ProofStrip from "@/components/landing/ProofStrip";
+import Problem from "@/components/landing/Problem";
+import Method from "@/components/landing/Method";
+import AppSection from "@/components/landing/AppSection";
+import Goals from "@/components/landing/Goals";
+import Results from "@/components/landing/Results";
+import Coach from "@/components/landing/Coach";
+import Steps from "@/components/landing/Steps";
+import Pricing from "@/components/landing/Pricing";
+import Faq from "@/components/landing/Faq";
+import FinalCta from "@/components/landing/FinalCta";
 
 export default function HomePage() {
   return (
@@ -21,19 +19,17 @@ export default function HomePage() {
       <Navigation />
       <main>
         <Hero />
-        <StatMarquee />
-        <AudienceSplit />
-        <TransformationCarousel />
-        <PainGrid />
-        <AppShowcase />
-        <WeeklyPlanMockup />
-        <PricingCards />
-        <GuaranteeBanner />
-        <ComparisonTable />
-        <ThreeStepKickoff />
-        <ReviewsCarousel />
-        <FAQAccordion />
-        <DemoCTA />
+        <ProofStrip />
+        <Problem />
+        <Method />
+        <AppSection />
+        <Goals />
+        <Results />
+        <Coach />
+        <Steps />
+        <Pricing />
+        <Faq />
+        <FinalCta />
       </main>
       <Footer />
     </>

@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
+import PageHero from "@/components/landing/PageHero";
+import { Hl } from "@/components/landing/ui";
 import Footer from "@/components/layout/Footer";
 
 const faqs = [
@@ -67,50 +69,13 @@ export default function ContactClient() {
       <Navigation />
       <main>
         {/* Hero */}
-        <section
-          style={{ padding: "140px 24px 80px", textAlign: "center", position: "relative" }}
-          className="grid-bg"
-        >
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.06) 0%, transparent 65%)",
-              pointerEvents: "none",
-            }}
-          />
-          <div style={{ maxWidth: "640px", margin: "0 auto", position: "relative" }}>
-            <div className="tag" style={{ marginBottom: "24px" }}>Get In Touch</div>
-            <h1
-              style={{
-                fontSize: "clamp(40px, 5.5vw, 64px)",
-                fontWeight: 700,
-                color: "#FFFFFF",
-                marginBottom: "20px",
-                letterSpacing: "-0.01em",
-                lineHeight: 1.05,
-              }}
-            >
-              Let&apos;s start a{" "}
-              <span className="gold-text">conversation</span>
-            </h1>
-            <p
-              style={{
-                fontSize: "17px",
-                color: "#B7B9C3",
-                lineHeight: 1.65,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                marginBottom: "40px",
-              }}
-            >
-              Have a question before booking? Want to know if coaching is right for you?
-              Reach out, every message gets a personal response within 24 hours.
-            </p>
-            <Link href="/book" className="btn-primary" style={{ fontSize: "15px", padding: "14px 32px" }}>
-              Book Free Consultation
-            </Link>
-          </div>
-        </section>
+        <PageHero
+          compact
+          eyebrow="Get in touch"
+          title={<>Let&apos;s start a <Hl ink>conversation.</Hl></>}
+          lead="Have a question before booking? Want to know if coaching is right for you? Reach out, every message gets a personal response within 24 hours."
+          ctas={[{ label: "Book free consultation", href: "/book" }]}
+        />
 
         {/* Contact methods */}
         <section style={{ padding: "80px 24px 0" }}>
@@ -174,17 +139,17 @@ export default function ContactClient() {
                 style={{
                   borderRadius: "16px", padding: "32px 28px", textAlign: "center",
                   transition: "border-color 0.3s ease, transform 0.3s ease", cursor: "pointer",
-                  border: "1px solid rgba(168,85,247,0.12)",
+                  border: "1px solid rgba(255,222,2,0.12)",
                 }}
               >
-                <div style={{ width: "52px", height: "52px", borderRadius: "14px", background: "rgba(168,85,247,0.1)", border: "1px solid rgba(168,85,247,0.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
+                <div style={{ width: "52px", height: "52px", borderRadius: "14px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                    <rect x="3" y="3" width="16" height="16" rx="4" stroke="#A855F7" strokeWidth="1.5" />
-                    <circle cx="11" cy="11" r="3.5" stroke="#A855F7" strokeWidth="1.5" />
-                    <circle cx="15.5" cy="6.5" r="1" fill="#A855F7" />
+                    <rect x="3" y="3" width="16" height="16" rx="4" stroke="#FFDE02" strokeWidth="1.5" />
+                    <circle cx="11" cy="11" r="3.5" stroke="#FFDE02" strokeWidth="1.5" />
+                    <circle cx="15.5" cy="6.5" r="1" fill="#FFDE02" />
                   </svg>
                 </div>
-                <p style={{ fontSize: "12px", fontWeight: 700, color: "#A855F7", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "8px" }}>Instagram</p>
+                <p style={{ fontSize: "12px", fontWeight: 700, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "8px" }}>Instagram</p>
                 <p style={{ fontSize: "15px", color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, marginBottom: "6px" }}>@fitguhay</p>
                 <p style={{ fontSize: "13px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Follow for daily content</p>
               </div>
@@ -271,7 +236,7 @@ export default function ContactClient() {
                 Frequently asked
               </h2>
               <p style={{ fontSize: "15px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "28px", lineHeight: 1.6 }}>
-                Most questions answered. If yours isn't here, just ask.
+                Most questions answered. If yours isn&apos;t here, just ask.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                 {faqs.map((faq, i) => (

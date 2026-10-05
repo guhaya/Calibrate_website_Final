@@ -7,6 +7,8 @@ export const metadata: Metadata = {
 
 import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
+import PageHero from "@/components/landing/PageHero";
+import { Hl } from "@/components/landing/ui";
 import Footer from "@/components/layout/Footer";
 import Icon from "@/components/shared/Icon";
 
@@ -30,14 +32,14 @@ const experiences = [
     title: "You hit your stride",
     description: "By now you're not thinking about the plan, you're living it. Training feels natural. Nutrition is second nature. Your coach adjusts intensity and targets as your fitness improves. This is where the real progress accelerates.",
     icon: "lightning",
-    color: "#3B82F6",
+    color: "#FFDE02",
   },
   {
     phase: "Week 9–12",
     title: "The transformation is visible",
     description: "The before and after difference is undeniable. Strength is up. Body composition is transformed. You have the system, the habits, and the knowledge to maintain this for the rest of your life.",
     icon: "star",
-    color: "#A855F7",
+    color: "#FFDE02",
   },
 ];
 
@@ -58,48 +60,12 @@ export default function ClientsPage() {
       <Navigation />
       <main>
         {/* Hero */}
-        <section
-          style={{
-            padding: "140px 24px 80px",
-            textAlign: "center",
-            position: "relative",
-          }}
-          className="grid-bg"
-        >
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.05) 0%, transparent 60%)",
-              pointerEvents: "none",
-            }}
-          />
-          <div style={{ maxWidth: "680px", margin: "0 auto", position: "relative" }}>
-            <div className="tag" style={{ marginBottom: "24px" }}>Your Experience</div>
-            <h1
-              style={{
-                fontSize: "clamp(40px, 5vw, 60px)",
-                fontWeight: 600,
-                color: "#FFFFFF",
-                marginBottom: "20px",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              What coaching with{" "}
-              <span className="gold-text">CALIBRATE</span> looks like
-            </h1>
-            <p
-              style={{
-                fontSize: "17px",
-                color: "#B7B9C3",
-                lineHeight: 1.65,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-              }}
-            >
-              From day one to your final result, here's exactly what you get, what to expect, and how the process works.
-            </p>
-          </div>
-        </section>
+        <PageHero
+          compact
+          eyebrow="Your experience"
+          title={<>What coaching with <Hl ink>CALIBRATE</Hl> looks like</>}
+          lead="From day one to your final result, here's exactly what you get, what to expect, and how the process works inside the Vemisis app."
+        />
 
         {/* Inclusions marquee */}
         <div style={{ marginBottom: "40px", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(17,17,20,0.6)" }}>
@@ -149,8 +115,6 @@ export default function ClientsPage() {
                 const colorRgb: Record<string, string> = {
                   "#FFDE02": "255,222,2",
                   "#22C55E": "34,197,94",
-                  "#3B82F6": "59,130,246",
-                  "#A855F7": "168,85,247",
                 };
                 const rgb = colorRgb[exp.color];
                 return (
@@ -335,7 +299,7 @@ export default function ClientsPage() {
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
-              Book your free 30-minute call today. We'll map out your programme and get you started within the week.
+              Book your free 30-minute call today. We&apos;ll map out your programme and get you started within the week.
             </p>
             <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/book" className="btn-primary" style={{ fontSize: "15px", padding: "14px 32px" }}>

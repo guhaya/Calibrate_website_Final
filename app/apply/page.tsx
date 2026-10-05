@@ -10,6 +10,8 @@ export const metadata: Metadata = {
 
 import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
+import PageHero from "@/components/landing/PageHero";
+import { Hl } from "@/components/landing/ui";
 import Footer from "@/components/layout/Footer";
 import ApplyForm from "@/components/apply/ApplyForm";
 
@@ -26,78 +28,13 @@ export default function ApplyPage() {
       <Navigation />
       <main>
         {/* Hero */}
-        <section
-          className="grid-bg"
-          style={{ padding: "140px 24px 80px", textAlign: "center", position: "relative" }}
-        >
-          <div
-            style={{
-              position: "absolute", inset: 0,
-              background: "radial-gradient(ellipse at 50% 30%, rgba(255,222,2,0.06) 0%, transparent 60%)",
-              pointerEvents: "none",
-            }}
-          />
-          <div style={{ maxWidth: "620px", margin: "0 auto", position: "relative" }}>
-            <div className="tag" style={{ marginBottom: "24px" }}>Client Application</div>
-            <h1
-              style={{
-                fontSize: "clamp(40px, 5vw, 60px)",
-                fontWeight: 600,
-                color: "#FFFFFF",
-                letterSpacing: "-0.02em",
-                marginBottom: "20px",
-              }}
-            >
-              Apply to <span className="gold-text">CALIBRATE</span>
-            </h1>
-            <p
-              style={{
-                fontSize: "17px",
-                color: "#B7B9C3",
-                lineHeight: 1.65,
-                marginBottom: "40px",
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-              }}
-            >
-              Reviewed personally by Guhay. Fill in your details and you&apos;ll hear back within 48 hours.
-            </p>
-
-            {/* Primary CTA */}
-            <a
-              href="#application-form"
-              className="btn-primary"
-              style={{ fontSize: "16px", padding: "16px 40px", display: "inline-flex" }}
-            >
-              Start Your Application
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-
-            <p style={{ marginTop: "16px", fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              Takes a few minutes · reviewed personally within 48 hours
-            </p>
-
-            {/* Scarcity */}
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "10px",
-                background: "rgba(255,222,2,0.06)",
-                border: "1px solid rgba(255,222,2,0.18)",
-                borderRadius: "999px",
-                padding: "8px 20px",
-                marginTop: "28px",
-              }}
-            >
-              <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#FFDE02", flexShrink: 0, boxShadow: "0 0 8px rgba(255,222,2,0.6)" }} />
-              <span style={{ fontSize: "13px", fontWeight: 600, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                Now accepting applications
-              </span>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          compact
+          eyebrow="Client application"
+          title={<>Apply to <Hl ink>CALIBRATE.</Hl></>}
+          lead="Reviewed personally by Guhay. Fill in your details and you'll hear back within 48 hours."
+          ctas={[{ label: "Start your application", href: "#application-form" }]}
+        />
 
         {/* What happens next */}
         <section style={{ padding: "80px 24px", background: "rgba(9,9,11,0.5)" }}>
