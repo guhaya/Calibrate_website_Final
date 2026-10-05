@@ -33,7 +33,7 @@ const steps: JourneyStep[] = [
   {
     number: "02",
     title: "Your Custom Programme Is Built",
-    duration: "Within 5 days",
+    duration: "Within 48 hours",
     description:
       "After we speak, I build your training and nutrition plan from scratch. Not a template. Every exercise, every calorie target, every macro split, written specifically for you.",
     bullets: [

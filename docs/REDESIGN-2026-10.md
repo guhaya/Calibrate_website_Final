@@ -41,7 +41,6 @@ Branch: `redesign/vemisis-2026` (committed locally, **not pushed**; pushing to `
 
 1. **Social proof carried over unchanged** from the old site: "200+ clients transformed", "98% satisfaction", "4.9/5", "9.8kg average fat lost", and the named transformations/testimonials. Confirm these are accurate; nothing new was invented.
 2. **Existing copy that disagrees with itself**:
-   - Programme build time: the old site said "Within 5 days" (homepage) and "Within 48 hours" (How It Works). Both now say **"Within 5 days"** (the safer promise); change it if 48 hours is right.
    - "James O., Teacher" (homepage) and "Arjun K., Staff Engineer" (Results page) share identical before/after numbers.
    - In-app message replies "within 24 hours" vs WhatsApp "4-hour response window".
 3. **Assumption**: the site says Vemisis access is included with every plan.

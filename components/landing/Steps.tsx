@@ -14,7 +14,7 @@ const steps = [
   },
   {
     n: "02",
-    when: "Within 5 days",
+    when: "Within 48 hours",
     title: "Your personal protocol",
     body: "Training and nutrition built from scratch around your schedule, then loaded straight into your Vemisis app.",
     img: "/media/app/diet-plan.webp",
