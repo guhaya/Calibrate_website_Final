@@ -179,6 +179,9 @@ export default function ContactClient() {
                   </div>
                   <p style={{ fontSize: "16px", color: "#22C55E", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600 }}>Email client opened</p>
                   <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: "8px" }}>Hit send in your email app. We respond within 4 hours.</p>
+                  <p style={{ fontSize: "13px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: "12px" }}>
+                    Nothing opened? Email <a href="mailto:Admin@gvnfit.online" style={{ color: "#B7B9C3" }}>Admin@gvnfit.online</a> directly or DM <a href="https://instagram.com/fitguhay" target="_blank" rel="noopener noreferrer" style={{ color: "#B7B9C3" }}>@fitguhay</a> on Instagram.
+                  </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
