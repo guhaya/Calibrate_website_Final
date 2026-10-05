@@ -113,7 +113,7 @@ export default function Pricing({ fallback = FALLBACK_PLANS, showMoreLink = true
             </p>
           </div>
           <ul className="pr-g-list">
-            {["No fine print", "No hidden fees", "Cancel anytime after month 1"].map((t) => (
+            {["No fine print", "No hidden fees", "3-month minimum, then month to month"].map((t) => (
               <li key={t}><Check />{t}</li>
             ))}
           </ul>

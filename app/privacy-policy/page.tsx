@@ -19,7 +19,7 @@ export default async function PrivacyPolicyPage() {
     <PolicyPage
       policy={policy}
       policyType="privacy"
-      intro="This Privacy Policy explains how CALIBRATE (operated by GVN Fit) collects, uses, and protects your personal information when you use our website or coaching services. Please read it carefully."
+      intro="This Privacy Policy explains how CALIBRATE by GVNFIT collects, uses, and protects your personal information when you use our website, the Vemisis app or our coaching services. Please read it carefully."
     />
   );
 }

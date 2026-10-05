@@ -60,7 +60,7 @@ const faqs = [
       },
       {
         q: "How long is the minimum commitment?",
-        a: "The minimum is 12 weeks. Real transformation takes time, and 12 weeks is where most clients see genuinely significant changes. Anything shorter doesn't do justice to the process.",
+        a: "The minimum is 3 months. Real transformation takes time, and 3 months is where most clients see genuinely significant changes. After that you can continue month to month or cancel at the end of any billing cycle.",
       },
       {
         q: "Can I pause my programme?",

@@ -19,7 +19,7 @@ export default async function RefundPolicyPage() {
     <PolicyPage
       policy={policy}
       policyType="refund"
-      intro="This Refund Policy explains cancellation terms, the cooling-off window, and how refund requests are handled for CALIBRATE coaching programmes. Please read it carefully before enrolling."
+      intro="This Refund Policy explains the minimum commitment, cancellation terms, and how refund requests are handled for CALIBRATE coaching programmes. Please read it carefully before enrolling."
     />
   );
 }

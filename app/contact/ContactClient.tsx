@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: "Is there a minimum commitment period?",
-    a: "We ask for a minimum of one month, enough time to go through the assessment, receive your plan, and complete your first full week. Real results take 8-12 weeks, but we'll never lock you into something you're not benefiting from.",
+    a: "Yes, the minimum commitment is 3 months. The first month sets your baselines; months two and three are where results become visible and measurable. After that you can continue month to month or cancel at the end of any billing cycle.",
   },
 ];
 
