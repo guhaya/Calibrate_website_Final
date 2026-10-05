@@ -187,10 +187,11 @@ export default function ContactClient() {
                     { label: "Email address", type: "email", key: "email", placeholder: "alex@email.com" },
                   ].map((field) => (
                     <div key={field.key}>
-                      <label style={{ display: "block", fontSize: "12px", fontWeight: 700, color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "8px" }}>
+                      <label htmlFor={`contact-${field.key}`} style={{ display: "block", fontSize: "12px", fontWeight: 700, color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "8px" }}>
                         {field.label}
                       </label>
                       <input
+                        id={`contact-${field.key}`}
                         type={field.type}
                         required
                         placeholder={field.placeholder}
@@ -203,10 +204,11 @@ export default function ContactClient() {
                     </div>
                   ))}
                   <div>
-                    <label style={{ display: "block", fontSize: "12px", fontWeight: 700, color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "8px" }}>
+                    <label htmlFor="contact-message" style={{ display: "block", fontSize: "12px", fontWeight: 700, color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "8px" }}>
                       Message
                     </label>
                     <textarea
+                      id="contact-message"
                       required
                       placeholder="Tell me about your goals, current situation, or any questions you have..."
                       rows={5}
@@ -231,7 +233,7 @@ export default function ContactClient() {
             </div>
 
             {/* FAQ */}
-            <div>
+            <div id="faq" style={{ scrollMarginTop: "110px" }}>
               <h2 style={{ fontSize: "clamp(28px, 3vw, 40px)", color: "#FFFFFF", marginBottom: "12px", letterSpacing: "-0.01em" }}>
                 Frequently asked
               </h2>

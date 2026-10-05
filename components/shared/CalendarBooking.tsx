@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 
 const CALENDAR_URL =
   process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_URL ||
@@ -24,6 +24,7 @@ const goals = [
 
 export default function CalendarBooking() {
   const [step, setStep] = useState<"form" | "done">("form");
+  const fieldId = useId();
   const [data, setData] = useState<FormData>({ name: "", email: "", goal: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
 
@@ -145,8 +146,9 @@ export default function CalendarBooking() {
       {/* Name + Email row */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }} className="booking-2col">
         <div>
-          <label style={labelStyle}>Your name *</label>
+          <label htmlFor={`${fieldId}-name`} style={labelStyle}>Your name *</label>
           <input
+            id={`${fieldId}-name`}
             type="text"
             required
             placeholder="Alex Mitchell"
@@ -158,8 +160,9 @@ export default function CalendarBooking() {
           />
         </div>
         <div>
-          <label style={labelStyle}>Email address *</label>
+          <label htmlFor={`${fieldId}-email`} style={labelStyle}>Email address *</label>
           <input
+            id={`${fieldId}-email`}
             type="email"
             required
             placeholder="alex@email.com"
@@ -174,8 +177,9 @@ export default function CalendarBooking() {
 
       {/* Goal */}
       <div>
-        <label style={labelStyle}>What&apos;s your main goal?</label>
+        <label htmlFor={`${fieldId}-goal`} style={labelStyle}>What&apos;s your main goal?</label>
         <select
+          id={`${fieldId}-goal`}
           value={data.goal}
           onChange={(e) => setData({ ...data, goal: e.target.value })}
           style={{ ...inputStyle, color: data.goal ? "#FFFFFF" : "#7E8395" }}
@@ -191,8 +195,9 @@ export default function CalendarBooking() {
 
       {/* Message */}
       <div>
-        <label style={labelStyle}>Anything else? <span style={{ opacity: 0.5, textTransform: "none", letterSpacing: 0 }}>(optional)</span></label>
+        <label htmlFor={`${fieldId}-message`} style={labelStyle}>Anything else? <span style={{ opacity: 0.5, textTransform: "none", letterSpacing: 0 }}>(optional)</span></label>
         <textarea
+          id={`${fieldId}-message`}
           placeholder="Current situation, what you've tried before, any questions..."
           value={data.message}
           onChange={(e) => setData({ ...data, message: e.target.value })}

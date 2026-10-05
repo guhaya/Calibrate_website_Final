@@ -48,6 +48,13 @@ export default function Navigation() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setMenuOpen(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
+
   const isActive = (href: string) => pathname === href || (href !== "/" && pathname?.startsWith(href + "/"));
 
   return (
