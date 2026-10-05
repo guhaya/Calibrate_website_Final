@@ -127,8 +127,6 @@ export default function Footer() {
           -webkit-text-stroke: 1px rgba(255,255,255,0.14);
           letter-spacing: 0.02em;
           user-select: none;
-          background: linear-gradient(180deg, rgba(255,222,2,0.16), transparent 75%);
-          -webkit-background-clip: text; background-clip: text;
         }
         .ft-bottom {
           display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;

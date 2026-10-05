@@ -116,7 +116,6 @@ export default function HowItWorksPage() {
         <Method showLink={false} />
 
         <Journey
-          eyebrow="Your journey"
           title={<>Week by week, <Hl>step by step.</Hl></>}
           lead="From the first conversation to lasting results. No mystery, no black box, just a process you can see working."
           steps={steps}

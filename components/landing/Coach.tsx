@@ -37,8 +37,7 @@ export default function Coach() {
         </div>
 
         <div className="coach-copy">
-          <span className="tag rv">Meet your head coach</span>
-          <h2 className="display-lg rv" style={{ ["--d" as string]: "80ms" }}>
+          <h2 className="display-lg rv">
             Your body is a process. <Hl>Processes</Hl> can be optimised.
           </h2>
           <p className="lead rv" style={{ ["--d" as string]: "140ms" }}>

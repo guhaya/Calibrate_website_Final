@@ -209,7 +209,6 @@ export default function ClientsPage() {
         <section style={{ padding: "80px 24px", background: "rgba(9,9,11,0.5)" }}>
           <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
-              <div className="tag" style={{ marginBottom: "20px" }}>All Inclusive</div>
               <h2
                 style={{
                   fontSize: "clamp(28px, 3.5vw, 44px)",

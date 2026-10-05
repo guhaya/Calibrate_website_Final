@@ -49,8 +49,7 @@ export default function Results() {
       <div className="wrap">
         <div className="res-head">
           <div className="sec-head left" style={{ marginBottom: 0 }}>
-            <span className="tag rv">Verified results</span>
-            <h2 className="display-lg rv" style={{ ["--d" as string]: "80ms" }}>
+            <h2 className="display-lg rv">
               The numbers <Hl>don&apos;t lie.</Hl>
             </h2>
           </div>
@@ -74,18 +73,10 @@ export default function Results() {
             </div>
             <p className="cs-big">{t.headline}</p>
             <p className="cs-sub">{t.sub}</p>
-            <div className="cs-bars" aria-label={`Body fat from ${t.bfFrom}% to ${t.bfTo}%`}>
-              <div className="cs-bar">
-                <span className="mono c-muted">Before</span>
-                <div className="cs-track"><div className="cs-fill cs-fill-b" style={{ width: `${t.bfFrom * 2.6}%` }} /></div>
-                <span className="cs-val">{t.before}</span>
-              </div>
-              <div className="cs-bar">
-                <span className="mono c-accent">After</span>
-                <div className="cs-track"><div className="cs-fill cs-fill-a" style={{ width: `${t.bfTo * 2.6}%` }} /></div>
-                <span className="cs-val" style={{ color: "#fff" }}>{t.after}</span>
-              </div>
-            </div>
+            <dl className="cs-ba">
+              <div><dt>Before</dt><dd>{t.before}</dd></div>
+              <div><dt>After</dt><dd className="c-accent">{t.after}</dd></div>
+            </dl>
             <p className="cs-name">{t.name}</p>
           </article>
         ))}
@@ -122,19 +113,13 @@ export default function Results() {
           transition: border-color 0.3s ease, transform 0.5s var(--ease-out);
         }
         .cs:hover { border-color: rgba(255,222,2,0.4); }
-        .cs::after { content: ''; position: absolute; right: -80px; top: -80px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,222,2,0.16), transparent); }
         .cs-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 18px; }
         .cs-weeks { font-size: 12px; font-weight: 800; padding: 6px 12px; border-radius: 999px; background: var(--accent); color: #050506; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
         .cs-big { font-family: var(--font-display); font-size: clamp(84px, 9vw, 128px); line-height: 0.85; color: var(--accent); }
         .cs-sub { font-size: 15px; font-weight: 700; color: #fff; margin-top: 8px; }
-        .cs-bars { margin-top: auto; padding-top: 28px; display: grid; gap: 14px; }
-        .cs-bar { display: grid; grid-template-columns: 58px 1fr; gap: 6px 12px; align-items: center; }
-        .cs-track { height: 8px; border-radius: 8px; background: rgba(255,255,255,0.06); overflow: hidden; }
-        .cs-fill { height: 100%; border-radius: 8px; transform-origin: left; transform: scaleX(0); transition: transform 1.2s var(--ease-out) 0.3s; }
-        .cs.in-view .cs-fill { transform: scaleX(1); }
-        .cs-fill-b { background: rgba(255,255,255,0.28); }
-        .cs-fill-a { background: var(--accent); }
-        .cs-val { grid-column: 2; font-size: 13px; color: var(--text-muted); font-weight: 600; }
+        .cs-ba { margin-top: auto; padding-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .cs-ba dt { font-size: 12.5px; font-weight: 700; color: var(--text-muted); margin-bottom: 4px; }
+        .cs-ba dd { font-size: 15px; font-weight: 700; color: #fff; }
         .cs-name { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); font-weight: 800; font-size: 16px; }
         .cs-more { justify-content: center; align-items: flex-start; text-decoration: none; color: #fff; background: transparent; border-style: dashed; }
 

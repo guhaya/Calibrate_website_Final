@@ -144,7 +144,6 @@ export default function SupportClient() {
         <section id="booking" style={{ padding: "80px 24px", background: "rgba(9,9,11,0.5)" }}>
           <div style={{ maxWidth: "680px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "48px" }}>
-              <div className="tag" style={{ marginBottom: "20px" }}>Book a Call</div>
               <h2 style={{ fontSize: "clamp(28px, 3vw, 40px)", color: "#FFFFFF", marginBottom: "16px", letterSpacing: "-0.01em" }}>
                 Book your free <span className="gold-text">consultation</span>
               </h2>
@@ -162,7 +161,6 @@ export default function SupportClient() {
         <section style={{ padding: "80px 24px 120px" }}>
           <div style={{ maxWidth: "800px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "64px" }}>
-              <div className="tag" style={{ marginBottom: "20px" }}>FAQ</div>
               <h2 style={{ fontSize: "clamp(28px, 3vw, 40px)", color: "#FFFFFF", letterSpacing: "-0.01em" }}>Common questions</h2>
             </div>
 

@@ -219,7 +219,6 @@ export default function BlogClient() {
         {/* Subscribe */}
         <section style={{ padding: "80px 24px 120px", background: "rgba(9,9,11,0.5)" }}>
           <div style={{ maxWidth: "560px", margin: "0 auto", textAlign: "center" }}>
-            <div className="tag" style={{ marginBottom: "20px" }}>Newsletter</div>
             <h2 style={{ fontSize: "clamp(26px, 3.5vw, 36px)", color: "#FFFFFF", marginBottom: "16px", letterSpacing: "-0.01em" }}>
               Training and nutrition insights.{" "}
               <span className="gold-text">Every week.</span>

@@ -127,7 +127,6 @@ export default function PricingClient() {
         <section className="sec-tight">
           <div className="wrap">
             <div className="sec-head">
-              <span className="tag rv">Who this is for</span>
               <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Built for <Hl>high performers.</Hl></h2>
             </div>
             <div className="pp-grid">

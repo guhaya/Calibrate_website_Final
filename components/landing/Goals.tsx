@@ -4,7 +4,6 @@ import { Arrow, Check, Hl } from "./ui";
 
 const goals = [
   {
-    n: "01",
     title: "Fat Loss",
     line: "Drop body fat while holding onto every bit of muscle, without the crash-diet spiral.",
     points: ["Custom calorie and macro targets", "Strength-preserving training split", "Weekly check-in adjustments"],
@@ -12,7 +11,6 @@ const goals = [
     alt: "Coach running outdoors at sunrise",
   },
   {
-    n: "02",
     title: "Muscle Gain",
     line: "A structured hypertrophy programme with progressive overload tracked every session.",
     points: ["Progressive overload tracking", "Surplus calibrated to your metabolism", "Video form checks on request"],
@@ -20,7 +18,6 @@ const goals = [
     alt: "Coach training on the bench press",
   },
   {
-    n: "03",
     title: "Recomposition",
     line: "Lose fat and build muscle at the same time. The hardest goal to programme, and the one CALIBRATE was built for.",
     points: ["Nutrient timing around training", "Bi-weekly composition scans", "Slowest, most rewarding path"],
@@ -33,26 +30,21 @@ export default function Goals() {
   return (
     <section className="sec goals">
       <div className="wrap">
-        <div className="goals-head">
-          <div className="sec-head left" style={{ marginBottom: 0 }}>
-            <span className="tag rv">Built for your goal</span>
-            <h2 className="display-lg rv" style={{ ["--d" as string]: "80ms" }}>
-              No generic plans. <br />
-              <Hl>Ever.</Hl>
-            </h2>
-          </div>
-          <p className="lead rv" style={{ ["--d" as string]: "160ms", maxWidth: 420 }}>
-            Your programme is written for the exact outcome you&apos;re chasing, then re-written every week as your body responds.
+        <div className="sec-head left goals-head">
+          <h2 className="display-lg rv">
+            No generic plans. <Hl>Ever.</Hl>
+          </h2>
+          <p className="lead rv" style={{ ["--d" as string]: "100ms", maxWidth: 560 }}>
+            Your programme is written for the outcome you&apos;re chasing, then rewritten every week as your body responds.
           </p>
         </div>
 
         <div className="goals-grid">
           {goals.map((g, i) => (
-            <article key={g.title} className="goal rv" style={{ ["--d" as string]: `${i * 110}ms` }}>
+            <article key={g.title} className={`goal rv ${i === 0 ? "goal-lead" : ""}`} style={{ ["--d" as string]: `${i * 110}ms` }}>
               <Image src={g.img} alt={g.alt} fill sizes="(max-width: 900px) 100vw, 400px" className="goal-img" />
               <div className="goal-shade" />
               <div className="goal-body">
-                <span className="mono c-accent">{g.n}</span>
                 <h3 className="goal-title">{g.title}</h3>
                 <p className="goal-line">{g.line}</p>
                 <ul className="goal-points">
@@ -70,9 +62,12 @@ export default function Goals() {
       </div>
 
       <style>{`
-        .goals-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; margin-bottom: 56px; }
-        .goals-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-        .goal { position: relative; border-radius: 28px; overflow: hidden; min-height: 580px; isolation: isolate; border: 1px solid var(--line); }
+        .goals-head { margin-bottom: 56px; }
+        .goals-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); grid-template-rows: repeat(2, minmax(330px, auto)); gap: 20px; }
+        .goal { position: relative; border-radius: 28px; overflow: hidden; min-height: 330px; isolation: isolate; border: 1px solid var(--line); }
+        .goal-lead { grid-row: span 2; min-height: 680px; }
+        .goal-lead .goal-title { font-size: clamp(48px, 5vw, 72px); }
+        .goal-lead .goal-points { max-height: 140px; opacity: 1; margin: 4px 0 6px; }
         .goal-img { object-fit: cover; transition: transform 1.2s var(--ease-out), filter 0.6s ease; filter: saturate(0.9); z-index: -2; }
         .goal:hover .goal-img { transform: scale(1.06); filter: saturate(1.05); }
         .goal-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(5,5,6,0.15) 0%, rgba(5,5,6,0.35) 40%, rgba(5,5,6,0.96) 78%); }
@@ -91,8 +86,8 @@ export default function Goals() {
           .goal-points { max-height: 140px; opacity: 1; margin: 4px 0 6px; }
         }
         @media (max-width: 900px) {
-          .goals-grid { grid-template-columns: 1fr; }
-          .goal { min-height: 520px; }
+          .goals-grid { grid-template-columns: 1fr; grid-template-rows: none; }
+          .goal, .goal-lead { min-height: 520px; grid-row: auto; }
         }
       `}</style>
     </section>

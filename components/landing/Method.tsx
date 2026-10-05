@@ -95,7 +95,7 @@ export default function Method({ showLink = true }: { showLink?: boolean }) {
             <div className="mth-copy">
               {phases.map((p, i) => (
                 <div key={p.word} className={`mth-panel ${i === active ? "is-on" : ""}`} aria-hidden={i !== active}>
-                  <p className="mono c-accent">Phase 0{i + 1} · {p.week}</p>
+                  <p className="mono c-accent">{p.week}</p>
                   <h3 className="mth-word">{p.word}</h3>
                   <p className="lead" style={{ maxWidth: 480 }}>{p.desc}</p>
                   <div className="mth-app">
@@ -109,7 +109,6 @@ export default function Method({ showLink = true }: { showLink?: boolean }) {
             </div>
 
             <div className="mth-visual">
-              <div className="mth-halo" />
               <div className="device mth-device">
                 <div className="device-screen">
                   {phases.map((p, i) => (
@@ -125,13 +124,6 @@ export default function Method({ showLink = true }: { showLink?: boolean }) {
                   ))}
                 </div>
               </div>
-              <div className="float-card mth-badge">
-                <span className="mth-badge-letter">{phases[active].letter}</span>
-                <div>
-                  <p className="mono c-muted">Current phase</p>
-                  <p style={{ fontWeight: 800, fontSize: 15 }}>{phases[active].word}</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -139,12 +131,12 @@ export default function Method({ showLink = true }: { showLink?: boolean }) {
 
       {/* Mobile: stacked cards */}
       <div className="wrap mth-mobile">
-        {phases.map((p, i) => (
+        {phases.map((p) => (
           <article key={p.word} className="card mth-mcard rv">
             <div className="mth-mhead">
               <span className="mth-mletter">{p.letter}</span>
               <div>
-                <p className="mono c-accent">Phase 0{i + 1} · {p.week}</p>
+                <p className="mono c-accent">{p.week}</p>
                 <h3 className="display-sm">{p.word}</h3>
               </div>
             </div>
@@ -177,7 +169,7 @@ export default function Method({ showLink = true }: { showLink?: boolean }) {
         .mth-letter.is-done { -webkit-text-stroke-color: rgba(255,222,2,0.6); }
         .mth-letter.is-on { color: var(--accent); -webkit-text-stroke-color: var(--accent); transform: scale(1.18); }
         .mth-track { position: absolute; right: -14px; top: 8px; bottom: 8px; width: 2px; background: rgba(255,255,255,0.08); border-radius: 2px; }
-        .mth-fill { width: 100%; background: var(--accent); border-radius: 2px; transition: height 0.6s var(--ease-out); box-shadow: 0 0 12px rgba(255,222,2,0.7); }
+        .mth-fill { width: 100%; background: var(--accent); border-radius: 2px; transition: height 0.6s var(--ease-out);  }
         .mth-copy { position: relative; min-height: 440px; }
         .mth-panel {
           position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 18px;
@@ -190,12 +182,9 @@ export default function Method({ showLink = true }: { showLink?: boolean }) {
         .mth-app-row { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; color: #E4E5EA; line-height: 1.5; }
         .mth-app-row + .mth-app-row { margin-top: 10px; }
         .mth-visual { position: relative; display: grid; place-items: center; }
-        .mth-halo { position: absolute; width: 440px; height: 440px; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,222,2,0.28), transparent); filter: blur(10px); }
         .mth-device { width: min(300px, 26vw); max-height: 76vh; }
         .mth-shot { opacity: 0; transform: scale(1.04); transition: opacity 0.7s var(--ease-out), transform 0.9s var(--ease-out) !important; }
         .mth-shot.is-on { opacity: 1; transform: scale(1); }
-        .mth-badge { position: absolute; left: -10px; bottom: 14%; display: flex; align-items: center; gap: 12px; }
-        .mth-badge-letter { width: 40px; height: 40px; border-radius: 12px; background: var(--accent); color: #050506; display: grid; place-items: center; font-family: var(--font-display); font-size: 22px; }
 
         .mth-mobile { display: none; }
         .mth-mcard { padding: 26px 22px 0; display: flex; flex-direction: column; gap: 14px; }

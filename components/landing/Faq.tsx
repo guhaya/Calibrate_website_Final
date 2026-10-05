@@ -47,8 +47,7 @@ export default function Faq({ items = DEFAULT_FAQS, title }: { items?: FaqItem[]
     <section className="sec faq" id="faq">
       <div className="wrap faq-grid">
         <div className="faq-side">
-          <span className="tag rv">FAQ</span>
-          <h2 className="display-lg rv" style={{ ["--d" as string]: "80ms" }}>
+          <h2 className="display-lg rv">
             {title ?? <>Questions, <Hl>answered.</Hl></>}
           </h2>
           <div className="card faq-help rv" style={{ ["--d" as string]: "160ms" }}>

@@ -133,7 +133,6 @@ export default async function AboutPage() {
           <section className="sec-tight">
             <div className="wrap">
               <div className="sec-head">
-                <span className="tag rv">Certified trainers</span>
                 <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>On the floor, <Hl>on your side.</Hl></h2>
               </div>
               <div className="co-grid">
@@ -159,7 +158,6 @@ export default async function AboutPage() {
           <section className="sec-tight">
             <div className="wrap">
               <div className="sec-head">
-                <span className="tag rv">On-call specialists</span>
                 <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Clinical depth <Hl>when you need it.</Hl></h2>
                 <p className="lead rv" style={{ ["--d" as string]: "140ms", maxWidth: 600 }}>
                   For clients who need clinical-level nutrition or complex dietary support, these specialists step in.
@@ -186,7 +184,6 @@ export default async function AboutPage() {
         <section className="sec">
           <div className="wrap">
             <div className="sec-head">
-              <span className="tag rv">What we stand for</span>
               <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Four rules we <Hl>never break.</Hl></h2>
             </div>
             <div className="co-values">

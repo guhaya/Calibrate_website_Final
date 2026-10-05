@@ -126,13 +126,11 @@ export default function FeaturesPage() {
           <section key={p.id} id={p.id} className={`sec-tight ft-pillar ${i % 2 ? "is-rev" : ""}`}>
             <div className="wrap ft-pillar-grid">
               <div className="ft-copy">
-                <span className="tag rv">{p.label}</span>
                 <h2 className="display-md rv balance" style={{ ["--d" as string]: "80ms" }}>{p.headline}</h2>
                 <p className="lead rv" style={{ ["--d" as string]: "140ms" }}>{p.description}</p>
                 <div className="ft-feats">
                   {p.features.map((f, k) => (
                     <div key={f.title} className="ft-feat rv" style={{ ["--d" as string]: `${180 + k * 60}ms` }}>
-                      <span className="ft-feat-n">0{k + 1}</span>
                       <p style={{ fontWeight: 800, fontSize: 15.5 }}>{f.title}</p>
                       <p className="body-sm" style={{ fontSize: 14 }}>{f.description}</p>
                     </div>
@@ -151,7 +149,6 @@ export default function FeaturesPage() {
         <section id="more" className="sec">
           <div className="wrap">
             <div className="sec-head">
-              <span className="tag rv">Also inside Vemisis</span>
               <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Built for the <Hl>whole you.</Hl></h2>
             </div>
             <div className="ft-extras">
@@ -196,7 +193,6 @@ export default function FeaturesPage() {
         .ft-copy { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
         .ft-feats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; margin-top: 8px; }
         .ft-feat { padding: 20px; border-radius: 20px; background: var(--surface-1); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
-        .ft-feat-n { font-family: var(--font-mono); font-size: 11px; color: var(--accent); font-weight: 600; }
         .ft-vis { position: relative; height: 560px; }
         .ft-vis-glow { position: absolute; inset: 12%; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,222,2,0.22), transparent); filter: blur(20px); }
         .ft-ph-a { position: absolute !important; left: 14%; top: 0; z-index: 2; transform: rotate(-4deg); }

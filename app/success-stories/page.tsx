@@ -81,11 +81,6 @@ const stories = [
   },
 ];
 
-function parse(v: string) {
-  const n = parseFloat(v.replace(/[^0-9.]/g, ""));
-  return Number.isFinite(n) ? n : 0;
-}
-
 export default function SuccessStoriesPage() {
   return (
     <>
@@ -110,7 +105,7 @@ export default function SuccessStoriesPage() {
 
         <section className="sec">
           <div className="wrap ss-list">
-            {stories.map((s, idx) => (
+            {stories.map((s) => (
               <article key={s.name} className="panel ss-story rv">
                 <div className="ss-main">
                   <div className="ss-meta">
@@ -128,19 +123,14 @@ export default function SuccessStoriesPage() {
                 </div>
 
                 <aside className="ss-side">
-                  <p className="mono c-accent">Story 0{idx + 1} · Measured results</p>
+                  <p className="mono c-accent">Measured results</p>
                   <div className="ss-metrics">
                     {s.metrics.map((m) => {
-                      const b = parse(m.before), a = parse(m.after), max = Math.max(a, b) || 1;
                       return (
                         <div key={m.label} className="ss-metric">
                           <div className="ss-metric-top">
                             <span style={{ fontWeight: 700 }}>{m.label}</span>
                             <span><span className="c-muted">{m.before}</span> <span className="c-accent">→ {m.after}</span></span>
-                          </div>
-                          <div className="ss-bars">
-                            <span className="ss-bar ss-bar-b" style={{ width: `${(b / max) * 100}%` }} />
-                            <span className="ss-bar ss-bar-a" style={{ width: `${(a / max) * 100}%` }} />
                           </div>
                         </div>
                       );
@@ -172,12 +162,7 @@ export default function SuccessStoriesPage() {
         .ss-text p { font-size: 15.5px; line-height: 1.75; color: var(--text-secondary); }
         .ss-side { padding: 48px 40px; background: linear-gradient(180deg, rgba(255,222,2,0.08), transparent 60%), #0A0A0C; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 26px; }
         .ss-metrics { display: flex; flex-direction: column; gap: 22px; }
-        .ss-metric-top { display: flex; justify-content: space-between; gap: 12px; font-size: 14.5px; margin-bottom: 10px; }
-        .ss-bars { display: grid; gap: 6px; }
-        .ss-bar { display: block; height: 8px; border-radius: 8px; transform-origin: left; transform: scaleX(0); transition: transform 1.2s var(--ease-out) 0.3s; }
-        .ss-story.in-view .ss-bar { transform: scaleX(1); }
-        .ss-bar-b { background: rgba(255,255,255,0.22); }
-        .ss-bar-a { background: var(--accent); }
+        .ss-metric-top { display: flex; justify-content: space-between; gap: 12px; font-size: 14.5px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
         .ss-quote { margin-top: auto; padding: 22px; border-radius: 20px; background: var(--accent); color: #050506; font-weight: 700; font-size: 15.5px; line-height: 1.55; }
         @media (max-width: 900px) {
           .ss-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 0; }

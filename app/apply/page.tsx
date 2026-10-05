@@ -40,7 +40,6 @@ export default function ApplyPage() {
         <section style={{ padding: "80px 24px", background: "rgba(9,9,11,0.5)" }}>
           <div style={{ maxWidth: "860px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "52px" }}>
-              <div className="tag" style={{ marginBottom: "20px" }}>What Happens Next</div>
               <h2 style={{ fontSize: "clamp(28px, 3vw, 40px)", color: "#FFFFFF", letterSpacing: "-0.01em" }}>
                 Four steps from application to results
               </h2>
@@ -100,7 +99,6 @@ export default function ApplyPage() {
         <section id="application-form" style={{ padding: "80px 24px 120px", scrollMarginTop: "96px" }}>
           <div style={{ maxWidth: "620px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "48px" }}>
-              <div className="tag" style={{ marginBottom: "20px" }}>Your Application</div>
               <h2 style={{ fontSize: "clamp(28px, 3.5vw, 42px)", color: "#FFFFFF", letterSpacing: "-0.02em", marginBottom: "16px" }}>
                 Tell us about you
               </h2>

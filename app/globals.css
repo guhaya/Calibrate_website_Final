@@ -115,10 +115,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* ─── Color utilities ─── */
 .gold-text {
-  background: linear-gradient(135deg, #FFDE02 0%, #FFE600 40%, #E6C700 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
 }
 
 .gold-text-soft {
@@ -356,7 +353,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .btn-primary:hover::before { transform: translateX(120%); }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 40px -8px rgba(255,222,2,0.55), 0 0 0 1px rgba(255,222,2,0.3);
+  box-shadow: 0 16px 34px -14px rgba(255,222,2,0.6);
 }
 .btn-primary:active { transform: translateY(0) scale(0.98); }
 .btn-primary svg { transition: transform 0.35s var(--ease-out); }
@@ -452,15 +449,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-family: var(--font-body);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-}
-.tag::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 10px rgba(255,222,2,0.8);
-  flex-shrink: 0;
 }
 
 .badge-success {
@@ -1148,7 +1136,7 @@ main { overflow-x: clip; }
 }
 .hl > svg path {
   fill: none;
-  stroke: var(--accent);
+  stroke: #FFFFFF;
   stroke-width: 7;
   stroke-linecap: round;
   stroke-dasharray: 420;

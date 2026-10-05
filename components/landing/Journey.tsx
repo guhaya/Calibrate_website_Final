@@ -11,12 +11,11 @@ export type JourneyStep = {
   img?: { src: string; alt: string };
 };
 
-export default function Journey({ eyebrow, title, lead, steps }: { eyebrow: string; title: ReactNode; lead?: string; steps: JourneyStep[] }) {
+export default function Journey({ title, lead, steps }: { title: ReactNode; lead?: string; steps: JourneyStep[] }) {
   return (
     <section className="sec jr">
       <div className="wrap jr-grid">
         <div className="jr-side">
-          <span className="tag rv">{eyebrow}</span>
           <h2 className="display-lg rv" style={{ ["--d" as string]: "80ms" }}>{title}</h2>
           {lead && <p className="lead rv" style={{ ["--d" as string]: "160ms" }}>{lead}</p>}
         </div>
@@ -61,7 +60,6 @@ export default function Journey({ eyebrow, title, lead, steps }: { eyebrow: stri
         .jr-num {
           width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0;
           font-family: var(--font-display); font-size: 22px; color: #050506; background: var(--accent);
-          box-shadow: 0 0 30px rgba(255,222,2,0.35);
         }
         .jr-line { flex: 1; width: 2px; margin: 8px 0; background: linear-gradient(var(--accent), rgba(255,222,2,0.08)); min-height: 40px; }
         .jr-card { padding: 28px; margin-bottom: 24px; display: grid; gap: 24px; }

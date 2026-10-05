@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useMotionValueEvent, useScroll } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
@@ -34,18 +35,13 @@ export default function Navigation() {
   const pathname = usePathname();
   const lastY = useRef(0);
 
-  useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 24);
-      setHidden(y > 320 && y > lastY.current + 4);
-      if (y < lastY.current - 4 || y < 320) setHidden(false);
-      lastY.current = y;
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (y) => {
+    setScrolled(y > 24);
+    if (y < 320 || y < lastY.current - 4) setHidden(false);
+    else if (y > lastY.current + 4) setHidden(true);
+    lastY.current = y;
+  });
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";

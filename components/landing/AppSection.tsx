@@ -20,7 +20,6 @@ const orbit = [
 const tiles = [
   {
     area: "chat",
-    eyebrow: "Coach chat",
     title: "Your coach, one tap away",
     body: "Message your coach inside the app, share wins and struggles, and get your weekly check-in reviewed where your data already lives.",
     img: "/media/app/messages.webp",
@@ -28,7 +27,6 @@ const tiles = [
   },
   {
     area: "ai",
-    eyebrow: "A.L.F.R.E.D",
     title: "An AI assistant trained on your coach's playbook",
     body: "Ask about nutrition, training, supplements or recovery and get answers grounded in the CALIBRATE method, not random internet advice.",
     img: "/media/app/alfred.webp",
@@ -36,7 +34,6 @@ const tiles = [
   },
   {
     area: "rec",
-    eyebrow: "Recovery",
     title: "Train when you're ready",
     body: "A daily readiness score built from HRV, resting heart rate and sleep.",
     img: "/media/app/recovery.webp",
@@ -44,7 +41,6 @@ const tiles = [
   },
   {
     area: "food",
-    eyebrow: "Nutrition",
     title: "Log a meal in seconds",
     body: "Barcode scanning and a food database that covers Indian and global cuisine.",
     img: "/media/app/food-log.webp",
@@ -52,7 +48,6 @@ const tiles = [
   },
   {
     area: "fast",
-    eyebrow: "Fasting",
     title: "Fasting, built in",
     body: "16:8, 18:6, OMAD or custom protocols with a live timer and metabolic stages.",
     img: "/media/app/fasting.webp",
@@ -60,7 +55,6 @@ const tiles = [
   },
   {
     area: "sync",
-    eyebrow: "Wearables",
     title: "Syncs with what you already wear",
     body: "Apple Health, Apple Watch and Oura on iPhone, Health Connect on Android. Steps, sleep, HRV and workouts flow in automatically.",
     img: "/media/app/connections.webp",
@@ -101,7 +95,7 @@ export default function AppSection() {
           <div className="app-fan" ref={fanRef}>
             {orbit.map((o, i) => (
               <span key={o.label} className="app-orb" style={{ left: o.x, top: o.y, ["--i" as string]: i }}>
-                <span className="app-orb-dot" />{o.label}
+                {o.label}
               </span>
             ))}
             <motion.div className="app-ph app-ph-l" style={{ x: xL, rotate: rL }}>
@@ -120,7 +114,6 @@ export default function AppSection() {
           {tiles.map((t, i) => (
             <article key={t.area} className={`card card-hover bento-tile bt-${t.area} rv`} style={{ gridArea: t.area, ["--d" as string]: `${(i % 3) * 80}ms` }}>
               <div className="bt-copy">
-                <p className="mono c-accent">{t.eyebrow}</p>
                 <h3 className="bt-title">{t.title}</h3>
                 <p className="body-sm">{t.body}</p>
               </div>
@@ -157,7 +150,6 @@ export default function AppSection() {
           animation: bob 6s ease-in-out infinite; animation-delay: calc(var(--i) * -0.8s);
           box-shadow: 0 14px 30px -10px rgba(0,0,0,0.6);
         }
-        .app-orb-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px rgba(255,222,2,0.9); }
 
         .bento {
           margin-top: 20px;
