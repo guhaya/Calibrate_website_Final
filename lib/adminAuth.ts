@@ -1,4 +1,4 @@
-// Server-only (uses Node's crypto module) — import only from API routes,
+// Server-only (uses Node's crypto module); import only from API routes,
 // never from a client component. Kept out of lib/supabase.ts, which client
 // components already import for shared types, so this never risks ending
 // up in a client bundle.

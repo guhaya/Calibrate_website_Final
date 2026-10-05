@@ -139,8 +139,8 @@ export default function PolicyPage({ policy, policyType, intro }: {
   );
 }
 
-// Coaches write fairly ordinary markdown by hand in the admin editor —
-// "### " sub-headings, "---" dividers, "**bold**", "- "/"* " bullets — so
+// Coaches write fairly ordinary markdown by hand in the admin editor:
+// "### " sub-headings, "---" dividers, "**bold**", "- "/"* " bullets, so
 // this renders that common subset line by line rather than requiring a
 // stricter format.
 function PolicyBody({ content }: { content: string }) {

@@ -8,7 +8,7 @@ import FinalCta from "@/components/landing/FinalCta";
 import { Device, Hl } from "@/components/landing/ui";
 
 export const metadata: Metadata = {
-  title: "How It Works | The CALIBRATE Method",
+  title: "How It Works",
   description:
     "The DMAIC coaching process explained: Define, Measure, Analyse, Improve, Control, applied to body recomposition for busy professionals and delivered through the Vemisis app. From first call to transformed in 12 to 24 weeks.",
   openGraph: {
@@ -33,7 +33,7 @@ const steps: JourneyStep[] = [
   {
     number: "02",
     title: "Your Custom Programme Is Built",
-    duration: "Within 48 hours",
+    duration: "Within 5 days",
     description:
       "After we speak, I build your training and nutrition plan from scratch. Not a template. Every exercise, every calorie target, every macro split, written specifically for you.",
     bullets: [

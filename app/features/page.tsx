@@ -7,7 +7,7 @@ import FinalCta from "@/components/landing/FinalCta";
 import { Device, Hl } from "@/components/landing/ui";
 
 export const metadata: Metadata = {
-  title: "Vemisis App | The Training App for CALIBRATE Clients",
+  title: "Vemisis App",
   description:
     "Vemisis is the training app that delivers the CALIBRATE method: custom training, flexible nutrition, weekly check-ins, recovery scores, fasting, wearable sync and direct access to your coach.",
 };

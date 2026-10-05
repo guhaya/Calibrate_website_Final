@@ -2,7 +2,7 @@ import { supabaseAdmin } from "@/lib/supabase";
 
 // Reads the same policy_documents / policy_versions tables that
 // calibrate-portal's coach admin (app.gvnfit.online/admin/policies) writes
-// to, so an edit made there shows up here without a separate deploy —
+// to, so an edit made there shows up here without a separate deploy,
 // same shared Supabase project, service-role read (RLS on these tables is
 // coach/service_role only).
 

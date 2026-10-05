@@ -33,14 +33,15 @@ Branch: `redesign/vemisis-2026` (committed locally, **not pushed**; pushing to `
 
 ## Verified
 
-- 15 public routes return 200 at 1440px and 390px with no horizontal scroll and no console errors.
+- All 15 public routes plus `/admin` return 200 at 1440px and 390px on a production build (`npm run start`), with no horizontal scroll and no console errors.
+- Live pricing confirmed: `/api/form-data` returns the admin-managed plans.
 - `npm run build` passes. ESLint is clean for all new/changed public code; remaining errors are pre-existing in `/admin` components.
 
 ## Please review before going live
 
 1. **Social proof carried over unchanged** from the old site: "200+ clients transformed", "98% satisfaction", "4.9/5", "9.8kg average fat lost", and the named transformations/testimonials. Confirm these are accurate; nothing new was invented.
 2. **Existing copy that disagrees with itself**:
-   - Programme build time: "Within 5 days" (homepage steps) vs "Within 48 hours" (How It Works).
+   - Programme build time: the old site said "Within 5 days" (homepage) and "Within 48 hours" (How It Works). Both now say **"Within 5 days"** (the safer promise); change it if 48 hours is right.
    - Free call length: 30 minutes in most places vs "20-minute call" in pricing page structured data (`app/pricing/page.tsx`).
    - "James O., Teacher" (homepage) and "Arjun K., Staff Engineer" (Results page) share identical before/after numbers.
    - In-app message replies "within 24 hours" vs WhatsApp "4-hour response window".
