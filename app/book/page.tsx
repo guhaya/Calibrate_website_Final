@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Book a Free Diagnostic Call",
-  description: "Book a free 20-minute diagnostic call with Guhayavarman. Honest assessment of your situation, no sales pressure.",
+  description: "Book a free 30-minute diagnostic call with Guhayavarman. Honest assessment of your situation, no sales pressure.",
   openGraph: {
     title: "Book a Call | CALIBRATE",
-    description: "20 minutes. Free. Guhay reviews your situation and tells you honestly whether CALIBRATE is the right fit.",
+    description: "30 minutes. Free. Guhay reviews your situation and tells you honestly whether CALIBRATE is the right fit.",
   },
 };
 

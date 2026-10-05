@@ -18,7 +18,7 @@ import ApplyForm from "@/components/apply/ApplyForm";
 const steps = [
   { num: "01", label: "Fill the form", detail: "A few sections covering your goals, schedule, and lifestyle, takes a few minutes." },
   { num: "02", label: "Personal review", detail: "Guhay reviews every application himself within 48 hours." },
-  { num: "03", label: "Diagnostic call", detail: "A free 20-minute call to confirm fit and outline your exact protocol." },
+  { num: "03", label: "Diagnostic call", detail: "A free 30-minute call to confirm fit and outline your exact protocol." },
   { num: "04", label: "Programme begins", detail: "Custom training and nutrition plan delivered within 48 hours of your call." },
 ];
 
@@ -106,7 +106,7 @@ export default function ApplyPage() {
               </h2>
               <p style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                 Not sure yet?{" "}
-                <Link href="/book" style={{ color: "#FFDE02", textDecoration: "none" }}>Book a free 20-minute diagnostic call</Link>{" "}
+                <Link href="/book" style={{ color: "#FFDE02", textDecoration: "none" }}>Book a free 30-minute diagnostic call</Link>{" "}
                 first, no commitment required.
               </p>
             </div>

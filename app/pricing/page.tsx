@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         { "@type": "Question", name: "Why a 3-month minimum commitment?", acceptedAnswer: { "@type": "Answer", text: "Real body recomposition takes time. The first month establishes baselines; months two and three produce visible, measurable results." } },
         { "@type": "Question", name: "How quickly can I start?", acceptedAnswer: { "@type": "Answer", text: "Applications are open to everyone and Guhay reviews each one personally, usually within 48 hours." } },
         { "@type": "Question", name: "Do I need a gym?", acceptedAnswer: { "@type": "Answer", text: "No. Programmes are built for gym, home gym, hotel gym, or bodyweight setups." } },
-        { "@type": "Question", name: "Is the diagnostic call really free?", acceptedAnswer: { "@type": "Answer", text: "Completely free. It's a 20-minute call, not a sales call." } },
+        { "@type": "Question", name: "Is the diagnostic call really free?", acceptedAnswer: { "@type": "Answer", text: "Completely free. It's a 30-minute call, not a sales call." } },
       ],
     }),
   },
