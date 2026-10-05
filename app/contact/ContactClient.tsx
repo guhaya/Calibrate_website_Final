@@ -73,7 +73,7 @@ export default function ContactClient() {
           compact
           eyebrow="Get in touch"
           title={<>Let&apos;s start a <Hl ink>conversation.</Hl></>}
-          lead="Have a question before booking? Want to know if coaching is right for you? Reach out, every message gets a personal response within 24 hours."
+          lead="Have a question before booking? Want to know if coaching is right for you? Reach out, every message gets a personal response within 4 hours."
           ctas={[{ label: "Book free consultation", href: "/book" }]}
         />
 
@@ -106,7 +106,7 @@ export default function ContactClient() {
                 </div>
                 <p style={{ fontSize: "12px", fontWeight: 700, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "8px" }}>Email Us</p>
                 <p style={{ fontSize: "15px", color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, marginBottom: "6px" }}>Admin@gvnfit.online</p>
-                <p style={{ fontSize: "13px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Response within 24 hours</p>
+                <p style={{ fontSize: "13px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Response within 4 hours</p>
               </div>
             </a>
 
@@ -178,7 +178,7 @@ export default function ContactClient() {
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 11l4.5 4.5 8-9" stroke="#22C55E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </div>
                   <p style={{ fontSize: "16px", color: "#22C55E", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600 }}>Email client opened</p>
-                  <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: "8px" }}>Hit send in your email app. We respond within 24 hours.</p>
+                  <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: "8px" }}>Hit send in your email app. We respond within 4 hours.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>

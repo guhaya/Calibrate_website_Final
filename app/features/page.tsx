@@ -56,7 +56,7 @@ const pillars = [
     features: [
       { title: "Video or written", description: "Choose the check-in format that suits you." },
       { title: "Data-driven adjustments", description: "Weight trend, training data and your answers drive every change." },
-      { title: "Direct messaging", description: "Message your coach in the app between check-ins. Responses within 24 hours." },
+      { title: "Direct messaging", description: "Message your coach in the app between check-ins. Responses within 4 hours." },
       { title: "A.L.F.R.E.D AI", description: "Ask questions any time and get answers from your coach's own playbook." },
     ],
     shots: [

@@ -47,7 +47,7 @@ const inclusions = [
   { icon: "lightning", title: "Custom Training Programme", desc: "Built for your goals, schedule, and equipment." },
   { icon: "leaf", title: "Nutrition Targets", desc: "Custom macros with flexible guidance for real life." },
   { icon: "calendar", title: "Weekly Check-ins", desc: "Video or written, you decide what works for you." },
-  { icon: "message", title: "Direct Coach Access", desc: "Message anytime. Responses within 24 hours." },
+  { icon: "message", title: "Direct Coach Access", desc: "Message anytime. Responses within 4 hours." },
   { icon: "trending", title: "Progress App", desc: "Log workouts, track body metrics, see your data." },
   { icon: "dumbbell", title: "Exercise Library", desc: "Video guidance on every movement in your plan." },
   { icon: "refresh", title: "Plan Adjustments", desc: "Updated every week based on your actual progress." },

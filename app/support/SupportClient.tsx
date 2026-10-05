@@ -35,7 +35,7 @@ const faqs = [
     questions: [
       {
         q: "How often do we communicate?",
-        a: "You have direct messaging access to your coach every day. Weekly check-ins are structured, but you can message anytime with questions, updates, or if something needs adjusting. Responses within 24 hours, typically much sooner.",
+        a: "You have direct messaging access to your coach every day. Weekly check-ins are structured, but you can message anytime with questions, updates, or if something needs adjusting. Responses within 4 hours, typically much sooner.",
       },
       {
         q: "Can you accommodate dietary restrictions?",
@@ -82,7 +82,7 @@ const contactMethods = [
   {
     icon: "message",
     title: "Email",
-    description: "Send a message and we'll respond within 24 hours.",
+    description: "Send a message and we'll respond within 4 hours.",
     cta: "Email us",
     href: "mailto:Admin@gvnfit.online",
     color: "#FFDE02",

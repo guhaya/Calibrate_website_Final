@@ -42,7 +42,7 @@ Branch: `redesign/vemisis-2026` (committed locally, **not pushed**; pushing to `
 1. **Social proof carried over unchanged** from the old site: "200+ clients transformed", "98% satisfaction", "4.9/5", "9.8kg average fat lost", and the named transformations/testimonials. Confirm these are accurate; nothing new was invented.
 2. **Existing copy that disagrees with itself**:
    - "James O., Teacher" (homepage) and "Arjun K., Staff Engineer" (Results page) share identical before/after numbers.
-   - In-app message replies "within 24 hours" vs WhatsApp "4-hour response window".
+   - The Vemisis coach chat screenshot itself shows "Replies usually within 24 hours" (in-app text, not website copy); the website now says 4 hours everywhere.
 3. **Assumption**: the site says Vemisis access is included with every plan.
 
 ## To go live
