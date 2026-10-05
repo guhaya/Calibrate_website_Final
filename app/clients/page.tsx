@@ -14,28 +14,28 @@ import Icon from "@/components/shared/Icon";
 
 const experiences = [
   {
-    phase: "Week 1–2",
+    phase: "Week 1-2",
     title: "You get your full programme",
     description: "Within 48 hours of your first call, your complete training and nutrition plan lands in the Vemisis app. Every session is already loaded, every meal target is set, every exercise has video guidance. You start with complete clarity.",
     icon: "target",
     color: "#FFDE02",
   },
   {
-    phase: "Week 3–4",
+    phase: "Week 3-4",
     title: "The momentum builds",
     description: "You're tracking sessions, logging nutrition, and sending check-ins. Your coach reviews everything weekly and sends feedback. Small adjustments. Big compounding results. Most clients report visible changes by week four.",
     icon: "trending",
     color: "#22C55E",
   },
   {
-    phase: "Week 5–8",
+    phase: "Week 5-8",
     title: "You hit your stride",
     description: "By now you're not thinking about the plan, you're living it. Training feels natural. Nutrition is second nature. Your coach adjusts intensity and targets as your fitness improves. This is where the real progress accelerates.",
     icon: "lightning",
     color: "#FFDE02",
   },
   {
-    phase: "Week 9–12",
+    phase: "Week 9-12",
     title: "The transformation is visible",
     description: "The before and after difference is undeniable. Strength is up. Body composition is transformed. You have the system, the habits, and the knowledge to maintain this for the rest of your life.",
     icon: "star",
@@ -303,7 +303,7 @@ export default function ClientsPage() {
             </p>
             <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/book" className="btn-primary" style={{ fontSize: "15px", padding: "14px 32px" }}>
-                Book Free Call
+                Book your free call
               </Link>
               <Link href="/pricing" className="btn-secondary" style={{ fontSize: "15px", padding: "14px 28px" }}>
                 View Packages

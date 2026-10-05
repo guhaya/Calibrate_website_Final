@@ -106,7 +106,7 @@ export default function ApplyPage() {
               </h2>
               <p style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                 Not sure yet?{" "}
-                <Link href="/book" style={{ color: "#FFDE02", textDecoration: "none" }}>Book a free 30-minute diagnostic call</Link>{" "}
+                <Link href="/book" style={{ color: "#FFDE02", textDecoration: "none" }}>Book your free call</Link>{" "}
                 first, no commitment required.
               </p>
             </div>

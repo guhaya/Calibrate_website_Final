@@ -96,7 +96,7 @@ export default function SuccessStoriesPage() {
           eyebrow="Verified results"
           title={<>Real people. <Hl ink>Real numbers.</Hl></>}
           lead="Engineers, product managers and founders who stopped guessing and started calibrating. Honest stories, measured outcomes, no filters."
-          ctas={[{ label: "Start your story", href: "/apply" }, { label: "Book a free call", href: "/book", variant: "secondary" }]}
+          ctas={[{ label: "Start your story", href: "/apply" }, { label: "Book your free call", href: "/book", variant: "secondary" }]}
         />
 
         <section className="wrap ss-highlights">

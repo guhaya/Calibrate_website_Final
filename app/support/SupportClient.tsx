@@ -75,7 +75,7 @@ const contactMethods = [
     icon: "calendar",
     title: "Book a Free Call",
     description: "Schedule a 30-minute consultation. No commitment, no pitch.",
-    cta: "Book now",
+    cta: "Book your free call",
     href: "#booking",
     color: "#FFDE02",
   },

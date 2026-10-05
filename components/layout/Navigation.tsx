@@ -73,7 +73,7 @@ export default function Navigation() {
           <div className="nv-actions">
             <Link href="/apply" className="nv-text-link">Apply</Link>
             <Link href="/book" className="btn-primary nv-cta">
-              Book Free Call <Arrow />
+              Book your free call <Arrow />
             </Link>
             <button
               className={`nv-burger ${menuOpen ? "is-open" : ""}`}
@@ -113,7 +113,7 @@ export default function Navigation() {
             tabIndex={menuOpen ? 0 : -1}
             style={{ width: "100%", marginTop: 32 }}
           >
-            Book Your Free Call <Arrow />
+            Book your free call <Arrow />
           </Link>
           <p className="body-sm" style={{ marginTop: 20, textAlign: "center" }}>
             <a href="mailto:Admin@gvnfit.online" style={{ color: "#fff", textDecoration: "none" }} tabIndex={menuOpen ? 0 : -1}>Admin@gvnfit.online</a>

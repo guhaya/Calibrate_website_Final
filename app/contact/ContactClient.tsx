@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "How quickly will I see results?",
-    a: "Most clients notice meaningful changes in energy, performance, and body composition within 4–6 weeks. Visible physical changes typically show clearly by weeks 8–12. Results depend on your starting point, consistency, and how closely you follow the plan.",
+    a: "Most clients notice meaningful changes in energy, performance, and body composition within 4-6 weeks. Visible physical changes typically show clearly by weeks 8-12. Results depend on your starting point, consistency, and how closely you follow the plan.",
   },
   {
     q: "What's included in the free consultation?",
@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: "Is there a minimum commitment period?",
-    a: "We ask for a minimum of one month, enough time to go through the assessment, receive your plan, and complete your first full week. Real results take 8–12 weeks, but we'll never lock you into something you're not benefiting from.",
+    a: "We ask for a minimum of one month, enough time to go through the assessment, receive your plan, and complete your first full week. Real results take 8-12 weeks, but we'll never lock you into something you're not benefiting from.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function ContactClient() {
           eyebrow="Get in touch"
           title={<>Let&apos;s start a <Hl ink>conversation.</Hl></>}
           lead="Have a question before booking? Want to know if coaching is right for you? Reach out, every message gets a personal response within 4 hours."
-          ctas={[{ label: "Book free consultation", href: "/book" }]}
+          ctas={[{ label: "Book your free call", href: "/book" }]}
         />
 
         {/* Contact methods */}
@@ -285,7 +285,7 @@ export default function ContactClient() {
               The free consultation exists for this exact moment. 30 minutes, no pitch, no pressure. Just an honest conversation about whether coaching makes sense for you.
             </p>
             <Link href="/book" className="btn-primary" style={{ fontSize: "15px", padding: "14px 32px" }}>
-              Book Your Free Call
+              Book your free call
             </Link>
           </div>
         </section>

@@ -101,11 +101,6 @@ export default function Results() {
             {[...reviews, ...reviews].map((r, i) => <Review key={`a${i}`} r={r} />)}
           </div>
         </div>
-        <div className="mq" style={{ ["--mq-dur" as string]: "70s" }}>
-          <div className="mq-track rev">
-            {[...reviews.slice(2), ...reviews.slice(0, 2), ...reviews.slice(2), ...reviews.slice(0, 2)].map((r, i) => <Review key={`b${i}`} r={r} />)}
-          </div>
-        </div>
       </div>
 
       <style>{`

@@ -165,7 +165,7 @@ export default function Method({ showLink = true }: { showLink?: boolean }) {
       <style>{`
         .mth { position: relative; padding-bottom: 120px; }
         .mth-scroller { position: relative; }
-        .mth-sticky { position: sticky; top: 0; height: 100vh; min-height: 640px; display: flex; align-items: center; overflow: hidden; }
+        .mth-sticky { position: sticky; top: 0; height: 100vh; height: 100dvh; min-height: 640px; display: flex; align-items: center; overflow: hidden; }
         .mth-grid { display: grid; grid-template-columns: 90px minmax(0, 1fr) minmax(0, 420px); gap: 48px; align-items: center; }
         .mth-rail { position: relative; display: flex; flex-direction: column; gap: 6px; align-items: center; }
         .mth-letter {

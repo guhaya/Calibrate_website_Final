@@ -68,7 +68,7 @@ export default function Steps() {
         </div>
 
         <div style={{ display: "flex", justifyContent: "center", marginTop: 56 }}>
-          <Link href="/book" className="btn-primary btn-primary-lg">Book your free consultation <Arrow /></Link>
+          <Link href="/book" className="btn-primary btn-primary-lg">Book your free call <Arrow /></Link>
         </div>
       </div>
 

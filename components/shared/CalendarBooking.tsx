@@ -227,7 +227,7 @@ export default function CalendarBooking() {
             </>
           ) : (
             <>
-              Book Free Consultation
+              Book your free call
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <rect x="2" y="3" width="12" height="11" rx="2" stroke="currentColor" strokeWidth="1.4" />
                 <path d="M2 7h12M5 1v3M11 1v3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
