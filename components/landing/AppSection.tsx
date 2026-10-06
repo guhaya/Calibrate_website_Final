@@ -33,27 +33,6 @@ const tiles = [
     alt: "Vemisis A.L.F.R.E.D AI assistant screen",
   },
   {
-    area: "rec",
-    title: "Train when you're ready",
-    body: "A daily readiness score built from HRV, resting heart rate and sleep.",
-    img: "/media/app/recovery.webp",
-    alt: "Vemisis recovery screen showing a readiness score of 72",
-  },
-  {
-    area: "food",
-    title: "Log a meal in seconds",
-    body: "Barcode scanning and a food database that covers Indian and global cuisine.",
-    img: "/media/app/food-log.webp",
-    alt: "Vemisis food log screen with meals and macros",
-  },
-  {
-    area: "fast",
-    title: "Fasting, built in",
-    body: "16:8, 18:6, OMAD or custom protocols with a live timer and metabolic stages.",
-    img: "/media/app/fasting.webp",
-    alt: "Vemisis fasting timer screen",
-  },
-  {
     area: "sync",
     title: "Syncs with what you already wear",
     body: "Apple Health, Apple Watch and Oura on iPhone, Health Connect on Android. Steps, sleep, HRV and workouts flow in automatically.",
@@ -147,7 +126,6 @@ export default function AppSection() {
           font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
           background: rgba(22,22,27,0.8); border: 1px solid var(--line-strong);
           backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-          animation: bob 6s ease-in-out infinite; animation-delay: calc(var(--i) * -0.8s);
           box-shadow: 0 14px 30px -10px rgba(0,0,0,0.6);
         }
 
@@ -157,8 +135,7 @@ export default function AppSection() {
           grid-template-columns: repeat(3, minmax(0, 1fr));
           grid-template-areas:
             "chat chat ai"
-            "rec food ai"
-            "fast sync sync";
+            "sync sync ai";
           gap: 20px;
         }
         .bento-tile { display: flex; flex-direction: column; padding: 32px 32px 0; min-height: 420px; }
@@ -192,7 +169,7 @@ export default function AppSection() {
           .app-ph-r { right: calc(50% - 230px); }
           .app-orb { font-size: 11.5px; padding: 7px 11px; }
           .app-orb:nth-of-type(n+5) { display: none; }
-          .bento { grid-template-columns: 1fr 1fr; grid-template-areas: "chat chat" "ai ai" "rec food" "fast fast" "sync sync"; }
+          .bento { grid-template-columns: 1fr; grid-template-areas: "chat" "ai" "sync"; }
         }
         @media (max-width: 600px) {
           .app-fan { height: 430px; }
@@ -201,7 +178,7 @@ export default function AppSection() {
           .app-ph-l { left: calc(50% - 170px); }
           .app-ph-r { right: calc(50% - 170px); }
           .app-orb { display: none; }
-          .bento { grid-template-columns: 1fr; grid-template-areas: "chat" "ai" "rec" "food" "fast" "sync"; }
+          .bento { grid-template-columns: 1fr; grid-template-areas: "chat" "ai" "sync"; }
           .bento-tile { padding: 26px 22px 0; min-height: 0; }
           .bt-chat, .bt-sync { flex-direction: column; }
           .bt-chat .bt-copy, .bt-sync .bt-copy { padding-bottom: 0; }

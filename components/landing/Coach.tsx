@@ -38,7 +38,7 @@ export default function Coach() {
 
         <div className="coach-copy">
           <h2 className="display-lg rv">
-            Your body is a process. Processes can be optimised.
+            Why I built CALIBRATE.
           </h2>
           <p className="lead rv" style={{ ["--d" as string]: "140ms" }}>
             I started CALIBRATE because I kept seeing the same pattern: smart, motivated people failing to reach their

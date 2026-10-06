@@ -8,7 +8,6 @@ import AppSection from "@/components/landing/AppSection";
 import Goals from "@/components/landing/Goals";
 import Results from "@/components/landing/Results";
 import Coach from "@/components/landing/Coach";
-import Steps from "@/components/landing/Steps";
 import Pricing from "@/components/landing/Pricing";
 import Faq from "@/components/landing/Faq";
 import FinalCta from "@/components/landing/FinalCta";
@@ -30,9 +29,8 @@ export default function HomePage() {
         <AppSection />
         <Goals />
         <Results />
-        <Coach />
-        <Steps />
         <Pricing />
+        <Coach />
         <Faq />
         <FinalCta />
       </main>

@@ -15,9 +15,9 @@ import Image from "next/image";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import Icon from "@/components/shared/Icon";
-import PageHero from "@/components/landing/PageHero";
+import Link from "next/link";
 import FinalCta from "@/components/landing/FinalCta";
-import { Check } from "@/components/landing/ui";
+import { Arrow, Check } from "@/components/landing/ui";
 import { getTeamMembers } from "@/lib/team";
 import { SITE_URL, ogBase } from "@/lib/seo";
 
@@ -67,18 +67,37 @@ export default async function AboutPage() {
   };
   const trainers = members.filter((m) => m.category === "trainer");
   const specialists = members.filter((m) => m.category === "specialist");
-  const accent = headCoach.color || "#FFDE02";
 
   return (
     <>
       <Navigation />
       <main id="main">
-        <PageHero
-          compact
-          eyebrow="The people behind your protocol"
-          title={<>Meet your coaching team.</>}
-          lead="A head coach who reviews every application personally, certified trainers across India and on-call specialists for clinical-level nutrition. One team, one method."
-        />
+        <section className="co-open" aria-labelledby="co-title">
+          <div className="co-open-media">
+            <Image
+              src="/media/coach/guhay-090.webp"
+              alt={`${headCoach.name}, ${headCoach.role ?? "Head Coach"}`}
+              fill
+              preload
+              sizes="(max-width: 900px) 100vw, 62vw"
+              style={{ objectFit: "cover", objectPosition: "50% 30%" }}
+            />
+            <div className="co-open-shade" aria-hidden="true" />
+          </div>
+          <div className="wrap co-open-inner">
+            <div className="co-open-copy">
+              <p className="mono c-accent">{[headCoach.name, headCoach.role ?? "Founder & Head Coach"].join(" · ")}</p>
+              <h1 id="co-title" className="co-title">The people behind your protocol.</h1>
+              <p className="co-lead">
+                A head coach who reviews every application personally, certified trainers across India and on-call specialists for clinical-level nutrition. One team, one method.
+              </p>
+              <div className="co-open-ctas">
+                <Link href="/book" className="btn-primary btn-primary-lg">Book your free call <Arrow /></Link>
+                <Link href="/apply" className="btn-secondary btn-primary-lg">Apply</Link>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="ps" aria-label="Where our coaches are based" style={{ padding: "26px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", background: "#08080A" }}>
           <div className="mq" style={{ ["--mq-dur" as string]: "30s" }}>
@@ -94,20 +113,16 @@ export default async function AboutPage() {
         </section>
 
         {/* Head coach */}
-        <section className="sec">
+        <section className="sec" aria-labelledby="co-head-name">
           <div className="wrap co-head">
-            <div className="co-photo rv rv-left">
-              <div className="co-frame" style={{ background: accent }} aria-hidden="true" />
-              <div className="co-img">
-                <Image src="/media/coach/guhay-090.webp" alt={`${headCoach.name}, ${headCoach.role ?? "Head Coach"}`} fill sizes="(max-width: 900px) 90vw, 480px" style={{ objectFit: "cover", objectPosition: "50% 15%" }} />
-              </div>
-            </div>
-            <div className="co-copy">
+            <div className="co-head-id">
               <span className="tag rv">{headCoach.role ?? "Founder & Head Coach"}</span>
-              <h2 className="display-lg rv" style={{ ["--d" as string]: "80ms" }}>{headCoach.name}</h2>
+              <h2 id="co-head-name" className="display-md co-head-name rv" style={{ ["--d" as string]: "80ms" }}>{headCoach.name}</h2>
               <p className="mono c-muted rv" style={{ ["--d" as string]: "120ms" }}>
                 {[headCoach.handle, headCoach.location].filter(Boolean).join(" · ")}
               </p>
+            </div>
+            <div className="co-copy">
               {(headCoach.bio ?? []).map((para, i) => (
                 <p key={i} className={i === 0 ? "lead rv" : "body-sm rv"} style={{ ["--d" as string]: `${160 + i * 60}ms` }}>{para}</p>
               ))}
@@ -141,7 +156,7 @@ export default async function AboutPage() {
               </div>
               <div className="co-grid">
                 {trainers.map((t, i) => (
-                  <article key={t.id ?? t.name} className="card card-hover co-card rv" style={{ ["--d" as string]: `${(i % 3) * 90}ms` }}>
+                  <article key={t.id ?? t.name} className="card card-hover co-card rv" style={{ ["--d" as string]: `${(i % 2) * 90}ms` }}>
                     <div className="co-card-top">
                       <span className="co-av" style={{ background: t.color || "#FFDE02", boxShadow: `0 0 30px rgba(${hexToRgb(t.color || "#FFDE02")},0.35)` }}>{t.initials || t.name.charAt(0)}</span>
                       {t.experience && <span className="co-chip">{t.experience}</span>}
@@ -207,20 +222,30 @@ export default async function AboutPage() {
       <Footer />
 
       <style>{`
-        .co-head { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 72px; align-items: center; }
-        .co-photo { position: relative; padding: 0 22px 22px 0; }
-        .co-frame { position: absolute; inset: 22px 0 0 22px; border-radius: 32px; }
-        .co-img { position: relative; aspect-ratio: 4 / 5; border-radius: 32px; overflow: hidden; border: 1px solid var(--line-strong); background: #111; }
+        .co-open { position: relative; min-height: min(100svh, 940px); display: flex; align-items: flex-end; isolation: isolate; overflow: hidden; background: #050506; }
+        .co-open-media { position: absolute; top: 0; right: 0; bottom: 0; width: 62%; z-index: -1; }
+        .co-open-shade { position: absolute; inset: 0; background:
+          linear-gradient(90deg, #050506 0%, rgba(5,5,6,0.6) 22%, rgba(5,5,6,0) 52%),
+          linear-gradient(0deg, #050506 0%, rgba(5,5,6,0) 32%),
+          linear-gradient(180deg, rgba(5,5,6,0.55) 0%, rgba(5,5,6,0) 18%); }
+        .co-open-inner { padding-top: 140px; padding-bottom: 88px; }
+        .co-open-copy { max-width: 640px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
+        .co-title { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; color: #fff; font-size: clamp(48px, 6.4vw, 104px); line-height: 0.92; text-wrap: balance; }
+        .co-lead { font-size: clamp(16px, 1.3vw, 18px); line-height: 1.65; color: #D7D9E0; max-width: 520px; text-wrap: pretty; }
+        .co-open-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+        .co-head { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 72px; align-items: start; }
+        .co-head-name { overflow-wrap: anywhere; }
+        .co-head-id { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; position: sticky; top: 120px; }
         .co-copy { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
         .co-creds { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; margin-top: 6px; }
         .co-creds li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: #E4E5EA; line-height: 1.45; }
         .co-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 16px; width: 100%; padding-top: 22px; border-top: 1px solid var(--line); }
         .co-stat-v { font-family: var(--font-display); font-size: clamp(36px, 3.6vw, 54px); line-height: 1; }
-        .co-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+        .co-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
         .co-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .co-card { padding: 30px; display: flex; flex-direction: column; gap: 10px; }
         .co-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-        .co-av { width: 56px; height: 56px; border-radius: 18px; display: grid; place-items: center; font-family: var(--font-display); font-size: 26px; color: #050506; flex-shrink: 0; }
+        .co-av { width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center; font-family: var(--font-display); font-size: 26px; color: #050506; flex-shrink: 0; }
         .co-chip { font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 10px; border-radius: 999px; color: var(--accent); background: rgba(255,222,2,0.08); border: 1px solid rgba(255,222,2,0.25); }
         .co-spec { flex-direction: row; gap: 20px; align-items: flex-start; }
         .co-values { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
@@ -228,11 +253,14 @@ export default async function AboutPage() {
         .co-v-ico { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: grid; place-items: center; margin-bottom: 6px; }
         @media (max-width: 1000px) {
           .co-values { grid-template-columns: 1fr 1fr; }
-          .co-grid { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 900px) {
-          .co-head { grid-template-columns: 1fr; gap: 48px; }
-          .co-photo { max-width: 440px; margin: 0 auto; width: 100%; }
+          .co-head { grid-template-columns: 1fr; gap: 32px; }
+          .co-head-id { position: static; }
+          .co-open { min-height: 0; display: block; }
+          .co-open-media { position: relative; width: 100%; height: 62svh; min-height: 380px; max-height: 560px; }
+          .co-open-shade { background: linear-gradient(0deg, #050506 0%, rgba(5,5,6,0.88) 26%, rgba(5,5,6,0) 62%), linear-gradient(180deg, rgba(5,5,6,0.6) 0%, rgba(5,5,6,0) 22%); }
+          .co-open-inner { padding-top: 0; padding-bottom: 64px; margin-top: -104px; position: relative; }
           .co-stats { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 640px) {

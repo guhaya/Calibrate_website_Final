@@ -25,7 +25,7 @@ export default function PolicyPage({ policy, policyType, intro }: {
   return (
     <>
       <Navigation />
-      <main>
+      <main id="main">
         <section style={{ padding: "168px 24px 72px", position: "relative" }} className="grid-bg">
           <div
             style={{

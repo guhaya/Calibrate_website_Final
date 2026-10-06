@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
-import PageHero from "@/components/landing/PageHero";
 import Pricing from "@/components/landing/Pricing";
 import Faq, { type FaqItem } from "@/components/landing/Faq";
 import FinalCta from "@/components/landing/FinalCta";
@@ -101,12 +100,31 @@ export default function PricingClient() {
     <>
       <Navigation />
       <main id="main">
-        <PageHero
-          compact
-          eyebrow="Coaching investment"
-          title={<>Invest in a system, not a guess.</>}
-          lead="Two tiers, one protocol. Every plan includes the full CALIBRATE method, the Vemisis app and direct access to your coach. Applications are reviewed personally within 48 hours."
-        />
+        <section className="pri-open" aria-labelledby="pri-title">
+          <div className="wrap">
+            <header className="pri-head">
+              <h1 id="pri-title" className="pri-title">Pricing</h1>
+              <p className="pri-lead">
+                Two tiers, one protocol. Every plan includes the full CALIBRATE method, the Vemisis app and direct access to your coach.
+              </p>
+            </header>
+          </div>
+          <div className="pri-plans">
+            <Pricing fallback={FALLBACK_PLANS} showMoreLink={false} heading={false} />
+          </div>
+          <style>{`
+            .pri-open { padding-top: 128px; }
+            .pri-head { max-width: 920px; margin: 0 auto 28px; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px 40px; flex-wrap: wrap; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+            .pri-title { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: clamp(40px, 4.2vw, 60px); line-height: 0.95; color: #fff; }
+            .pri-lead { flex: 1 1 380px; max-width: 520px; font-size: 15px; line-height: 1.6; color: var(--text-secondary); text-wrap: pretty; }
+            .pri-plans .pr { padding-top: 0; }
+            @media (max-width: 768px) {
+              .pri-open { padding-top: 112px; }
+              .pri-head { margin-bottom: 22px; padding-bottom: 16px; }
+              .pri-lead { flex-basis: 100%; font-size: 14.5px; }
+            }
+          `}</style>
+        </section>
 
         <section className="ps" aria-label="Included in every plan" style={{ padding: "26px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", background: "#08080A" }}>
           <div className="mq" style={{ ["--mq-dur" as string]: "38s" }}>
@@ -121,8 +139,6 @@ export default function PricingClient() {
           </div>
         </section>
 
-        <Pricing fallback={FALLBACK_PLANS} showMoreLink={false} heading={false} />
-
         <section className="sec-tight">
           <div className="wrap">
             <div className="sec-head">
@@ -131,7 +147,7 @@ export default function PricingClient() {
             <div className="pp-grid">
               {profiles.map((p, i) => (
                 <article key={p.role} className="pp-card rv" style={{ ["--d" as string]: `${i * 100}ms` }}>
-                  <Image src={p.img} alt="" fill sizes="(max-width: 800px) 100vw, 400px" style={{ objectFit: "cover" }} />
+                  <Image src={p.img} alt="" fill sizes="(max-width: 800px) 100vw, 680px" style={{ objectFit: "cover" }} />
                   <div className="pp-shade" />
                   <div className="pp-body">
                     <h3 className="display-sm">{p.role}</h3>
@@ -142,13 +158,14 @@ export default function PricingClient() {
             </div>
           </div>
           <style>{`
-            .pp-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-            .pp-card { position: relative; min-height: 420px; border-radius: 28px; overflow: hidden; border: 1px solid var(--line); isolation: isolate; }
+            .pp-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); grid-template-rows: repeat(2, minmax(260px, auto)); gap: 20px; }
+            .pp-card:first-child { grid-row: span 2; }
+            .pp-card { position: relative; min-height: 260px; border-radius: 24px; overflow: hidden; border: 1px solid var(--line); isolation: isolate; }
             .pp-card img { z-index: -2; transition: transform 1s var(--ease-out); }
             .pp-card:hover img { transform: scale(1.05); }
             .pp-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 30%, rgba(5,5,6,0.95) 82%); }
             .pp-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px; display: flex; flex-direction: column; gap: 8px; }
-            @media (max-width: 800px) { .pp-grid { grid-template-columns: 1fr; } .pp-card { min-height: 360px; } }
+            @media (max-width: 800px) { .pp-grid { grid-template-columns: 1fr; grid-template-rows: none; } .pp-card:first-child { grid-row: auto; } .pp-card { min-height: 340px; } }
           `}</style>
         </section>
 
