@@ -56,11 +56,12 @@ type Channel = {
   expect: string;
   href?: string;
   internal?: boolean;
+  external?: boolean;
 };
 
 const channels: Channel[] = [
   { n: "01", channel: "Email", detail: "Admin@gvnfit.online", expect: "Response within 4 hours", href: "mailto:Admin@gvnfit.online" },
-  { n: "02", channel: "WhatsApp", detail: "Coach support for clients, weekdays", expect: "Response within 4 hours" },
+  { n: "02", channel: "WhatsApp", detail: "+91 98848 24064, weekdays", expect: "Response within 4 hours", href: "https://wa.me/919884824064", external: true },
   { n: "03", channel: "Book a free call", detail: "Free consultation, 30 minutes", expect: "No commitment", href: "/book", internal: true },
 ];
 
@@ -116,7 +117,13 @@ export default function ContactClient() {
                   {c.href && c.internal ? (
                     <Link href={c.href} className="ct-row is-link"><RowInner c={c} /></Link>
                   ) : c.href ? (
-                    <a href={c.href} className="ct-row is-link"><RowInner c={c} /></a>
+                    <a
+                      href={c.href}
+                      className="ct-row is-link"
+                      {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    >
+                      <RowInner c={c} />
+                    </a>
                   ) : (
                     <div className="ct-row"><RowInner c={c} /></div>
                   )}
