@@ -49,7 +49,7 @@ export default function CalendarBooking() {
         </a>
 
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap", gap: "16px", marginTop: "12px" }}>
-          {["Free · no commitment", "30 minutes", "Spots limited"].map((t) => (
+          {["Free · no commitment", "30 minutes", "Google Calendar invite"].map((t) => (
             <span
               key={t}
               style={{

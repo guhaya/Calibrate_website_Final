@@ -10,7 +10,6 @@ const navLinks = [
   { label: "Method", href: "/how-it-works" },
   { label: "Programmes", href: "/programmes" },
   { label: "Vemisis App", href: "/features" },
-  { label: "Results", href: "/success-stories" },
   { label: "Coaches", href: "/coaches" },
   { label: "Pricing", href: "/pricing" },
 ];

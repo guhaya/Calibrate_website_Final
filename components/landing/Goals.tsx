@@ -52,7 +52,7 @@ export default function Goals() {
                     <li key={p}><Check />{p}</li>
                   ))}
                 </ul>
-                <Link href="/apply" className="arrow-link goal-link">
+                <Link href="/book" className="arrow-link goal-link">
                   Start with {g.title.toLowerCase()} <span className="ar"><Arrow size={12} /></span>
                 </Link>
               </div>

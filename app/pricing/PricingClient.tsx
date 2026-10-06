@@ -13,7 +13,7 @@ const FALLBACK_PLANS: PricingRate[] = [
     id: "fallback-monthly",
     order_index: 1,
     name: "Monthly",
-    tagline: "Flexible commitment",
+    tagline: "1:1 coaching, billed monthly",
     price: 25000,
     currency: "INR",
     billing_note: "per month · minimum 3-month commitment",

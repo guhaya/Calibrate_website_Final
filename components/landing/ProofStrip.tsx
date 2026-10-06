@@ -3,8 +3,8 @@ import { CountUp } from "./ui";
 const stats = [
   { value: "45", label: "Clients coached" },
   { value: "10", label: "Countries" },
-  { value: "5", label: "Continents" },
-  { value: "4.9/5", label: "Average client rating" },
+  { value: "48h", label: "Application review time" },
+  { value: "4h", label: "WhatsApp reply time, weekdays" },
 ];
 
 export default function ProofStrip() {

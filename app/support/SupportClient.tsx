@@ -86,14 +86,6 @@ const contactMethods = [
     href: "mailto:Admin@gvnfit.online",
     color: "#FFDE02",
   },
-  {
-    icon: "star",
-    title: "Browse Results",
-    description: "Read client transformation stories before committing.",
-    cta: "See results",
-    href: "/success-stories",
-    color: "#22C55E",
-  },
 ];
 
 export default function SupportClient() {

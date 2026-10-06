@@ -214,7 +214,7 @@ export default async function AboutPage() {
         .co-copy { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
         .co-creds { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; margin-top: 6px; }
         .co-creds li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: #E4E5EA; line-height: 1.45; }
-        .co-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; width: 100%; padding-top: 22px; border-top: 1px solid var(--line); }
+        .co-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 16px; width: 100%; padding-top: 22px; border-top: 1px solid var(--line); }
         .co-stat-v { font-family: var(--font-display); font-size: clamp(36px, 3.6vw, 54px); line-height: 1; }
         .co-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
         .co-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }

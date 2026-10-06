@@ -11,7 +11,7 @@ const FALLBACK_PLANS: PricingRate[] = [
     id: "fallback-monthly",
     order_index: 1,
     name: "Monthly",
-    tagline: "Flexible commitment",
+    tagline: "1:1 coaching, billed monthly",
     price: 25000,
     currency: "INR",
     billing_note: "per month · minimum 3-month commitment",
@@ -86,9 +86,10 @@ export default function Pricing({ fallback = FALLBACK_PLANS, showMoreLink = true
               <h3 className="pr-name">{plan.name}</h3>
               <p className="pr-price">{formatPrice(plan)}</p>
               {plan.billing_note && <p className="pr-note">{plan.billing_note}</p>}
-              <Link href="/apply" className={plan.highlight ? "btn-primary" : "btn-secondary"} style={{ width: "100%", margin: "26px 0 28px" }}>
-                Apply for {plan.name} <Arrow />
+              <Link href="/book" className={plan.highlight ? "btn-primary" : "btn-secondary"} style={{ width: "100%", marginTop: 26 }}>
+                Book your free call <Arrow />
               </Link>
+              <Link href="/apply" className="pr-apply">or apply for {plan.name} directly</Link>
               <ul className="pr-feats">
                 {plan.features.map((f) => (
                   <li key={f}><Check color={plan.highlight ? "#050506" : "#FFDE02"} />{f}</li>
@@ -106,10 +107,11 @@ export default function Pricing({ fallback = FALLBACK_PLANS, showMoreLink = true
             </svg>
           </div>
           <div style={{ flex: 1, minWidth: 240 }}>
-            <p className="display-sm" style={{ marginBottom: 6 }}>The risk-free guarantee</p>
+            <p className="display-sm" style={{ marginBottom: 6 }}>Our progress commitment</p>
             <p className="body-sm">
               Follow the protocol for 30 days. If you don&apos;t see measurable progress in your check-in data, we rebuild your
-              plan from scratch, free, until you do.
+              plan from scratch, free, until you do. Fees and cancellations follow our{" "}
+              <Link href="/refund" className="link-underline">refund policy</Link>.
             </p>
           </div>
           <ul className="pr-g-list">
@@ -128,6 +130,8 @@ export default function Pricing({ fallback = FALLBACK_PLANS, showMoreLink = true
 
       <style>{`
         .pr-grid { display: grid; gap: 20px; margin: 0 auto; align-items: stretch; }
+        .pr-apply { display: flex; align-items: center; justify-content: center; min-height: 44px; margin: 6px 0 18px; font-size: 13.5px; font-weight: 700; color: inherit; opacity: 0.8; text-decoration: underline; text-underline-offset: 4px; }
+        .pr-apply:hover { opacity: 1; }
         .pr-card {
           position: relative; padding: 38px 34px; border-radius: 30px;
           background: var(--surface-1); border: 1px solid var(--line);

@@ -14,7 +14,6 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
   ],
   Company: [
     { label: "Meet the Coaches", href: "/coaches" },
-    { label: "Results", href: "/success-stories" },
     { label: "Blog", href: "/blog" },
     { label: "Book your free call", href: "/book" },
   ],
