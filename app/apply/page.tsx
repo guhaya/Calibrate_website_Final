@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Apply to CALIBRATE",
   description: "Apply for CALIBRATE coaching. Applications are open to everyone and reviewed personally by Guhayavarman within 48 hours.",
+  alternates: { canonical: "/apply" },
   openGraph: {
+    ...ogBase,
+    url: `${SITE_URL}/apply`,
     title: "Apply | CALIBRATE",
     description: "Start your application for CALIBRATE coaching. Reviewed by the head coach personally.",
   },
@@ -11,9 +14,9 @@ export const metadata: Metadata = {
 import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
 import PageHero from "@/components/landing/PageHero";
-import { Hl } from "@/components/landing/ui";
 import Footer from "@/components/layout/Footer";
 import ApplyForm from "@/components/apply/ApplyForm";
+import { SITE_URL, ogBase } from "@/lib/seo";
 
 const steps = [
   { num: "01", label: "Fill the form", detail: "A few sections covering your goals, schedule, and lifestyle, takes a few minutes." },
@@ -26,12 +29,12 @@ export default function ApplyPage() {
   return (
     <>
       <Navigation />
-      <main>
+      <main id="main">
         {/* Hero */}
         <PageHero
           compact
           eyebrow="Client application"
-          title={<>Apply to <Hl ink>CALIBRATE.</Hl></>}
+          title={<>Apply to CALIBRATE.</>}
           lead="Reviewed personally by Guhay. Fill in your details and you'll hear back within 48 hours."
           ctas={[{ label: "Start your application", href: "#application-form" }]}
         />
@@ -58,7 +61,7 @@ export default function ApplyPage() {
                 >
                   <div
                     style={{
-                      fontFamily: "'Barlow Condensed', sans-serif",
+                      fontFamily: "var(--font-display)",
                       fontSize: "13px",
                       fontWeight: 800,
                       color: "#FFDE02",

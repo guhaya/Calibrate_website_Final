@@ -5,7 +5,6 @@ import PageHero from "@/components/landing/PageHero";
 import Pricing from "@/components/landing/Pricing";
 import Faq, { type FaqItem } from "@/components/landing/Faq";
 import FinalCta from "@/components/landing/FinalCta";
-import { Hl } from "@/components/landing/ui";
 import type { PricingRate } from "@/lib/supabase";
 
 // Shown only until /api/form-data responds. Live plans are managed in /admin (Rates).
@@ -101,11 +100,11 @@ export default function PricingClient() {
   return (
     <>
       <Navigation />
-      <main>
+      <main id="main">
         <PageHero
           compact
           eyebrow="Coaching investment"
-          title={<>Invest in a <Hl ink>system,</Hl> not a guess.</>}
+          title={<>Invest in a system, not a guess.</>}
           lead="Two tiers, one protocol. Every plan includes the full CALIBRATE method, the Vemisis app and direct access to your coach. Applications are reviewed personally within 48 hours."
         />
 
@@ -127,7 +126,7 @@ export default function PricingClient() {
         <section className="sec-tight">
           <div className="wrap">
             <div className="sec-head">
-              <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Built for <Hl>high performers.</Hl></h2>
+              <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Who CALIBRATE suits best.</h2>
             </div>
             <div className="pp-grid">
               {profiles.map((p, i) => (
@@ -153,7 +152,7 @@ export default function PricingClient() {
           `}</style>
         </section>
 
-        <Faq items={faqs} title={<>Questions before you <Hl>commit.</Hl></>} />
+        <Faq items={faqs} title={<>Questions before you commit.</>} />
         <FinalCta />
       </main>
       <Footer />

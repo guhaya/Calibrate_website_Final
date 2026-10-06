@@ -12,12 +12,17 @@ import Steps from "@/components/landing/Steps";
 import Pricing from "@/components/landing/Pricing";
 import Faq from "@/components/landing/Faq";
 import FinalCta from "@/components/landing/FinalCta";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (
     <>
       <Navigation />
-      <main>
+      <main id="main">
         <Hero />
         <ProofStrip />
         <Problem />

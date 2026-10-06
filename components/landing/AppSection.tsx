@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { Arrow, Device, Hl } from "./ui";
+import { Arrow, Device } from "./ui";
 
 const orbit = [
   { label: "Workouts", x: "6%", y: "14%" },
@@ -84,7 +84,7 @@ export default function AppSection() {
             <Image src="/media/brand/vemisis-app-icon.png" alt="Vemisis app icon" width={84} height={84} className="app-icon rv rv-scale" />
             <span className="tag rv" style={{ ["--d" as string]: "60ms" }}>Meet Vemisis, the CALIBRATE app</span>
             <h2 className="display-lg rv balance" style={{ ["--d" as string]: "120ms" }}>
-              Your coach. Your plan. <Hl>One app.</Hl>
+              Your coach. Your plan. One app.
             </h2>
             <p className="lead rv" style={{ ["--d" as string]: "200ms", maxWidth: 640 }}>
               Vemisis is the training app built for CALIBRATE clients. Sessions, macros, recovery and your coach live

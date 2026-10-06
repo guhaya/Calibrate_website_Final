@@ -8,7 +8,6 @@ export const metadata: Metadata = {
 import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
 import PageHero from "@/components/landing/PageHero";
-import { Hl } from "@/components/landing/ui";
 import Footer from "@/components/layout/Footer";
 import Icon from "@/components/shared/Icon";
 
@@ -36,8 +35,8 @@ const experiences = [
   },
   {
     phase: "Week 9-12",
-    title: "The transformation is visible",
-    description: "The before and after difference is undeniable. Strength is up. Body composition is transformed. You have the system, the habits, and the knowledge to maintain this for the rest of your life.",
+    title: "Changes you can see",
+    description: "By now the changes show up in your numbers: strength is up and body composition has moved. You have the system, the habits, and the knowledge to maintain this for the rest of your life.",
     icon: "star",
     color: "#FFDE02",
   },
@@ -58,12 +57,12 @@ export default function ClientsPage() {
   return (
     <>
       <Navigation />
-      <main>
+      <main id="main">
         {/* Hero */}
         <PageHero
           compact
           eyebrow="Your experience"
-          title={<>What coaching with <Hl ink>CALIBRATE</Hl> looks like</>}
+          title={<>What coaching with CALIBRATE looks like</>}
           lead="From day one to your final result, here's exactly what you get, what to expect, and how the process works inside the Vemisis app."
         />
 
@@ -72,7 +71,7 @@ export default function ClientsPage() {
           <div className="marquee-viewport" style={{ padding: "24px 0" }}>
             <div className="marquee-track">
               {[...inclusions, ...inclusions].map((inc, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "0 30px" }}>
+                <div key={i} aria-hidden={i >= inclusions.length ? true : undefined} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "0 30px" }}>
                   <span style={{ color: "#FFDE02" }}><Icon name={inc.icon} size={15} /></span>
                   <span style={{ fontSize: "13px", fontWeight: 700, color: "#F5F3EE", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.02em" }}>
                     {inc.title}

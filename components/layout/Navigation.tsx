@@ -8,6 +8,7 @@ import Logo from "./Logo";
 
 const navLinks = [
   { label: "Method", href: "/how-it-works" },
+  { label: "Programmes", href: "/programmes" },
   { label: "Vemisis App", href: "/features" },
   { label: "Results", href: "/success-stories" },
   { label: "Coaches", href: "/coaches" },
@@ -48,6 +49,23 @@ export default function Navigation() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  // While the menu is open, take the page behind it out of the tab order and
+  // move focus into the menu; hand focus back to the burger when it closes.
+  const burgerRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const wasOpen = useRef(false);
+  useEffect(() => {
+    const behind = document.querySelectorAll<HTMLElement>("main, footer");
+    behind.forEach((el) => { el.inert = menuOpen; });
+    if (menuOpen) {
+      menuRef.current?.querySelector<HTMLElement>("a")?.focus({ preventScroll: true });
+    } else if (wasOpen.current) {
+      burgerRef.current?.focus({ preventScroll: true });
+    }
+    wasOpen.current = menuOpen;
+    return () => behind.forEach((el) => { el.inert = false; });
+  }, [menuOpen]);
+
   useEffect(() => {
     if (!menuOpen) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setMenuOpen(false); };
@@ -67,7 +85,7 @@ export default function Navigation() {
 
           <nav className="nv-pill" aria-label="Primary">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className={`nv-link ${isActive(link.href) ? "is-active" : ""}`}>
+              <Link key={link.href} href={link.href} className={`nv-link ${isActive(link.href) ? "is-active" : ""}`} aria-current={isActive(link.href) ? "page" : undefined}>
                 {link.label}
               </Link>
             ))}
@@ -79,6 +97,7 @@ export default function Navigation() {
               Book your free call <Arrow />
             </Link>
             <button
+              ref={burgerRef}
               className={`nv-burger ${menuOpen ? "is-open" : ""}`}
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -91,7 +110,15 @@ export default function Navigation() {
         </div>
       </header>
 
-      <div id="mobile-menu" className={`nv-menu ${menuOpen ? "is-open" : ""}`} aria-hidden={!menuOpen}>
+      <div
+        id="mobile-menu"
+        ref={menuRef}
+        className={`nv-menu ${menuOpen ? "is-open" : ""}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Site menu"
+        aria-hidden={!menuOpen}
+      >
         <div className="nv-menu-inner">
           <p className="mono c-muted" style={{ marginBottom: 18 }}>Menu</p>
           <ul>
@@ -102,6 +129,7 @@ export default function Navigation() {
                   onClick={() => setMenuOpen(false)}
                   tabIndex={menuOpen ? 0 : -1}
                   className={isActive(link.href) ? "is-active" : ""}
+                  aria-current={isActive(link.href) ? "page" : undefined}
                 >
                   <span>{link.label}</span>
                   <Arrow />
@@ -131,6 +159,7 @@ export default function Navigation() {
           transition: transform 0.5s var(--ease-out), padding 0.4s var(--ease-out);
         }
         .nv-hidden { transform: translateY(-110%); }
+        .nv:focus-within { transform: none; }
         .nv-inner {
           max-width: 1400px; margin: 0 auto;
           display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px;
@@ -195,6 +224,7 @@ export default function Navigation() {
           transition: clip-path 0.7s var(--ease-out);
           visibility: hidden;
           overflow-y: auto;
+          overscroll-behavior: contain;
         }
         .nv-menu.is-open { clip-path: circle(150% at calc(100% - 46px) 46px); visibility: visible; }
         .nv-menu-inner { max-width: 560px; margin: 0 auto; padding: 112px 24px 40px; }
@@ -216,7 +246,7 @@ export default function Navigation() {
 
         @media (max-width: 1080px) {
           .nv-text-link { display: none; }
-          .nv-link { padding: 9px 12px; }
+          .nv-link { padding: 9px 9px; font-size: 13px; }
         }
         @media (max-width: 960px) {
           .nv { padding: 12px 14px; }

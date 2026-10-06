@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
-import { Arrow, Check, Hl } from "./ui";
+import { Arrow, Check } from "./ui";
 
 const phases = [
   {
@@ -70,7 +70,7 @@ export default function Method({ showLink = true }: { showLink?: boolean }) {
         <div className="sec-head">
           <span className="tag rv">The CALIBRATE Method</span>
           <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>
-            Five phases. <Hl>One system.</Hl>
+            Five phases. One system.
           </h2>
           <p className="lead rv" style={{ ["--d" as string]: "160ms", maxWidth: 640 }}>
             DMAIC is the improvement framework engineers use to perfect complex processes. CALIBRATE applies it to your

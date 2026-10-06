@@ -106,8 +106,19 @@ img { display: block; max-width: 100%; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(255,222,2,0.35); }
 ::selection { background: var(--accent); color: #050506; }
 
+html { color-scheme: dark; }
+
+/* ─── Skip link ─── */
+.skip-link {
+  position: fixed; top: 12px; left: 12px; z-index: 200;
+  padding: 12px 18px; border-radius: 999px;
+  background: var(--accent); color: #050506; font-weight: 800; font-size: 14px; text-decoration: none;
+  transform: translateY(-160%); transition: transform 0.2s ease;
+}
+.skip-link:focus-visible { transform: none; }
+
 /* ─── Focus states ─── */
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, summary:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: 4px;
@@ -648,6 +659,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   border-color: rgba(255,222,2,0.45);
   box-shadow: 0 0 0 3px rgba(255,222,2,0.10);
 }
+.input-dark:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .input-dark::placeholder { color: var(--text-muted); }
 
 /* ─── Comparison table ─── */
@@ -1308,9 +1320,8 @@ main { overflow-x: clip; }
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 24px 50px -12px rgba(0,0,0,0.7);
 }
-.bob { animation: bob 6s ease-in-out infinite; }
-.bob-2 { animation: bob 7s ease-in-out -2s infinite; }
-.bob-3 { animation: bob 5.5s ease-in-out -4s infinite; }
+/* Floating cards sit still: perpetual bobbing read as decoration, not information. */
+.bob, .bob-2, .bob-3 { animation: none; }
 @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 
 /* Marquee (generic, reversible) */
@@ -1321,7 +1332,7 @@ main { overflow-x: clip; }
 
 /* Arrow pill link */
 .arrow-link {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
   font-weight: 700; font-size: 14px; color: #fff; text-decoration: none;
 }
 .arrow-link span.ar {

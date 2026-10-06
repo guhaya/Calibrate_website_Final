@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Coaching Team",
   description: "Meet the CALIBRATE team, head coach Guhayavarman, certified trainers across Chennai, Bangalore, and Coimbatore, and on-call nutrition specialists. The people behind your protocol.",
+  alternates: { canonical: "/coaches" },
   openGraph: {
+    ...ogBase,
+    url: `${SITE_URL}/coaches`,
     title: "Coaching Team | CALIBRATE by GVNFIT",
     description: "Guhayavarman and the full CALIBRATE coaching team. Certified trainers, nutrition specialists, and a head coach who reviews every application personally.",
   },
@@ -14,8 +17,9 @@ import Footer from "@/components/layout/Footer";
 import Icon from "@/components/shared/Icon";
 import PageHero from "@/components/landing/PageHero";
 import FinalCta from "@/components/landing/FinalCta";
-import { Check, Hl } from "@/components/landing/ui";
+import { Check } from "@/components/landing/ui";
 import { getTeamMembers } from "@/lib/team";
+import { SITE_URL, ogBase } from "@/lib/seo";
 
 // Reads live from Supabase on every request so edits made in /admin (Team)
 // show up here immediately instead of only after the next deploy.
@@ -68,11 +72,11 @@ export default async function AboutPage() {
   return (
     <>
       <Navigation />
-      <main>
+      <main id="main">
         <PageHero
           compact
           eyebrow="The people behind your protocol"
-          title={<>Meet your <Hl ink>coaching team.</Hl></>}
+          title={<>Meet your coaching team.</>}
           lead="A head coach who reviews every application personally, certified trainers across India and on-call specialists for clinical-level nutrition. One team, one method."
         />
 
@@ -133,7 +137,7 @@ export default async function AboutPage() {
           <section className="sec-tight">
             <div className="wrap">
               <div className="sec-head">
-                <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>On the floor, <Hl>on your side.</Hl></h2>
+                <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>On the floor, on your side.</h2>
               </div>
               <div className="co-grid">
                 {trainers.map((t, i) => (
@@ -158,7 +162,7 @@ export default async function AboutPage() {
           <section className="sec-tight">
             <div className="wrap">
               <div className="sec-head">
-                <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Clinical depth <Hl>when you need it.</Hl></h2>
+                <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Clinical depth when you need it.</h2>
                 <p className="lead rv" style={{ ["--d" as string]: "140ms", maxWidth: 600 }}>
                   For clients who need clinical-level nutrition or complex dietary support, these specialists step in.
                 </p>
@@ -184,7 +188,7 @@ export default async function AboutPage() {
         <section className="sec">
           <div className="wrap">
             <div className="sec-head">
-              <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Four rules we <Hl>never break.</Hl></h2>
+              <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Four rules we never break.</h2>
             </div>
             <div className="co-values">
               {values.map((v, i) => (

@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
 import PageHero from "@/components/landing/PageHero";
-import { Hl } from "@/components/landing/ui";
 import Footer from "@/components/layout/Footer";
 
 const faqs = [
@@ -38,7 +37,7 @@ const faqs = [
   },
   {
     q: "How do I pay? Are there contracts?",
-    a: "Coaching is billed monthly. There are no long-term contracts, you can cancel at the end of any billing period. We also offer a quarterly option with a 14% saving for clients who want to commit to a full transformation block.",
+    a: "Every CALIBRATE plan has a 3-month minimum commitment. The Monthly plan is billed each month; the Quarterly plan is paid upfront and saves ₹10,000 over the three months. After the minimum, you continue month to month and can cancel with 7 days' notice before your next billing date.",
   },
   {
     q: "What app do you use?",
@@ -67,12 +66,12 @@ export default function ContactClient() {
   return (
     <>
       <Navigation />
-      <main>
+      <main id="main">
         {/* Hero */}
         <PageHero
           compact
           eyebrow="Get in touch"
-          title={<>Let&apos;s start a <Hl ink>conversation.</Hl></>}
+          title={<>Talk to a coach.</>}
           lead="Have a question before booking? Want to know if coaching is right for you? Reach out, every message gets a personal response within 4 hours."
           ctas={[{ label: "Book your free call", href: "/book" }]}
         />
@@ -106,7 +105,7 @@ export default function ContactClient() {
                 </div>
                 <p style={{ fontSize: "12px", fontWeight: 700, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "8px" }}>Email Us</p>
                 <p style={{ fontSize: "15px", color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, marginBottom: "6px" }}>Admin@gvnfit.online</p>
-                <p style={{ fontSize: "13px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Response within 4 hours</p>
+                <p style={{ fontSize: "13px", color: "#8A8F9A", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Response within 4 hours</p>
               </div>
             </a>
 
@@ -128,7 +127,7 @@ export default function ContactClient() {
                 </div>
                 <p style={{ fontSize: "12px", fontWeight: 700, color: "#22C55E", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "8px" }}>Book a Call</p>
                 <p style={{ fontSize: "15px", color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, marginBottom: "6px" }}>Free Consultation</p>
-                <p style={{ fontSize: "13px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>30 minutes · No commitment</p>
+                <p style={{ fontSize: "13px", color: "#8A8F9A", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>30 minutes · No commitment</p>
               </div>
             </Link>
 
@@ -151,7 +150,7 @@ export default function ContactClient() {
                 </div>
                 <p style={{ fontSize: "12px", fontWeight: 700, color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "8px" }}>Instagram</p>
                 <p style={{ fontSize: "15px", color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, marginBottom: "6px" }}>@fitguhay</p>
-                <p style={{ fontSize: "13px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Follow for daily content</p>
+                <p style={{ fontSize: "13px", color: "#8A8F9A", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Follow for daily content</p>
               </div>
             </a>
           </div>
@@ -186,8 +185,8 @@ export default function ContactClient() {
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                   {[
-                    { label: "Your name", type: "text", key: "name", placeholder: "Alex Mitchell" },
-                    { label: "Email address", type: "email", key: "email", placeholder: "alex@email.com" },
+                    { label: "Your name", type: "text", key: "name", placeholder: "Priya Raman" },
+                    { label: "Email address", type: "email", key: "email", placeholder: "priya@email.com" },
                   ].map((field) => (
                     <div key={field.key}>
                       <label htmlFor={`contact-${field.key}`} style={{ display: "block", fontSize: "12px", fontWeight: 700, color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "8px" }}>
@@ -200,7 +199,7 @@ export default function ContactClient() {
                         placeholder={field.placeholder}
                         value={formState[field.key as "name" | "email"]}
                         onChange={(e) => setFormState((p) => ({ ...p, [field.key]: e.target.value }))}
-                        style={{ width: "100%", padding: "14px 18px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "10px", color: "#FFFFFF", fontSize: "15px", fontFamily: "'Plus Jakarta Sans', sans-serif", outline: "none", boxSizing: "border-box" }}
+                        style={{ width: "100%", padding: "14px 18px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "10px", color: "#FFFFFF", fontSize: "15px", fontFamily: "'Plus Jakarta Sans', sans-serif", boxSizing: "border-box" }}
                         onFocus={(e) => (e.target.style.borderColor = "rgba(255,222,2,0.4)")}
                         onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
                       />
@@ -217,7 +216,7 @@ export default function ContactClient() {
                       rows={5}
                       value={formState.message}
                       onChange={(e) => setFormState((p) => ({ ...p, message: e.target.value }))}
-                      style={{ width: "100%", padding: "14px 18px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "10px", color: "#FFFFFF", fontSize: "15px", fontFamily: "'Plus Jakarta Sans', sans-serif", outline: "none", resize: "vertical", boxSizing: "border-box" }}
+                      style={{ width: "100%", padding: "14px 18px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "10px", color: "#FFFFFF", fontSize: "15px", fontFamily: "'Plus Jakarta Sans', sans-serif", resize: "vertical", boxSizing: "border-box" }}
                       onFocus={(e) => (e.target.style.borderColor = "rgba(255,222,2,0.4)")}
                       onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
                     />
@@ -255,12 +254,13 @@ export default function ContactClient() {
                   >
                     <button
                       onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      aria-expanded={openFaq === i}
                       style={{ width: "100%", padding: "18px 20px", background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", textAlign: "left" }}
                     >
                       <span style={{ fontSize: "14px", fontWeight: 600, color: openFaq === i ? "#FFFFFF" : "#C4CDD8", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.4 }}>
                         {faq.q}
                       </span>
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, transform: openFaq === i ? "rotate(45deg)" : "rotate(0deg)", transition: "transform 0.25s ease", color: openFaq === i ? "#FFDE02" : "#6B7280" }}>
+                      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, transform: openFaq === i ? "rotate(45deg)" : "rotate(0deg)", transition: "transform 0.25s ease", color: openFaq === i ? "#FFDE02" : "#6B7280" }}>
                         <path d="M8 3v10M3 8h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                     </button>
@@ -303,7 +303,7 @@ export default function ContactClient() {
           .contact-grid { grid-template-columns: 1fr !important; }
           .contact-main-grid { grid-template-columns: 1fr !important; }
         }
-        input::placeholder, textarea::placeholder { color: #3D4550; }
+        input::placeholder, textarea::placeholder { color: #7E8395; }
       `}</style>
     </>
   );

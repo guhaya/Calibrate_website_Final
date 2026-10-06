@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import type { PricingRate } from "@/lib/supabase";
-import { Arrow, Check, Hl } from "./ui";
+import { Arrow, Check } from "./ui";
 
 // Shown only until /api/form-data responds. Live plans are managed in /admin (Rates).
 const FALLBACK_PLANS: PricingRate[] = [
@@ -71,7 +71,7 @@ export default function Pricing({ fallback = FALLBACK_PLANS, showMoreLink = true
         {heading && <div className="sec-head">
           <span className="tag rv">Investment</span>
           <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>
-            One protocol. <Hl>Zero guesswork.</Hl>
+            One protocol. Zero guesswork.
           </h2>
           <p className="lead rv" style={{ ["--d" as string]: "160ms", maxWidth: 560 }}>
             Every plan includes the full CALIBRATE system, your Vemisis app access, weekly analysis and direct coach access.

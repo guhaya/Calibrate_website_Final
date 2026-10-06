@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Navigation from "@/components/layout/Navigation";
 import PageHero from "@/components/landing/PageHero";
-import { Hl } from "@/components/landing/ui";
 import Footer from "@/components/layout/Footer";
 import Icon from "@/components/shared/Icon";
 import CalendarBooking from "@/components/shared/CalendarBooking";
@@ -103,12 +102,12 @@ export default function SupportClient() {
   return (
     <>
       <Navigation />
-      <main>
+      <main id="main">
         {/* Hero */}
         <PageHero
           compact
           eyebrow="Contact & FAQ"
-          title={<>We&apos;re here to <Hl ink>help you succeed.</Hl></>}
+          title={<>Help with coaching and the Vemisis app.</>}
           lead="Questions about coaching, pricing or getting started? Find answers below or reach out directly."
         />
 
@@ -177,10 +176,11 @@ export default function SupportClient() {
                       <div key={fi} style={{ borderBottom: fi < section.questions.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none" }}>
                         <button
                           onClick={() => setOpenFaq(isOpen ? null : key)}
+                          aria-expanded={isOpen}
                           style={{ width: "100%", padding: "20px 24px", background: isOpen ? "rgba(23,23,23,0.9)" : "rgba(17,17,20,0.9)", border: "none", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", textAlign: "left", transition: "background 0.2s ease" }}
                         >
                           <span style={{ fontWeight: 600, fontSize: "15px", color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{faq.q}</span>
-                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s ease" }}>
+                          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s ease" }}>
                             <path d="M4 6l4 4 4-4" stroke="#B7B9C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </button>

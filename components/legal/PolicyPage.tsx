@@ -109,7 +109,7 @@ export default function PolicyPage({ policy, policyType, intro }: {
                     color: "#FFFFFF",
                     marginBottom: "16px",
                     letterSpacing: "-0.01em",
-                    fontFamily: "'Barlow Condensed', sans-serif",
+                    fontFamily: "var(--font-display)",
                     fontWeight: 700,
                   }}
                 >

@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Book a Free Diagnostic Call",
   description: "Book a free 30-minute diagnostic call with Guhayavarman. Honest assessment of your situation, no sales pressure.",
+  alternates: { canonical: "/book" },
   openGraph: {
+    ...ogBase,
+    url: `${SITE_URL}/book`,
     title: "Book a Call | CALIBRATE",
     description: "30 minutes. Free. Guhay reviews your situation and tells you honestly whether CALIBRATE is the right fit.",
   },
@@ -10,20 +13,20 @@ export const metadata: Metadata = {
 
 import Navigation from "@/components/layout/Navigation";
 import PageHero from "@/components/landing/PageHero";
-import { Hl } from "@/components/landing/ui";
 import Footer from "@/components/layout/Footer";
 import CalendarBooking from "@/components/shared/CalendarBooking";
+import { SITE_URL, ogBase } from "@/lib/seo";
 
 export default function BookPage() {
   return (
     <>
       <Navigation />
-      <main>
+      <main id="main">
         {/* Hero */}
         <PageHero
           compact
           eyebrow="Free consultation"
-          title={<>Let&apos;s talk about <Hl ink>your goals.</Hl></>}
+          title={<>Let&apos;s talk about your goals.</>}
           lead="A free 30-minute call, no pressure, no pitch. We'll talk about where you are, where you want to be, and whether coaching is the right fit for you."
         />
 
@@ -66,7 +69,7 @@ export default function BookPage() {
                 >
                   <p
                     style={{
-                      fontFamily: "'Barlow Condensed', sans-serif",
+                      fontFamily: "var(--font-display)",
                       fontSize: "28px",
                       fontWeight: 300,
                       color: "rgba(255,222,2,0.4)",

@@ -25,7 +25,7 @@ export default function Hero() {
         <h1 className="hero-title">
           <span className="hero-line">
             <RiseLine text="Stop guessing." delay={120} />
-            <span className="sticker hero-sticker">Built for busy professionals</span>
+            <span className="sticker hero-sticker" aria-hidden="true">Built for busy professionals</span>
           </span>
           <span className="hero-line">
             <RiseLine text="Start" delay={320} />{" "}
@@ -37,7 +37,7 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="lead hero-lead rv" style={{ ["--d" as string]: "500ms" }}>
+        <p className="lead hero-lead">
           Precision body recomposition coaching from GVNFIT, adjusted every week and delivered through the <strong style={{ color: "#fff" }}>Vemisis</strong> app.
         </p>
 

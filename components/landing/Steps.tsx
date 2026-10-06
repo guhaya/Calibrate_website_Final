@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Arrow, Hl } from "./ui";
+import { Arrow } from "./ui";
 
 const steps = [
   {
@@ -25,7 +25,7 @@ export default function Steps() {
       <div className="wrap st-grid">
         <div className="st-side">
           <h2 className="display-lg rv">
-            Start in <Hl>three steps.</Hl>
+            Start in three steps.
           </h2>
           <p className="lead rv" style={{ ["--d" as string]: "100ms" }}>
             From first conversation to your first calibrated week, here is exactly what happens.

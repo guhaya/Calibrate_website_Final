@@ -6,6 +6,7 @@ import FooterWord from "./FooterWord";
 const footerLinks: Record<string, { label: string; href: string }[]> = {
   Coaching: [
     { label: "The CALIBRATE Method", href: "/how-it-works" },
+    { label: "Programmes", href: "/programmes" },
     { label: "Vemisis App", href: "/features" },
     { label: "Your Experience", href: "/clients" },
     { label: "Pricing", href: "/pricing" },
@@ -116,7 +117,7 @@ export default function Footer() {
         }
         .ft-app-icon { border-radius: 14px; flex-shrink: 0; }
         .ft-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-        .ft-link { color: var(--text-muted); font-size: 14.5px; text-decoration: none; transition: color 0.2s ease; }
+        .ft-link { display: inline-block; padding: 4px 0; min-height: 24px; color: var(--text-muted); font-size: 14.5px; text-decoration: none; transition: color 0.2s ease; }
         .ft-link:hover { color: var(--accent); }
         .ft-bottom {
           display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;

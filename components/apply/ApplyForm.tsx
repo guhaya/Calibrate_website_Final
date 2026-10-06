@@ -17,6 +17,7 @@ function FieldInput({
   const baseProps = {
     id: field.id,
     required: field.required,
+    "aria-describedby": field.help_text ? `${field.id}-help` : undefined,
     placeholder: field.placeholder || undefined,
     className: "input-dark",
   };
@@ -50,9 +51,9 @@ function FieldInput({
 
     case "radio":
       return (
-        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+        <div role="radiogroup" aria-labelledby={`${field.id}-label`} style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
           {field.options.map((opt) => (
-            <label key={opt} style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "14px", color: "#F5F3EE", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
+            <label key={opt} style={{ display: "flex", alignItems: "center", gap: "10px", minHeight: "44px", fontSize: "14px", color: "#F5F3EE", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
               <input
                 type="radio"
                 name={field.id}
@@ -71,9 +72,9 @@ function FieldInput({
     case "checkbox": {
       const arr = Array.isArray(value) ? value : [];
       return (
-        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+        <div role="group" aria-labelledby={`${field.id}-label`} style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
           {field.options.map((opt) => (
-            <label key={opt} style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "14px", color: "#F5F3EE", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
+            <label key={opt} style={{ display: "flex", alignItems: "center", gap: "10px", minHeight: "44px", fontSize: "14px", color: "#F5F3EE", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
               <input
                 type="checkbox"
                 checked={arr.includes(opt)}
@@ -91,11 +92,12 @@ function FieldInput({
 
     case "scale":
       return (
-        <div style={{ display: "flex", gap: "8px" }}>
+        <div role="group" aria-labelledby={`${field.id}-label`} style={{ display: "flex", gap: "8px" }}>
           {[1, 2, 3, 4, 5].map((n) => (
             <button
               key={n}
               type="button"
+              aria-pressed={value === String(n)}
               onClick={() => onChange(String(n))}
               style={{
                 width: "44px", height: "44px", borderRadius: "10px",
@@ -103,7 +105,7 @@ function FieldInput({
                 background: value === String(n) ? "rgba(255,222,2,0.14)" : "rgba(255,255,255,0.03)",
                 color: value === String(n) ? "#FFDE02" : "#B7B9C3",
                 fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: "15px",
-                cursor: "pointer", transition: "all 0.15s ease",
+                cursor: "pointer", transition: "border-color 0.15s ease, background 0.15s ease, color 0.15s ease",
               }}
             >
               {n}
@@ -119,10 +121,10 @@ function FieldInput({
       return <input {...baseProps} type="number" value={(value as string) || ""} onChange={(e) => onChange(e.target.value)} />;
 
     case "email":
-      return <input {...baseProps} type="email" value={(value as string) || ""} onChange={(e) => onChange(e.target.value)} />;
+      return <input {...baseProps} type="email" autoComplete="email" value={(value as string) || ""} onChange={(e) => onChange(e.target.value)} />;
 
     case "phone":
-      return <input {...baseProps} type="tel" value={(value as string) || ""} onChange={(e) => onChange(e.target.value)} />;
+      return <input {...baseProps} type="tel" autoComplete="tel" value={(value as string) || ""} onChange={(e) => onChange(e.target.value)} />;
 
     default:
       return <input {...baseProps} type="text" value={(value as string) || ""} onChange={(e) => onChange(e.target.value)} />;
@@ -233,7 +235,7 @@ export default function ApplyForm() {
           <div style={{ display: "flex", flexDirection: "column", gap: "22px" }}>
             {group.fields.map((field) => (
               <div key={field.id}>
-                <label htmlFor={field.id} style={{
+                <label htmlFor={field.id} id={`${field.id}-label`} style={{
                   display: "block", fontSize: "14px", fontWeight: 600, color: "#FFFFFF",
                   fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px",
                 }}>
@@ -241,7 +243,7 @@ export default function ApplyForm() {
                   {field.required && <span style={{ color: "#FFDE02" }}> *</span>}
                 </label>
                 {field.help_text && (
-                  <p style={{ fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>
+                  <p id={`${field.id}-help`} style={{ fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>
                     {field.help_text}
                   </p>
                 )}
@@ -257,7 +259,7 @@ export default function ApplyForm() {
       ))}
 
       {submitError && (
-        <p style={{ fontSize: "13px", color: "#DE3033", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{submitError}</p>
+        <p role="alert" style={{ fontSize: "13px", color: "#DE3033", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{submitError}</p>
       )}
 
       <button type="submit" className="btn-primary btn-primary-lg" disabled={submitting} style={{ justifyContent: "center", opacity: submitting ? 0.7 : 1 }}>

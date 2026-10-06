@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import type React from "react";
-import { Arrow, Hl } from "./ui";
+import { Arrow } from "./ui";
 
 const DEFAULT_FAQS = [
   {
@@ -48,7 +48,7 @@ export default function Faq({ items = DEFAULT_FAQS, title }: { items?: FaqItem[]
       <div className="wrap faq-grid">
         <div className="faq-side">
           <h2 className="display-lg rv">
-            {title ?? <>Questions, <Hl>answered.</Hl></>}
+            {title ?? <>Questions, answered.</>}
           </h2>
           <div className="card faq-help rv" style={{ ["--d" as string]: "160ms" }}>
             <Image src="/media/coach/guhay-028.webp" alt="Coach Guhayavarman" width={64} height={64} className="faq-av" />

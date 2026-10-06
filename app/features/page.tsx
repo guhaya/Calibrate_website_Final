@@ -4,7 +4,7 @@ import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/landing/PageHero";
 import FinalCta from "@/components/landing/FinalCta";
-import { Device, Hl } from "@/components/landing/ui";
+import { Device } from "@/components/landing/ui";
 
 export const metadata: Metadata = {
   title: "Vemisis App",
@@ -96,11 +96,11 @@ export default function FeaturesPage() {
   return (
     <>
       <Navigation />
-      <main>
+      <main id="main">
         <PageHero
           align="split"
           eyebrow="Vemisis · the CALIBRATE app"
-          title={<>Every day, <Hl ink>already decided.</Hl></>}
+          title={<>Every day, already decided.</>}
           lead="Vemisis is the training app built for CALIBRATE clients. Open it, see today's session and targets, log in seconds, and let your coach handle the adjustments."
           ctas={[
             { label: "Book your free call", href: "/book" },
@@ -149,7 +149,7 @@ export default function FeaturesPage() {
         <section id="more" className="sec">
           <div className="wrap">
             <div className="sec-head">
-              <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Built for the <Hl>whole you.</Hl></h2>
+              <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Everything else in the app.</h2>
             </div>
             <div className="ft-extras">
               {extras.map((e, i) => (
@@ -185,7 +185,7 @@ export default function FeaturesPage() {
           backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
         }
         .ft-jump::-webkit-scrollbar { display: none; }
-        .ft-jump a { padding: 9px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; color: var(--text-secondary); text-decoration: none; white-space: nowrap; transition: all 0.2s ease; }
+        .ft-jump a { padding: 12px 16px; min-height: 44px; display: inline-flex; align-items: center; border-radius: 999px; font-size: 13px; font-weight: 700; color: var(--text-secondary); text-decoration: none; white-space: nowrap; transition: all 0.2s ease; }
         .ft-jump a:hover { background: var(--accent); color: #050506; }
         .ft-pillar { scroll-margin-top: 140px; }
         .ft-pillar-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 64px; align-items: center; }

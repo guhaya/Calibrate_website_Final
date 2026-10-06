@@ -33,7 +33,7 @@ export function Check({ color = "#FFDE02", size = 16 }: { color?: string; size?:
 
 export function Stars({ n = 5, size = 14 }: { n?: number; size?: number }) {
   return (
-    <span style={{ display: "inline-flex", gap: 2 }} aria-label={`${n} out of 5 stars`}>
+    <span role="img" style={{ display: "inline-flex", gap: 2 }} aria-label={`${n} out of 5 stars`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <svg key={i} width={size} height={size} viewBox="0 0 12 12" fill={i < n ? "#FFDE02" : "rgba(255,255,255,0.18)"} aria-hidden="true">
           <path d="M6 1l1.3 3.9h4.1l-3.3 2.4 1.3 3.9L6 9 2.6 11.2l1.3-3.9L.6 4.9h4.1L6 1z" />
@@ -80,16 +80,21 @@ export function Device({
 export function CountUp({ value, duration = 1600, className, style }: { value: string; duration?: number; className?: string; style?: CSSProperties }) {
   const ref = useRef<HTMLSpanElement>(null);
   const match = value.match(/^([^0-9]*)([0-9]+(?:[.,][0-9]+)?)(.*)$/);
-  const [display, setDisplay] = useState(match ? `${match[1]}0${match[3]}` : value);
+  // Render the real figure on the server and before hydration, so crawlers,
+  // link previews and no-JS visitors never see "0".
+  const [display, setDisplay] = useState(value);
 
   useEffect(() => {
     if (!match || !ref.current) return;
     const [, pre, num, post] = match;
+    // Already on screen at load: keep the final value rather than flashing 0.
+    if (ref.current.getBoundingClientRect().top < window.innerHeight) return;
     const target = parseFloat(num.replace(",", "."));
     const decimals = num.includes(".") ? num.split(".")[1].length : 0;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const el = ref.current;
     let raf = 0;
+    if (!reduce) raf = requestAnimationFrame(() => setDisplay(`${pre}0${post}`));
     const io = new IntersectionObserver(
       ([e]) => {
         if (!e.isIntersecting) return;

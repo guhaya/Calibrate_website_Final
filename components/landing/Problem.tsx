@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import { useMotionValueEvent, useReducedMotion, useScroll } from "framer-motion";
-import { Hl } from "./ui";
 
 const pains = [
   "You've started over more times than you can count",
@@ -50,7 +49,7 @@ export default function Problem() {
       <div className="wrap">
         <div className="sec-head">
           <h2 className="display-lg rv balance">
-            It&apos;s not a willpower problem. It&apos;s a <Hl>system</Hl> problem.
+            It&apos;s not a willpower problem. It&apos;s a system problem.
           </h2>
           <p className="lead rv" style={{ ["--d" as string]: "160ms", maxWidth: 620 }}>
             Smart, driven people don&apos;t fail at fitness for lack of effort. They fail because nobody built them a
@@ -97,7 +96,7 @@ export default function Problem() {
                 <circle className="pb-dial-hub" cx="32" cy="32" r="6" fill="#050506" />
               </svg>
             </div>
-            <span className="mono pb-hub-label" aria-live="polite">
+            <span className="mono pb-hub-label">
               {complete ? "Fully calibrated" : `${count}/${N} calibrated`}
             </span>
           </div>
@@ -162,8 +161,8 @@ export default function Problem() {
         .pb-pain.is-active { border-color: rgba(242,88,91,0.45); transition-delay: 0s; }
 
         /* Fixes: dim until their pain has been calibrated */
-        .pb-fix { color: rgba(255,255,255,0.5); }
-        .pb-map.in-view .pb-fix { opacity: 0.55; }
+        .pb-fix { color: #9A9DA8; }
+        .pb-map.in-view .pb-fix { opacity: 1; }
         .pb-map.in-view .pb-fix.is-done {
           opacity: 1; color: #fff; transition-delay: 0.45s;
           border-color: rgba(255,222,2,0.5); background: linear-gradient(90deg, rgba(255,222,2,0.10), var(--surface-1) 70%);

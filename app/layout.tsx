@@ -74,6 +74,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full" data-scroll-behavior="smooth">
       <head>
+        <meta name="theme-color" content="#07070A" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -138,6 +139,8 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full">
+        <a href="#main" className="skip-link">Skip to content</a>
+        <noscript><style>{`.rv{opacity:1 !important;transform:none !important}`}</style></noscript>
         <VisitorTracker />
         {children}
         <RevealObserver />

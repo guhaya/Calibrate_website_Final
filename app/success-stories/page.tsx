@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Client Transformations",
   description: "Real results from CALIBRATE clients, engineers, product managers, and consultants who transformed their body with data-driven coaching. Detailed stories, metrics, and outcomes.",
+  alternates: { canonical: "/success-stories" },
   openGraph: {
+    ...ogBase,
+    url: `${SITE_URL}/success-stories`,
     title: "Client Transformations | CALIBRATE by GVNFIT",
     description: "Real results from engineers, PMs, and founders who used the CALIBRATE protocol. Honest stories with before/after metrics.",
   },
@@ -12,7 +15,8 @@ import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/landing/PageHero";
 import FinalCta from "@/components/landing/FinalCta";
-import { CountUp, Hl } from "@/components/landing/ui";
+import { CountUp } from "@/components/landing/ui";
+import { SITE_URL, ogBase } from "@/lib/seo";
 
 const highlights = [
   { stat: "−14kg", label: "Marcus T. · 14 weeks" },
@@ -85,11 +89,11 @@ export default function SuccessStoriesPage() {
   return (
     <>
       <Navigation />
-      <main>
+      <main id="main">
         <PageHero
           compact
           eyebrow="Verified results"
-          title={<>Real people. <Hl ink>Real numbers.</Hl></>}
+          title={<>Real people. Real numbers.</>}
           lead="Engineers, product managers and founders who stopped guessing and started calibrating. Honest stories, measured outcomes, no filters."
           ctas={[{ label: "Start your story", href: "/apply" }, { label: "Book your free call", href: "/book", variant: "secondary" }]}
         />

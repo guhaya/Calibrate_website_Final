@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Navigation from "@/components/layout/Navigation";
 import PageHero from "@/components/landing/PageHero";
-import { Hl } from "@/components/landing/ui";
 import Footer from "@/components/layout/Footer";
 
 const categories = ["All", "Nutrition", "Training", "Mindset", "Lifestyle"];
@@ -106,12 +105,12 @@ export default function BlogClient() {
   return (
     <>
       <Navigation />
-      <main>
+      <main id="main">
         {/* Hero */}
         <PageHero
           compact
           eyebrow="Blog"
-          title={<>Training. Nutrition. <Hl ink>Transformation.</Hl></>}
+          title={<>Training and nutrition, explained by coaches.</>}
           lead="Practical guidance on training, nutrition, mindset and building the body you want, written by coaches, not content marketers. The first articles are being written now."
         />
 
@@ -159,7 +158,7 @@ export default function BlogClient() {
                   <div style={{ display: "inline-flex", alignItems: "center", padding: "3px 10px", background: `rgba(${getCategoryColorRGB(post.category)}, 0.1)`, border: `1px solid rgba(${getCategoryColorRGB(post.category)}, 0.2)`, borderRadius: "999px", fontSize: "11px", fontWeight: 600, color: getCategoryColor(post.category), marginBottom: "16px", letterSpacing: "0.04em", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                     {post.category}
                   </div>
-                  <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "24px", fontWeight: 600, color: "#FFFFFF", lineHeight: 1.25, marginBottom: "12px", letterSpacing: "-0.01em" }}>
+                  <h2 style={{ fontFamily: "var(--font-display)", fontSize: "24px", fontWeight: 600, color: "#FFFFFF", lineHeight: 1.25, marginBottom: "12px", letterSpacing: "-0.01em" }}>
                     {post.title}
                   </h2>
                   <p style={{ fontSize: "14px", color: "#B7B9C3", lineHeight: 1.65, marginBottom: "24px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.excerpt}</p>
@@ -186,7 +185,7 @@ export default function BlogClient() {
                       <span style={{ fontSize: "11px", fontWeight: 700, color: "#7E8395", letterSpacing: "0.06em", textTransform: "uppercase", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Coming soon</span>
                       <span style={{ fontSize: "11px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.readTime}</span>
                     </div>
-                    <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 600, color: "#FFFFFF", marginBottom: "6px", lineHeight: 1.3, letterSpacing: "-0.01em" }}>{post.title}</h3>
+                    <h3 style={{ fontFamily: "var(--font-display)", fontSize: "18px", fontWeight: 600, color: "#FFFFFF", marginBottom: "6px", lineHeight: 1.3, letterSpacing: "-0.01em" }}>{post.title}</h3>
                     <p style={{ fontSize: "13px", color: "#B7B9C3", lineHeight: 1.6, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.excerpt}</p>
                   </div>
                 </article>

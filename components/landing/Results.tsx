@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRef } from "react";
-import { Arrow, Hl, Stars } from "./ui";
+import { Arrow, Stars } from "./ui";
 
 const transformations = [
   { name: "Marcus T.", role: "Software Engineer, 34", before: "97kg · 28% BF", after: "83kg · 16% BF", headline: "−14kg", sub: "fat lost", weeks: 14, bfFrom: 28, bfTo: 16 },
@@ -50,7 +50,7 @@ export default function Results() {
         <div className="res-head">
           <div className="sec-head left" style={{ marginBottom: 0 }}>
             <h2 className="display-lg rv">
-              The numbers <Hl>don&apos;t lie.</Hl>
+              What clients measured.
             </h2>
           </div>
           <div className="res-arrows rv">
@@ -89,7 +89,10 @@ export default function Results() {
       <div className="rvw-rows">
         <div className="mq" style={{ ["--mq-dur" as string]: "60s" }}>
           <div className="mq-track">
-            {[...reviews, ...reviews].map((r, i) => <Review key={`a${i}`} r={r} />)}
+            {reviews.map((r, i) => <Review key={`a${i}`} r={r} />)}
+            <div aria-hidden="true" style={{ display: "contents" }}>
+              {reviews.map((r, i) => <Review key={`b${i}`} r={r} />)}
+            </div>
           </div>
         </div>
       </div>

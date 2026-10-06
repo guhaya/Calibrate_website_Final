@@ -5,13 +5,17 @@ import PageHero from "@/components/landing/PageHero";
 import Method from "@/components/landing/Method";
 import Journey, { type JourneyStep } from "@/components/landing/Journey";
 import FinalCta from "@/components/landing/FinalCta";
-import { Device, Hl } from "@/components/landing/ui";
+import { Device } from "@/components/landing/ui";
+import { SITE_URL, ogBase } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "How It Works",
   description:
     "The DMAIC coaching process explained: Define, Measure, Analyse, Improve, Control, applied to body recomposition for busy professionals and delivered through the Vemisis app. From first call to transformed in 12 to 24 weeks.",
+  alternates: { canonical: "/how-it-works" },
   openGraph: {
+    ...ogBase,
+    url: `${SITE_URL}/how-it-works`,
     title: "How It Works | CALIBRATE by GVNFIT",
     description: "The DMAIC protocol applied to body recomposition. Custom training, weekly data analysis and automatic adjustments, built around your actual schedule.",
   },
@@ -70,7 +74,7 @@ const steps: JourneyStep[] = [
   },
   {
     number: "05",
-    title: "Real Results. Lasting Change.",
+    title: "Results You Can Measure",
     duration: "12 to 24 weeks",
     description:
       "By the end of your programme you won't just look different, you'll know exactly how to train and eat for the rest of your life. Most clients continue beyond their first programme because this becomes their new standard.",
@@ -86,11 +90,11 @@ export default function HowItWorksPage() {
   return (
     <>
       <Navigation />
-      <main>
+      <main id="main">
         <PageHero
           align="split"
           eyebrow="The CALIBRATE Method"
-          title={<>From first call to <Hl ink>transformed.</Hl></>}
+          title={<>What happens after you book.</>}
           lead="Every CALIBRATE coaching journey follows a clear, engineered process. Here is exactly what happens from the moment you book your free call, and how the Vemisis app keeps every week on track."
           ctas={[
             { label: "Book your free call", href: "/book" },
@@ -116,7 +120,7 @@ export default function HowItWorksPage() {
         <Method showLink={false} />
 
         <Journey
-          title={<>Week by week, <Hl>step by step.</Hl></>}
+          title={<>Week by week, step by step.</>}
           lead="From the first conversation to lasting results. No mystery, no black box, just a process you can see working."
           steps={steps}
         />

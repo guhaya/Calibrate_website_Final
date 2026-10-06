@@ -8,7 +8,7 @@ export default function CalendarBooking() {
       <div>
         <h3
           style={{
-            fontFamily: "'Barlow Condensed', sans-serif",
+            fontFamily: "var(--font-display)",
             fontSize: "28px",
             fontWeight: 800,
             color: "#FFFFFF",

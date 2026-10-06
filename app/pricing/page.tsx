@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import PricingClient from "./PricingClient";
+import { SITE_URL, ogBase } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Coaching Investment | Pricing",
   description: "CALIBRATE coaching starts at ₹25,000/month. Two tiers, Monthly and Quarterly. Applications open to all, reviewed personally by Guhay within 48 hours.",
+  alternates: { canonical: "/pricing" },
   openGraph: {
+    ...ogBase,
+    url: `${SITE_URL}/pricing`,
     title: "Pricing | CALIBRATE",
     description: "Monthly at ₹25,000 or Quarterly at ₹65,000 upfront. Full CALIBRATE protocol, custom training, nutrition, weekly analysis, WhatsApp support.",
   },
