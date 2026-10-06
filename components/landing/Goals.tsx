@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Arrow, Check, Hl } from "./ui";
+import { Arrow, Check } from "./ui";
 
 const goals = [
   {
@@ -32,7 +32,7 @@ export default function Goals() {
       <div className="wrap">
         <div className="sec-head left goals-head">
           <h2 className="display-lg rv">
-            No generic plans. <Hl>Ever.</Hl>
+            No generic plans. Ever.
           </h2>
           <p className="lead rv" style={{ ["--d" as string]: "100ms", maxWidth: 560 }}>
             Your programme is written for the outcome you&apos;re chasing, then rewritten every week as your body responds.
@@ -59,6 +59,10 @@ export default function Goals() {
             </article>
           ))}
         </div>
+
+        <Link href="/programmes" className="arrow-link goals-more rv">
+          Explore every goal we coach, including Longevity and GLP-1 Support <span className="ar"><Arrow size={12} /></span>
+        </Link>
       </div>
 
       <style>{`
@@ -82,6 +86,7 @@ export default function Goals() {
         .goal-points li { display: flex; gap: 10px; align-items: center; font-size: 14px; color: #fff; font-weight: 600; }
         .goal:hover .goal-points, .goal:focus-within .goal-points { max-height: 140px; opacity: 1; margin: 4px 0 6px; }
         .goal-link { margin-top: 4px; }
+        .goals-more { margin-top: 32px; display: inline-flex; }
         @media (hover: none), (max-width: 900px) {
           .goal-points { max-height: 140px; opacity: 1; margin: 4px 0 6px; }
         }
