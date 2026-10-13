@@ -51,6 +51,8 @@ export async function POST(req: NextRequest) {
             stats: body.stats && body.stats.length ? body.stats : null,
             color: body.color || null,
             initials: body.initials || null,
+            // Only sent when set, so creating members still works before migration 007 adds the column.
+            ...(body.photo_url ? { photo_url: body.photo_url } : {}),
             active: body.active !== false,
           })
           .select()
@@ -77,6 +79,7 @@ export async function POST(req: NextRequest) {
             stats: rest.stats && rest.stats.length ? rest.stats : null,
             color: rest.color || null,
             initials: rest.initials || null,
+            ...("photo_url" in rest ? { photo_url: rest.photo_url || null } : {}),
             active: Boolean(rest.active),
             updated_at: new Date().toISOString(),
           })

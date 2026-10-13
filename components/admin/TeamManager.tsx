@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import type { TeamMember, TeamCategory, TeamStat } from "@/lib/supabase";
 
 const inputStyle: React.CSSProperties = {
@@ -132,6 +133,13 @@ function MemberEditor({
         </div>
       </div>
 
+      {!isHeadCoach && (
+        <div style={{ marginBottom: "16px" }}>
+          <label style={labelStyle}>Photo URL (optional, replaces the initials avatar)</label>
+          <input style={inputStyle} value={draft.photo_url || ""} onChange={(e) => onChange({ ...draft, photo_url: e.target.value.trim() })} placeholder="/images/coaches/name.webp" />
+        </div>
+      )}
+
       <label style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer", marginBottom: "16px" }}>
         <input type="checkbox" checked={draft.active} onChange={(e) => onChange({ ...draft, active: e.target.checked })} style={{ accentColor: "#FFDE02" }} />
         Active (visible on the live site)
@@ -201,11 +209,15 @@ function CategorySection({
               style={{
                 width: "36px", height: "36px", borderRadius: "50%", flexShrink: 0,
                 background: `${m.color || "#FFDE02"}22`, border: `1px solid ${m.color || "#FFDE02"}55`,
-                display: "flex", alignItems: "center", justifyContent: "center",
+                display: "flex", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden",
                 fontSize: "14px", fontWeight: 800, color: m.color || "#FFDE02", fontFamily: "'Barlow Condensed', sans-serif",
               }}
             >
-              {m.initials || m.name.charAt(0)}
+              {m.photo_url ? (
+                <Image src={m.photo_url} alt="" fill sizes="36px" unoptimized={!m.photo_url.startsWith("/")} style={{ objectFit: "cover", objectPosition: "50% 20%" }} />
+              ) : (
+                m.initials || m.name.charAt(0)
+              )}
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
               <span style={{ fontSize: "14px", fontWeight: 600, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", display: "block" }}>{m.name}</span>

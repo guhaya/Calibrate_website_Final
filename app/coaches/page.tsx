@@ -19,6 +19,7 @@ import Link from "next/link";
 import FinalCta from "@/components/landing/FinalCta";
 import { Arrow, Check } from "@/components/landing/ui";
 import { getTeamMembers } from "@/lib/team";
+import type { TeamMember } from "@/lib/supabase";
 import { SITE_URL, ogBase } from "@/lib/seo";
 
 // Reads live from Supabase on every request so edits made in /admin (Team)
@@ -31,6 +32,29 @@ function hexToRgb(hex: string): string {
   const num = parseInt(full, 16);
   if (Number.isNaN(num) || full.length !== 6) return "255,222,2";
   return `${(num >> 16) & 255},${(num >> 8) & 255},${num & 255}`;
+}
+
+function CoachAvatar({ member, glow }: { member: TeamMember; glow?: boolean }) {
+  const color = member.color || "#FFDE02";
+  const style = {
+    background: color,
+    ...(glow ? { boxShadow: `0 0 30px rgba(${hexToRgb(color)},0.35)` } : {}),
+  };
+  if (member.photo_url) {
+    return (
+      <span className="co-av co-av-photo" style={style}>
+        <Image
+          src={member.photo_url}
+          alt={`${member.name}${member.role ? `, ${member.role}` : ""}`}
+          fill
+          sizes="56px"
+          unoptimized={!member.photo_url.startsWith("/")}
+          style={{ objectFit: "cover", objectPosition: "50% 20%" }}
+        />
+      </span>
+    );
+  }
+  return <span className="co-av" style={style}>{member.initials || member.name.charAt(0)}</span>;
 }
 
 const locations = ["Chennai", "Bangalore", "Hyderabad", "Coimbatore"];
@@ -158,7 +182,7 @@ export default async function AboutPage() {
                 {trainers.map((t, i) => (
                   <article key={t.id ?? t.name} className="card card-hover co-card rv" style={{ ["--d" as string]: `${(i % 2) * 90}ms` }}>
                     <div className="co-card-top">
-                      <span className="co-av" style={{ background: t.color || "#FFDE02", boxShadow: `0 0 30px rgba(${hexToRgb(t.color || "#FFDE02")},0.35)` }}>{t.initials || t.name.charAt(0)}</span>
+                      <CoachAvatar member={t} glow />
                       {t.experience && <span className="co-chip">{t.experience}</span>}
                     </div>
                     <h3 className="display-sm">{t.name}</h3>
@@ -185,7 +209,7 @@ export default async function AboutPage() {
               <div className="co-grid co-grid-2">
                 {specialists.map((sp, i) => (
                   <article key={sp.id ?? sp.name} className="card card-hover co-card co-spec rv" style={{ ["--d" as string]: `${i * 90}ms` }}>
-                    <span className="co-av" style={{ background: sp.color || "#FFDE02" }}>{sp.initials || sp.name.charAt(0)}</span>
+                    <CoachAvatar member={sp} />
                     <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                       <h3 className="display-sm">{sp.name}</h3>
                       {sp.role && <p style={{ fontWeight: 700, fontSize: 14 }}>{sp.role}</p>}
@@ -246,6 +270,7 @@ export default async function AboutPage() {
         .co-card { padding: 30px; display: flex; flex-direction: column; gap: 10px; }
         .co-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
         .co-av { width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center; font-family: var(--font-display); font-size: 26px; color: #050506; flex-shrink: 0; }
+        .co-av-photo { position: relative; overflow: hidden; }
         .co-chip { font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 10px; border-radius: 999px; color: var(--accent); background: rgba(255,222,2,0.08); border: 1px solid rgba(255,222,2,0.25); }
         .co-spec { flex-direction: row; gap: 20px; align-items: flex-start; }
         .co-values { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
