@@ -70,5 +70,6 @@ export interface TeamMember {
   stats: TeamStat[] | null;
   color: string | null;
   initials: string | null;
+  photo_url?: string | null;
   active: boolean;
 }
