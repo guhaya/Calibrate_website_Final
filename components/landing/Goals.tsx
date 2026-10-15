@@ -7,22 +7,22 @@ const goals = [
     title: "Fat Loss",
     line: "Drop body fat while holding onto every bit of muscle, without the crash-diet spiral.",
     points: ["Custom calorie and macro targets", "Strength-preserving training split", "Weekly check-in adjustments"],
-    img: "/media/life/me-park-run.webp",
-    alt: "Coach running outdoors at sunrise",
+    img: "/media/campaign/goal-fatloss-rooftop.webp",
+    alt: "Coach Guhayavarman on a rooftop at sunrise",
   },
   {
     title: "Muscle Gain",
     line: "A structured hypertrophy programme with progressive overload tracked every session.",
     points: ["Progressive overload tracking", "Surplus calibrated to your metabolism", "Video form checks on request"],
-    img: "/media/life/me-bench.webp",
-    alt: "Coach training on the bench press",
+    img: "/media/campaign/goal-muscle-pushup.webp",
+    alt: "Coach Guhayavarman holding a low push-up",
   },
   {
     title: "Recomposition",
     line: "Lose fat and build muscle at the same time. The hardest goal to programme, and the one CALIBRATE was built for.",
     points: ["Nutrient timing around training", "Bi-weekly composition scans", "Slowest, most rewarding path"],
-    img: "/media/life/me-deadlift.webp",
-    alt: "Coach performing a heavy deadlift",
+    img: "/media/campaign/goal-recomp-gymfloor.webp",
+    alt: "Coach Guhayavarman standing on the gym floor",
   },
 ];
 

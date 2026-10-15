@@ -23,8 +23,8 @@ export default function Coach() {
           <div className="coach-frame" aria-hidden="true" />
           <div className="coach-img">
             <Image
-              src="/media/coach/guhay-016.webp"
-              alt="Guhayavarman, founder and head coach of CALIBRATE, in a black t-shirt with arms crossed"
+              src="/media/campaign/about-portrait.webp"
+              alt="Guhayavarman, founder and head coach of CALIBRATE, in a black t-shirt in warm window light"
               fill
               sizes="(max-width: 900px) 90vw, 520px"
               style={{ objectFit: "cover", objectPosition: "50% 20%" }}

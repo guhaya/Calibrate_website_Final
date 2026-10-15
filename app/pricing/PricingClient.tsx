@@ -59,9 +59,9 @@ const inclusions = [
 ];
 
 const profiles = [
-  { role: "Engineers & Developers", detail: "Complex problem-solvers who prefer systems over motivation.", img: "/media/life/me-coffee-laptop.webp" },
-  { role: "Product Managers", detail: "Detail-oriented professionals who want measurable outcomes.", img: "/media/life/me-tablet-review.webp" },
-  { role: "Consultants & Founders", detail: "High travel, high pressure. The protocol adapts to your schedule.", img: "/media/life/me-steps-watch.webp" },
+  { role: "Engineers & Developers", detail: "Complex problem-solvers who prefer systems over motivation.", img: "/media/campaign/persona-engineers-cafe.webp" },
+  { role: "Product Managers", detail: "Detail-oriented professionals who want measurable outcomes.", img: "/media/campaign/persona-pm-office.webp" },
+  { role: "Consultants & Founders", detail: "High travel, high pressure. The protocol adapts to your schedule.", img: "/media/campaign/persona-founders-lounge.webp" },
 ];
 
 const faqs: FaqItem[] = [
@@ -147,7 +147,7 @@ export default function PricingClient() {
             <div className="pp-grid">
               {profiles.map((p, i) => (
                 <article key={p.role} className="pp-card rv" style={{ ["--d" as string]: `${i * 100}ms` }}>
-                  <Image src={p.img} alt="" fill sizes="(max-width: 800px) 100vw, 680px" style={{ objectFit: "cover" }} />
+                  <Image src={p.img} alt="" fill sizes="(max-width: 800px) 100vw, 680px" style={{ objectFit: "cover", objectPosition: "50% 22%" }} />
                   <div className="pp-shade" />
                   <div className="pp-body">
                     <h3 className="display-sm">{p.role}</h3>

@@ -99,12 +99,12 @@ export default async function AboutPage() {
         <section className="co-open" aria-labelledby="co-title">
           <div className="co-open-media">
             <Image
-              src="/media/coach/guhay-090.webp"
+              src="/media/campaign/coach-gym-wide.webp"
               alt={`${headCoach.name}, ${headCoach.role ?? "Head Coach"}`}
               fill
               preload
               sizes="(max-width: 900px) 100vw, 62vw"
-              style={{ objectFit: "cover", objectPosition: "50% 30%" }}
+              style={{ objectFit: "cover", objectPosition: "75% 30%" }}
             />
             <div className="co-open-shade" aria-hidden="true" />
           </div>
