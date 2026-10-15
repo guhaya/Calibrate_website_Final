@@ -29,10 +29,10 @@ export default function FinalCta() {
 
           <div className="fcta-coach">
             <Image
-              src="/media/coach/cut-163.webp"
+              src="/media/campaign/cta-coach-cutout.webp"
               alt="Coach Guhayavarman checking the Vemisis app on his phone"
-              width={739}
-              height={1400}
+              width={753}
+              height={1411}
               sizes="(max-width: 900px) 70vw, 460px"
               style={{ width: "100%", height: "auto" }}
             />
@@ -64,7 +64,7 @@ export default function FinalCta() {
         .fcta-btn:hover svg, .fcta-link:hover svg { transform: translateX(3px); }
         .fcta-link { position: relative; display: inline-flex; align-items: center; gap: 8px; color: #050506; font-weight: 800; font-size: 14.5px; text-decoration: none; border-bottom: 2px solid #050506; padding-bottom: 2px; }
         .fcta-link::before { content: ""; position: absolute; inset: -10px -6px; }
-        .fcta-coach { align-self: end; justify-self: center; width: 100%; max-width: 360px; margin-top: 80px; filter: drop-shadow(0 30px 40px rgba(0,0,0,0.35)); }
+        .fcta-coach { align-self: end; justify-self: center; width: 100%; max-width: 360px; margin-top: 80px; filter: drop-shadow(0 18px 26px rgba(92,70,0,0.28)) drop-shadow(0 2px 4px rgba(60,45,0,0.18)); }
         @media (max-width: 900px) {
           .fcta-panel { grid-template-columns: 1fr; padding: 0 28px; min-height: 0; }
           .fcta-copy { padding: 64px 0 8px; }
