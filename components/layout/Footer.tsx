@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AppStoreBadge from "@/components/shared/AppStoreBadge";
 import Image from "next/image";
 import Logo from "./Logo";
 import FooterWord from "./FooterWord";
@@ -53,6 +54,7 @@ export default function Footer() {
                 <p className="mono c-accent" style={{ marginBottom: 4 }}>The training app</p>
                 <p style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>Vemisis, included with every plan</p>
                 <p style={{ fontSize: 12.5, color: "var(--text-muted)" }}>Built for iPhone and Android</p>
+                <div style={{ marginTop: 12 }}><AppStoreBadge size="sm" /></div>
               </div>
             </div>
           </div>

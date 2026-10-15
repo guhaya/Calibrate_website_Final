@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { APP_STORE_URL } from "@/lib/appLinks";
 import Image from "next/image";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
@@ -104,7 +105,7 @@ export default function FeaturesPage() {
           lead="Vemisis is the training app built for CALIBRATE clients. Open it, see today's session and targets, log in seconds, and let your coach handle the adjustments."
           ctas={[
             { label: "Book your free call", href: "/book" },
-            { label: "How the method works", href: "/how-it-works", variant: "secondary" },
+            { label: "Download on the App Store", href: APP_STORE_URL, variant: "secondary" },
           ]}
           visual={
             <div className="ft-hero-vis">
