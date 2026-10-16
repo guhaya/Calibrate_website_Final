@@ -42,7 +42,7 @@ export default function ProgrammesPage() {
           align="split"
           eyebrow="Programmes"
           title={<>Train for the outcome you want.</>}
-          lead="Whether you want to look different, perform better, protect your health or simply feel capable every day, your programme is written for that goal, then adjusted every week as your body responds. Online worldwide, and in person for kids with autism and senior citizens."
+          lead="Whether you want to look different, perform better, protect your health or simply feel capable every day, your programme is written for that goal, then adjusted every week as your body responds. Online worldwide, and in person by arrangement for kids with autism and senior citizens."
           ctas={[
             { label: "Book your free call", href: "/book" },
             { label: "See pricing", href: "/pricing", variant: "secondary" },
@@ -57,7 +57,7 @@ export default function ProgrammesPage() {
                 <p className="pg-hero-card-t">Coaching worldwide</p>
               </div>
               <div className="float-card bob-2 pg-hero-card pg-hero-card-b">
-                <p className="mono c-accent">In person</p>
+                <p className="mono c-accent">In person · by arrangement</p>
                 <p className="pg-hero-card-t">Kids with autism · Seniors</p>
               </div>
             </figure>
@@ -149,6 +149,7 @@ export default function ProgrammesPage() {
                       ))}
                     </ul>
                     <p className="pg-note">{a.note}</p>
+                    <p className="pg-booking">{a.booking}</p>
                     <Link href="/book" className="pg-inline-link">Ask about {a.name.toLowerCase()} sessions <Arrow size={12} /></Link>
                   </div>
                 </article>
@@ -271,6 +272,7 @@ export default function ProgrammesPage() {
         .pg-points li { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; color: #fff; font-weight: 600; line-height: 1.45; }
         .pg-points li svg { margin-top: 2px; flex-shrink: 0; }
         .pg-note { padding-top: 6px; font-size: 13px; color: var(--text-secondary); line-height: 1.55; border-left: 2px solid var(--accent-border); padding-left: 12px; }
+        .pg-booking { font-size: 14px; font-weight: 700; color: #fff; }
         .pg-included { margin-top: 28px; font-size: 15px; color: var(--text-secondary); }
         .pg-inline-link { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--accent); }
 

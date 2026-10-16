@@ -219,6 +219,7 @@ export type Adaptive = {
   line: string;
   points: string[];
   note: string;
+  booking: string;
   photos: { img: string; alt: string; caption: string }[];
 };
 
@@ -236,6 +237,7 @@ export const adaptive: Adaptive[] = [
       "Parents involved in every session, with simple activities for home",
     ],
     note: "This is movement coaching, not therapy. We work alongside your child's therapists and doctors, and follow their guidance.",
+    booking: "In-person sessions by arrangement. Pricing is discussed on your free call.",
     photos: [
       { img: "/media/programmes/p07-autism-kids-balance.webp", alt: "Coach Guhayavarman kneeling beside a smiling boy walking a low balance beam", caption: "In person" },
     ],
@@ -250,9 +252,10 @@ export const adaptive: Adaptive[] = [
       "Strength and balance work to support independence and help lower the risk of falls",
       "Every session adapted to your joints, health conditions and energy on the day",
       "Online: live, guided sessions at home over a video call",
-      "In person: hands-on coaching with support close by",
+      "In person, by arrangement: hands-on coaching with support close by",
     ],
     note: "Please check with your doctor before starting. We work around existing conditions with their guidance.",
+    booking: "Online sessions anywhere, in-person sessions by arrangement. Pricing is discussed on your free call.",
     photos: [
       { img: "/media/programmes/p08-seniors-inperson.webp", alt: "Coach Guhayavarman supporting a senior woman during a sit-to-stand with light dumbbells", caption: "In person" },
       { img: "/media/programmes/p09-seniors-online.webp", alt: "Senior man doing a seated band row while Coach Guhayavarman demonstrates on a video call", caption: "Online" },
@@ -275,15 +278,15 @@ export const faqs = [
   },
   {
     q: "Do specialist tracks cost extra?",
-    a: "No. Every goal and specialist track is delivered within the standard CALIBRATE Monthly and Quarterly plans. Your programme is simply written for the outcome you're chasing. Sessions for kids with autism and in-person senior sessions are arranged separately, so we'll go through them on your free call.",
+    a: "No. Every goal and specialist track is delivered within the standard CALIBRATE Monthly and Quarterly plans. Your programme is simply written for the outcome you're chasing. Sessions for kids with autism and senior citizens are by arrangement, and pricing for them is discussed on your free call.",
   },
   {
     q: "How do sessions for kids with autism work?",
-    a: "They are one-to-one and in person. Each session follows the same predictable routine and uses play to build balance, coordination and strength. A parent stays involved throughout, and we work alongside your child's therapists rather than replacing them.",
+    a: "They are one-to-one and in person, by arrangement, and pricing is discussed on your free call. Each session follows the same predictable routine and uses play to build balance, coordination and strength. A parent stays involved throughout, and we work alongside your child's therapists rather than replacing them.",
   },
   {
     q: "Can senior citizens train online?",
-    a: "Yes. Seniors can train online with live, guided sessions at home over a video call, or in person. Every session is adapted to joints, health conditions and how you feel that day, and we ask that your doctor is aware before you start.",
+    a: "Yes. Seniors can train online with live, guided sessions at home over a video call, or in person by arrangement. Every session is adapted to joints, health conditions and how you feel that day, and we ask that your doctor is aware before you start.",
   },
   {
     q: "I'm a beginner or have little equipment. Is that a problem?",
