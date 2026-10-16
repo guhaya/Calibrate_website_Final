@@ -6,10 +6,18 @@ import type { TeamMember } from "@/lib/supabase";
 // and credential lines that only state a city are dropped.
 const INDIAN_PLACE = /\b(chennai|bangalore|bengaluru|mumbai|coimbatore|hyderabad|delhi|pune|kochi|madurai|tamil nadu|karnataka|kerala|maharashtra|india)\b/i;
 
+// Guhayavarman has 10+ years of coaching experience (confirmed by him,
+// Oct 2026); older team_members rows still say 5+.
+const HEAD_COACH_YEARS = "10+";
+
 function worldwide(m: TeamMember): TeamMember {
   const fallback = m.category === "head_coach" ? "Coaching clients worldwide" : "Online coaching";
+  const stats = m.category === "head_coach" && m.stats
+    ? m.stats.map((st) => (/year/i.test(st.label) ? { ...st, value: HEAD_COACH_YEARS } : st))
+    : m.stats;
   return {
     ...m,
+    stats,
     location: m.location && INDIAN_PLACE.test(m.location) ? fallback : m.location,
     credentials: m.credentials ? m.credentials.filter((c) => !/^based in\b/i.test(c) || !INDIAN_PLACE.test(c)) : m.credentials,
   };
@@ -34,7 +42,7 @@ const FALLBACK_TEAM: TeamMember[] = [
     ],
     stats: [
       { value: "45", label: "Active clients" },
-      { value: "5+", label: "Years coaching" },
+      { value: "10+", label: "Years coaching" },
       { value: "10", label: "Countries reached" },
     ],
     color: "#FFDE02", initials: "G", photo_url: null, active: true,
