@@ -23,8 +23,8 @@ export default function Coach() {
           <div className="coach-frame" aria-hidden="true" />
           <div className="coach-img">
             <Image
-              src="/media/coach/guhay-016.webp"
-              alt="Guhayavarman, founder and head coach of CALIBRATE, in a black t-shirt with arms crossed"
+              src="/media/campaign/about-portrait.webp"
+              alt="Guhayavarman, founder and head coach of CALIBRATE, in a black t-shirt in warm window light"
               fill
               sizes="(max-width: 900px) 90vw, 520px"
               style={{ objectFit: "cover", objectPosition: "50% 20%" }}
@@ -32,7 +32,7 @@ export default function Coach() {
           </div>
           <div className="float-card coach-tag bob-2">
             <Image src="/media/brand/gvnfit-wordmark-white.png" alt="Guhayavarman Fitness" width={150} height={19} style={{ height: "auto" }} />
-            <p className="mono c-muted" style={{ marginTop: 8 }}>Chennai, Tamil Nadu</p>
+            <p className="mono c-muted" style={{ marginTop: 8 }}>Coaching clients worldwide</p>
           </div>
         </div>
 

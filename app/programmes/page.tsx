@@ -40,7 +40,7 @@ export default function ProgrammesPage() {
           visual={
             <figure className="pg-hero-visual">
               <div className="pg-hero-img">
-                <Image src="/media/life/me-chalk.webp" alt="Guhay chalking up before a heavy lift" fill preload sizes="(max-width: 900px) 90vw, 460px" style={{ objectFit: "cover" }} />
+                <Image src="/media/campaign/programmes-jump.webp" alt="Coach Guhayavarman mid jump in a dark studio" fill preload sizes="(max-width: 900px) 90vw, 460px" style={{ objectFit: "cover" }} />
               </div>
             </figure>
           }

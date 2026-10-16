@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import AppStoreBadge from "@/components/shared/AppStoreBadge";
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { Arrow, Device } from "./ui";
@@ -103,7 +104,8 @@ export default function AppSection() {
           ))}
         </div>
 
-        <div style={{ display: "flex", justifyContent: "center", marginTop: 48 }}>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 16, flexWrap: "wrap", marginTop: 48 }}>
+          <AppStoreBadge />
           <Link href="/features" className="btn-secondary">See everything inside Vemisis <Arrow /></Link>
         </div>
       </div>

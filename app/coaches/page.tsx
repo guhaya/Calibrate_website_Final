@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Coaching Team",
-  description: "Meet the CALIBRATE team, head coach Guhayavarman, certified trainers across Chennai, Bangalore, and Coimbatore, and on-call nutrition specialists. The people behind your protocol.",
+  description: "Meet the CALIBRATE team, head coach Guhayavarman, certified trainers and on-call nutrition specialists, coaching clients in 10 countries. The people behind your protocol.",
   alternates: { canonical: "/coaches" },
   openGraph: {
     ...ogBase,
@@ -57,7 +57,7 @@ function CoachAvatar({ member, glow }: { member: TeamMember; glow?: boolean }) {
   return <span className="co-av" style={style}>{member.initials || member.name.charAt(0)}</span>;
 }
 
-const locations = ["Chennai", "Bangalore", "Hyderabad", "Coimbatore"];
+const locations = ["New York", "London", "Dubai", "Singapore", "Sydney", "Tokyo", "Dublin", "Kuala Lumpur", "Durban"];
 
 const values = [
   {
@@ -85,7 +85,7 @@ const values = [
 export default async function AboutPage() {
   const members = await getTeamMembers();
   const headCoach = members.find((m) => m.category === "head_coach") ?? {
-    name: "Guhayavarman", handle: "@fitguhay", role: "Founder & Head Coach", location: "Chennai, TN",
+    name: "Guhayavarman", handle: "@fitguhay", role: "Founder & Head Coach", location: "Coaching worldwide",
     bio: [] as string[], credentials: [] as string[], stats: [] as { value: string; label: string }[],
     color: "#FFDE02", initials: "G",
   };
@@ -99,12 +99,12 @@ export default async function AboutPage() {
         <section className="co-open" aria-labelledby="co-title">
           <div className="co-open-media">
             <Image
-              src="/media/coach/guhay-090.webp"
+              src="/media/campaign/coach-gym-wide.webp"
               alt={`${headCoach.name}, ${headCoach.role ?? "Head Coach"}`}
               fill
               preload
               sizes="(max-width: 900px) 100vw, 62vw"
-              style={{ objectFit: "cover", objectPosition: "50% 30%" }}
+              style={{ objectFit: "cover", objectPosition: "75% 30%" }}
             />
             <div className="co-open-shade" aria-hidden="true" />
           </div>
@@ -123,7 +123,7 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        <section className="ps" aria-label="Where our coaches are based" style={{ padding: "26px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", background: "#08080A" }}>
+        <section className="ps" aria-label="Cities where CALIBRATE clients train" style={{ padding: "26px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", background: "#08080A" }}>
           <div className="mq" style={{ ["--mq-dur" as string]: "30s" }}>
             <div className="mq-track">
               {[...locations, ...locations, ...locations, ...locations].map((l, i) => (
