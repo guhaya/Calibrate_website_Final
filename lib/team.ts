@@ -27,9 +27,10 @@ function worldwide(m: TeamMember): TeamMember {
   return {
     ...m,
     stats,
-    ...(head ? { role: HEAD_COACH_ROLE, credentials: HEAD_COACH_CREDENTIALS } : {}),
     location: m.location && INDIAN_PLACE.test(m.location) ? fallback : m.location,
     credentials: m.credentials ? m.credentials.filter((c) => !/^based in\b/i.test(c) || !INDIAN_PLACE.test(c)) : m.credentials,
+    // Last, so the confirmed title and credentials win over the database row.
+    ...(head ? { role: HEAD_COACH_ROLE, credentials: HEAD_COACH_CREDENTIALS } : {}),
   };
 }
 
