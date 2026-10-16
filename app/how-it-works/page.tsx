@@ -130,7 +130,7 @@ export default function HowItWorksPage() {
             <figure className="panel hiw-quote rv">
               <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 34c0-10 5-17 14-20l2 4c-5 2-8 6-8 10h6v12H8V34zm20 0c0-10 5-17 14-20l2 4c-5 2-8 6-8 10h6v12H28V34z" fill="#FFDE02" /></svg>
               <blockquote className="display-md">Your body is a process. Processes can be <span className="c-accent">optimised.</span></blockquote>
-              <figcaption className="mono c-muted">Guhayavarman · Founder &amp; Head Coach, GVNFIT</figcaption>
+              <figcaption className="mono c-muted">Guhayavarman · Founder &amp; Chief Fitness Director, CALIBRATE</figcaption>
             </figure>
           </div>
           <style>{`.hiw-quote{padding:64px 56px;display:flex;flex-direction:column;gap:22px;align-items:flex-start;background:radial-gradient(80% 120% at 100% 0%,rgba(255,222,2,0.12),var(--surface-1) 60%)} @media(max-width:600px){.hiw-quote{padding:40px 26px}}`}</style>

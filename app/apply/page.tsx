@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     ...ogBase,
     url: `${SITE_URL}/apply`,
     title: "Apply | CALIBRATE",
-    description: "Start your application for CALIBRATE coaching. Reviewed by the head coach personally.",
+    description: "Start your application for CALIBRATE coaching. Reviewed personally by our Chief Fitness Director.",
   },
 };
 
