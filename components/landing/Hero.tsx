@@ -46,6 +46,14 @@ export default function Hero() {
           <Link href="/how-it-works" className="btn-secondary btn-primary-lg">See the method</Link>
         </div>
 
+        <p className="hero-proof rv" style={{ ["--d" as string]: "760ms" }}>
+          <span>NASM-certified coach</span>
+          <span className="hero-proof-dot" aria-hidden="true" />
+          <span>10+ years coaching</span>
+          <span className="hero-proof-dot" aria-hidden="true" />
+          <span>45 clients in 10 countries</span>
+        </p>
+
       </div>
 
       <div className="hero-stage" ref={stageRef}>
@@ -116,6 +124,8 @@ export default function Hero() {
         @keyframes sticker-in { from { opacity: 0; transform: rotate(-24deg) scale(0.4); } to { opacity: 1; transform: rotate(-6deg) scale(1); } }
         .hero-lead { max-width: 680px; margin-top: 30px; text-wrap: pretty; }
         .hero-ctas { display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; justify-content: center; }
+        .hero-proof { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 14px; margin-top: 22px; font-size: 13.5px; font-weight: 600; color: var(--text-secondary); }
+        .hero-proof-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
 
         .hero-stage { position: relative; height: 700px; max-width: 1320px; margin: 24px auto 0; }
         .hero-ribbon { position: absolute; left: -10%; right: -10%; width: 120%; top: 40px; height: 600px; z-index: 0; overflow: visible; }
