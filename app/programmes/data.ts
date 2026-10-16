@@ -2,6 +2,8 @@ export type Quality = { name: string; means: string; train: string };
 
 export type Pillar = {
   id: string;
+  img: string;
+  alt: string;
   number: string;
   name: string;
   line: string;
@@ -12,6 +14,8 @@ export type Pillar = {
 export const pillars: Pillar[] = [
   {
     id: "aesthetic",
+    img: "/media/campaign/goal-muscle-pushup.webp",
+    alt: "Coach Guhayavarman holding a low push-up",
     number: "01",
     name: "Aesthetic",
     line: "Change how your body looks, with a plan that protects muscle and makes the result last.",
@@ -30,6 +34,8 @@ export const pillars: Pillar[] = [
   },
   {
     id: "performance",
+    img: "/media/programmes/p04-hybrid-sled.webp",
+    alt: "Coach Guhayavarman driving a weighted sled",
     number: "02",
     name: "Performance",
     line: "Get measurably better at something: heavier, faster, longer, sharper.",
@@ -51,6 +57,8 @@ export const pillars: Pillar[] = [
   },
   {
     id: "health",
+    img: "/media/campaign/goal-fatloss-rooftop.webp",
+    alt: "Coach Guhayavarman on a rooftop at sunrise",
     number: "03",
     name: "Health",
     line: "Train for the numbers your doctor watches, and for the decades ahead.",
@@ -70,6 +78,8 @@ export const pillars: Pillar[] = [
   },
   {
     id: "movement",
+    img: "/media/programmes/p06-return-stepdown.webp",
+    alt: "Coach guiding a controlled single-leg step-down",
     number: "04",
     name: "Movement",
     line: "Move freely, stand taller and get back to doing things without pain.",
@@ -92,6 +102,8 @@ export const pillars: Pillar[] = [
   },
   {
     id: "lifestyle",
+    img: "/media/campaign/persona-founders-lounge.webp",
+    alt: "Coach Guhayavarman in a calm consultation room",
     number: "05",
     name: "Lifestyle & Mind",
     line: "Build the routine, energy and confidence that make every other goal stick.",
@@ -117,11 +129,15 @@ export type Track = {
   line: string;
   points: string[];
   note?: string;
+  img: string;
+  alt: string;
 };
 
 export const tracks: Track[] = [
   {
     id: "longevity",
+    img: "/media/programmes/p02-longevity-carry.webp",
+    alt: "Coach Guhayavarman walking beside a client during a kettlebell carry",
     name: "Longevity",
     kicker: "Healthspan, not just lifespan",
     line: "Training aimed at the capacities that keep you strong, mobile and independent for decades: aerobic fitness, muscle, power, balance and bone.",
@@ -134,6 +150,8 @@ export const tracks: Track[] = [
   },
   {
     id: "glp1",
+    img: "/media/programmes/p03-glp1-rdl.webp",
+    alt: "Coach Guhayavarman coaching a dumbbell Romanian deadlift",
     name: "GLP-1 Support",
     kicker: "For clients prescribed GLP-1 medication",
     line: "GLP-1 medication can drive fast weight loss. Our job is to make sure the weight you lose is fat, not the muscle and strength you need to keep it off.",
@@ -147,6 +165,8 @@ export const tracks: Track[] = [
   },
   {
     id: "hybrid",
+    img: "/media/programmes/p04-hybrid-sled.webp",
+    alt: "Coach Guhayavarman driving a weighted sled across turf",
     name: "Hybrid & Hyrox",
     kicker: "Strong and fit at the same time",
     line: "Strength and endurance programmed together, so neither one undermines the other. Ideal for Hyrox, running events or simply being capable at everything.",
@@ -159,6 +179,8 @@ export const tracks: Track[] = [
   },
   {
     id: "metabolic",
+    img: "/media/programmes/p05-metabolic-rower.webp",
+    alt: "Coach Guhayavarman checking a client's heart rate on the rowing machine",
     name: "Metabolic Health",
     kicker: "Training for your health markers",
     line: "Structured activity and nutrition to support healthier blood pressure, blood glucose and cholesterol markers, with progress tracked alongside your doctor.",
@@ -172,6 +194,8 @@ export const tracks: Track[] = [
   },
   {
     id: "return",
+    img: "/media/programmes/p06-return-stepdown.webp",
+    alt: "Coach Guhayavarman guiding a controlled single-leg step-down",
     name: "Return to Training",
     kicker: "After injury, surgery or pain",
     line: "A gradual, confidence-building path back to full training once your physiotherapist or doctor has cleared you to load again.",
@@ -182,6 +206,57 @@ export const tracks: Track[] = [
       "Coaching that fits around your physio plan, never against it",
     ],
     note: "We work alongside your physiotherapist. Rehabilitation itself stays with your clinician.",
+  },
+];
+
+export type Mode = "In person" | "Online";
+
+export type Adaptive = {
+  id: string;
+  name: string;
+  kicker: string;
+  modes: Mode[];
+  line: string;
+  points: string[];
+  note: string;
+  photos: { img: string; alt: string; caption: string }[];
+};
+
+export const adaptive: Adaptive[] = [
+  {
+    id: "autism",
+    name: "Kids with autism",
+    kicker: "Movement sessions for children",
+    modes: ["In person"],
+    line: "One-to-one, in-person sessions that build balance, coordination, strength and confidence through play, at your child's pace and in a calm, predictable setting.",
+    points: [
+      "One child, one coach, with the same routine every session",
+      "Play-based balance, coordination and motor-skill work",
+      "Clear visual cues, short steps and a sensory-aware approach",
+      "Parents involved in every session, with simple activities for home",
+    ],
+    note: "This is movement coaching, not therapy. We work alongside your child's therapists and doctors, and follow their guidance.",
+    photos: [
+      { img: "/media/programmes/p07-autism-kids-balance.webp", alt: "Coach Guhayavarman kneeling beside a smiling boy walking a low balance beam", caption: "In person" },
+    ],
+  },
+  {
+    id: "seniors",
+    name: "Senior citizens",
+    kicker: "Strength and balance for later life",
+    modes: ["Online", "In person"],
+    line: "Gentle, progressive training that keeps everyday life easy: getting up from a chair, climbing stairs, carrying shopping and staying steady on your feet.",
+    points: [
+      "Strength and balance work to support independence and help lower the risk of falls",
+      "Every session adapted to your joints, health conditions and energy on the day",
+      "Online: live, guided sessions at home over a video call",
+      "In person: hands-on coaching with support close by",
+    ],
+    note: "Please check with your doctor before starting. We work around existing conditions with their guidance.",
+    photos: [
+      { img: "/media/programmes/p08-seniors-inperson.webp", alt: "Coach Guhayavarman supporting a senior woman during a sit-to-stand with light dumbbells", caption: "In person" },
+      { img: "/media/programmes/p09-seniors-online.webp", alt: "Senior man doing a seated band row while Coach Guhayavarman demonstrates on a video call", caption: "Online" },
+    ],
   },
 ];
 
@@ -200,7 +275,15 @@ export const faqs = [
   },
   {
     q: "Do specialist tracks cost extra?",
-    a: "No. Every goal and specialist track is delivered within the standard CALIBRATE Monthly and Quarterly plans. Your programme is simply written for the outcome you're chasing.",
+    a: "No. Every goal and specialist track is delivered within the standard CALIBRATE Monthly and Quarterly plans. Your programme is simply written for the outcome you're chasing. Sessions for kids with autism and in-person senior sessions are arranged separately, so we'll go through them on your free call.",
+  },
+  {
+    q: "How do sessions for kids with autism work?",
+    a: "They are one-to-one and in person. Each session follows the same predictable routine and uses play to build balance, coordination and strength. A parent stays involved throughout, and we work alongside your child's therapists rather than replacing them.",
+  },
+  {
+    q: "Can senior citizens train online?",
+    a: "Yes. Seniors can train online with live, guided sessions at home over a video call, or in person. Every session is adapted to joints, health conditions and how you feel that day, and we ask that your doctor is aware before you start.",
   },
   {
     q: "I'm a beginner or have little equipment. Is that a problem?",
