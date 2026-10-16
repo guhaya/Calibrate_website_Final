@@ -70,9 +70,9 @@ export default function Hero() {
         <motion.div className="hero-coach" style={{ y: yCoach }}>
           <div className="hero-coach-in">
           <Image
-            src="/media/coach/cut-040.webp"
+            src="/media/campaign/hero-coach-cutout.webp"
             alt="Guhayavarman, founder and head coach of CALIBRATE"
-            width={760}
+            width={804}
             height={1400}
             preload
             sizes="(max-width: 768px) 80vw, 520px"
