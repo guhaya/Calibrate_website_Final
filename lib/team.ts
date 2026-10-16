@@ -6,18 +6,28 @@ import type { TeamMember } from "@/lib/supabase";
 // and credential lines that only state a city are dropped.
 const INDIAN_PLACE = /\b(chennai|bangalore|bengaluru|mumbai|coimbatore|hyderabad|delhi|pune|kochi|madurai|tamil nadu|karnataka|kerala|maharashtra|india)\b/i;
 
-// Guhayavarman has 10+ years of coaching experience (confirmed by him,
-// Oct 2026); older team_members rows still say 5+.
+// Guhayavarman's title, credentials and experience as confirmed by him
+// (Oct 2026). Older team_members rows still say "Founder & Head Coach",
+// list outdated credentials and 5+ years, so these always win.
 const HEAD_COACH_YEARS = "10+";
+const HEAD_COACH_ROLE = "Founder & Chief Fitness Director";
+const HEAD_COACH_CREDENTIALS = [
+  "NASM Certified Personal Trainer (CPT)",
+  "ISSA Certified Nutritionist",
+  "Diploma in Fitness Science and Sports Nutrition",
+  "Corrective Exercise Specialist",
+];
 
 function worldwide(m: TeamMember): TeamMember {
   const fallback = m.category === "head_coach" ? "Coaching clients worldwide" : "Online coaching";
   const stats = m.category === "head_coach" && m.stats
     ? m.stats.map((st) => (/year/i.test(st.label) ? { ...st, value: HEAD_COACH_YEARS } : st))
     : m.stats;
+  const head = m.category === "head_coach";
   return {
     ...m,
     stats,
+    ...(head ? { role: HEAD_COACH_ROLE, credentials: HEAD_COACH_CREDENTIALS } : {}),
     location: m.location && INDIAN_PLACE.test(m.location) ? fallback : m.location,
     credentials: m.credentials ? m.credentials.filter((c) => !/^based in\b/i.test(c) || !INDIAN_PLACE.test(c)) : m.credentials,
   };
@@ -28,17 +38,14 @@ function worldwide(m: TeamMember): TeamMember {
 const FALLBACK_TEAM: TeamMember[] = [
   {
     id: "fallback-guhay", category: "head_coach", order_index: 0, name: "Guhayavarman", handle: "@fitguhay",
-    role: "Founder & Head Coach", location: "Coaching clients worldwide", experience: null, specialisation: null,
+    role: HEAD_COACH_ROLE, location: "Coaching clients worldwide", experience: null, specialisation: null,
     credentials_line: null, description: null,
     bio: [
       "I started CALIBRATE because I kept seeing the same pattern: smart, motivated people failing to reach their goals, not from lack of effort, but from lack of the right system. Engineers, founders, product managers putting in the work but getting nowhere.",
       "The fitness industry profits from confusion. CALIBRATE is built on the opposite principle, the same data-driven frameworks used in precision engineering, applied to body optimisation. Your body is a process. Processes can be optimised.",
     ],
     credentials: [
-      "Level 4 Personal Training Certification",
-      "Sports Nutrition Specialist",
-      "DMAIC-certified performance protocol",
-      "Competitive athlete background",
+      ...HEAD_COACH_CREDENTIALS,
     ],
     stats: [
       { value: "45", label: "Active clients" },

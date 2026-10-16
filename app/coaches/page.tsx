@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Coaching Team",
-  description: "Meet the CALIBRATE team, head coach Guhayavarman, certified trainers and on-call nutrition specialists, coaching clients in 10 countries. The people behind your protocol.",
+  description: "Meet the CALIBRATE team, Founder and Chief Fitness Director Guhayavarman, certified trainers and on-call nutrition specialists, coaching clients in 10 countries. The people behind your protocol.",
   alternates: { canonical: "/coaches" },
   openGraph: {
     ...ogBase,
     url: `${SITE_URL}/coaches`,
     title: "Coaching Team | CALIBRATE by GVNFIT",
-    description: "Guhayavarman and the full CALIBRATE coaching team. Certified trainers, nutrition specialists, and a head coach who reviews every application personally.",
+    description: "Guhayavarman and the full CALIBRATE coaching team. Certified trainers, nutrition specialists, and a Chief Fitness Director who reviews every application personally.",
   },
 };
 
@@ -85,7 +85,7 @@ const values = [
 export default async function AboutPage() {
   const members = await getTeamMembers();
   const headCoach = members.find((m) => m.category === "head_coach") ?? {
-    name: "Guhayavarman", handle: "@fitguhay", role: "Founder & Head Coach", location: "Coaching worldwide",
+    name: "Guhayavarman", handle: "@fitguhay", role: "Founder & Chief Fitness Director", location: "Coaching worldwide",
     bio: [] as string[], credentials: [] as string[], stats: [] as { value: string; label: string }[],
     color: "#FFDE02", initials: "G",
   };
@@ -100,7 +100,7 @@ export default async function AboutPage() {
           <div className="co-open-media">
             <Image
               src="/media/campaign/coach-gym-wide.webp"
-              alt={`${headCoach.name}, ${headCoach.role ?? "Head Coach"}`}
+              alt={`${headCoach.name}, ${headCoach.role ?? "Chief Fitness Director"}`}
               fill
               preload
               sizes="(max-width: 900px) 100vw, 62vw"
@@ -110,10 +110,10 @@ export default async function AboutPage() {
           </div>
           <div className="wrap co-open-inner">
             <div className="co-open-copy">
-              <p className="mono c-accent">{[headCoach.name, headCoach.role ?? "Founder & Head Coach"].join(" · ")}</p>
+              <p className="mono c-accent">{[headCoach.name, headCoach.role ?? "Founder & Chief Fitness Director"].join(" · ")}</p>
               <h1 id="co-title" className="co-title">The people behind your protocol.</h1>
               <p className="co-lead">
-                A head coach who reviews every application personally, certified trainers across India and on-call specialists for clinical-level nutrition. One team, one method.
+                A Chief Fitness Director who reviews every application personally, certified trainers across India and on-call specialists for clinical-level nutrition. One team, one method.
               </p>
               <div className="co-open-ctas">
                 <Link href="/book" className="btn-primary btn-primary-lg">Book your free call <Arrow /></Link>
@@ -140,7 +140,7 @@ export default async function AboutPage() {
         <section className="sec" aria-labelledby="co-head-name">
           <div className="wrap co-head">
             <div className="co-head-id">
-              <span className="tag rv">{headCoach.role ?? "Founder & Head Coach"}</span>
+              <span className="tag rv">{headCoach.role ?? "Founder & Chief Fitness Director"}</span>
               <h2 id="co-head-name" className="display-md co-head-name rv" style={{ ["--d" as string]: "80ms" }}>{headCoach.name}</h2>
               <p className="mono c-muted rv" style={{ ["--d" as string]: "120ms" }}>
                 {[headCoach.handle, headCoach.location].filter(Boolean).join(" · ")}

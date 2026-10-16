@@ -71,7 +71,7 @@ export default function Hero() {
           <div className="hero-coach-in">
           <Image
             src="/media/campaign/hero-coach-cutout.webp"
-            alt="Guhayavarman, founder and head coach of CALIBRATE"
+            alt="Guhayavarman, founder and Chief Fitness Director of CALIBRATE"
             width={804}
             height={1400}
             preload

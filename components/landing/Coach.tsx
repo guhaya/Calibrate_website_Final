@@ -3,10 +3,10 @@ import Link from "next/link";
 import { Arrow, Check, CountUp } from "./ui";
 
 const creds = [
-  "Level 4 Personal Training Certification",
-  "Sports Nutrition Specialist",
-  "DMAIC-certified performance protocol",
-  "Competitive athlete background",
+  "NASM Certified Personal Trainer (CPT)",
+  "ISSA Certified Nutritionist",
+  "Diploma in Fitness Science and Sports Nutrition",
+  "Corrective Exercise Specialist",
 ];
 
 const stats = [
@@ -24,7 +24,7 @@ export default function Coach() {
           <div className="coach-img">
             <Image
               src="/media/campaign/about-portrait.webp"
-              alt="Guhayavarman, founder and head coach of CALIBRATE, in a black t-shirt in warm window light"
+              alt="Guhayavarman, founder and Chief Fitness Director of CALIBRATE, in a black t-shirt in warm window light"
               fill
               sizes="(max-width: 900px) 90vw, 520px"
               style={{ objectFit: "cover", objectPosition: "50% 20%" }}
@@ -50,7 +50,7 @@ export default function Coach() {
             data-driven frameworks used in precision engineering, applied to your body.
           </p>
           <p className="coach-sign rv" style={{ ["--d" as string]: "240ms" }}>
-            Guhayavarman <span className="c-muted">· Founder &amp; Head Coach, GVNFIT</span>
+            Guhayavarman <span className="c-muted">· Founder &amp; Chief Fitness Director, CALIBRATE</span>
           </p>
 
           <ul className="coach-creds rv" style={{ ["--d" as string]: "280ms" }}>

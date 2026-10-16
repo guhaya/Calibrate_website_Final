@@ -122,7 +122,7 @@ export default function RootLayout({
                 employee: {
                   "@type": "Person",
                   name: "Guhayavarman",
-                  jobTitle: "Founder & Head Coach",
+                  jobTitle: "Founder & Chief Fitness Director",
                   url: "https://calibrate.gvnfit.online/coaches",
                 },
               },
