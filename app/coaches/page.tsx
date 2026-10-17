@@ -175,7 +175,7 @@ export default async function AboutPage() {
           <section className="sec-tight">
             <div className="wrap">
               <div className="sec-head">
-                <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Trainers on the gym floor.</h2>
+                <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>The trainers you&apos;ll work with.</h2>
               </div>
               <div className="co-grid">
                 {trainers.map((t, i) => (
