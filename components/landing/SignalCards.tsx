@@ -78,7 +78,10 @@ export default function SignalCards() {
       <style>{`
         .sig-head { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 24px 64px; align-items: end; margin-bottom: 56px; }
         .sig-head .lead { max-width: 520px; }
-        .sig-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+        .sig-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+        /* Staggered, not three identical tiles in a row. */
+        .sig-card:nth-child(2) { margin-top: 56px; }
+        .sig-card:nth-child(3) { margin-top: 112px; }
         .sig-card {
           position: relative; display: flex; flex-direction: column; min-height: 640px; padding: 32px 30px 0;
           border-radius: 32px; overflow: visible; isolation: isolate;
@@ -111,6 +114,7 @@ export default function SignalCards() {
 
         @media (max-width: 1000px) {
           .sig-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+          .sig-card:nth-child(2), .sig-card:nth-child(3) { margin-top: 0; }
           .sig-card { min-height: 0; }
           .sig-chip { left: 12px; }
         }

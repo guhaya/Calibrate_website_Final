@@ -68,7 +68,6 @@ const channels: Channel[] = [
 function RowInner({ c }: { c: Channel }) {
   return (
     <>
-      <span className="mono c-muted ct-n">{c.n}</span>
       <span className="ct-ch">{c.channel}</span>
       <span className="ct-detail">{c.detail}</span>
       <span className="ct-expect">{c.expect}</span>
@@ -264,7 +263,7 @@ export default function ContactClient() {
         .ct-rows { list-style: none; border-top: 1px solid var(--line-strong); }
         .ct-rows li { border-bottom: 1px solid var(--line-strong); }
         .ct-row {
-          display: grid; grid-template-columns: 56px minmax(0, 1.1fr) minmax(0, 1.2fr) minmax(0, 0.9fr) 44px;
+          display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr) minmax(0, 0.9fr) 44px;
           align-items: center; gap: 24px; min-height: 104px; padding: 20px 8px;
           color: #fff; text-decoration: none; border-radius: 14px;
           transition: background 0.3s ease;
@@ -332,7 +331,6 @@ export default function ContactClient() {
           .ct-open { padding: 128px 0 56px; }
           .ct-head { margin-bottom: 40px; }
           .ct-row { grid-template-columns: minmax(0, 1fr) 44px; grid-template-areas: "ch ar" "detail ar" "expect ar"; gap: 6px 16px; padding: 22px 4px; min-height: 0; }
-          .ct-n { display: none; }
           .ct-ch { grid-area: ch; margin-bottom: 6px; }
           .ct-detail { grid-area: detail; font-size: 16px; }
           .ct-expect { grid-area: expect; }

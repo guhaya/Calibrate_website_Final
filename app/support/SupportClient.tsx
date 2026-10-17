@@ -103,10 +103,9 @@ export default function SupportClient() {
         {/* Ways to get help */}
         <section className="sp-help">
           <div className="wrap">
-            <ol className="sp-rows">
+            <ul className="sp-rows">
               {helpOptions.map((o, i) => (
                 <li key={o.n} className="sp-row rv" style={{ ["--d" as string]: `${i * 80}ms` }}>
-                  <span className="mono c-accent sp-n">{o.n}</span>
                   <h2 className="display-sm sp-title">{o.title}</h2>
                   <p className="body-sm sp-desc">{o.description}</p>
                   <a href={o.href} className="arrow-link sp-cta">
@@ -115,7 +114,7 @@ export default function SupportClient() {
                   </a>
                 </li>
               ))}
-            </ol>
+            </ul>
           </div>
         </section>
 
@@ -185,7 +184,7 @@ export default function SupportClient() {
         .sp-help { padding: 8px 0 96px; }
         .sp-rows { list-style: none; border-top: 1px solid var(--line-strong); max-width: 1040px; margin: 0 auto; }
         .sp-row {
-          display: grid; grid-template-columns: 64px minmax(0, 0.9fr) minmax(0, 1.2fr) auto;
+          display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr) auto;
           align-items: center; gap: 28px; padding: 30px 4px; border-bottom: 1px solid var(--line-strong);
         }
         .sp-title { font-size: clamp(26px, 2.4vw, 34px); }
@@ -224,9 +223,8 @@ export default function SupportClient() {
 
         @media (max-width: 900px) {
           .sp-help { padding-bottom: 64px; }
-          .sp-row { grid-template-columns: 40px minmax(0, 1fr); gap: 8px 16px; padding: 24px 0; align-items: start; }
-          .sp-n { padding-top: 8px; }
-          .sp-desc, .sp-cta { grid-column: 2; }
+          .sp-row { grid-template-columns: minmax(0, 1fr); gap: 8px 16px; padding: 24px 0; align-items: start; }
+          .sp-desc, .sp-cta { grid-column: 1; }
           .sp-cta { justify-self: start; }
           .sp-book-grid { grid-template-columns: 1fr; gap: 40px; }
           .sp-book-card { padding: 28px 20px; }

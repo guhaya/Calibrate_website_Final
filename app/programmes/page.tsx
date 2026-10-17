@@ -96,7 +96,6 @@ export default function ProgrammesPage() {
                     ) : (
                       <Image src={t.img} alt={t.alt} fill sizes="(max-width: 860px) 92vw, 460px" style={{ objectFit: "cover", objectPosition: "50% 22%" }} />
                     )}
-                    <span className="pg-row-num mono" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
                   </div>
                   <div className="pg-row-body">
                     <div className="pg-modes"><ModeBadge mode="Online" /></div>
@@ -274,7 +273,6 @@ export default function ProgrammesPage() {
         }
         .pg-row-fig > .jf { height: 520px; }
         .pg-row-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(5,5,6,0.35)); pointer-events: none; }
-        .pg-row-num { position: absolute; left: 20px; bottom: 18px; z-index: 1; font-size: 13px; letter-spacing: 0.14em; color: #fff; background: rgba(5,5,6,0.55); padding: 6px 10px; border-radius: 8px; backdrop-filter: blur(6px); }
         .pg-row-body { padding: 44px 48px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
         .pg-track-name { font-family: var(--font-display); font-weight: 400; font-size: clamp(36px, 3.4vw, 54px); line-height: 0.95; text-transform: uppercase; }
         .pg-points { list-style: none; display: grid; gap: 10px; margin-top: 4px; }
