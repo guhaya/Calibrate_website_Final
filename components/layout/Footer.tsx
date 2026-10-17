@@ -6,22 +6,19 @@ import FooterWord from "./FooterWord";
 
 const footerLinks: Record<string, { label: string; href: string }[]> = {
   Coaching: [
-    { label: "The CALIBRATE Method", href: "/how-it-works" },
+    { label: "The CALIBRATE method", href: "/how-it-works" },
     { label: "Programmes", href: "/programmes" },
-    { label: "Vemisis App", href: "/features" },
-    { label: "Your Experience", href: "/clients" },
+    { label: "Vemisis app", href: "/features" },
+    { label: "Your first 12 weeks", href: "/clients" },
+    { label: "Coaches", href: "/coaches" },
     { label: "Pricing", href: "/pricing" },
-    { label: "Apply", href: "/apply" },
-  ],
-  Company: [
-    { label: "Meet the Coaches", href: "/coaches" },
     { label: "Blog", href: "/blog" },
-    { label: "Book your free call", href: "/book" },
   ],
-  Support: [
+  "Get in touch": [
+    { label: "Book your free call", href: "/book" },
+    { label: "Apply", href: "/apply" },
     { label: "Contact", href: "/contact" },
-    { label: "Help Centre", href: "/support" },
-    { label: "FAQ", href: "/contact#faq" },
+    { label: "Help centre", href: "/support" },
     { label: "Admin@gvnfit.online", href: "mailto:Admin@gvnfit.online" },
   ],
 };
@@ -43,25 +40,16 @@ export default function Footer() {
               CALIBRATE is the precision coaching methodology of GVNFIT (Guhayavarman Fitness). Data-driven body
               recomposition, built around your real schedule and delivered day to day through the Vemisis app.
             </p>
-            <div className="ft-status">
-              <span className="status-dot" />
-              <span>Currently accepting new clients</span>
-            </div>
-
+            <p className="ft-note">Taking new clients now. Vemisis, the training app, is included with every plan.</p>
             <div className="ft-app">
-              <Image src="/media/brand/vemisis-app-icon.png" alt="Vemisis app icon" width={52} height={52} className="ft-app-icon" />
-              <div>
-                <p className="mono c-accent" style={{ marginBottom: 4 }}>The training app</p>
-                <p style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>Vemisis, included with every plan</p>
-                <p style={{ fontSize: 12.5, color: "var(--text-muted)" }}>Built for iPhone and Android</p>
-                <div style={{ marginTop: 12 }}><AppStoreBadge size="sm" /></div>
-              </div>
+              <Image src="/media/brand/vemisis-app-icon.png" alt="Vemisis app icon" width={40} height={40} className="ft-app-icon" />
+              <AppStoreBadge size="sm" />
             </div>
           </div>
 
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category} className="ft-col">
-              <p className="mono" style={{ color: "#fff", marginBottom: 20 }}>{category}</p>
+              <p className="ft-cat">{category}</p>
               <ul>
                 {links.map((link) => (
                   <li key={link.href}>
@@ -108,16 +96,12 @@ export default function Footer() {
           background: radial-gradient(closest-side, rgba(255,222,2,0.10), transparent);
           pointer-events: none;
         }
-        .ft-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; position: relative; }
-        .ft-status { margin-top: 22px; display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); }
-        .ft-app {
-          margin-top: 28px; display: flex; align-items: center; gap: 14px;
-          padding: 14px 18px 14px 14px; border-radius: 20px;
-          background: var(--surface-1); border: 1px solid var(--line);
-          max-width: 360px;
-        }
-        .ft-app-icon { border-radius: 14px; flex-shrink: 0; }
-        .ft-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .ft-top { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) minmax(0, 1fr); gap: 48px 64px; position: relative; }
+        .ft-note { margin-top: 14px; font-size: 14px; line-height: 1.6; color: var(--text-secondary); max-width: 340px; }
+        .ft-app { margin-top: 22px; display: flex; align-items: center; gap: 12px; }
+        .ft-app-icon { border-radius: 11px; flex-shrink: 0; }
+        .ft-cat { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 18px; }
+        .ft-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
         .ft-link { display: inline-block; padding: 4px 0; min-height: 24px; color: var(--text-muted); font-size: 14.5px; text-decoration: none; transition: color 0.2s ease; }
         .ft-link:hover { color: var(--accent); }
         .ft-bottom {

@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import type React from "react";
 import { Arrow } from "./ui";
 
@@ -40,77 +37,45 @@ const DEFAULT_FAQS = [
 export type FaqItem = { q: string; a: string };
 
 export default function Faq({ items = DEFAULT_FAQS, title }: { items?: FaqItem[]; title?: React.ReactNode }) {
-  const faqs = items;
-  const [open, setOpen] = useState<number | null>(0);
-
+  // An open question-and-answer list, not an accordion: every answer is
+  // readable at a glance (and by search engines), set in two columns.
   return (
     <section className="sec faq" id="faq">
-      <div className="wrap faq-grid">
-        <div className="faq-side">
-          <h2 className="display-lg rv">
-            {title ?? <>What people ask before booking.</>}
-          </h2>
-          <div className="card faq-help rv" style={{ ["--d" as string]: "160ms" }}>
-            <Image src="/media/coach/guhay-028.webp" alt="Coach Guhayavarman" width={64} height={64} className="faq-av" />
-            <p className="display-sm" style={{ fontSize: 26 }}>Still have questions?</p>
-            <p className="body-sm">Can&apos;t find what you&apos;re looking for? Message us and you&apos;ll hear back from a real coach.</p>
-            <Link href="/contact" className="btn-secondary" style={{ marginTop: 6 }}>Message us <Arrow /></Link>
-          </div>
+      <div className="wrap">
+        <div className="faq-head">
+          <h2 className="display-lg rv">{title ?? <>What people ask before booking.</>}</h2>
+          <p className="faq-more rv" style={{ ["--d" as string]: "100ms" }}>
+            <Image src="/media/coach/guhay-028.webp" alt="" width={44} height={44} className="faq-av" />
+            <span>
+              Something else on your mind?{" "}
+              <Link href="/contact" className="faq-link">Message a coach <Arrow size={12} /></Link>
+            </span>
+          </p>
         </div>
 
-        <div className="faq-list">
-          {faqs.map((f, i) => {
-            const isOpen = open === i;
-            return (
-              <div key={f.q} className="rv" style={{ ["--d" as string]: `${i * 50}ms` }}>
-              <div className={`faq-item ${isOpen ? "is-open" : ""}`}>
-                <button
-                  className="faq-q"
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  aria-expanded={isOpen}
-                  aria-controls={`faq-a-${i}`}
-                  id={`faq-q-${i}`}
-                >
-                  <span>{f.q}</span>
-                  <span className="faq-ico" aria-hidden="true"><span /><span /></span>
-                </button>
-                <div className="faq-a" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
-                  <div><p>{f.a}</p></div>
-                </div>
-              </div>
-              </div>
-            );
-          })}
-        </div>
+        <dl className="faq-list">
+          {items.map((f, i) => (
+            <div key={f.q} className="faq-item rv" style={{ ["--d" as string]: `${(i % 2) * 60}ms` }}>
+              <dt className="faq-q">{f.q}</dt>
+              <dd className="faq-a">{f.a}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
 
       <style>{`
-        .faq-grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 72px; align-items: start; }
-        .faq-side { position: sticky; top: 120px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
-        .faq-help { padding: 28px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; margin-top: 16px; max-width: 400px; }
-        .faq-av { border-radius: 50%; object-fit: cover; object-position: 50% 18%; width: 64px; height: 64px; border: 2px solid var(--accent); }
-        .faq-list { display: flex; flex-direction: column; gap: 12px; }
-        .faq-item { border-radius: 22px; background: var(--surface-1); border: 1px solid var(--line); transition: border-color 0.3s ease, background 0.3s ease; }
-        .faq-item.is-open { border-color: rgba(255,222,2,0.35); background: #111114; }
-        .faq-q {
-          width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 18px;
-          padding: 22px 24px; background: none; border: none; cursor: pointer; text-align: left;
-          font-family: var(--font-body); font-size: 16.5px; font-weight: 700; color: #fff; line-height: 1.4;
-        }
-        .faq-ico { position: relative; width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0; background: rgba(255,255,255,0.06); transition: background 0.3s ease, transform 0.4s var(--ease-out); }
-        .faq-ico span { position: absolute; left: 11px; right: 11px; top: 16px; height: 2px; border-radius: 2px; background: #fff; transition: transform 0.4s var(--ease-out), background 0.3s; }
-        .faq-ico span:last-child { transform: rotate(90deg); }
-        .faq-item.is-open .faq-ico { background: var(--accent); transform: rotate(180deg); }
-        .faq-item.is-open .faq-ico span { background: #050506; }
-        .faq-item.is-open .faq-ico span:last-child { transform: rotate(0deg); }
-        .faq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s var(--ease-out); }
-        .faq-a > div { overflow: hidden; }
-        .faq-item.is-open .faq-a { grid-template-rows: 1fr; }
-        .faq-a p { padding: 0 24px 24px; font-size: 15px; line-height: 1.7; color: var(--text-secondary); max-width: 640px; }
-        @media (max-width: 900px) {
-          .faq-grid { grid-template-columns: 1fr; gap: 40px; }
-          .faq-side { position: static; }
-          .faq-help { display: none; }
+        .faq-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 48px; margin-bottom: 48px; }
+        .faq-head h2 { max-width: 14ch; text-wrap: balance; }
+        .faq-more { display: flex; align-items: center; gap: 14px; font-size: 15px; color: var(--text-secondary); }
+        .faq-av { border-radius: 14px; object-fit: cover; object-position: 50% 18%; width: 44px; height: 44px; flex: none; }
+        .faq-link { color: var(--accent); font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
+        .faq-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+        .faq-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 64px; border-top: 1px solid var(--border-strong); }
+        .faq-item { padding: 26px 0 28px; border-bottom: 1px solid var(--border); }
+        .faq-q { font-size: 17px; font-weight: 700; color: #fff; line-height: 1.4; text-wrap: balance; }
+        .faq-a { margin: 10px 0 0; font-size: 15px; line-height: 1.7; color: var(--text-secondary); max-width: 60ch; }
+        @media (max-width: 860px) {
+          .faq-list { grid-template-columns: 1fr; }
         }
       `}</style>
     </section>
