@@ -78,7 +78,7 @@ export default function Navigation() {
     <>
       <header className={`nv ${scrolled ? "nv-scrolled" : ""} ${hidden && !menuOpen ? "nv-hidden" : ""}`}>
         <div className="nv-inner">
-          <Link href="/" aria-label="CALIBRATE by GVNFIT home" className="nv-logo">
+          <Link href="/" className="nv-logo">
             <Logo size={34} />
           </Link>
 
