@@ -83,17 +83,17 @@ export default function Hero() {
             width={804}
             height={1400}
             preload
-            sizes="(max-width: 768px) 80vw, 520px"
+            sizes="(max-width: 480px) 280px, (max-width: 860px) 330px, 470px"
             style={{ width: "100%", height: "auto" }}
           />
           </div>
         </motion.div>
 
         <motion.div className="hero-phone hero-phone-l" style={{ y: yLeft, rotate: -7 }}>
-          <Device src="/media/app/home.webp" alt="Vemisis app home screen showing today's session and daily logs" width="100%" preload sizes="260px" />
+          <Device src="/media/app/home.webp" alt="Vemisis app home screen showing today's session and daily logs" width="100%" preload sizes="(max-width: 480px) 118px, (max-width: 860px) 150px, 228px" />
         </motion.div>
         <motion.div className="hero-phone hero-phone-r" style={{ y: yRight, rotate: 7 }}>
-          <Device src="/media/app/insights.webp" alt="Vemisis Insights screen with an overall score of 62" width="100%" sizes="260px" />
+          <Device src="/media/app/insights.webp" alt="Vemisis Insights screen with an overall score of 62" width="100%" sizes="(max-width: 480px) 118px, (max-width: 860px) 150px, 228px" />
         </motion.div>
 
         <div className="hero-fade" aria-hidden="true" />

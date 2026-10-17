@@ -16,6 +16,7 @@ import SignalCards from "@/components/landing/SignalCards";
 import TrustPanel from "@/components/landing/TrustPanel";
 import LabsOrbit from "@/components/landing/LabsOrbit";
 import Reviews from "@/components/landing/Reviews";
+import WhoItsFor from "@/components/landing/WhoItsFor";
 import AppQrCard from "@/components/shared/AppQrCard";
 import type { Metadata } from "next";
 
@@ -38,6 +39,7 @@ export default function HomePage() {
         <AppSection />
         <TrustPanel />
         <Goals />
+        <WhoItsFor />
         <Results />
         <Reviews />
         <Pricing />

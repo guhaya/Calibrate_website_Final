@@ -9,7 +9,7 @@ export default function AppStoreBadge({ size = "md" }: { size?: "sm" | "md" }) {
       target="_blank"
       rel="noopener noreferrer"
       className="asb"
-      aria-label="Download Vemisis on the App Store"
+      aria-label="Download on the App Store: Vemisis for iPhone"
       style={{
         display: "inline-flex", alignItems: "center", gap: sm ? 8 : 10,
         padding: sm ? "7px 14px 7px 11px" : "10px 20px 10px 16px",
