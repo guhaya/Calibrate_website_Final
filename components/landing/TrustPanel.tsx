@@ -9,28 +9,69 @@ const points = [
   { Icon: Trash2, text: "Delete your account and data from the app's Profile screen." },
 ];
 
+// Combination-safe dial: brushed-steel bezel, rubber ring, numbered face and knob.
+// The face and knob turn together like someone dialling a combination.
+const TICKS = Array.from({ length: 100 }, (_, i) => i);
+function SafeDial() {
+  return (
+    <div className="trust-lock" aria-hidden="true">
+      <div className="sd-bezel">
+        <div className="sd-rubber">
+          <div className="sd-turn">
+            <svg className="sd-face" viewBox="0 0 200 200">
+              <defs>
+                <radialGradient id="sd-face-g" cx="50%" cy="38%" r="65%">
+                  <stop offset="0%" stopColor="#3A3C42" />
+                  <stop offset="100%" stopColor="#1B1C20" />
+                </radialGradient>
+              </defs>
+              <circle cx="100" cy="100" r="100" fill="url(#sd-face-g)" />
+              {TICKS.map((i) => {
+                const major = i % 10 === 0;
+                const mid = i % 5 === 0;
+                const len = major ? 13 : mid ? 9 : 6;
+                return (
+                  <line
+                    key={i}
+                    x1="100" y1="5" x2="100" y2={5 + len}
+                    stroke={major ? "#F2F2F4" : "rgba(242,242,244,0.55)"}
+                    strokeWidth={major ? 1.8 : 1}
+                    transform={`rotate(${i * 3.6} 100 100)`}
+                  />
+                );
+              })}
+              {TICKS.filter((i) => i % 10 === 0).map((i) => (
+                <text
+                  key={i}
+                  x="100" y="35"
+                  textAnchor="middle"
+                  fontSize="11.5"
+                  fontWeight="600"
+                  fill="#F2F2F4"
+                  fontFamily="'JetBrains Mono', ui-monospace, monospace"
+                  transform={`rotate(${i * 3.6} 100 100)`}
+                >
+                  {i}
+                </text>
+              ))}
+            </svg>
+            <div className="sd-accent">
+              <div className="sd-knob" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <span className="sd-index" />
+    </div>
+  );
+}
+
 export default function TrustPanel() {
   return (
     <section className="sec-tight trust" aria-labelledby="trust-title">
       <div className="wrap-wide">
         <div className="trust-panel rv rv-scale">
-          <svg className="trust-lock" viewBox="0 0 200 240" aria-hidden="true">
-            <defs>
-              <linearGradient id="tl-body" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="rgba(255,255,255,0.16)" />
-                <stop offset="100%" stopColor="rgba(255,255,255,0.03)" />
-              </linearGradient>
-              <linearGradient id="tl-edge" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="rgba(255,255,255,0.55)" />
-                <stop offset="60%" stopColor="rgba(255,255,255,0.08)" />
-                <stop offset="100%" stopColor="rgba(255,222,2,0.4)" />
-              </linearGradient>
-            </defs>
-            <path d="M54 104 V72 a46 46 0 0 1 92 0 V104" fill="none" stroke="url(#tl-edge)" strokeWidth="16" strokeLinecap="round" />
-            <rect x="22" y="100" width="156" height="128" rx="30" fill="url(#tl-body)" stroke="url(#tl-edge)" strokeWidth="2" />
-            <circle cx="100" cy="156" r="14" fill="rgba(255,222,2,0.85)" />
-            <rect x="94" y="164" width="12" height="30" rx="6" fill="rgba(255,222,2,0.85)" />
-          </svg>
+          <SafeDial />
 
           <div className="trust-copy">
             <p className="mono c-accent">Built for privacy</p>
@@ -59,7 +100,52 @@ export default function TrustPanel() {
             linear-gradient(160deg, #141418 0%, #08080A 100%);
           border: 1px solid rgba(255,255,255,0.08);
         }
-        .trust-lock { width: 100%; max-width: 300px; justify-self: center; filter: drop-shadow(0 40px 60px rgba(0,0,0,0.6)); }
+        .trust-lock { position: relative; width: 100%; max-width: 320px; aspect-ratio: 1; justify-self: center; container-type: inline-size; }
+        .sd-bezel {
+          position: absolute; inset: 0; border-radius: 50%; padding: 6.5cqi;
+          background:
+            radial-gradient(circle at 50% 50%, transparent 62%, rgba(0,0,0,0.35) 70%, transparent 71%),
+            conic-gradient(from 210deg, #6C6F76, #C9CCD2, #5A5D63, #2A2C31, #8E9198, #D4D7DC, #4C4F55, #2A2C31, #6C6F76);
+          box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.45),
+            inset 0 -2px 4px rgba(0,0,0,0.6),
+            0 0 0 1px rgba(0,0,0,0.6),
+            0 40px 70px -20px rgba(0,0,0,0.85),
+            0 0 90px -10px rgba(255,222,2,0.12);
+        }
+        .sd-rubber {
+          width: 100%; height: 100%; border-radius: 50%; padding: 3.5cqi;
+          background: radial-gradient(circle, #1A1B1F 60%, #0B0B0D 100%);
+          box-shadow: inset 0 3px 8px rgba(0,0,0,0.9), inset 0 -1px 0 rgba(255,255,255,0.08);
+        }
+        .sd-turn { position: relative; width: 100%; height: 100%; border-radius: 50%; animation: sd-dial 14s cubic-bezier(.65,0,.35,1) infinite; }
+        .sd-face { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); }
+        .sd-accent {
+          position: absolute; inset: 28%; border-radius: 50%; padding: 1.6cqi;
+          background: linear-gradient(160deg, #FFE94D, #E6C200 55%, #A88E00);
+          box-shadow: 0 0 0 1px rgba(0,0,0,0.5), 0 6px 18px rgba(0,0,0,0.6), 0 0 24px rgba(255,222,2,0.25);
+        }
+        .sd-knob {
+          width: 100%; height: 100%; border-radius: 50%;
+          background:
+            radial-gradient(circle, rgba(255,255,255,0.22), transparent 55%),
+            repeating-radial-gradient(circle, rgba(255,255,255,0.05) 0 1px, rgba(0,0,0,0.04) 1px 2px),
+            conic-gradient(from 20deg, #7D8087, #E9EBEE 12%, #8C8F95 25%, #5B5E64 37%, #D9DCE0 50%, #7D8087 62%, #4F5258 75%, #CDD0D4 88%, #7D8087);
+          box-shadow: inset 0 0 0 1.2cqi rgba(20,20,24,0.25), inset 0 0 0 1.5cqi rgba(255,255,255,0.35), inset 0 -6px 14px rgba(0,0,0,0.45);
+          outline: 1px dashed rgba(255,255,255,0.35); outline-offset: -3.4cqi;
+        }
+        .sd-index {
+          position: absolute; left: 50%; top: 1.2cqi; translate: -50% 0; z-index: 2;
+          width: 0; height: 0; border-left: 2.6cqi solid transparent; border-right: 2.6cqi solid transparent; border-top: 4cqi solid var(--accent);
+          filter: drop-shadow(0 2px 3px rgba(0,0,0,0.6));
+        }
+        @keyframes sd-dial {
+          0%, 8% { transform: rotate(0deg); }
+          30%, 38% { transform: rotate(-126deg); }
+          58%, 66% { transform: rotate(54deg); }
+          86%, 100% { transform: rotate(0deg); }
+        }
+        @media (prefers-reduced-motion: reduce) { .sd-turn { animation: none; } }
         .trust-copy { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
         .trust-title { font-family: var(--font-display); font-size: clamp(44px, 5vw, 76px); line-height: 0.95; text-transform: uppercase; }
         .trust-lead { font-size: 17px; line-height: 1.6; color: #C9CBD3; max-width: 560px; }
@@ -69,7 +155,7 @@ export default function TrustPanel() {
         .trust-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 4px; color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--accent); }
         @media (max-width: 900px) {
           .trust-panel { grid-template-columns: 1fr; padding: 56px 28px; text-align: left; }
-          .trust-lock { max-width: 170px; justify-self: start; }
+          .trust-lock { max-width: 200px; justify-self: start; }
         }
       `}</style>
     </section>
