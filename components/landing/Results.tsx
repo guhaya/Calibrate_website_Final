@@ -64,7 +64,8 @@ export default function Results() {
             {measures.map((m, i) => (
               <li
                 key={m.area}
-                className={`res-row rv ${active === m.region ? "is-active" : ""}`}
+                className="res-row rv"
+                data-active={active === m.region ? "true" : undefined}
                 style={{ ["--d" as string]: `${i * 70}ms` }}
                 onMouseEnter={() => setHover(i)}
                 onMouseLeave={() => setHover(null)}
@@ -94,13 +95,13 @@ export default function Results() {
         .res-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--line); }
         .res-row { position: relative; transition: border-color 0.4s var(--ease-out); }
         .res-row::before { content: ""; position: absolute; left: -16px; top: 22px; bottom: 22px; width: 2px; border-radius: 2px; background: var(--accent); transform: scaleY(0); transition: transform 0.4s var(--ease-out); }
-        .res-row.is-active::before { transform: scaleY(1); }
+        .res-row[data-active]::before { transform: scaleY(1); }
         .res-area { transition: color 0.4s var(--ease-out); }
-        .res-row.is-active .res-area { color: var(--accent); }
+        .res-row[data-active] .res-area { color: var(--accent); }
         .res-area { font-weight: 800; font-size: 17px; color: #fff; margin-bottom: 4px; }
         .res-what { font-size: 14.5px; color: var(--text-secondary); line-height: 1.6; }
         .res-when { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
-        .res-visual { position: relative; width: 100%; max-width: 440px; justify-self: center; }
+        .res-visual { position: relative; width: 100%; max-width: 480px; justify-self: center; }
         @media (max-width: 960px) {
           .res-grid { grid-template-columns: 1fr; gap: 40px; }
           .res-visual { max-width: 380px; }
