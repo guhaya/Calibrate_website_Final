@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import JointsFigure from "@/components/programmes/JointsFigure";
 import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
@@ -89,8 +90,12 @@ export default function ProgrammesPage() {
             <div className="pg-rows">
               {tracks.map((t, i) => (
                 <article key={t.id} id={t.id} className={`pg-row rv ${i % 2 ? "pg-row-flip" : ""}`}>
-                  <div className="pg-row-img">
-                    <Image src={t.img} alt={t.alt} fill sizes="(max-width: 860px) 92vw, 460px" style={{ objectFit: "cover", objectPosition: "50% 22%" }} />
+                  <div className={`pg-row-img ${t.id === "return" ? "pg-row-fig" : ""}`}>
+                    {t.id === "return" ? (
+                      <JointsFigure />
+                    ) : (
+                      <Image src={t.img} alt={t.alt} fill sizes="(max-width: 860px) 92vw, 460px" style={{ objectFit: "cover", objectPosition: "50% 22%" }} />
+                    )}
                     <span className="pg-row-num mono" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
                   </div>
                   <div className="pg-row-body">
@@ -263,6 +268,11 @@ export default function ProgrammesPage() {
         }
         .pg-row-flip .pg-row-img { order: 2; }
         .pg-row-img { position: relative; min-height: 460px; }
+        .pg-row-fig {
+          display: grid; place-items: center; padding: 32px 24px;
+          background: radial-gradient(70% 60% at 40% 45%, rgba(255,222,2,0.07), transparent 70%), #08080A;
+        }
+        .pg-row-fig > .jf { height: 520px; }
         .pg-row-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(5,5,6,0.35)); pointer-events: none; }
         .pg-row-num { position: absolute; left: 20px; bottom: 18px; z-index: 1; font-size: 13px; letter-spacing: 0.14em; color: #fff; background: rgba(5,5,6,0.55); padding: 6px 10px; border-radius: 8px; backdrop-filter: blur(6px); }
         .pg-row-body { padding: 44px 48px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
@@ -337,6 +347,8 @@ export default function ProgrammesPage() {
           .pg-row, .pg-adapt, .pg-adapt-two { grid-template-columns: 1fr; }
           .pg-row-flip .pg-row-img { order: 0; }
           .pg-row-img { min-height: 0; aspect-ratio: 4 / 3; }
+          .pg-row-fig { aspect-ratio: auto; }
+          .pg-row-fig > .jf { height: 400px; }
           .pg-adapt-photos { min-height: 0; aspect-ratio: 4 / 3; }
           .pg-hero-card-a { left: -2%; }
           .pg-hero-card-b { right: -2%; }
