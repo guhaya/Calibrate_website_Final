@@ -61,7 +61,7 @@ export default function Reviews() {
           </div>
         ))}
       </div>
-      <p className="wrap rvw-note">Excerpts from public Google reviews, quoted word for word. Names shortened.</p>
+      <p className="wrap rvw-note">Excerpts from public Google reviews, quoted word for word. Names shortened. Many clients know Guhayavarman as Vikram. Individual results vary.</p>
 
       <style>{`
         .rvw { overflow: hidden; }
