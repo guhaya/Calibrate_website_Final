@@ -119,7 +119,7 @@ export default function Hero() {
         .hero-proof { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 14px; margin-top: 22px; font-size: 13.5px; font-weight: 600; color: var(--text-secondary); }
         .hero-proof-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
 
-        .hero-stage { position: relative; height: 700px; max-width: 1320px; margin: 24px auto 0; }
+        .hero-stage { position: relative; height: 700px; max-width: 1320px; margin: 84px auto 0; }
         .hero-ribbon { position: absolute; left: -10%; right: -10%; width: 120%; top: 40px; height: 600px; z-index: 0; overflow: visible; }
         .rb-main { stroke-dasharray: 2400; stroke-dashoffset: 2400; animation: rb-draw 2.2s var(--ease-out) 0.5s forwards; }
         .rb-shine { stroke-dasharray: 2400; stroke-dashoffset: 2400; animation: rb-draw 2.4s var(--ease-out) 0.9s forwards; }

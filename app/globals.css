@@ -663,13 +663,14 @@ main { overflow-x: clip; }
 }
 
 /* Reveal system (.rv + optional --d delay in ms via style) */
+/* Section reveals stay quiet so the hero remains the one authored entrance. */
 .rv {
   opacity: 0;
-  transform: translateY(36px);
+  transform: translateY(14px);
   transition:
-    opacity 0.9s var(--ease-out) var(--d, 0ms),
-    transform 0.9s var(--ease-out) var(--d, 0ms),
-    filter 0.9s var(--ease-out) var(--d, 0ms);
+    opacity 0.7s var(--ease-out) var(--d, 0ms),
+    transform 0.7s var(--ease-out) var(--d, 0ms),
+    filter 0.7s var(--ease-out) var(--d, 0ms);
 }
 .rv.rv-blur { filter: blur(8px); }
 .rv.rv-scale { transform: scale(0.94); }

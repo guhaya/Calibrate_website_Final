@@ -24,6 +24,9 @@ export default function FinalCta() {
               <Link href="/book" className="fcta-btn">Book your free call <Arrow /></Link>
               <Link href="/apply" className="fcta-link">Or apply directly <Arrow /></Link>
             </div>
+            <p className="fcta-facts">
+              Applications are reviewed within 48 hours. WhatsApp replies come within 4 hours on weekdays.
+            </p>
           </div>
 
           <div className="fcta-coach">
@@ -46,6 +49,7 @@ export default function FinalCta() {
         .fcta-chip { display: inline-flex; padding: 8px 14px; border-radius: 999px; background: #050506; color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
         .fcta-title { font-family: var(--font-display); font-size: clamp(42px, 6vw, 96px); line-height: 0.92; color: #050506; text-wrap: balance; }
         .fcta-lead { font-size: 17px; line-height: 1.6; color: rgba(5,5,6,0.78); max-width: 520px; font-weight: 500; }
+        .fcta-facts { font-size: 14px; font-weight: 600; color: rgba(5,5,6,0.7); max-width: 46ch; }
         .fcta-ctas { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 6px; }
         .fcta-btn {
           display: inline-flex; align-items: center; gap: 10px; padding: 19px 32px; border-radius: 999px;

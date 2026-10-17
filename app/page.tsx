@@ -1,7 +1,6 @@
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/landing/Hero";
-import ProofStrip from "@/components/landing/ProofStrip";
 import Problem from "@/components/landing/Problem";
 import Method from "@/components/landing/Method";
 import AppSection from "@/components/landing/AppSection";
@@ -31,7 +30,6 @@ export default function HomePage() {
       <main id="main">
         <Hero />
         <WorksWith />
-        <ProofStrip />
         <Problem />
         <Method />
         <SignalCards />
