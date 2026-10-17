@@ -7,6 +7,8 @@ import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/landing/PageHero";
 import FinalCta from "@/components/landing/FinalCta";
 import { Device } from "@/components/landing/ui";
+import PhoneTour from "@/components/landing/PhoneTour";
+import type { TourStep } from "@/components/landing/PhoneTour";
 
 export const metadata: Metadata = {
   title: "Vemisis App",
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
     "Vemisis is the training app that delivers the CALIBRATE method: custom training, flexible nutrition, weekly check-ins, recovery scores, fasting, wearable sync and direct access to your coach.",
 };
 
-const pillars = [
+const steps: TourStep[] = [
   {
     id: "training",
     label: "Training",
@@ -27,10 +29,7 @@ const pillars = [
       { title: "Exercise video library", description: "Clear video guidance for every movement. No YouTube rabbit holes." },
       { title: "Session logging", description: "Every set logged in the app and reviewed by your coach weekly." },
     ],
-    shots: [
-      { src: "/media/app/workout.webp", alt: "Vemisis workout detail with sets, reps and rest" },
-      { src: "/media/app/active-workout.webp", alt: "Vemisis active workout logging screen" },
-    ],
+    shot: { src: "/media/app/active-workout.webp", alt: "Vemisis active workout logging screen" },
   },
   {
     id: "nutrition",
@@ -44,10 +43,32 @@ const pillars = [
       { title: "Fast logging", description: "Barcode scanning and a food database covering Indian and global cuisine." },
       { title: "Eating out guidance", description: "Strategies for restaurants, social events and travel." },
     ],
-    shots: [
-      { src: "/media/app/nutrition.webp", alt: "Vemisis nutrition screen with a calorie ring and macros" },
-      { src: "/media/app/food-log.webp", alt: "Vemisis food log with meals" },
+    shot: { src: "/media/app/nutrition.webp", alt: "Vemisis nutrition screen with a calorie ring and macros" },
+  },
+  {
+    id: "fasting",
+    label: "Fasting",
+    headline: "Fasting that fits your schedule",
+    description:
+      "Pick a fasting window that suits your day and let the app track it, with live metabolic stages as your fast progresses.",
+    features: [
+      { title: "Choose your window", description: "16:8, 18:6, OMAD or a custom schedule." },
+      { title: "Live metabolic stages", description: "See which stage of your fast you are in as it happens." },
     ],
+    shot: { src: "/media/app/fasting.webp", alt: "Vemisis fasting timer with metabolic stages" },
+  },
+  {
+    id: "vitals",
+    label: "Vitals & recovery",
+    headline: "Know when to push and when to rest",
+    description:
+      "HRV, resting heart rate, sleep, SpO2 and more from your wearable, trended over time and turned into a daily recovery score.",
+    features: [
+      { title: "Recovery score", description: "Daily readiness from HRV, resting heart rate and sleep." },
+      { title: "Vitals trends", description: "HRV, resting heart rate, sleep, SpO2 and more, trended over time." },
+      { title: "Wearable sync", description: "Apple Health, Apple Watch and Oura on iPhone, Health Connect on Android." },
+    ],
+    shot: { src: "/media/app/vitals.webp", alt: "Vemisis vitals screen with HRV, resting heart rate and sleep" },
   },
   {
     id: "coach",
@@ -61,10 +82,7 @@ const pillars = [
       { title: "Direct messaging", description: "Message your coach in the app between check-ins. Responses within 4 hours." },
       { title: "A.L.F.R.E.D AI", description: "Ask questions any time and get answers from your coach's own playbook." },
     ],
-    shots: [
-      { src: "/media/app/messages.webp", alt: "Vemisis coach messages" },
-      { src: "/media/app/coach-hub.webp", alt: "Vemisis coach hub with your next step" },
-    ],
+    shot: { src: "/media/app/messages.webp", alt: "Vemisis coach messages" },
   },
   {
     id: "progress",
@@ -78,18 +96,12 @@ const pillars = [
       { title: "Measurements & photos", description: "Concrete evidence of change beyond the scale." },
       { title: "Coach visibility", description: "Your coach sees all your data, which is what makes precise adjustments possible." },
     ],
-    shots: [
-      { src: "/media/app/progress.webp", alt: "Vemisis progress screen with weight trend" },
-      { src: "/media/app/insights.webp", alt: "Vemisis insights with overall score" },
-    ],
+    shot: { src: "/media/app/progress.webp", alt: "Vemisis progress screen with weight trend" },
   },
 ];
 
 const extras = [
-  { title: "Recovery score", body: "Daily readiness from HRV, resting heart rate and sleep.", img: "/media/app/recovery.webp" },
-  { title: "Fasting timer", body: "16:8, 18:6, OMAD or custom with live metabolic stages.", img: "/media/app/fasting.webp" },
-  { title: "Wearable sync", body: "Apple Health, Apple Watch and Oura on iPhone, Health Connect on Android.", img: "/media/app/connections.webp" },
-  { title: "Vitals", body: "HRV, resting heart rate, sleep, SpO2 and more, trended over time.", img: "/media/app/vitals.webp" },
+  { title: "Food log", body: "Barcode scanning and a food database covering Indian and global cuisine.", img: "/media/app/food-log.webp" },
   { title: "Sessions", body: "Book, reschedule and review your 1-on-1 coaching sessions.", img: "/media/app/sessions.webp" },
   { title: "Smart notifications", body: "Plan updates, session reminders and weekly consistency nudges.", img: "/media/app/notifications.webp" },
 ];
@@ -118,35 +130,13 @@ export default function FeaturesPage() {
         />
 
         <nav className="ft-jump" aria-label="App sections">
-          {pillars.map((p) => (
+          {steps.map((p) => (
             <a key={p.id} href={`#${p.id}`}>{p.label}</a>
           ))}
           <a href="#more">More</a>
         </nav>
 
-        {pillars.map((p, i) => (
-          <section key={p.id} id={p.id} className={`sec-tight ft-pillar ${i % 2 ? "is-rev" : ""}`}>
-            <div className="wrap ft-pillar-grid">
-              <div className="ft-copy">
-                <h2 className="display-md rv balance" style={{ ["--d" as string]: "80ms" }}>{p.headline}</h2>
-                <p className="lead rv" style={{ ["--d" as string]: "140ms" }}>{p.description}</p>
-                <div className="ft-feats">
-                  {p.features.map((f, k) => (
-                    <div key={f.title} className="ft-feat rv" style={{ ["--d" as string]: `${180 + k * 60}ms` }}>
-                      <p style={{ fontWeight: 800, fontSize: 15.5 }}>{f.title}</p>
-                      <p className="body-sm" style={{ fontSize: 14 }}>{f.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="ft-vis rv rv-scale">
-                <div className="ft-vis-glow" aria-hidden="true" />
-                <Device src={p.shots[0].src} alt={p.shots[0].alt} width={250} className="ft-ph-a" sizes="250px" />
-                <Device src={p.shots[1].src} alt={p.shots[1].alt} width={220} className="ft-ph-b" sizes="220px" />
-              </div>
-            </div>
-          </section>
-        ))}
+        <PhoneTour steps={steps} />
 
         <section id="more" className="sec">
           <div className="wrap">
@@ -190,24 +180,11 @@ export default function FeaturesPage() {
         .ft-jump::-webkit-scrollbar { display: none; }
         .ft-jump a { padding: 12px 16px; min-height: 44px; display: inline-flex; align-items: center; border-radius: 999px; font-size: 13px; font-weight: 700; color: var(--text-secondary); text-decoration: none; white-space: nowrap; transition: all 0.2s ease; }
         .ft-jump a:hover { background: var(--accent); color: #050506; }
-        .ft-pillar { scroll-margin-top: 140px; }
-        .ft-pillar-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 64px; align-items: center; }
-        .ft-pillar.is-rev .ft-copy { order: 2; }
-        .ft-copy { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
-        .ft-feats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; margin-top: 8px; }
-        .ft-feat { padding: 20px; border-radius: 20px; background: var(--surface-1); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
-        .ft-vis { position: relative; height: 560px; }
-        .ft-vis-glow { position: absolute; inset: 12%; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,222,2,0.22), transparent); filter: blur(20px); }
-        .ft-ph-a { position: absolute !important; left: 14%; top: 0; z-index: 2; transform: rotate(-4deg); }
-        .ft-ph-b { position: absolute !important; right: 10%; bottom: 0; z-index: 1; transform: rotate(5deg); }
         .ft-extras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
         .ft-extra { padding: 28px 28px 0; display: flex; flex-direction: column; gap: 22px; min-height: 380px; }
         .ft-extra-shot { margin-top: auto; align-self: center; width: 62%; -webkit-mask-image: linear-gradient(#000 65%, transparent); mask-image: linear-gradient(#000 65%, transparent); }
         .ft-extra-shot img { width: 100%; height: auto; max-height: 230px; object-fit: cover; object-position: top; border-radius: 22px 22px 0 0; border: 1px solid var(--line-strong); }
         @media (max-width: 960px) {
-          .ft-pillar-grid { grid-template-columns: 1fr; gap: 40px; }
-          .ft-pillar.is-rev .ft-copy { order: 0; }
-          .ft-vis { height: 480px; max-width: 460px; margin: 0 auto; width: 100%; }
           .ft-extras { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 600px) {
@@ -215,10 +192,6 @@ export default function FeaturesPage() {
           .ft-hero-a { width: 200px !important; right: 2%; }
           .ft-hero-b { width: 175px !important; left: 2%; }
           .ft-hero-icon { width: 72px; height: 72px; }
-          .ft-feats { grid-template-columns: 1fr; }
-          .ft-vis { height: 420px; }
-          .ft-ph-a { width: 200px !important; left: 4%; }
-          .ft-ph-b { width: 175px !important; right: 2%; }
           .ft-extras { grid-template-columns: 1fr; }
           .ft-extra { min-height: 0; }
           .ft-jump { top: 84px; }
