@@ -47,7 +47,7 @@ export default function PolicyPage({ policy, policyType, intro }: {
             >
               {policy.title}
             </h1>
-            <p style={{ fontSize: "14px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "28px" }}>
+            <p style={{ fontSize: "14px", color: "#7E8395", fontFamily: "var(--font-body)", marginBottom: "28px" }}>
               Version {policy.versionNumber} · Last updated: {lastUpdated}
             </p>
             {policy.sections.length > 1 && (
@@ -60,7 +60,7 @@ export default function PolicyPage({ policy, policyType, intro }: {
                       fontSize: "12px",
                       fontWeight: 600,
                       color: "#B7B9C3",
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontFamily: "var(--font-body)",
                       textDecoration: "none",
                       padding: "6px 14px",
                       borderRadius: "999px",
@@ -87,7 +87,7 @@ export default function PolicyPage({ policy, policyType, intro }: {
                 marginBottom: "48px",
               }}
             >
-              <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.7 }}>
+              <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "var(--font-body)", lineHeight: 1.7 }}>
                 {intro}
               </p>
             </div>
@@ -115,7 +115,7 @@ export default function PolicyPage({ policy, policyType, intro }: {
                 >
                   {section.title}
                 </h2>
-                <div style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.8, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                <div style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.8, fontFamily: "var(--font-body)" }}>
                   <PolicyBody content={section.content} />
                 </div>
               </div>

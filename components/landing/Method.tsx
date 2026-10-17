@@ -89,7 +89,7 @@ export default function Method({ showLink = true }: { showLink?: boolean }) {
                   {p.letter}
                 </div>
               ))}
-              <div className="mth-track"><div className="mth-fill" style={{ height: `${((active + 1) / phases.length) * 100}%` }} /></div>
+              <div className="mth-track"><div className="mth-fill" style={{ transform: `scaleY(${(active + 1) / phases.length})` }} /></div>
             </div>
 
             <div className="mth-copy">
@@ -169,7 +169,7 @@ export default function Method({ showLink = true }: { showLink?: boolean }) {
         .mth-letter.is-done { -webkit-text-stroke-color: rgba(255,222,2,0.6); }
         .mth-letter.is-on { color: var(--accent); -webkit-text-stroke-color: var(--accent); transform: scale(1.18); }
         .mth-track { position: absolute; right: -14px; top: 8px; bottom: 8px; width: 2px; background: rgba(255,255,255,0.08); border-radius: 2px; }
-        .mth-fill { width: 100%; background: var(--accent); border-radius: 2px; transition: height 0.6s var(--ease-out);  }
+        .mth-fill { width: 100%; height: 100%; background: var(--accent); border-radius: 2px; transform-origin: top; transition: transform 0.6s var(--ease-out); }
         .mth-copy { position: relative; min-height: 440px; }
         .mth-panel {
           position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 18px;

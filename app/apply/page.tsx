@@ -71,10 +71,10 @@ export default function ApplyPage() {
                   >
                     {s.num}
                   </div>
-                  <p style={{ fontSize: "15px", fontWeight: 700, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "10px" }}>
+                  <p style={{ fontSize: "15px", fontWeight: 700, color: "#FFFFFF", fontFamily: "var(--font-body)", marginBottom: "10px" }}>
                     {s.label}
                   </p>
-                  <p style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.65 }}>
+                  <p style={{ fontSize: "13px", color: "#B7B9C3", fontFamily: "var(--font-body)", lineHeight: 1.65 }}>
                     {s.detail}
                   </p>
                   {i < steps.length - 1 && (
@@ -105,7 +105,7 @@ export default function ApplyPage() {
               <h2 style={{ fontSize: "clamp(28px, 3.5vw, 42px)", color: "#FFFFFF", letterSpacing: "-0.02em", marginBottom: "16px" }}>
                 Tell us about you
               </h2>
-              <p style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <p style={{ fontSize: "15px", color: "#B7B9C3", lineHeight: 1.65, fontFamily: "var(--font-body)" }}>
                 Not sure yet?{" "}
                 <Link href="/book" style={{ color: "#FFDE02", textDecoration: "none" }}>Book your free call</Link>{" "}
                 first, no commitment required.

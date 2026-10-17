@@ -155,7 +155,7 @@ export default function Navigation() {
         .nv {
           position: fixed; top: 0; left: 0; right: 0; z-index: 100;
           padding: 16px 24px;
-          transition: transform 0.5s var(--ease-out), padding 0.4s var(--ease-out);
+          transition: transform 0.5s var(--ease-out);
         }
         .nv-hidden { transform: translateY(-110%); }
         .nv:focus-within { transform: none; }

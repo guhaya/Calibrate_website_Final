@@ -19,12 +19,12 @@ const FIELD_TYPES: { value: FormFieldType; label: string; hasOptions: boolean }[
 const inputStyle: React.CSSProperties = {
   width: "100%", padding: "10px 14px", background: "rgba(255,255,255,0.04)",
   border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", color: "#FFFFFF",
-  fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", outline: "none", boxSizing: "border-box",
+  fontSize: "13px", fontFamily: "var(--font-body)", outline: "none", boxSizing: "border-box",
 };
 
 const labelStyle: React.CSSProperties = {
   display: "block", fontSize: "10px", fontWeight: 700, color: "#6B7280",
-  fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.07em",
+  fontFamily: "var(--font-body)", letterSpacing: "0.07em",
   textTransform: "uppercase", marginBottom: "6px",
 };
 
@@ -94,11 +94,11 @@ function FieldEditor({
       )}
 
       <div style={{ display: "flex", alignItems: "center", gap: "20px", marginBottom: "16px" }}>
-        <label style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
+        <label style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", color: "#B7B9C3", fontFamily: "var(--font-body)", cursor: "pointer" }}>
           <input type="checkbox" checked={draft.required} onChange={(e) => onChange({ ...draft, required: e.target.checked })} style={{ accentColor: "#FFDE02" }} />
           Required
         </label>
-        <label style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
+        <label style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", color: "#B7B9C3", fontFamily: "var(--font-body)", cursor: "pointer" }}>
           <input type="checkbox" checked={draft.active} onChange={(e) => onChange({ ...draft, active: e.target.checked })} style={{ accentColor: "#FFDE02" }} />
           Active (visible on the live application form)
         </label>
@@ -110,13 +110,13 @@ function FieldEditor({
           disabled={saving || !draft.label.trim()}
           style={{
             padding: "9px 20px", background: "#FFDE02", border: "none", borderRadius: "8px",
-            color: "#07070A", fontSize: "13px", fontWeight: 700, fontFamily: "'Plus Jakarta Sans', sans-serif",
+            color: "#07070A", fontSize: "13px", fontWeight: 700, fontFamily: "var(--font-body)",
             cursor: saving || !draft.label.trim() ? "not-allowed" : "pointer", opacity: saving || !draft.label.trim() ? 0.5 : 1,
           }}
         >
           {saving ? "Saving…" : "Save question"}
         </button>
-        <button onClick={onCancel} style={{ padding: "9px 20px", background: "transparent", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "8px", color: "#B7B9C3", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
+        <button onClick={onCancel} style={{ padding: "9px 20px", background: "transparent", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "8px", color: "#B7B9C3", fontSize: "13px", fontFamily: "var(--font-body)", cursor: "pointer" }}>
           Cancel
         </button>
       </div>
@@ -206,14 +206,14 @@ export default function FormBuilder({ password }: { password: string }) {
   }, {});
 
   if (loading) {
-    return <p style={{ color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: "14px" }}>Loading form…</p>;
+    return <p style={{ color: "#7E8395", fontFamily: "var(--font-body)", fontSize: "14px" }}>Loading form…</p>;
   }
 
   return (
     <div>
       {fields.length === 0 && editingId !== "new" && (
         <div style={{ padding: "32px", textAlign: "center", background: "rgba(255,255,255,0.02)", border: "1px dashed rgba(255,255,255,0.1)", borderRadius: "12px", marginBottom: "20px" }}>
-          <p style={{ color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: "14px", marginBottom: "12px" }}>
+          <p style={{ color: "#7E8395", fontFamily: "var(--font-body)", fontSize: "14px", marginBottom: "12px" }}>
             No questions yet. This means the Supabase migration probably hasn&apos;t been run, or the form is intentionally empty.
           </p>
         </div>
@@ -221,7 +221,7 @@ export default function FormBuilder({ password }: { password: string }) {
 
       {Object.entries(grouped).map(([section, sectionFields]) => (
         <div key={section} style={{ marginBottom: "24px" }}>
-          <p style={{ fontSize: "11px", fontWeight: 700, color: "#FFDE02", textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "10px" }}>
+          <p style={{ fontSize: "11px", fontWeight: 700, color: "#FFDE02", textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: "var(--font-body)", marginBottom: "10px" }}>
             {section}
           </p>
           {sectionFields.map((field) => (
@@ -243,10 +243,10 @@ export default function FormBuilder({ password }: { password: string }) {
                 </span>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                    <span style={{ fontSize: "14px", fontWeight: 600, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{field.label}</span>
+                    <span style={{ fontSize: "14px", fontWeight: 600, color: "#FFFFFF", fontFamily: "var(--font-body)" }}>{field.label}</span>
                     {field.required && <span style={{ fontSize: "10px", color: "#FFDE02" }}>required</span>}
                   </div>
-                  <span style={{ fontSize: "11px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <span style={{ fontSize: "11px", color: "#7E8395", fontFamily: "var(--font-body)" }}>
                     {FIELD_TYPES.find((t) => t.value === field.field_type)?.label}
                   </span>
                 </div>
@@ -264,10 +264,10 @@ export default function FormBuilder({ password }: { password: string }) {
                     transition: "left 0.15s ease",
                   }} />
                 </button>
-                <button onClick={() => startEdit(field)} style={{ padding: "6px 12px", background: "transparent", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer", flexShrink: 0 }}>
+                <button onClick={() => startEdit(field)} style={{ padding: "6px 12px", background: "transparent", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "var(--font-body)", cursor: "pointer", flexShrink: 0 }}>
                   Edit
                 </button>
-                <button onClick={() => remove(field.id, field.label)} style={{ padding: "6px 12px", background: "rgba(222,48,51,0.06)", border: "1px solid rgba(222,48,51,0.2)", borderRadius: "6px", color: "#DE3033", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer", flexShrink: 0 }}>
+                <button onClick={() => remove(field.id, field.label)} style={{ padding: "6px 12px", background: "rgba(222,48,51,0.06)", border: "1px solid rgba(222,48,51,0.2)", borderRadius: "6px", color: "#DE3033", fontSize: "12px", fontFamily: "var(--font-body)", cursor: "pointer", flexShrink: 0 }}>
                   Delete
                 </button>
               </div>
@@ -286,7 +286,7 @@ export default function FormBuilder({ password }: { password: string }) {
           onClick={startNew}
           style={{
             width: "100%", padding: "14px", background: "rgba(255,222,2,0.05)", border: "1px dashed rgba(255,222,2,0.3)",
-            borderRadius: "10px", color: "#FFDE02", fontSize: "13px", fontWeight: 600, fontFamily: "'Plus Jakarta Sans', sans-serif",
+            borderRadius: "10px", color: "#FFDE02", fontSize: "13px", fontWeight: 600, fontFamily: "var(--font-body)",
             cursor: "pointer", marginTop: "8px",
           }}
         >

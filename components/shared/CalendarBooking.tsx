@@ -24,7 +24,7 @@ export default function CalendarBooking() {
             color: "#B7B9C3",
             fontSize: "15px",
             lineHeight: 1.65,
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
+            fontFamily: "var(--font-body)",
             maxWidth: "420px",
             margin: "0 auto",
           }}
@@ -55,7 +55,7 @@ export default function CalendarBooking() {
               style={{
                 fontSize: "11px",
                 color: "#7E8395",
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontFamily: "var(--font-body)",
                 display: "flex",
                 alignItems: "center",
                 gap: "5px",
@@ -68,7 +68,7 @@ export default function CalendarBooking() {
         </div>
       </div>
 
-      <p style={{ fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+      <p style={{ fontSize: "12px", color: "#7E8395", fontFamily: "var(--font-body)" }}>
         Opens Google Calendar in a new tab. Questions first? Email{" "}
         <a href="mailto:Admin@gvnfit.online" style={{ color: "#B7B9C3" }}>Admin@gvnfit.online</a>
       </p>

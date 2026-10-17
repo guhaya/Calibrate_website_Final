@@ -30,7 +30,7 @@ function FieldInput({
           rows={4}
           value={(value as string) || ""}
           onChange={(e) => onChange(e.target.value)}
-          style={{ resize: "vertical", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          style={{ resize: "vertical", fontFamily: "var(--font-body)" }}
         />
       );
 
@@ -40,7 +40,7 @@ function FieldInput({
           {...baseProps}
           value={(value as string) || ""}
           onChange={(e) => onChange(e.target.value)}
-          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          style={{ fontFamily: "var(--font-body)" }}
         >
           <option value="" disabled>Select an option</option>
           {field.options.map((opt) => (
@@ -53,7 +53,7 @@ function FieldInput({
       return (
         <div role="radiogroup" aria-labelledby={`${field.id}-label`} style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
           {field.options.map((opt) => (
-            <label key={opt} style={{ display: "flex", alignItems: "center", gap: "10px", minHeight: "44px", fontSize: "14px", color: "#F5F3EE", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
+            <label key={opt} style={{ display: "flex", alignItems: "center", gap: "10px", minHeight: "44px", fontSize: "14px", color: "#F5F3EE", fontFamily: "var(--font-body)", cursor: "pointer" }}>
               <input
                 type="radio"
                 name={field.id}
@@ -74,7 +74,7 @@ function FieldInput({
       return (
         <div role="group" aria-labelledby={`${field.id}-label`} style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
           {field.options.map((opt) => (
-            <label key={opt} style={{ display: "flex", alignItems: "center", gap: "10px", minHeight: "44px", fontSize: "14px", color: "#F5F3EE", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
+            <label key={opt} style={{ display: "flex", alignItems: "center", gap: "10px", minHeight: "44px", fontSize: "14px", color: "#F5F3EE", fontFamily: "var(--font-body)", cursor: "pointer" }}>
               <input
                 type="checkbox"
                 checked={arr.includes(opt)}
@@ -104,7 +104,7 @@ function FieldInput({
                 border: `1px solid ${value === String(n) ? "#FFDE02" : "rgba(255,255,255,0.14)"}`,
                 background: value === String(n) ? "rgba(255,222,2,0.14)" : "rgba(255,255,255,0.03)",
                 color: value === String(n) ? "#FFDE02" : "#B7B9C3",
-                fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: "15px",
+                fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "15px",
                 cursor: "pointer", transition: "border-color 0.15s ease, background 0.15s ease, color 0.15s ease",
               }}
             >
@@ -186,7 +186,7 @@ export default function ApplyForm() {
 
   if (loading) {
     return (
-      <div style={{ textAlign: "center", padding: "60px 24px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+      <div style={{ textAlign: "center", padding: "60px 24px", color: "#7E8395", fontFamily: "var(--font-body)" }}>
         Loading application form…
       </div>
     );
@@ -194,7 +194,7 @@ export default function ApplyForm() {
 
   if (loadError || fields.length === 0) {
     return (
-      <div style={{ textAlign: "center", padding: "60px 24px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+      <div style={{ textAlign: "center", padding: "60px 24px", color: "#B7B9C3", fontFamily: "var(--font-body)" }}>
         The application form couldn&apos;t load. Please email{" "}
         <a href="mailto:Admin@gvnfit.online" style={{ color: "#FFDE02" }}>Admin@gvnfit.online</a> directly, or try again shortly.
       </div>
@@ -215,7 +215,7 @@ export default function ApplyForm() {
         <p style={{ fontFamily: "var(--font-display)", fontSize: "28px", color: "#FFFFFF", textTransform: "uppercase", marginBottom: "10px" }}>
           Application received
         </p>
-        <p style={{ fontSize: "15px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", maxWidth: "420px", margin: "0 auto" }}>
+        <p style={{ fontSize: "15px", color: "#B7B9C3", fontFamily: "var(--font-body)", maxWidth: "420px", margin: "0 auto" }}>
           Guhay reviews every application personally. You&apos;ll hear back within 48 hours.
         </p>
       </div>
@@ -228,7 +228,7 @@ export default function ApplyForm() {
         <div key={group.section}>
           <p style={{
             fontSize: "11px", fontWeight: 700, color: "#FFDE02", textTransform: "uppercase",
-            letterSpacing: "0.1em", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "20px",
+            letterSpacing: "0.1em", fontFamily: "var(--font-body)", marginBottom: "20px",
           }}>
             {group.section}
           </p>
@@ -237,13 +237,13 @@ export default function ApplyForm() {
               <div key={field.id}>
                 <label htmlFor={field.id} id={`${field.id}-label`} style={{
                   display: "block", fontSize: "14px", fontWeight: 600, color: "#FFFFFF",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px",
+                  fontFamily: "var(--font-body)", marginBottom: "8px",
                 }}>
                   {field.label}
                   {field.required && <span style={{ color: "#FFDE02" }}> *</span>}
                 </label>
                 {field.help_text && (
-                  <p id={`${field.id}-help`} style={{ fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "8px" }}>
+                  <p id={`${field.id}-help`} style={{ fontSize: "12px", color: "#7E8395", fontFamily: "var(--font-body)", marginBottom: "8px" }}>
                     {field.help_text}
                   </p>
                 )}
@@ -259,7 +259,7 @@ export default function ApplyForm() {
       ))}
 
       {submitError && (
-        <p role="alert" style={{ fontSize: "13px", color: "#DE3033", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{submitError}</p>
+        <p role="alert" style={{ fontSize: "13px", color: "#DE3033", fontFamily: "var(--font-body)" }}>{submitError}</p>
       )}
 
       <button type="submit" className="btn-primary btn-primary-lg" disabled={submitting} style={{ justifyContent: "center", opacity: submitting ? 0.7 : 1 }}>
