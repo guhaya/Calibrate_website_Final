@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { APP_STORE_URL } from "@/lib/appLinks";
+import AppQrCard from "@/components/shared/AppQrCard";
 import Image from "next/image";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
@@ -172,6 +173,7 @@ export default function FeaturesPage() {
         <FinalCta />
       </main>
       <Footer />
+      <AppQrCard />
 
       <style>{`
         .ft-hero-vis { position: relative; width: 100%; max-width: 520px; height: 600px; margin: 0 auto; }

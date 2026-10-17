@@ -11,6 +11,10 @@ import Coach from "@/components/landing/Coach";
 import Pricing from "@/components/landing/Pricing";
 import Faq from "@/components/landing/Faq";
 import FinalCta from "@/components/landing/FinalCta";
+import WorksWith from "@/components/landing/WorksWith";
+import SignalCards from "@/components/landing/SignalCards";
+import TrustPanel from "@/components/landing/TrustPanel";
+import AppQrCard from "@/components/shared/AppQrCard";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -23,10 +27,13 @@ export default function HomePage() {
       <Navigation />
       <main id="main">
         <Hero />
+        <WorksWith />
         <ProofStrip />
         <Problem />
         <Method />
+        <SignalCards />
         <AppSection />
+        <TrustPanel />
         <Goals />
         <Results />
         <Pricing />
@@ -35,6 +42,7 @@ export default function HomePage() {
         <FinalCta />
       </main>
       <Footer />
+      <AppQrCard />
     </>
   );
 }
