@@ -22,9 +22,8 @@ export default function LabsOrbit() {
     <section className="sec lo" aria-labelledby="lo-title">
       <div className="wrap lo-grid">
         <div className="lo-copy">
-          <p className="mono c-accent rv">Lab reports</p>
           <h2 id="lo-title" className="display-lg rv" style={{ ["--d" as string]: "60ms" }}>
-            Your blood work, read and reviewed.
+            Blood tests belong in your plan too.
           </h2>
           <p className="lead rv" style={{ ["--d" as string]: "120ms" }}>
             Bring your latest blood test into Vemisis. The numbers sit next to your daily data, so your coach plans with the full picture.

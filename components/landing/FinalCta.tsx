@@ -14,7 +14,7 @@ export default function FinalCta() {
 
           <div className="fcta-copy">
             <h2 className="fcta-title">
-              Your body is a process. Let&apos;s calibrate it.
+              Start with a free 30-minute call.
             </h2>
             <p className="fcta-lead">
               Tell us where you are and where you want to be. In a free 30-minute call we&apos;ll show you exactly how CALIBRATE and the Vemisis app

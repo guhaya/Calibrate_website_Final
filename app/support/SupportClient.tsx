@@ -96,7 +96,6 @@ export default function SupportClient() {
       <main id="main">
         <PageHero
           compact
-          eyebrow="Contact & FAQ"
           title={<>Help with coaching and the Vemisis app.</>}
           lead="Questions about coaching, pricing or getting started? Find answers below or reach out directly."
         />
@@ -124,7 +123,6 @@ export default function SupportClient() {
         <section id="booking" className="sec-tight sp-book">
           <div className="wrap sp-book-grid">
             <div className="sp-book-copy rv">
-              <span className="tag">Free consultation</span>
               <h2 className="display-md">Book your free consultation</h2>
               <p className="lead">
                 30 minutes. We&apos;ll cover your goals, your situation, and exactly what coaching would look like for you.

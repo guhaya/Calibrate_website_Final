@@ -43,7 +43,6 @@ export default function BookPage() {
         <section className="bk-open" aria-labelledby="bk-title">
           <div className="wrap bk-grid">
             <div className="bk-copy">
-              <p className="mono c-accent">Free consultation</p>
               <h1 id="bk-title" className="bk-title">Let&apos;s talk about your goals.</h1>
               <p className="bk-lead">
                 A free 30-minute call, no pressure, no pitch. Guhay reviews your situation and tells you honestly whether coaching is the right fit.

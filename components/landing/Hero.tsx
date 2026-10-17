@@ -24,14 +24,12 @@ export default function Hero() {
 
         <h1 className="hero-title">
           <span className="hero-line">
-            <RiseLine text="Stop guessing." delay={120} />
-            <span className="sticker hero-sticker" aria-hidden="true">Built for busy professionals</span>
+            <RiseLine text="Coaching for" delay={120} />
           </span>
           <span className="hero-line">
-            <RiseLine text="Start" delay={320} />{" "}
             <span className="rise">
-              <span style={{ ["--d" as string]: "400ms" }}>
-                <Hl ink>calibrating</Hl>
+              <span style={{ ["--d" as string]: "320ms" }}>
+                <Hl ink>full calendars.</Hl>
               </span>
             </span>
           </span>
@@ -116,12 +114,6 @@ export default function Hero() {
           max-width: 100%;
         }
         .hero-line { position: relative; display: block; }
-        .hero-sticker {
-          position: absolute; top: -14px; right: -132px;
-          font-size: 15px;
-          animation: sticker-in 0.9s var(--ease-out) 0.9s both;
-        }
-        @keyframes sticker-in { from { opacity: 0; transform: rotate(-24deg) scale(0.4); } to { opacity: 1; transform: rotate(-6deg) scale(1); } }
         .hero-lead { max-width: 680px; margin-top: 30px; text-wrap: pretty; }
         .hero-ctas { display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; justify-content: center; }
         .hero-proof { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 14px; margin-top: 22px; font-size: 13.5px; font-weight: 600; color: var(--text-secondary); }
@@ -148,14 +140,12 @@ export default function Hero() {
         .hero-fade { position: absolute; left: -20%; right: -20%; bottom: -1px; height: 170px; background: linear-gradient(transparent, var(--bg-base) 88%); z-index: 4; pointer-events: none; }
 
         @media (max-width: 1180px) {
-          .hero-sticker { right: -40px; top: -48px; }
           .hero-phone { width: 200px; }
           .hero-phone-l { left: 3%; }
           .hero-phone-r { right: 3%; }
         }
         @media (max-width: 860px) {
           .hero { padding-top: 116px; }
-          .hero-sticker { position: relative; top: auto; right: auto; display: inline-flex; margin: 0 auto 18px; font-size: 13px; order: -1; }
           .hero-line:first-child { display: flex; flex-direction: column; align-items: center; }
           .hero-stage { height: 560px; margin-top: 8px; }
           .hero-coach { width: 330px; margin-left: -165px; bottom: -20px; }

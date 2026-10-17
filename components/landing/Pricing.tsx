@@ -69,9 +69,8 @@ export default function Pricing({ fallback = FALLBACK_PLANS, showMoreLink = true
     <section className="sec pr" id="pricing">
       <div className="wrap">
         {heading && <div className="sec-head">
-          <span className="tag rv">Investment</span>
           <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>
-            One protocol. Zero guesswork.
+            What coaching costs.
           </h2>
           <p className="lead rv" style={{ ["--d" as string]: "160ms", maxWidth: 560 }}>
             Every plan includes the full CALIBRATE system, your Vemisis app access, weekly analysis and direct coach access.
@@ -147,7 +146,7 @@ export default function Pricing({ fallback = FALLBACK_PLANS, showMoreLink = true
         }
         .pr-tagline { color: var(--text-muted); }
         .pr-card.is-hl .pr-tagline { color: rgba(5,5,6,0.65); }
-        .pr-name { font-family: var(--font-display); font-size: 42px; line-height: 1; margin-top: 10px; }
+        .pr-name { font-family: var(--font-display); font-weight: 400; font-size: 42px; line-height: 1; margin-top: 10px; text-transform: uppercase; letter-spacing: 0.002em; }
         .pr-card.is-hl .pr-name, .pr-card.is-hl .pr-price { color: #050506; }
         .pr-price { font-family: var(--font-display); font-size: clamp(54px, 5.4vw, 76px); line-height: 1; margin-top: 18px; color: #fff; }
         .pr-note { font-size: 13.5px; color: var(--text-muted); margin-top: 8px; }

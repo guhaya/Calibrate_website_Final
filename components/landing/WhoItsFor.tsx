@@ -64,9 +64,8 @@ export default function WhoItsFor() {
     <section className="sec wif" aria-labelledby="wif-title">
       <div className="wrap">
         <div className="wif-head">
-          <p className="mono c-accent rv">Who it&apos;s for</p>
           <h2 id="wif-title" className="display-lg rv" style={{ ["--d" as string]: "60ms" }}>
-            Built for real lives, not perfect ones.
+            Who we coach.
           </h2>
         </div>
 
@@ -114,7 +113,7 @@ export default function WhoItsFor() {
           backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
         }
         .wif-body { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px 22px; flex: 1; }
-        .wif-who { font-family: var(--font-display); font-size: clamp(26px, 2.1vw, 32px); line-height: 1; text-transform: uppercase; }
+        .wif-who { font-size: clamp(20px, 1.7vw, 23px); line-height: 1.2; }
         .wif-line { font-size: 15px; font-weight: 700; color: #fff; line-height: 1.45; }
         .wif-how { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
         .wif-quote { margin: 6px 0 0; padding-left: 12px; border-left: 2px solid var(--accent); }

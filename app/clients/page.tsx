@@ -56,7 +56,6 @@ export default function ClientsPage() {
       <main id="main">
         <PageHero
           compact
-          eyebrow="Your experience"
           title={<>What coaching with CALIBRATE looks like</>}
           lead="From day one to your final result, here's exactly what you get, what to expect, and how the process works inside the Vemisis app."
         />
@@ -79,7 +78,6 @@ export default function ClientsPage() {
         <section className="sec cl-phases" aria-labelledby="cl-phases-title">
           <div className="wrap cl-phases-grid">
             <div className="cl-side">
-              <p className="mono c-accent rv">12 weeks, four phases</p>
               <h2 id="cl-phases-title" className="display-lg rv" style={{ ["--d" as string]: "80ms" }}>Your first 12 weeks</h2>
               <p className="lead rv" style={{ ["--d" as string]: "160ms" }}>Every phase is designed. Nothing is left to chance.</p>
             </div>
@@ -92,8 +90,8 @@ export default function ClientsPage() {
                     {i < experiences.length - 1 && <span className="cl-line" />}
                   </div>
                   <div className="cl-phase-body">
-                    <p className="mono c-accent">{exp.phase}</p>
                     <h3 className="display-sm">{exp.title}</h3>
+                    <p className="subhead">{exp.phase}</p>
                     <p className="body-sm">{exp.description}</p>
                   </div>
                 </li>

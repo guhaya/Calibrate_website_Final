@@ -105,7 +105,6 @@ const steps: TourStep[] = [
 const extras: Omit<SplitFeatureProps, "flip">[] = [
   {
     id: "food-log",
-    eyebrow: "Food log",
     title: "Log a meal in seconds.",
     body: "Barcode scanning and a food database covering Indian and global cuisine, so logging fits into a real day.",
     points: [
@@ -117,8 +116,7 @@ const extras: Omit<SplitFeatureProps, "flip">[] = [
   },
   {
     id: "sessions",
-    eyebrow: "Sessions",
-    title: "Your coach, on the calendar.",
+    title: "Book and review your sessions.",
     body: "Book, reschedule and review your 1-on-1 coaching sessions in the same app you train with.",
     points: [
       "Session credits and upcoming sessions in one place",
@@ -129,8 +127,7 @@ const extras: Omit<SplitFeatureProps, "flip">[] = [
   },
   {
     id: "notifications",
-    eyebrow: "Smart notifications",
-    title: "Nudges that know your plan.",
+    title: "Notifications when something changes.",
     body: "Plan updates, session reminders and weekly consistency nudges, only when there is something worth knowing.",
     points: [
       "Messages from your coach",
@@ -148,8 +145,7 @@ export default function FeaturesPage() {
       <main id="main">
         <PageHero
           align="split"
-          eyebrow="Vemisis · the CALIBRATE app"
-          title={<>Every day, already decided.</>}
+          title={<>Today&apos;s plan is waiting when you open the app.</>}
           lead="Vemisis is the training app built for CALIBRATE clients. Open it, see today's session and targets, log in seconds, and let your coach handle the adjustments."
           ctas={[
             { label: "Book your free call", href: "/book" },

@@ -2,7 +2,6 @@ import { Check, Device } from "./ui";
 
 export type SplitFeatureProps = {
   id: string;
-  eyebrow: string;
   title: string;
   body: string;
   points: string[];
@@ -11,12 +10,11 @@ export type SplitFeatureProps = {
 };
 
 // Wide section: a big headline on one side, a real app screen on the other. Alternate with `flip`.
-export default function SplitFeature({ id, eyebrow, title, body, points, shot, flip = false }: SplitFeatureProps) {
+export default function SplitFeature({ id, title, body, points, shot, flip = false }: SplitFeatureProps) {
   return (
     <section id={id} className={`sec sf ${flip ? "sf-flip" : ""}`} aria-labelledby={`${id}-title`}>
       <div className="wrap sf-grid">
         <div className="sf-copy">
-          <p className="mono c-accent rv">{eyebrow}</p>
           <h2 id={`${id}-title`} className="display-lg rv" style={{ ["--d" as string]: "60ms" }}>{title}</h2>
           <p className="lead rv" style={{ ["--d" as string]: "120ms" }}>{body}</p>
           <ul className="sf-points">

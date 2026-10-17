@@ -75,7 +75,6 @@ export default function BlogClient() {
       <main id="main">
         <PageHero
           compact
-          eyebrow="Blog"
           title={<>Training and nutrition, explained by coaches.</>}
           lead="Practical guidance on training, nutrition, mindset and building the body you want, written by coaches, not content marketers. The first articles are being written now."
         />

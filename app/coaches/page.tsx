@@ -110,7 +110,6 @@ export default async function AboutPage() {
           </div>
           <div className="wrap co-open-inner">
             <div className="co-open-copy">
-              <p className="mono c-accent">{[headCoach.name, headCoach.role ?? "Founder & Chief Fitness Director"].join(" · ")}</p>
               <h1 id="co-title" className="co-title">The people behind your protocol.</h1>
               <p className="co-lead">
                 A Chief Fitness Director who reviews every application personally, certified trainers across India and on-call specialists for clinical-level nutrition. One team, one method.
@@ -140,8 +139,8 @@ export default async function AboutPage() {
         <section className="sec" aria-labelledby="co-head-name">
           <div className="wrap co-head">
             <div className="co-head-id">
-              <span className="tag rv">{headCoach.role ?? "Founder & Chief Fitness Director"}</span>
               <h2 id="co-head-name" className="display-md co-head-name rv" style={{ ["--d" as string]: "80ms" }}>{headCoach.name}</h2>
+              <p className="subhead rv" style={{ ["--d" as string]: "100ms" }}>{headCoach.role ?? "Founder & Chief Fitness Director"}</p>
               <p className="mono c-muted rv" style={{ ["--d" as string]: "120ms" }}>
                 {[headCoach.handle, headCoach.location].filter(Boolean).join(" · ")}
               </p>
@@ -176,7 +175,7 @@ export default async function AboutPage() {
           <section className="sec-tight">
             <div className="wrap">
               <div className="sec-head">
-                <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>On the floor, on your side.</h2>
+                <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Trainers on the gym floor.</h2>
               </div>
               <div className="co-grid">
                 {trainers.map((t, i) => (

@@ -40,7 +40,6 @@ export default function ProgrammesPage() {
       <main id="main">
         <PageHero
           align="split"
-          eyebrow="Programmes"
           title={<>Train for the outcome you want.</>}
           lead="Whether you want to look different, perform better, protect your health or simply feel capable every day, your programme is written for that goal, then adjusted every week as your body responds. Online worldwide, and in person by arrangement for kids with autism and senior citizens."
           ctas={[
@@ -96,8 +95,8 @@ export default function ProgrammesPage() {
                   </div>
                   <div className="pg-row-body">
                     <div className="pg-modes"><ModeBadge mode="Online" /></div>
-                    <p className="mono c-accent">{t.kicker}</p>
                     <h3 className="pg-track-name">{t.name}</h3>
+                    <p className="subhead">{t.kicker}</p>
                     <p className="pg-line">{t.line}</p>
                     <ul className="pg-points">
                       {t.points.map((pt) => (
@@ -140,8 +139,8 @@ export default function ProgrammesPage() {
                   </div>
                   <div className="pg-adapt-body">
                     <div className="pg-modes">{a.modes.map((m) => <ModeBadge key={m} mode={m} />)}</div>
-                    <p className="mono c-accent">{a.kicker}</p>
                     <h3 className="pg-track-name">{a.name}</h3>
+                    <p className="subhead">{a.kicker}</p>
                     <p className="pg-line">{a.line}</p>
                     <ul className="pg-points">
                       {a.points.map((pt) => (
@@ -267,7 +266,7 @@ export default function ProgrammesPage() {
         .pg-row-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(5,5,6,0.35)); pointer-events: none; }
         .pg-row-num { position: absolute; left: 20px; bottom: 18px; z-index: 1; font-size: 13px; letter-spacing: 0.14em; color: #fff; background: rgba(5,5,6,0.55); padding: 6px 10px; border-radius: 8px; backdrop-filter: blur(6px); }
         .pg-row-body { padding: 44px 48px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
-        .pg-track-name { font-family: var(--font-display); font-size: clamp(36px, 3.4vw, 54px); line-height: 0.95; text-transform: uppercase; }
+        .pg-track-name { font-family: var(--font-display); font-weight: 400; font-size: clamp(36px, 3.4vw, 54px); line-height: 0.95; text-transform: uppercase; }
         .pg-points { list-style: none; display: grid; gap: 10px; margin-top: 4px; }
         .pg-points li { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; color: #fff; font-weight: 600; line-height: 1.45; }
         .pg-points li svg { margin-top: 2px; flex-shrink: 0; }
@@ -297,7 +296,7 @@ export default function ProgrammesPage() {
         .pg-pillar-head { display: flex; flex-direction: column; gap: 10px; }
         .pg-pillar-img { position: relative; aspect-ratio: 16 / 10; border-radius: 18px; overflow: hidden; border: 1px solid var(--border); margin-top: 8px; }
         .pg-num { color: var(--accent); font-size: 13px; letter-spacing: 0.12em; }
-        .pg-pillar-name { font-family: var(--font-display); font-size: clamp(36px, 3.4vw, 52px); line-height: 0.95; text-transform: uppercase; }
+        .pg-pillar-name { font-family: var(--font-display); font-weight: 400; font-size: clamp(36px, 3.4vw, 52px); line-height: 0.95; text-transform: uppercase; }
         .pg-pillar-body { display: flex; flex-direction: column; gap: 20px; }
         .pg-goals { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
         .pg-goals li { padding: 9px 14px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); font-size: 14px; font-weight: 600; color: #fff; line-height: 1.3; }
@@ -321,7 +320,7 @@ export default function ProgrammesPage() {
         .pg-train::before { content: "Trained with: "; color: var(--text-muted); }
 
         .pg-cta { margin-top: 56px; border-radius: 24px; padding: 36px 40px; color: #07070A; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr) auto; align-items: center; gap: 16px 40px; }
-        .pg-cta-title { font-family: var(--font-display); font-size: clamp(30px, 2.8vw, 42px); line-height: 0.95; text-transform: uppercase; color: #07070A; }
+        .pg-cta-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 2.8vw, 42px); line-height: 0.95; text-transform: uppercase; color: #07070A; }
         .pg-cta p { line-height: 1.6; }
         .pg-dark-btn { justify-self: end; white-space: nowrap; background: #07070A !important; color: #fff !important; }
         .pg-disclaimer { margin-top: 24px; font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; max-width: 880px; }

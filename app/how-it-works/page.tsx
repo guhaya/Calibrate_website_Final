@@ -93,7 +93,6 @@ export default function HowItWorksPage() {
       <main id="main">
         <PageHero
           align="split"
-          eyebrow="The CALIBRATE Method"
           title={<>What happens after you book.</>}
           lead="Every CALIBRATE coaching journey follows a clear, engineered process. Here is exactly what happens from the moment you book your free call, and how the Vemisis app keeps every week on track."
           ctas={[
@@ -120,7 +119,7 @@ export default function HowItWorksPage() {
         <Method showLink={false} />
 
         <Journey
-          title={<>Week by week, step by step.</>}
+          title={<>Your first weeks, in order.</>}
           lead="From the first conversation to lasting results. No mystery, no black box, just a process you can see working."
           steps={steps}
         />

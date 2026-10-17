@@ -31,7 +31,7 @@ export default function Results() {
         <div>
           <h2 className="display-lg rv">How progress is measured.</h2>
           <p className="lead rv" style={{ ["--d" as string]: "80ms", maxWidth: 520, marginTop: 18 }}>
-            No guesswork and no fixed promises. Every week your coach reviews the same numbers you see in Vemisis, and the plan changes when they do.
+            Every week your coach reviews the same numbers you see in Vemisis, and the plan changes when they do.
           </p>
 
           <ol className="res-list">

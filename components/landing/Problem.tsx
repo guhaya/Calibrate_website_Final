@@ -49,11 +49,11 @@ export default function Problem() {
       <div className="wrap">
         <div className="sec-head">
           <h2 className="display-lg rv balance">
-            It&apos;s not a willpower problem. It&apos;s a system problem.
+            Effort was never what you were missing.
           </h2>
           <p className="lead rv" style={{ ["--d" as string]: "160ms", maxWidth: 620 }}>
-            Smart, driven people don&apos;t fail at fitness for lack of effort. They fail because nobody built them a
-            system that bends around real life. That&apos;s exactly what CALIBRATE does.
+            Smart, driven people put real effort into fitness. What usually breaks is the plan, the moment work,
+            travel or family get busy. CALIBRATE is built to bend at exactly those points.
           </p>
         </div>
 
