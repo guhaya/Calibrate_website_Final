@@ -49,7 +49,7 @@ const FALLBACK_TEAM: TeamMember[] = [
       ...HEAD_COACH_CREDENTIALS,
     ],
     stats: [
-      { value: "45", label: "Active clients" },
+      { value: "45", label: "Clients in 2026" },
       { value: "10+", label: "Years coaching" },
       { value: "10", label: "Countries reached" },
     ],

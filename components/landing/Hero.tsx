@@ -51,7 +51,7 @@ export default function Hero() {
           <span className="hero-proof-dot" aria-hidden="true" />
           <span>10+ years coaching</span>
           <span className="hero-proof-dot" aria-hidden="true" />
-          <span>45 clients in 10 countries</span>
+          <span>45 clients in 2026, across 10 countries</span>
         </p>
 
       </div>

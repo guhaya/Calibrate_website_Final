@@ -10,7 +10,7 @@ const creds = [
 ];
 
 const stats = [
-  { value: "45", label: "Clients coached" },
+  { value: "45", label: "Clients in 2026" },
   { value: "10", label: "Countries reached" },
   { value: "10+", label: "Years coaching" },
 ];
