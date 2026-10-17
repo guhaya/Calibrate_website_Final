@@ -51,10 +51,6 @@ export default function PhoneTour({ steps }: { steps: TourStep[] }) {
               ref={(el) => { refs.current[i] = el; }}
               className={`pt-step ${i === active ? "is-active" : ""}`}
             >
-              <button type="button" className="pt-step-head" onClick={() => go(i)} aria-current={i === active ? "step" : undefined}>
-                <span className="pt-num mono">{String(i + 1).padStart(2, "0")}</span>
-                <span className="pt-label mono">{s.label}</span>
-              </button>
               <h2 className="pt-title">{s.headline}</h2>
               <p className="pt-desc">{s.description}</p>
               <ul className="pt-feats">
@@ -115,10 +111,6 @@ export default function PhoneTour({ steps }: { steps: TourStep[] }) {
           opacity: 0.32; transition: opacity 0.5s var(--ease-out);
         }
         .pt-step.is-active { opacity: 1; }
-        .pt-step-head { display: inline-flex; align-items: center; gap: 14px; background: none; border: 0; padding: 0; cursor: pointer; color: inherit; min-height: 44px; align-self: flex-start; }
-        .pt-num { font-size: 13px; letter-spacing: 0.14em; color: var(--accent); }
-        .pt-label { font-size: 13px; letter-spacing: 0.14em; color: var(--text-secondary); text-transform: uppercase; }
-        .pt-step-head:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
         .pt-title { font-family: var(--font-display); font-size: clamp(36px, 3.6vw, 58px); line-height: 0.95; text-transform: uppercase; text-wrap: balance; }
         .pt-desc { font-size: 16.5px; line-height: 1.65; color: #C9CBD3; max-width: 560px; }
         .pt-feats { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px; }
