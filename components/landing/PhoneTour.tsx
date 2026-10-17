@@ -84,6 +84,7 @@ export default function PhoneTour({ steps }: { steps: TourStep[] }) {
                     alt=""
                     fill
                     sizes="300px"
+                    loading="eager"
                     className={`pt-shot ${i === active ? "is-on" : ""}`}
                     style={{ objectFit: "cover", objectPosition: "top" }}
                   />
@@ -130,8 +131,9 @@ export default function PhoneTour({ steps }: { steps: TourStep[] }) {
         .pt-stage { position: sticky; top: 140px; height: calc(100vh - 180px); min-height: 600px; display: flex; align-items: center; justify-content: center; gap: 36px; }
         .pt-glow { position: absolute; inset: 14% 10%; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,222,2,0.24), transparent); filter: blur(24px); }
         .pt-device { width: 300px; position: relative; z-index: 1; }
-        .pt-shot { opacity: 0; transform: scale(1.02); transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out); }
-        .pt-shot.is-on { opacity: 1; transform: none; }
+        /* The outgoing screen waits until the incoming one has faded in on top, so the phone never shows black. */
+        .pt-shot { opacity: 0; transform: scale(1.02); transition: opacity 0.3s linear 0.55s, transform 0.55s var(--ease-out); }
+        .pt-shot.is-on { z-index: 1; opacity: 1; transform: none; transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out); }
         .pt-dots { list-style: none; display: flex; flex-direction: column; gap: 6px; position: relative; z-index: 1; }
         .pt-dots button { display: inline-flex; align-items: center; gap: 10px; background: none; border: 0; padding: 6px 0; cursor: pointer; color: var(--text-muted); font-size: 12.5px; font-weight: 700; }
         .pt-dots button.is-on { color: #fff; }

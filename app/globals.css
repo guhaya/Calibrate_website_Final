@@ -1286,26 +1286,70 @@ main { overflow-x: clip; }
 }
 @keyframes rise-in { to { transform: translateY(0); } }
 
-/* Phone device frame */
+/* Phone device frame: iPhone Pro style. Metal rim (padding) + black bezel (screen border) + side buttons.
+   The app screenshots already include the status bar and Dynamic Island, so no island is drawn here.
+   Sizes inside the frame use cqi so the frame scales the same at every width. */
 .device {
   position: relative;
+  container-type: inline-size;
   aspect-ratio: 1206 / 2622;
-  border-radius: 14% / 6.6%;
-  padding: 3.2%;
-  background: linear-gradient(145deg, #2B2B31, #0B0B0D 40%, #1E1E23);
+  border-radius: 15.5% / 7.1%;
+  padding: 1.6%;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.22), transparent 7%, transparent 93%, rgba(255,255,255,0.18)),
+    linear-gradient(160deg, #A4A7AE 0%, #4A4D54 14%, #24262B 38%, #1A1B1F 62%, #4A4D54 86%, #A9ACB3 100%);
   box-shadow:
-    0 0 0 1px rgba(255,255,255,0.10),
-    inset 0 0 0 1px rgba(255,255,255,0.06),
+    inset 0 0 0 1px rgba(255,255,255,0.28),
+    inset 0 0 0 2px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(0,0,0,0.6),
     0 50px 100px -30px rgba(0,0,0,0.9),
     0 30px 60px -30px rgba(0,0,0,0.8);
 }
+/* Action button + volume buttons (left), side button + Camera Control (right). */
+.device::before,
+.device::after {
+  content: "";
+  position: absolute;
+  width: 1.1%;
+  border-radius: 2px;
+  pointer-events: none;
+}
+.device::before {
+  left: -0.9%;
+  top: 17%;
+  height: 21%;
+  background: linear-gradient(180deg,
+    #6E7178 0 15%, transparent 15% 31%,
+    #6E7178 31% 63%, transparent 63% 69%,
+    #6E7178 69% 100%);
+}
+.device::after {
+  right: -0.9%;
+  top: 25%;
+  height: 33%;
+  background: linear-gradient(180deg,
+    #6E7178 0 33%, transparent 33% 70%,
+    #5A5D63 70% 90%, transparent 90%);
+}
 .device-screen {
   position: relative;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
-  border-radius: 11.5% / 5.4%;
+  border: 2.7cqi solid #030304;
+  border-radius: 14cqi;
   overflow: hidden;
   background: #000;
+  box-shadow: 0 0 0 0.35cqi rgba(0,0,0,0.9);
+}
+.device-screen::after {
+  /* Faint glass sheen across the display. */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(115deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0) 32%);
 }
 .device-screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
 
