@@ -104,7 +104,6 @@ export default function ContactClient() {
           <div className="ct-bg grid-lines" aria-hidden="true" />
           <div className="wrap">
             <div className="ct-head">
-              <span className="tag ct-in" style={{ ["--d" as string]: "0ms" }}>Get in touch</span>
               <h1 className="ct-title ct-in" style={{ ["--d" as string]: "90ms" }}>Talk to a coach.</h1>
               <p className="lead ct-lead ct-in" style={{ ["--d" as string]: "180ms" }}>
                 Have a question before booking? Want to know if coaching is right for you? Reach out, every message gets a personal response within 4 hours.

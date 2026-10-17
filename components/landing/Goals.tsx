@@ -32,7 +32,7 @@ export default function Goals() {
       <div className="wrap">
         <div className="sec-head left goals-head">
           <h2 className="display-lg rv">
-            No generic plans. Ever.
+            Start with one of three goals.
           </h2>
           <p className="lead rv" style={{ ["--d" as string]: "100ms", maxWidth: 560 }}>
             Your programme is written for the outcome you&apos;re chasing, then rewritten every week as your body responds.
@@ -79,7 +79,7 @@ export default function Goals() {
         .goal:hover .goal-img { transform: scale(1.06); filter: saturate(1.05); }
         .goal-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(5,5,6,0.15) 0%, rgba(5,5,6,0.35) 40%, rgba(5,5,6,0.96) 78%); }
         .goal-body { position: absolute; inset: auto 0 0 0; padding: 30px 28px; display: flex; flex-direction: column; gap: 12px; }
-        .goal-title { font-family: var(--font-display); font-size: clamp(40px, 3.6vw, 54px); line-height: 0.95; }
+        .goal-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 3.6vw, 54px); line-height: 0.95; text-transform: uppercase; letter-spacing: 0.002em; }
         .goal-line { font-size: 14.5px; color: #D7D9E0; line-height: 1.6; }
         .goal-reveal { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.5s var(--ease-out); }
         .goal-points {

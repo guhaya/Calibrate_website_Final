@@ -68,9 +68,8 @@ export default function Method({ showLink = true }: { showLink?: boolean }) {
     <section className="mth" id="method">
       <div className="wrap sec-tight" style={{ paddingBottom: 0 }}>
         <div className="sec-head">
-          <span className="tag rv">The CALIBRATE Method</span>
           <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>
-            Five phases. One system.
+            Define, Measure, Analyse, Improve, Control.
           </h2>
           <p className="lead rv" style={{ ["--d" as string]: "160ms", maxWidth: 640 }}>
             DMAIC is the improvement framework engineers use to perfect complex processes. CALIBRATE applies it to your
@@ -95,8 +94,8 @@ export default function Method({ showLink = true }: { showLink?: boolean }) {
             <div className="mth-copy">
               {phases.map((p, i) => (
                 <div key={p.word} className={`mth-panel ${i === active ? "is-on" : ""}`} aria-hidden={i !== active}>
-                  <p className="mono c-accent">{p.week}</p>
                   <h3 className="mth-word">{p.word}</h3>
+                  <p className="subhead">{p.week}</p>
                   <p className="lead" style={{ maxWidth: 480 }}>{p.desc}</p>
                   <div className="mth-app">
                     <p className="mono" style={{ color: "#fff", marginBottom: 12 }}>In Vemisis</p>
@@ -136,8 +135,8 @@ export default function Method({ showLink = true }: { showLink?: boolean }) {
             <div className="mth-mhead">
               <span className="mth-mletter">{p.letter}</span>
               <div>
-                <p className="mono c-accent">{p.week}</p>
                 <h3 className="display-sm">{p.word}</h3>
+                <p className="subhead">{p.week}</p>
               </div>
             </div>
             <p className="body-sm">{p.desc}</p>
@@ -177,7 +176,7 @@ export default function Method({ showLink = true }: { showLink?: boolean }) {
           transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
         }
         .mth-panel.is-on { opacity: 1; transform: none; pointer-events: auto; }
-        .mth-word { font-family: var(--font-display); font-size: clamp(64px, 8vw, 128px); line-height: 0.9; }
+        .mth-word { font-family: var(--font-display); font-weight: 400; font-size: clamp(64px, 8vw, 128px); line-height: 0.9; text-transform: uppercase; letter-spacing: 0.002em; }
         .mth-app { margin-top: 8px; padding: 20px 22px; border-radius: 20px; background: var(--surface-1); border: 1px solid var(--line); max-width: 480px; }
         .mth-app-row { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; color: #E4E5EA; line-height: 1.5; }
         .mth-app-row + .mth-app-row { margin-top: 10px; }

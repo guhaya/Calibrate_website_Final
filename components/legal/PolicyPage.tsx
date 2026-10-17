@@ -35,7 +35,6 @@ export default function PolicyPage({ policy, policyType, intro }: {
             }}
           />
           <div style={{ maxWidth: "720px", margin: "0 auto", position: "relative" }}>
-            <div className="tag" style={{ marginBottom: "24px" }}>Legal</div>
             <h1
               style={{
                 fontSize: "clamp(44px, 6vw, 84px)",

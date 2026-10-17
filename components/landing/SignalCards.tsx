@@ -6,7 +6,6 @@ import Image from "next/image";
 const cards = [
   {
     key: "score",
-    eyebrow: "CALIBRATE Score",
     title: "One number for your week",
     body: "Training, nutrition, sleep and habits rolled into a single score, with the biggest opportunity called out for you.",
     img: "/media/app/insights.webp",
@@ -18,7 +17,6 @@ const cards = [
   },
   {
     key: "nutrition",
-    eyebrow: "Nutrition",
     title: "Know exactly what you've eaten",
     body: "Calories and macros against the targets your coach set, with your usual meals one tap away.",
     img: "/media/app/nutrition.webp",
@@ -30,7 +28,6 @@ const cards = [
   },
   {
     key: "recovery",
-    eyebrow: "Recovery",
     title: "Train hard, or take it easy",
     body: "HRV, resting heart rate and sleep from your wearable, turned into a daily readiness call.",
     img: "/media/app/recovery.webp",
@@ -57,7 +54,6 @@ export default function SignalCards() {
           {cards.map((c, i) => (
             <article key={c.key} className="sig-card rv" style={{ ["--d" as string]: `${i * 90}ms`, ["--tint" as string]: c.tint }}>
               <div className="sig-copy">
-                <p className="mono c-accent">{c.eyebrow}</p>
                 <h3 className="sig-title">{c.title}</h3>
                 <p className="sig-body">{c.body}</p>
               </div>
@@ -93,7 +89,7 @@ export default function SignalCards() {
           box-shadow: 0 40px 80px -40px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.06);
         }
         .sig-copy { display: flex; flex-direction: column; gap: 10px; }
-        .sig-title { font-family: var(--font-display); font-size: clamp(30px, 2.4vw, 40px); line-height: 0.98; text-transform: uppercase; }
+        .sig-title { font-size: clamp(22px, 1.9vw, 27px); line-height: 1.18; text-wrap: balance; }
         .sig-body { font-size: 15px; line-height: 1.6; color: #C9CBD3; max-width: 320px; }
         .sig-shot { position: relative; margin-top: auto; padding-top: 28px; display: flex; justify-content: center; overflow: hidden; border-radius: 0 0 32px 32px; height: 360px; }
         .sig-device {

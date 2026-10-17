@@ -5,7 +5,6 @@ import { Arrow } from "./ui";
 type Cta = { label: string; href: string; variant?: "primary" | "secondary" };
 
 export default function PageHero({
-  eyebrow,
   title,
   lead,
   ctas = [],
@@ -13,7 +12,6 @@ export default function PageHero({
   align = "center",
   compact = false,
 }: {
-  eyebrow: string;
   title: ReactNode;
   lead?: ReactNode;
   ctas?: Cta[];
@@ -28,7 +26,6 @@ export default function PageHero({
       <div className="ph-glow" aria-hidden="true" />
       <div className="wrap ph-inner">
         <div className="ph-copy">
-          <span className="tag ph-in" style={{ ["--d" as string]: "0ms" }}>{eyebrow}</span>
           <h1 className="ph-title ph-in" style={{ ["--d" as string]: "90ms" }}>{title}</h1>
           {lead && <p className="lead ph-lead ph-in" style={{ ["--d" as string]: "180ms" }}>{lead}</p>}
           {ctas.length > 0 && (

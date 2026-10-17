@@ -28,7 +28,6 @@ export default function Reviews() {
     <section className="sec rvw" aria-labelledby="rvw-title">
       <div className="wrap rvw-head">
         <div>
-          <p className="mono c-accent rv">From the people we coach</p>
           <h2 id="rvw-title" className="display-lg rv" style={{ ["--d" as string]: "60ms" }}>
             Rated {GOOGLE_RATING.score} on Google.
           </h2>

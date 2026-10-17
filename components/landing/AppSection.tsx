@@ -21,7 +21,7 @@ const orbit = [
 const tiles = [
   {
     area: "chat",
-    title: "Your coach, one tap away",
+    title: "Message your coach in the app",
     body: "Message your coach inside the app, share wins and struggles, and get your weekly check-in reviewed where your data already lives.",
     img: "/media/app/messages.webp",
     alt: "Vemisis coach messages screen",
@@ -62,9 +62,8 @@ export default function AppSection() {
 
           <div className="sec-head" style={{ marginBottom: 40 }}>
             <Image src="/media/brand/vemisis-app-icon.png" alt="Vemisis app icon" width={84} height={84} className="app-icon rv rv-scale" />
-            <span className="tag rv" style={{ ["--d" as string]: "60ms" }}>Meet Vemisis, the CALIBRATE app</span>
             <h2 className="display-lg rv balance" style={{ ["--d" as string]: "120ms" }}>
-              Your coach. Your plan. One app.
+              Everything your coach sets lives in Vemisis.
             </h2>
             <p className="lead rv" style={{ ["--d" as string]: "200ms", maxWidth: 640 }}>
               Vemisis is the training app built for CALIBRATE clients. Sessions, macros, recovery and your coach live
@@ -142,7 +141,7 @@ export default function AppSection() {
         }
         .bento-tile { display: flex; flex-direction: column; padding: 32px 32px 0; min-height: 420px; }
         .bt-copy { display: flex; flex-direction: column; gap: 10px; max-width: 460px; position: relative; z-index: 1; }
-        .bt-title { font-family: var(--font-display); font-size: clamp(26px, 2.3vw, 34px); line-height: 1; }
+        .bt-title { font-size: clamp(21px, 1.8vw, 25px); line-height: 1.2; text-wrap: balance; }
         .bt-shot {
           margin-top: auto; padding-top: 28px; align-self: center; width: 62%; max-width: 270px;
           -webkit-mask-image: linear-gradient(#000 70%, transparent); mask-image: linear-gradient(#000 70%, transparent);

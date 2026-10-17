@@ -24,9 +24,9 @@ export function Arrow({ size = 14 }: { size?: number }) {
 
 export function Check({ color = "#FFDE02", size = 16 }: { color?: string; size?: number }) {
   return (
+    // A short rule, not a tick in a circle: lists read as lists, not as a feature grid.
     <svg width={size} height={size} viewBox="0 0 16 16" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
-      <circle cx="8" cy="8" r="7.25" fill="rgba(255,222,2,0.12)" stroke="rgba(255,222,2,0.35)" strokeWidth="0.5" />
-      <path d="M5 8.2l2 2 4-4.2" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <rect x="2" y="7.25" width="10" height="1.5" rx="0.75" fill={color} />
     </svg>
   );
 }

@@ -74,7 +74,6 @@ export default function TrustPanel() {
           <SafeDial />
 
           <div className="trust-copy">
-            <p className="mono c-accent">Built for privacy</p>
             <h2 id="trust-title" className="trust-title">Your data is yours.</h2>
             <p className="trust-lead">
               You share bloodwork, body measurements and progress photos with us. We protect them with encryption in transit and strict access controls.

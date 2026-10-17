@@ -33,7 +33,6 @@ export default function ApplyPage() {
         {/* Hero */}
         <PageHero
           compact
-          eyebrow="Client application"
           title={<>Apply to CALIBRATE.</>}
           lead="Reviewed personally by Guhay. Fill in your details and you'll hear back within 48 hours."
           ctas={[{ label: "Start your application", href: "#application-form" }]}
