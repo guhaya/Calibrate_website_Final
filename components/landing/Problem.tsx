@@ -167,7 +167,7 @@ export default function Problem() {
           opacity: 1; color: #fff; transition-delay: 0.45s;
           border-color: rgba(255,222,2,0.5); background: linear-gradient(90deg, rgba(255,222,2,0.10), var(--surface-1) 70%);
         }
-        .pb-ico { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; transition: transform 0.5s cubic-bezier(0.34, 1.5, 0.5, 1), background 0.4s ease; }
+        .pb-ico { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease; }
         .pb-ico-x { background: rgba(222,48,51,0.14); color: #F2585B; }
         .pb-ico-ok { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); transform: scale(0.8); }
         .pb-fix.is-done .pb-ico-ok { background: var(--accent); color: #050506; transform: scale(1); transition-delay: 0.5s; }
@@ -201,14 +201,14 @@ export default function Problem() {
           background: var(--accent);
           box-shadow: 0 24px 50px -16px rgba(255,222,2,0.45);
           position: relative; z-index: 1;
-          transition: transform 0.6s cubic-bezier(0.34, 1.5, 0.5, 1);
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .pb-hub.is-complete .pb-hub-core { transform: scale(1.06); }
         .pb-hub-label { position: absolute; bottom: calc(50% - 124px); color: var(--accent); letter-spacing: 0.2em; white-space: nowrap; }
 
         .pb-dial-arc { stroke-dasharray: 100; stroke-dashoffset: 100; }
         .pb-dial-needle-wrap, .pb-dial-hub { transform-box: view-box; transform-origin: 32px 32px; }
-        .pb-dial-needle-wrap { transition: transform 0.9s cubic-bezier(0.34, 1.45, 0.5, 1); }
+        .pb-dial-needle-wrap { transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
         .pb-dial-hub { transform: scale(0); }
         .pb-map.in-view .pb-dial-arc { animation: dial-arc 1.1s var(--ease-out) 0.3s forwards; }
         .pb-map.in-view .pb-dial-hub { animation: dial-hub 0.5s var(--ease-out) 0.9s forwards; }

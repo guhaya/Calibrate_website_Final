@@ -59,20 +59,20 @@ export default function ApplicationsView({ password }: { password: string }) {
   }
 
   if (loading) {
-    return <p style={{ color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: "14px" }}>Loading applications…</p>;
+    return <p style={{ color: "#7E8395", fontFamily: "var(--font-body)", fontSize: "14px" }}>Loading applications…</p>;
   }
 
   if (subs.length === 0) {
     return (
       <div style={{ padding: "32px", textAlign: "center", background: "rgba(255,255,255,0.02)", border: "1px dashed rgba(255,255,255,0.1)", borderRadius: "12px" }}>
-        <p style={{ color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: "14px" }}>No applications yet.</p>
+        <p style={{ color: "#7E8395", fontFamily: "var(--font-body)", fontSize: "14px" }}>No applications yet.</p>
       </div>
     );
   }
 
   return (
     <div>
-      <p style={{ fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "16px" }}>{count} total</p>
+      <p style={{ fontSize: "12px", color: "#7E8395", fontFamily: "var(--font-body)", marginBottom: "16px" }}>{count} total</p>
       {subs.map((s) => (
         <div key={s.id} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "10px", marginBottom: "8px", overflow: "hidden" }}>
           <button
@@ -81,10 +81,10 @@ export default function ApplicationsView({ password }: { password: string }) {
           >
             <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: STATUS_COLORS[s.status], flexShrink: 0 }} />
             <div style={{ flex: 1, minWidth: 0 }}>
-              <span style={{ fontSize: "14px", fontWeight: 600, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{s.name || "(no name)"}</span>
-              <span style={{ fontSize: "12px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", marginLeft: "10px" }}>{s.email}</span>
+              <span style={{ fontSize: "14px", fontWeight: 600, color: "#FFFFFF", fontFamily: "var(--font-body)" }}>{s.name || "(no name)"}</span>
+              <span style={{ fontSize: "12px", color: "#7E8395", fontFamily: "var(--font-body)", marginLeft: "10px" }}>{s.email}</span>
             </div>
-            <span style={{ fontSize: "11px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", flexShrink: 0 }}>
+            <span style={{ fontSize: "11px", color: "#7E8395", fontFamily: "var(--font-body)", flexShrink: 0 }}>
               {new Date(s.created_at).toLocaleDateString()}
             </span>
           </button>
@@ -96,7 +96,7 @@ export default function ApplicationsView({ password }: { password: string }) {
                     key={st}
                     onClick={() => updateStatus(s.id, st)}
                     style={{
-                      padding: "5px 12px", borderRadius: "999px", fontSize: "11px", fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      padding: "5px 12px", borderRadius: "999px", fontSize: "11px", fontFamily: "var(--font-body)",
                       border: `1px solid ${s.status === st ? STATUS_COLORS[st] : "rgba(255,255,255,0.12)"}`,
                       background: s.status === st ? `${STATUS_COLORS[st]}1A` : "transparent",
                       color: s.status === st ? STATUS_COLORS[st] : "#7E8395", cursor: "pointer", textTransform: "capitalize",
@@ -108,7 +108,7 @@ export default function ApplicationsView({ password }: { password: string }) {
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                 {Object.entries(s.answers).map(([key, val]) => (
-                  <div key={key} style={{ fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <div key={key} style={{ fontSize: "13px", fontFamily: "var(--font-body)" }}>
                     <span style={{ color: "#7E8395" }}>{labelById[key] || key}: </span>
                     <span style={{ color: "#F5F3EE" }}>{Array.isArray(val) ? val.join(", ") : val}</span>
                   </div>

@@ -255,7 +255,7 @@ export default function AdminPage() {
             >
               Admin Portal
             </h1>
-            <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "var(--font-body)" }}>
               CALIBRATE · Content Management
             </p>
           </div>
@@ -276,7 +276,7 @@ export default function AdminPage() {
                   fontSize: "11px",
                   fontWeight: 700,
                   color: "#6B7280",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontFamily: "var(--font-body)",
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
                   marginBottom: "10px",
@@ -298,7 +298,7 @@ export default function AdminPage() {
                   borderRadius: "10px",
                   color: "#FFFFFF",
                   fontSize: "15px",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontFamily: "var(--font-body)",
                   outline: "none",
                   marginBottom: "16px",
                   boxSizing: "border-box",
@@ -306,7 +306,7 @@ export default function AdminPage() {
                 }}
               />
               {passwordError && (
-                <p style={{ fontSize: "13px", color: "#DE3033", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "12px" }}>
+                <p style={{ fontSize: "13px", color: "#DE3033", fontFamily: "var(--font-body)", marginBottom: "12px" }}>
                   Incorrect password. Try again.
                 </p>
               )}
@@ -321,7 +321,7 @@ export default function AdminPage() {
                   color: "#07070A",
                   fontSize: "15px",
                   fontWeight: 700,
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontFamily: "var(--font-body)",
                   cursor: "pointer",
                   letterSpacing: "0.02em",
                 }}
@@ -358,7 +358,7 @@ export default function AdminPage() {
     borderRadius: "10px",
     color: "#FFFFFF",
     fontSize: "14px",
-    fontFamily: "'Plus Jakarta Sans', sans-serif",
+    fontFamily: "var(--font-body)",
     outline: "none",
     boxSizing: "border-box",
   };
@@ -368,7 +368,7 @@ export default function AdminPage() {
     fontSize: "11px",
     fontWeight: 700,
     color: "#6B7280",
-    fontFamily: "'Plus Jakarta Sans', sans-serif",
+    fontFamily: "var(--font-body)",
     letterSpacing: "0.08em",
     textTransform: "uppercase",
     marginBottom: "8px",
@@ -408,7 +408,7 @@ export default function AdminPage() {
               marginTop: "8px",
               fontSize: "10px",
               color: "#7E8395",
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontFamily: "var(--font-body)",
               letterSpacing: "0.06em",
               textTransform: "uppercase",
             }}
@@ -432,7 +432,7 @@ export default function AdminPage() {
                 border: activeSection === item.key ? "1px solid rgba(255,222,2,0.2)" : "1px solid transparent",
                 color: activeSection === item.key ? "#FFDE02" : "#6B7280",
                 fontSize: "13px",
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontFamily: "var(--font-body)",
                 fontWeight: activeSection === item.key ? 600 : 400,
                 cursor: "pointer",
                 textAlign: "left",
@@ -456,7 +456,7 @@ export default function AdminPage() {
                 padding: "8px 12px",
                 fontSize: "12px",
                 color: "#22C55E",
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontFamily: "var(--font-body)",
                 textAlign: "center",
                 marginBottom: "10px",
               }}
@@ -474,7 +474,7 @@ export default function AdminPage() {
               borderRadius: "8px",
               color: "#FFDE02",
               fontSize: "12px",
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontFamily: "var(--font-body)",
               fontWeight: 600,
               cursor: "pointer",
               marginBottom: "8px",
@@ -495,7 +495,7 @@ export default function AdminPage() {
               borderRadius: "8px",
               color: "#6B7280",
               fontSize: "12px",
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontFamily: "var(--font-body)",
               cursor: "pointer",
             }}
           >
@@ -513,20 +513,20 @@ export default function AdminPage() {
               <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "32px", gap: "16px", flexWrap: "wrap" }}>
                 <div>
                   <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Visitor Logs</h1>
-                  <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "var(--font-body)" }}>
                     IP addresses, locations, devices, and pages visited. {visitorCount > 0 && <span style={{ color: "#FFDE02" }}>{visitorCount.toLocaleString()} total records.</span>}
                   </p>
                 </div>
                 <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
                   {visitors.length > 0 && (
-                    <button onClick={exportVisitorsCSV} style={{ padding: "9px 18px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.25)", borderRadius: "8px", color: "#FFDE02", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>
+                    <button onClick={exportVisitorsCSV} style={{ padding: "9px 18px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.25)", borderRadius: "8px", color: "#FFDE02", fontSize: "12px", fontFamily: "var(--font-body)", fontWeight: 600, cursor: "pointer" }}>
                       Export CSV
                     </button>
                   )}
                   <button
                     onClick={() => loadVisitors(0)}
                     disabled={visitorLoading}
-                    style={{ padding: "9px 18px", background: "linear-gradient(135deg,#FFDE02,#E6C700)", border: "none", borderRadius: "8px", color: "#07070A", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, cursor: "pointer", opacity: visitorLoading ? 0.6 : 1 }}
+                    style={{ padding: "9px 18px", background: "linear-gradient(135deg,#FFDE02,#E6C700)", border: "none", borderRadius: "8px", color: "#07070A", fontSize: "12px", fontFamily: "var(--font-body)", fontWeight: 700, cursor: "pointer", opacity: visitorLoading ? 0.6 : 1 }}
                   >
                     {visitorLoading ? "Loading…" : visitors.length ? "Refresh" : "Load Logs"}
                   </button>
@@ -535,7 +535,7 @@ export default function AdminPage() {
 
               {!visitors.length && !visitorLoading && (
                 <div style={{ ...cardStyle, textAlign: "center", padding: "48px 24px" }}>
-                  <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "var(--font-body)" }}>
                     Click "Load Logs" to fetch visitor records from the database.
                   </p>
                 </div>
@@ -553,7 +553,7 @@ export default function AdminPage() {
                     ].map(s => (
                       <div key={s.label} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "10px", padding: "16px", textAlign: "center" }}>
                         <p style={{ fontSize: "24px", fontFamily: "'Barlow Condensed', sans-serif", color: s.color, lineHeight: 1 }}>{s.value}</p>
-                        <p style={{ fontSize: "11px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginTop: "4px" }}>{s.label}</p>
+                        <p style={{ fontSize: "11px", color: "#6B7280", fontFamily: "var(--font-body)", marginTop: "4px" }}>{s.label}</p>
                       </div>
                     ))}
                   </div>
@@ -563,7 +563,7 @@ export default function AdminPage() {
                     {/* Table header */}
                     <div style={{ display: "grid", gridTemplateColumns: "140px 100px 130px 80px 80px 80px 1fr", gap: "0", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "10px 16px" }}>
                       {["Time", "IP", "Location", "Device", "Browser", "OS", "Page"].map(h => (
-                        <span key={h} style={{ fontSize: "10px", fontWeight: 700, color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase" }}>{h}</span>
+                        <span key={h} style={{ fontSize: "10px", fontWeight: 700, color: "#7E8395", fontFamily: "var(--font-body)", letterSpacing: "0.08em", textTransform: "uppercase" }}>{h}</span>
                       ))}
                     </div>
 
@@ -584,25 +584,25 @@ export default function AdminPage() {
                             background: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.01)",
                           }}
                         >
-                          <span style={{ fontSize: "11px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                          <span style={{ fontSize: "11px", color: "#6B7280", fontFamily: "var(--font-body)" }}>
                             {dt.toLocaleDateString()} {dt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                           </span>
-                          <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", fontVariantNumeric: "tabular-nums" }}>
+                          <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "var(--font-body)", fontVariantNumeric: "tabular-nums" }}>
                             {v.ip || "N/A"}
                           </span>
-                          <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                          <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "var(--font-body)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                             {location}
                           </span>
-                          <span style={{ fontSize: "11px", color: deviceColor, fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600 }}>
+                          <span style={{ fontSize: "11px", color: deviceColor, fontFamily: "var(--font-body)", fontWeight: 600 }}>
                             {v.device_type || "N/A"}
                           </span>
-                          <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                          <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "var(--font-body)" }}>
                             {v.browser || "N/A"}
                           </span>
-                          <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                          <span style={{ fontSize: "11px", color: "#B7B9C3", fontFamily: "var(--font-body)" }}>
                             {v.os || "N/A"}
                           </span>
-                          <span style={{ fontSize: "11px", color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                          <span style={{ fontSize: "11px", color: "#FFDE02", fontFamily: "var(--font-body)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                             {v.page || "/"}
                           </span>
                         </div>
@@ -613,12 +613,12 @@ export default function AdminPage() {
                   {/* Pagination */}
                   {visitorCount > 50 && (
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "16px" }}>
-                      <span style={{ fontSize: "12px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                      <span style={{ fontSize: "12px", color: "#6B7280", fontFamily: "var(--font-body)" }}>
                         Showing {visitorPage * 50 + 1}–{Math.min((visitorPage + 1) * 50, visitorCount)} of {visitorCount}
                       </span>
                       <div style={{ display: "flex", gap: "8px" }}>
-                        <button disabled={visitorPage === 0} onClick={() => loadVisitors(visitorPage - 1)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: visitorPage === 0 ? "default" : "pointer", opacity: visitorPage === 0 ? 0.4 : 1 }}>← Prev</button>
-                        <button disabled={(visitorPage + 1) * 50 >= visitorCount} onClick={() => loadVisitors(visitorPage + 1)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: (visitorPage + 1) * 50 >= visitorCount ? "default" : "pointer", opacity: (visitorPage + 1) * 50 >= visitorCount ? 0.4 : 1 }}>Next →</button>
+                        <button disabled={visitorPage === 0} onClick={() => loadVisitors(visitorPage - 1)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "var(--font-body)", cursor: visitorPage === 0 ? "default" : "pointer", opacity: visitorPage === 0 ? 0.4 : 1 }}>← Prev</button>
+                        <button disabled={(visitorPage + 1) * 50 >= visitorCount} onClick={() => loadVisitors(visitorPage + 1)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "var(--font-body)", cursor: (visitorPage + 1) * 50 >= visitorCount ? "default" : "pointer", opacity: (visitorPage + 1) * 50 >= visitorCount ? 0.4 : 1 }}>Next →</button>
                       </div>
                     </div>
                   )}
@@ -633,7 +633,7 @@ export default function AdminPage() {
               <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>
                 Dashboard
               </h1>
-              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>
+              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "var(--font-body)", marginBottom: "32px" }}>
                 Manage all CALIBRATE website content from here.
               </p>
 
@@ -647,7 +647,7 @@ export default function AdminPage() {
                     <div style={{ fontSize: "32px", fontFamily: "'Barlow Condensed', sans-serif", color: stat.color, marginBottom: "4px" }}>
                       {stat.value}
                     </div>
-                    <div style={{ fontSize: "12px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                    <div style={{ fontSize: "12px", color: "#6B7280", fontFamily: "var(--font-body)" }}>
                       {stat.label}
                     </div>
                   </div>
@@ -660,7 +660,7 @@ export default function AdminPage() {
                 </h3>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                   <div>
-                    <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                    <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "var(--font-body)" }}>
                       Currently shown as:{" "}
                       <strong style={{ color: content.acceptingClients ? "#22C55E" : "#DE3033" }}>
                         {content.acceptingClients ? "Accepting new clients" : "Not accepting clients"}
@@ -676,7 +676,7 @@ export default function AdminPage() {
                       borderRadius: "8px",
                       color: content.acceptingClients ? "#DE3033" : "#22C55E",
                       fontSize: "13px",
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontFamily: "var(--font-body)",
                       fontWeight: 600,
                       cursor: "pointer",
                     }}
@@ -704,7 +704,7 @@ export default function AdminPage() {
                         borderRadius: "8px",
                         color: "#B7B9C3",
                         fontSize: "13px",
-                        fontFamily: "'Plus Jakarta Sans', sans-serif",
+                        fontFamily: "var(--font-body)",
                         textDecoration: "none",
                         display: "flex",
                         alignItems: "center",
@@ -726,7 +726,7 @@ export default function AdminPage() {
           {activeSection === "hero" && (
             <div>
               <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Hero Section</h1>
-              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>Edit the main headline and subheadline on the homepage.</p>
+              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "var(--font-body)", marginBottom: "32px" }}>Edit the main headline and subheadline on the homepage.</p>
               <div style={cardStyle}>
                 <div style={{ marginBottom: "20px" }}>
                   <label style={labelStyle}>Main Headline</label>
@@ -746,7 +746,7 @@ export default function AdminPage() {
                     style={{ ...inputStyle, resize: "vertical" }}
                   />
                 </div>
-                <button onClick={() => saveContent(content)} style={{ padding: "12px 28px", background: "linear-gradient(135deg,#FFDE02,#E6C700)", border: "none", borderRadius: "8px", color: "#07070A", fontSize: "14px", fontWeight: 700, fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
+                <button onClick={() => saveContent(content)} style={{ padding: "12px 28px", background: "linear-gradient(135deg,#FFDE02,#E6C700)", border: "none", borderRadius: "8px", color: "#07070A", fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-body)", cursor: "pointer" }}>
                   Save Changes
                 </button>
               </div>
@@ -757,7 +757,7 @@ export default function AdminPage() {
           {activeSection === "faq" && (
             <div>
               <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>FAQ Manager</h1>
-              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>Add, edit, or remove FAQ items shown on the Contact and Support pages.</p>
+              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "var(--font-body)", marginBottom: "32px" }}>Add, edit, or remove FAQ items shown on the Contact and Support pages.</p>
 
               {content.faq.map((item, i) => (
                 <div key={i} style={cardStyle}>
@@ -790,24 +790,24 @@ export default function AdminPage() {
                         />
                       </div>
                       <div style={{ display: "flex", gap: "8px" }}>
-                        <button onClick={() => { saveContent(content); setEditingFaq(null); }} style={{ padding: "8px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>Save</button>
-                        <button onClick={() => setEditingFaq(null)} style={{ padding: "8px 20px", background: "none", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", color: "#6B7280", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>Cancel</button>
+                        <button onClick={() => { saveContent(content); setEditingFaq(null); }} style={{ padding: "8px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "var(--font-body)", fontWeight: 600, cursor: "pointer" }}>Save</button>
+                        <button onClick={() => setEditingFaq(null)} style={{ padding: "8px 20px", background: "none", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", color: "#6B7280", fontSize: "13px", fontFamily: "var(--font-body)", cursor: "pointer" }}>Cancel</button>
                       </div>
                     </div>
                   ) : (
                     <div style={{ display: "flex", justifyContent: "space-between", gap: "16px" }}>
                       <div style={{ flex: 1 }}>
-                        <p style={{ fontSize: "14px", fontWeight: 600, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "6px" }}>{item.q}</p>
-                        <p style={{ fontSize: "13px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.6 }}>{item.a}</p>
+                        <p style={{ fontSize: "14px", fontWeight: 600, color: "#FFFFFF", fontFamily: "var(--font-body)", marginBottom: "6px" }}>{item.q}</p>
+                        <p style={{ fontSize: "13px", color: "#6B7280", fontFamily: "var(--font-body)", lineHeight: 1.6 }}>{item.a}</p>
                       </div>
                       <div style={{ display: "flex", gap: "6px", flexShrink: 0 }}>
-                        <button onClick={() => setEditingFaq(i)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>Edit</button>
+                        <button onClick={() => setEditingFaq(i)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "var(--font-body)", cursor: "pointer" }}>Edit</button>
                         <button
                           onClick={() => {
                             const updated = content.faq.filter((_, idx) => idx !== i);
                             saveContent({ ...content, faq: updated });
                           }}
-                          style={{ padding: "6px 14px", background: "rgba(222,48,51,0.05)", border: "1px solid rgba(222,48,51,0.15)", borderRadius: "6px", color: "#DE3033", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}
+                          style={{ padding: "6px 14px", background: "rgba(222,48,51,0.05)", border: "1px solid rgba(222,48,51,0.15)", borderRadius: "6px", color: "#DE3033", fontSize: "12px", fontFamily: "var(--font-body)", cursor: "pointer" }}
                         >
                           Delete
                         </button>
@@ -823,7 +823,7 @@ export default function AdminPage() {
                   setContent({ ...content, faq: updated });
                   setEditingFaq(updated.length - 1);
                 }}
-                style={{ padding: "12px 24px", background: "rgba(255,222,2,0.08)", border: "1px dashed rgba(255,222,2,0.3)", borderRadius: "10px", color: "#FFDE02", fontSize: "14px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer", width: "100%" }}
+                style={{ padding: "12px 24px", background: "rgba(255,222,2,0.08)", border: "1px dashed rgba(255,222,2,0.3)", borderRadius: "10px", color: "#FFDE02", fontSize: "14px", fontFamily: "var(--font-body)", fontWeight: 600, cursor: "pointer", width: "100%" }}
               >
                 + Add FAQ item
               </button>
@@ -834,7 +834,7 @@ export default function AdminPage() {
           {activeSection === "testimonials" && (
             <div>
               <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Testimonials</h1>
-              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>Manage client success stories shown on the homepage and results page.</p>
+              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "var(--font-body)", marginBottom: "32px" }}>Manage client success stories shown on the homepage and results page.</p>
 
               {content.testimonials.map((t, i) => (
                 <div key={i} style={cardStyle}>
@@ -859,20 +859,20 @@ export default function AdminPage() {
                         <textarea rows={3} value={t.quote} onChange={(e) => { const u = [...content.testimonials]; u[i] = { ...t, quote: e.target.value }; setContent({ ...content, testimonials: u }); }} style={{ ...inputStyle, resize: "vertical" }} />
                       </div>
                       <div style={{ display: "flex", gap: "8px" }}>
-                        <button onClick={() => { saveContent(content); setEditingTestimonial(null); }} style={{ padding: "8px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>Save</button>
-                        <button onClick={() => setEditingTestimonial(null)} style={{ padding: "8px 20px", background: "none", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", color: "#6B7280", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>Cancel</button>
+                        <button onClick={() => { saveContent(content); setEditingTestimonial(null); }} style={{ padding: "8px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "var(--font-body)", fontWeight: 600, cursor: "pointer" }}>Save</button>
+                        <button onClick={() => setEditingTestimonial(null)} style={{ padding: "8px 20px", background: "none", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", color: "#6B7280", fontSize: "13px", fontFamily: "var(--font-body)", cursor: "pointer" }}>Cancel</button>
                       </div>
                     </div>
                   ) : (
                     <div style={{ display: "flex", justifyContent: "space-between", gap: "16px" }}>
                       <div>
-                        <p style={{ fontSize: "14px", fontWeight: 700, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{t.name}</p>
-                        <p style={{ fontSize: "13px", color: "#FFDE02", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "6px" }}>{t.result} · {t.duration}</p>
-                        <p style={{ fontSize: "13px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.6, fontStyle: "italic" }}>&ldquo;{t.quote}&rdquo;</p>
+                        <p style={{ fontSize: "14px", fontWeight: 700, color: "#FFFFFF", fontFamily: "var(--font-body)" }}>{t.name}</p>
+                        <p style={{ fontSize: "13px", color: "#FFDE02", fontFamily: "var(--font-body)", marginBottom: "6px" }}>{t.result} · {t.duration}</p>
+                        <p style={{ fontSize: "13px", color: "#6B7280", fontFamily: "var(--font-body)", lineHeight: 1.6, fontStyle: "italic" }}>&ldquo;{t.quote}&rdquo;</p>
                       </div>
                       <div style={{ display: "flex", gap: "6px", flexShrink: 0 }}>
-                        <button onClick={() => setEditingTestimonial(i)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>Edit</button>
-                        <button onClick={() => { const u = content.testimonials.filter((_, idx) => idx !== i); saveContent({ ...content, testimonials: u }); }} style={{ padding: "6px 14px", background: "rgba(222,48,51,0.05)", border: "1px solid rgba(222,48,51,0.15)", borderRadius: "6px", color: "#DE3033", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>Delete</button>
+                        <button onClick={() => setEditingTestimonial(i)} style={{ padding: "6px 14px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "var(--font-body)", cursor: "pointer" }}>Edit</button>
+                        <button onClick={() => { const u = content.testimonials.filter((_, idx) => idx !== i); saveContent({ ...content, testimonials: u }); }} style={{ padding: "6px 14px", background: "rgba(222,48,51,0.05)", border: "1px solid rgba(222,48,51,0.15)", borderRadius: "6px", color: "#DE3033", fontSize: "12px", fontFamily: "var(--font-body)", cursor: "pointer" }}>Delete</button>
                       </div>
                     </div>
                   )}
@@ -885,7 +885,7 @@ export default function AdminPage() {
                   setContent({ ...content, testimonials: u });
                   setEditingTestimonial(u.length - 1);
                 }}
-                style={{ padding: "12px 24px", background: "rgba(255,222,2,0.08)", border: "1px dashed rgba(255,222,2,0.3)", borderRadius: "10px", color: "#FFDE02", fontSize: "14px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer", width: "100%" }}
+                style={{ padding: "12px 24px", background: "rgba(255,222,2,0.08)", border: "1px dashed rgba(255,222,2,0.3)", borderRadius: "10px", color: "#FFDE02", fontSize: "14px", fontFamily: "var(--font-body)", fontWeight: 600, cursor: "pointer", width: "100%" }}
               >
                 + Add testimonial
               </button>
@@ -896,7 +896,7 @@ export default function AdminPage() {
           {activeSection === "pricing" && (
             <div>
               <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Rates</h1>
-              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>
+              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "var(--font-body)", marginBottom: "32px" }}>
                 Add, edit, delete, and reorder coaching plans. Changes save straight to the database and appear instantly on the homepage and pricing page for every visitor.
               </p>
               <RatesManager password={password} />
@@ -907,7 +907,7 @@ export default function AdminPage() {
           {activeSection === "team" && (
             <div>
               <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Team</h1>
-              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>
+              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "var(--font-body)", marginBottom: "32px" }}>
                 Edit the head coach bio, certified trainers, and on-call specialists shown on the /coaches page. Changes save straight to the database and go live for every visitor immediately.
               </p>
               <TeamManager password={password} />
@@ -917,7 +917,7 @@ export default function AdminPage() {
           {activeSection === "form" && (
             <div>
               <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Intake Form</h1>
-              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>
+              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "var(--font-body)", marginBottom: "32px" }}>
                 Build the application form clients fill out at /apply. Add questions, edit or delete existing ones, toggle required/visible, and drag to reorder. Every change saves to the database and shows up live, no redeploy needed.
               </p>
               <FormBuilder password={password} />
@@ -927,7 +927,7 @@ export default function AdminPage() {
           {activeSection === "applications" && (
             <div>
               <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Applications</h1>
-              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>Client submissions from the /apply form.</p>
+              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "var(--font-body)", marginBottom: "32px" }}>Client submissions from the /apply form.</p>
               <ApplicationsView password={password} />
             </div>
           )}
@@ -936,7 +936,7 @@ export default function AdminPage() {
           {activeSection === "contact" && (
             <div>
               <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Contact Info</h1>
-              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>Update your public contact details shown across the site.</p>
+              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "var(--font-body)", marginBottom: "32px" }}>Update your public contact details shown across the site.</p>
 
               <div style={cardStyle}>
                 {[
@@ -955,7 +955,7 @@ export default function AdminPage() {
                     />
                   </div>
                 ))}
-                <button onClick={() => saveContent(content)} style={{ padding: "12px 28px", background: "linear-gradient(135deg,#FFDE02,#E6C700)", border: "none", borderRadius: "8px", color: "#07070A", fontSize: "14px", fontWeight: 700, fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
+                <button onClick={() => saveContent(content)} style={{ padding: "12px 28px", background: "linear-gradient(135deg,#FFDE02,#E6C700)", border: "none", borderRadius: "8px", color: "#07070A", fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-body)", cursor: "pointer" }}>
                   Save Contact Info
                 </button>
               </div>
@@ -966,18 +966,18 @@ export default function AdminPage() {
           {activeSection === "settings" && (
             <div>
               <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "32px", color: "#FFFFFF", marginBottom: "8px" }}>Settings</h1>
-              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "32px" }}>Admin account and data management.</p>
+              <p style={{ fontSize: "14px", color: "#6B7280", fontFamily: "var(--font-body)", marginBottom: "32px" }}>Admin account and data management.</p>
 
               <div style={cardStyle}>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", color: "#FFFFFF", marginBottom: "16px" }}>Data Management</h3>
-                <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "16px", lineHeight: 1.6 }}>
+                <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "var(--font-body)", marginBottom: "16px", lineHeight: 1.6 }}>
                   Intake Form, Rates, and Applications save straight to the database and go live for every visitor immediately. Hero, FAQ, Testimonials, and Contact Info below are saved to this browser&apos;s local storage only, use &quot;Export JSON&quot; in the sidebar to download those and send them to your developer to apply permanently to the site code.
                 </p>
                 <div style={{ display: "flex", gap: "12px" }}>
-                  <button onClick={exportJSON} style={{ padding: "10px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: "pointer" }}>
+                  <button onClick={exportJSON} style={{ padding: "10px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "var(--font-body)", fontWeight: 600, cursor: "pointer" }}>
                     Export Content JSON
                   </button>
-                  <button onClick={resetToDefaults} style={{ padding: "10px 20px", background: "rgba(222,48,51,0.05)", border: "1px solid rgba(222,48,51,0.2)", borderRadius: "8px", color: "#DE3033", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
+                  <button onClick={resetToDefaults} style={{ padding: "10px 20px", background: "rgba(222,48,51,0.05)", border: "1px solid rgba(222,48,51,0.2)", borderRadius: "8px", color: "#DE3033", fontSize: "13px", fontFamily: "var(--font-body)", cursor: "pointer" }}>
                     Reset to Defaults
                   </button>
                 </div>
@@ -985,7 +985,7 @@ export default function AdminPage() {
 
               <div style={cardStyle}>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", color: "#FFFFFF", marginBottom: "12px" }}>Change Password</h3>
-                <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", marginBottom: "16px", lineHeight: 1.6 }}>
+                <p style={{ fontSize: "14px", color: "#B7B9C3", fontFamily: "var(--font-body)", marginBottom: "16px", lineHeight: 1.6 }}>
                   Takes effect immediately, no redeploy needed.
                 </p>
                 <form onSubmit={handleChangePassword} style={{ display: "flex", flexDirection: "column", gap: "12px", maxWidth: "360px" }}>
@@ -996,7 +996,7 @@ export default function AdminPage() {
                     onChange={(e) => setCurrentPw(e.target.value)}
                     autoComplete="current-password"
                     required
-                    style={{ padding: "10px 14px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "#FFFFFF", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                    style={{ padding: "10px 14px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "#FFFFFF", fontSize: "13px", fontFamily: "var(--font-body)" }}
                   />
                   <input
                     type="password"
@@ -1006,7 +1006,7 @@ export default function AdminPage() {
                     autoComplete="new-password"
                     minLength={8}
                     required
-                    style={{ padding: "10px 14px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "#FFFFFF", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                    style={{ padding: "10px 14px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "#FFFFFF", fontSize: "13px", fontFamily: "var(--font-body)" }}
                   />
                   <input
                     type="password"
@@ -1016,18 +1016,18 @@ export default function AdminPage() {
                     autoComplete="new-password"
                     minLength={8}
                     required
-                    style={{ padding: "10px 14px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "#FFFFFF", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                    style={{ padding: "10px 14px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "#FFFFFF", fontSize: "13px", fontFamily: "var(--font-body)" }}
                   />
                   {pwError && (
-                    <p style={{ fontSize: "13px", color: "#DE3033", fontFamily: "'Plus Jakarta Sans', sans-serif", margin: 0 }}>{pwError}</p>
+                    <p style={{ fontSize: "13px", color: "#DE3033", fontFamily: "var(--font-body)", margin: 0 }}>{pwError}</p>
                   )}
                   {pwSuccess && (
-                    <p style={{ fontSize: "13px", color: "#4ADE80", fontFamily: "'Plus Jakarta Sans', sans-serif", margin: 0 }}>Password changed.</p>
+                    <p style={{ fontSize: "13px", color: "#4ADE80", fontFamily: "var(--font-body)", margin: 0 }}>Password changed.</p>
                   )}
                   <button
                     type="submit"
                     disabled={pwSaving}
-                    style={{ padding: "10px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, cursor: pwSaving ? "default" : "pointer", opacity: pwSaving ? 0.6 : 1, alignSelf: "flex-start" }}
+                    style={{ padding: "10px 20px", background: "rgba(255,222,2,0.1)", border: "1px solid rgba(255,222,2,0.3)", borderRadius: "8px", color: "#FFDE02", fontSize: "13px", fontFamily: "var(--font-body)", fontWeight: 600, cursor: pwSaving ? "default" : "pointer", opacity: pwSaving ? 0.6 : 1, alignSelf: "flex-start" }}
                   >
                     {pwSaving ? "Saving…" : "Update Password"}
                   </button>

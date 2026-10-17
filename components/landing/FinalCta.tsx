@@ -7,7 +7,6 @@ export default function FinalCta() {
     <section className="sec-tight fcta">
       <div className="wrap-wide">
         <div className="panel-yellow fcta-panel rv rv-scale">
-          <div className="fcta-grid-bg" aria-hidden="true" />
           <svg className="fcta-ribbon" viewBox="0 0 1100 600" preserveAspectRatio="none" aria-hidden="true">
             <path d="M480 720 C 600 600, 680 440, 800 320 S 1000 70, 1180 50" stroke="#050506" strokeWidth="90" fill="none" opacity="0.92" />
             <path d="M462 702 C 582 582, 662 422, 782 302 S 982 52, 1180 32" stroke="#FFDE02" strokeWidth="3" fill="none" opacity="0.55" />
@@ -42,11 +41,6 @@ export default function FinalCta() {
 
       <style>{`
         .fcta-panel { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); align-items: end; min-height: 600px; padding: 0 0 0 72px; }
-        .fcta-grid-bg {
-          position: absolute; inset: 0; z-index: -2; opacity: 0.5;
-          background-image: linear-gradient(rgba(5,5,6,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(5,5,6,0.08) 1px, transparent 1px);
-          background-size: 56px 56px;
-        }
         .fcta-ribbon { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; overflow: visible; }
         .fcta-copy { padding: 88px 0; display: flex; flex-direction: column; gap: 22px; align-items: flex-start; align-self: center; }
         .fcta-chip { display: inline-flex; padding: 8px 14px; border-radius: 999px; background: #050506; color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }

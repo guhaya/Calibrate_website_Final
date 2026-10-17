@@ -7,12 +7,12 @@ import type { TeamMember, TeamCategory, TeamStat } from "@/lib/supabase";
 const inputStyle: React.CSSProperties = {
   width: "100%", padding: "10px 14px", background: "rgba(255,255,255,0.04)",
   border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", color: "#FFFFFF",
-  fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", outline: "none", boxSizing: "border-box",
+  fontSize: "13px", fontFamily: "var(--font-body)", outline: "none", boxSizing: "border-box",
 };
 
 const labelStyle: React.CSSProperties = {
   display: "block", fontSize: "10px", fontWeight: 700, color: "#6B7280",
-  fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.07em",
+  fontFamily: "var(--font-body)", letterSpacing: "0.07em",
   textTransform: "uppercase", marginBottom: "6px",
 };
 
@@ -140,7 +140,7 @@ function MemberEditor({
         </div>
       )}
 
-      <label style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", color: "#B7B9C3", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer", marginBottom: "16px" }}>
+      <label style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", color: "#B7B9C3", fontFamily: "var(--font-body)", cursor: "pointer", marginBottom: "16px" }}>
         <input type="checkbox" checked={draft.active} onChange={(e) => onChange({ ...draft, active: e.target.checked })} style={{ accentColor: "#FFDE02" }} />
         Active (visible on the live site)
       </label>
@@ -151,13 +151,13 @@ function MemberEditor({
           disabled={saving || !draft.name.trim()}
           style={{
             padding: "9px 20px", background: "#FFDE02", border: "none", borderRadius: "8px",
-            color: "#07070A", fontSize: "13px", fontWeight: 700, fontFamily: "'Plus Jakarta Sans', sans-serif",
+            color: "#07070A", fontSize: "13px", fontWeight: 700, fontFamily: "var(--font-body)",
             cursor: saving || !draft.name.trim() ? "not-allowed" : "pointer", opacity: saving || !draft.name.trim() ? 0.5 : 1,
           }}
         >
           {saving ? "Saving…" : "Save"}
         </button>
-        <button onClick={onCancel} style={{ padding: "9px 20px", background: "transparent", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "8px", color: "#B7B9C3", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer" }}>
+        <button onClick={onCancel} style={{ padding: "9px 20px", background: "transparent", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "8px", color: "#B7B9C3", fontSize: "13px", fontFamily: "var(--font-body)", cursor: "pointer" }}>
           Cancel
         </button>
       </div>
@@ -220,8 +220,8 @@ function CategorySection({
               )}
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <span style={{ fontSize: "14px", fontWeight: 600, color: "#FFFFFF", fontFamily: "'Plus Jakarta Sans', sans-serif", display: "block" }}>{m.name}</span>
-              <span style={{ fontSize: "11px", color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{m.role || "no role set"}</span>
+              <span style={{ fontSize: "14px", fontWeight: 600, color: "#FFFFFF", fontFamily: "var(--font-body)", display: "block" }}>{m.name}</span>
+              <span style={{ fontSize: "11px", color: "#7E8395", fontFamily: "var(--font-body)" }}>{m.role || "no role set"}</span>
             </div>
             <button
               onClick={() => onToggleActive(m)}
@@ -237,10 +237,10 @@ function CategorySection({
                 transition: "left 0.15s ease",
               }} />
             </button>
-            <button onClick={() => onStartEdit(m)} style={{ padding: "6px 12px", background: "transparent", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer", flexShrink: 0 }}>
+            <button onClick={() => onStartEdit(m)} style={{ padding: "6px 12px", background: "transparent", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "6px", color: "#B7B9C3", fontSize: "12px", fontFamily: "var(--font-body)", cursor: "pointer", flexShrink: 0 }}>
               Edit
             </button>
-            <button onClick={() => onRemove(m.id, m.name)} style={{ padding: "6px 12px", background: "rgba(222,48,51,0.06)", border: "1px solid rgba(222,48,51,0.2)", borderRadius: "6px", color: "#DE3033", fontSize: "12px", fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer", flexShrink: 0 }}>
+            <button onClick={() => onRemove(m.id, m.name)} style={{ padding: "6px 12px", background: "rgba(222,48,51,0.06)", border: "1px solid rgba(222,48,51,0.2)", borderRadius: "6px", color: "#DE3033", fontSize: "12px", fontFamily: "var(--font-body)", cursor: "pointer", flexShrink: 0 }}>
               Delete
             </button>
           </div>
@@ -257,7 +257,7 @@ function CategorySection({
           onClick={() => onStartNew(category)}
           style={{
             width: "100%", padding: "12px", background: "rgba(255,222,2,0.05)", border: "1px dashed rgba(255,222,2,0.3)",
-            borderRadius: "10px", color: "#FFDE02", fontSize: "13px", fontWeight: 600, fontFamily: "'Plus Jakarta Sans', sans-serif",
+            borderRadius: "10px", color: "#FFDE02", fontSize: "13px", fontWeight: 600, fontFamily: "var(--font-body)",
             cursor: "pointer", marginTop: "8px",
           }}
         >
@@ -345,7 +345,7 @@ export default function TeamManager({ password }: { password: string }) {
   }
 
   if (loading) {
-    return <p style={{ color: "#7E8395", fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: "14px" }}>Loading team…</p>;
+    return <p style={{ color: "#7E8395", fontFamily: "var(--font-body)", fontSize: "14px" }}>Loading team…</p>;
   }
 
   const byCategory = (category: TeamCategory) =>
