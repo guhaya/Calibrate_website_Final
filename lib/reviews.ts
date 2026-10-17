@@ -18,10 +18,20 @@ export const GOOGLE_RATING = {
   url: "https://www.google.com/maps/search/?api=1&query=Guhayavarman%20Fitness%20Madipakkam",
 } as const;
 
+// Superprof profile, captured 17 Oct 2026. Superprof shows "5 (24 reviews)".
+// Only its rated 5-star reviews are quoted, never its unrated "recommendations".
+export const SUPERPROF_RATING = {
+  score: "5",
+  count: 24,
+  url: "https://www.superprof.co.in/exercise-physiologist-premium-personal-trainer-fitness-coach-nasm-certified-strength-training-nutrition-specialist-for-busy.html",
+} as const;
+
 export type Review = {
   name: string;
   tag: string;
   quote: string;
+  /** Where the review was posted. Defaults to Google. */
+  source?: "Google" | "Superprof";
 };
 
 export const REVIEWS: Review[] = [
@@ -66,6 +76,12 @@ export const REVIEWS: Review[] = [
     quote: "I would say Vikram knows his art and is very systematic in addressing issues around strength, flexibility and nutrition. He has a very personable attitude, spends time listening to your concerns, asks for minimum necessary weight equipment and does not give a one-size-fit-all program.",
   },
   {
+    name: "Nainesh S.",
+    tag: "Personal training",
+    source: "Superprof",
+    quote: "Vikram has an in-depth knowledge of the core training concepts that have been used for decades. He's always on top of new trends and constantly adds variation to keep things interesting.",
+  },
+  {
     name: "Leo",
     tag: "Shoulder pain",
     quote: "He quickly identified the cause of my shoulder pain and adjusted my workouts to help with recovery. He also corrected my push-up form, which was making the pain worse.",
@@ -84,6 +100,12 @@ export const REVIEWS: Review[] = [
     name: "Kavitha L.",
     tag: "Personal training",
     quote: "He is meticulous in planning the schedule and sticks to it. … Workouts are tailor made to suit individual’s capacity and ensure no injury or damage in the process. He is polite and respectful which puts me at comfort as a female trainee.",
+  },
+  {
+    name: "Vaisakh",
+    tag: "Assessment and onboarding",
+    source: "Superprof",
+    quote: "Overall very good experience. Not rushed. Very consistent and i like the way each exercise is explained with detail",
   },
   {
     name: "Pranav R.",

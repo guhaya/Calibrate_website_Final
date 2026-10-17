@@ -1,4 +1,4 @@
-import { GOOGLE_RATING, REVIEWS, type Review } from "@/lib/reviews";
+import { GOOGLE_RATING, REVIEWS, SUPERPROF_RATING, type Review } from "@/lib/reviews";
 import { Arrow, Stars } from "./ui";
 
 // Two rows that drift in opposite directions. Each row is rendered twice so the loop is seamless;
@@ -17,7 +17,7 @@ function Card({ r }: { r: Review }) {
           <span className="rvw-name">{r.name}</span>
           <span className="rvw-tag">{r.tag}</span>
         </span>
-        <span className="rvw-src">Google review</span>
+        <span className="rvw-src">{r.source ?? "Google"} review</span>
       </figcaption>
     </figure>
   );
@@ -33,17 +33,31 @@ export default function Reviews() {
             Rated {GOOGLE_RATING.score} on Google.
           </h2>
         </div>
-        <div className="rvw-score rv" style={{ ["--d" as string]: "120ms" }}>
-          <span className="rvw-big">{GOOGLE_RATING.score}</span>
-          <span className="rvw-meta">
-            <Stars n={5} size={16} />
-            <span>
-              {GOOGLE_RATING.count} Google reviews of Guhayavarman Fitness, {GOOGLE_RATING.captured}
+        <div className="rvw-scores rv" style={{ ["--d" as string]: "120ms" }}>
+          <div className="rvw-score">
+            <span className="rvw-big">{GOOGLE_RATING.score}</span>
+            <span className="rvw-meta">
+              <Stars n={5} size={16} />
+              <span>
+                {GOOGLE_RATING.count} Google reviews of Guhayavarman Fitness, {GOOGLE_RATING.captured}
+              </span>
+              <a className="rvw-link" href={GOOGLE_RATING.url} target="_blank" rel="noopener noreferrer">
+                Read them all on Google <span className="ar"><Arrow size={12} /></span>
+              </a>
             </span>
-            <a className="rvw-link" href={GOOGLE_RATING.url} target="_blank" rel="noopener noreferrer">
-              Read them all on Google <span className="ar"><Arrow size={12} /></span>
-            </a>
-          </span>
+          </div>
+          <div className="rvw-score">
+            <span className="rvw-big">{SUPERPROF_RATING.score}</span>
+            <span className="rvw-meta">
+              <Stars n={5} size={16} />
+              <span>
+                {SUPERPROF_RATING.count} Superprof reviews of Guhayavarman, {GOOGLE_RATING.captured}
+              </span>
+              <a className="rvw-link" href={SUPERPROF_RATING.url} target="_blank" rel="noopener noreferrer">
+                See the Superprof profile <span className="ar"><Arrow size={12} /></span>
+              </a>
+            </span>
+          </div>
         </div>
       </div>
 
@@ -61,12 +75,13 @@ export default function Reviews() {
           </div>
         ))}
       </div>
-      <p className="wrap rvw-note">Excerpts from public Google reviews, quoted word for word. Names shortened. Many clients know Guhayavarman as Vikram. Individual results vary.</p>
+      <p className="wrap rvw-note">Excerpts from public Google and Superprof reviews, quoted word for word. Names shortened. Many clients know Guhayavarman as Vikram. Individual results vary.</p>
 
       <style>{`
         .rvw { overflow: hidden; }
         .rvw-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 28px 48px; margin-bottom: 52px; }
         .rvw-head h2 { margin-top: 12px; max-width: 12ch; text-wrap: balance; }
+        .rvw-scores { display: flex; flex-wrap: wrap; gap: 24px 40px; }
         .rvw-score { display: flex; align-items: center; gap: 18px; }
         .rvw-big { font-family: var(--font-display); font-size: clamp(72px, 8vw, 112px); line-height: 0.85; color: #fff; }
         .rvw-meta { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--text-secondary); max-width: 240px; }

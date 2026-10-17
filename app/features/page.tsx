@@ -8,6 +8,8 @@ import PageHero from "@/components/landing/PageHero";
 import FinalCta from "@/components/landing/FinalCta";
 import { Device } from "@/components/landing/ui";
 import PhoneTour from "@/components/landing/PhoneTour";
+import SplitFeature, { type SplitFeatureProps } from "@/components/landing/SplitFeature";
+import LabsOrbit from "@/components/landing/LabsOrbit";
 import type { TourStep } from "@/components/landing/PhoneTour";
 
 export const metadata: Metadata = {
@@ -100,10 +102,43 @@ const steps: TourStep[] = [
   },
 ];
 
-const extras = [
-  { title: "Food log", body: "Barcode scanning and a food database covering Indian and global cuisine.", img: "/media/app/food-log.webp" },
-  { title: "Sessions", body: "Book, reschedule and review your 1-on-1 coaching sessions.", img: "/media/app/sessions.webp" },
-  { title: "Smart notifications", body: "Plan updates, session reminders and weekly consistency nudges.", img: "/media/app/notifications.webp" },
+const extras: Omit<SplitFeatureProps, "flip">[] = [
+  {
+    id: "food-log",
+    eyebrow: "Food log",
+    title: "Log a meal in seconds.",
+    body: "Barcode scanning and a food database covering Indian and global cuisine, so logging fits into a real day.",
+    points: [
+      "Every meal shows calories, protein, carbs and fat",
+      "A running total against your daily target",
+      "Meals grouped by breakfast, lunch, dinner and snacks",
+    ],
+    shot: { src: "/media/app/food-log.webp", alt: "Vemisis food log with meals, calories and a daily target bar" },
+  },
+  {
+    id: "sessions",
+    eyebrow: "Sessions",
+    title: "Your coach, on the calendar.",
+    body: "Book, reschedule and review your 1-on-1 coaching sessions in the same app you train with.",
+    points: [
+      "Session credits and upcoming sessions in one place",
+      "See exactly until when you can cancel for free",
+      "Rate each session and read your coach's notes",
+    ],
+    shot: { src: "/media/app/sessions.webp", alt: "Vemisis sessions screen with an upcoming check-in and past sessions" },
+  },
+  {
+    id: "notifications",
+    eyebrow: "Smart notifications",
+    title: "Nudges that know your plan.",
+    body: "Plan updates, session reminders and weekly consistency nudges, only when there is something worth knowing.",
+    points: [
+      "Messages from your coach",
+      "A reminder before every session",
+      "An alert the moment your coach updates your plan",
+    ],
+    shot: { src: "/media/app/notifications.webp", alt: "Vemisis notifications with a coach message, a session reminder and a plan update" },
+  },
 ];
 
 export default function FeaturesPage() {
@@ -138,27 +173,16 @@ export default function FeaturesPage() {
 
         <PhoneTour steps={steps} />
 
-        <section id="more" className="sec">
+        <section id="more" className="sec ft-more-head">
           <div className="wrap">
-            <div className="sec-head">
-              <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Everything else in the app.</h2>
-            </div>
-            <div className="ft-extras">
-              {extras.map((e, i) => (
-                <article key={e.title} className="card card-hover ft-extra rv" style={{ ["--d" as string]: `${(i % 3) * 80}ms` }}>
-                  <div>
-                    <h3 className="display-sm">{e.title}</h3>
-                    <p className="body-sm" style={{ marginTop: 8 }}>{e.body}</p>
-                  </div>
-                  <div className="ft-extra-shot">
-                    <Image src={e.img} alt={`Vemisis ${e.title.toLowerCase()} screen`} width={640} height={1391} sizes="220px" />
-                  </div>
-                </article>
-              ))}
-            </div>
-            <p className="mono c-muted" style={{ textAlign: "center", marginTop: 32 }}>Screens shown with sample client data</p>
+            <h2 className="display-lg rv balance" style={{ ["--d" as string]: "80ms" }}>Everything else in the app.</h2>
           </div>
         </section>
+        {extras.map((e, i) => (
+          <SplitFeature key={e.id} {...e} flip={i % 2 === 1} />
+        ))}
+        <LabsOrbit />
+        <p className="mono c-muted" style={{ textAlign: "center", margin: "0 16px 64px" }}>Screens shown with sample client data</p>
 
         <FinalCta />
       </main>
@@ -178,22 +202,14 @@ export default function FeaturesPage() {
           backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
         }
         .ft-jump::-webkit-scrollbar { display: none; }
+        .ft-more-head { padding-bottom: 0; }
         .ft-jump a { padding: 12px 16px; min-height: 44px; display: inline-flex; align-items: center; border-radius: 999px; font-size: 13px; font-weight: 700; color: var(--text-secondary); text-decoration: none; white-space: nowrap; transition: all 0.2s ease; }
         .ft-jump a:hover { background: var(--accent); color: #050506; }
-        .ft-extras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-        .ft-extra { padding: 28px 28px 0; display: flex; flex-direction: column; gap: 22px; min-height: 380px; }
-        .ft-extra-shot { margin-top: auto; align-self: center; width: 62%; -webkit-mask-image: linear-gradient(#000 65%, transparent); mask-image: linear-gradient(#000 65%, transparent); }
-        .ft-extra-shot img { width: 100%; height: auto; max-height: 230px; object-fit: cover; object-position: top; border-radius: 22px 22px 0 0; border: 1px solid var(--line-strong); }
-        @media (max-width: 960px) {
-          .ft-extras { grid-template-columns: 1fr 1fr; }
-        }
         @media (max-width: 600px) {
           .ft-hero-vis { height: 470px; }
           .ft-hero-a { width: 200px !important; right: 2%; }
           .ft-hero-b { width: 175px !important; left: 2%; }
           .ft-hero-icon { width: 72px; height: 72px; }
-          .ft-extras { grid-template-columns: 1fr; }
-          .ft-extra { min-height: 0; }
           .ft-jump { top: 84px; }
         }
       `}</style>
