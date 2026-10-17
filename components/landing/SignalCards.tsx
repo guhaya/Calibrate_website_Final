@@ -62,7 +62,11 @@ export default function SignalCards() {
                 <p className="sig-body">{c.body}</p>
               </div>
               <div className="sig-shot">
-                <Image src={c.img} alt={c.alt} width={640} height={1391} sizes="(max-width: 900px) 70vw, 300px" className="sig-img" />
+                <div className="device sig-device">
+                  <div className="device-screen">
+                    <Image src={c.img} alt={c.alt} fill sizes="(max-width: 900px) 70vw, 300px" style={{ objectFit: "cover", objectPosition: "top" }} />
+                  </div>
+                </div>
               </div>
               <div className="sig-chip" aria-hidden="true">
                 <span className="sig-chip-label">{c.chipLabel}</span>
@@ -92,13 +96,11 @@ export default function SignalCards() {
         .sig-title { font-family: var(--font-display); font-size: clamp(30px, 2.4vw, 40px); line-height: 0.98; text-transform: uppercase; }
         .sig-body { font-size: 15px; line-height: 1.6; color: #C9CBD3; max-width: 320px; }
         .sig-shot { position: relative; margin-top: auto; padding-top: 28px; display: flex; justify-content: center; overflow: hidden; border-radius: 0 0 32px 32px; height: 360px; }
-        .sig-img {
-          width: 72%; height: auto; align-self: flex-start;
-          border-radius: 34px 34px 0 0; border: 6px solid #1A1A1F; border-bottom: 0;
-          box-shadow: 0 -20px 60px -20px rgba(0,0,0,0.6);
+        .sig-device {
+          width: 72%; align-self: flex-start; flex: none;
           transition: transform 0.7s var(--ease-out);
         }
-        .sig-card:hover .sig-img { transform: translateY(-10px); }
+        .sig-card:hover .sig-device { transform: translateY(-10px); }
         .sig-chip {
           position: absolute; left: -14px; bottom: 120px; z-index: 2;
           display: flex; flex-direction: column; gap: 2px; padding: 14px 18px; min-width: 172px;
@@ -119,7 +121,7 @@ export default function SignalCards() {
         @media (max-width: 860px) {
           .sig-head { grid-template-columns: 1fr; }
         }
-        @media (prefers-reduced-motion: reduce) { .sig-img { transition: none; } .sig-card:hover .sig-img { transform: none; } }
+        @media (prefers-reduced-motion: reduce) { .sig-device { transition: none; } .sig-card:hover .sig-device { transform: none; } }
       `}</style>
     </section>
   );
