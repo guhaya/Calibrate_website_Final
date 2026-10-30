@@ -2,8 +2,9 @@
 
 These three files are the admin-ready text of the GVNFIT legal policies, taken
 from the October 2026 drafts (`GVNFIT_*_Draft.md`). Wording is unchanged except
-for title-case headings, `**Label:**` formatting on contact lines, sub-headings
-in Privacy section 3, and publisher instructions wrapped as `[Drafting note: ...]`.
+for title-case headings, `**Label:**` formatting on contact lines and sub-headings
+in Privacy section 3. Privacy sections 3.7 and 3.8 and the account-deletion
+sentence in section 15 are kept from the portal admin's earlier version.
 
 | File | Page on this site | Admin policy type |
 | --- | --- | --- |
@@ -25,17 +26,12 @@ npm run build && POLICY_PREVIEW=draft npm run start
 `POLICY_PREVIEW=draft` makes the three pages render these files instead of the
 database, with a "Draft preview" notice. Never set it on Vercel.
 
-## Before publishing (release order)
+## Publishing changes
 
-Every `[bracketed]` item is unconfirmed and is highlighted on the page.
-
-1. Resolve them all (email, grievance contact, both dates, drafting notes) and
-   complete the Indian lawyer review.
-2. Publish each file as a new version in the portal admin.
-3. Paste the same text into the matching www.gvnfit.online (Wix) page. Copy it
-   from `wix/*.html` opened in a browser, so formatting survives.
-4. Only then merge the code that adds the new routes and page layout. Merging
-   first would show the old database text under the new page intros.
+1. Publish each changed file as a new version in the portal admin.
+2. Paste the same text into the matching www.gvnfit.online (Wix) page, then check
+   the page height on desktop and phone: Wix keeps a section's old height, so
+   shorter text leaves a blank gap.
 
 Format rules the page understands: `## ` section, `### ` sub-section, `- ` bullet,
 `**bold**`, `---` divider, and `Effective date:` / `Last updated:` lines above the

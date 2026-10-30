@@ -45,6 +45,19 @@ Payment and transaction information may include invoice details, amount paid, pa
 
 Account and technical information may include account identifiers, login timestamps, device or browser information, IP address, application usage, security logs, crash reports and session information, depending on the technologies actually used.
 
+### 3.7 Health and fitness data from your devices
+
+If you choose to connect Apple Health (HealthKit) on iPhone or Health Connect on Android, Vemisis reads only the data types you approve, such as steps, active calories, workouts, heart rate, heart rate variability, resting heart rate, sleep, blood oxygen, respiratory rate and body weight.
+
+- This data is used only to provide coaching features, such as your recovery score, trends and your coach's review of your progress.
+- It is never used for advertising or marketing, and it is never sold.
+- It is shared only with the service providers needed to run these features, as described in this policy.
+- You can disconnect access at any time in your phone's Health or Health Connect settings, and you can ask us to delete data that has already been synced.
+
+### 3.8 AI-assisted features
+
+Some features use AI service providers, including meal-photo analysis, lab report reading and A.L.F.R.E.D answers. When you use these features, the relevant content (for example the photo, the uploaded report, your question and related coaching context such as recovery or sleep trends) is sent to our AI providers, which currently include Google and Anthropic, to generate the result. AI results are estimates and coaching aids, not medical advice.
+
 ## 4. How Information Is Collected
 
 Information may be collected directly through forms, questionnaires, consultations, messages, purchase and onboarding processes, coaching sessions, progress submissions, website or app operation, payment providers and other service providers. Information may also be collected from other sources where permitted by law and appropriately disclosed.
@@ -103,7 +116,7 @@ When information is no longer required, GVNFIT will take appropriate steps to de
 
 ## 15. Privacy Requests and Rights
 
-Subject to applicable law and exceptions, individuals may request access to information relating to them, correction or updating of inaccurate information, deletion where applicable, withdrawal of consent where consent is the basis for processing, and exercise of other rights available under law.
+Subject to applicable law and exceptions, individuals may request access to information relating to them, correction or updating of inaccurate information, deletion where applicable, withdrawal of consent where consent is the basis for processing, and exercise of other rights available under law. You can delete your account from the Profile screen in the Vemisis app, or contact admin@gvnfit.online to make a request.
 
 Requests should be sent to the privacy contact listed in this Policy. GVNFIT may need to verify identity before responding and will respond within applicable legal timeframes. If consent is withdrawn for information necessary to deliver personalised coaching, some Services may no longer be possible; GVNFIT will explain the consequences and will not treat withdrawal as a blanket waiver of other rights.
 

@@ -1,3 +1,15 @@
+# Status update, 30 October 2026
+
+This section replaces anything below that it contradicts. The report below describes the state before these decisions.
+
+- **Filled in.** Effective and last-updated dates are 30 October 2026, the email is admin@gvnfit.online, and the grievance contact is Vikram, Fitness Director (vlvikram@outlook.com, +91 99626 87086). Drafting notes are removed. No placeholders remain.
+- **Privacy merge.** The portal admin Privacy Policy described the Vemisis app in ways the draft did not. Privacy section 3.7 (Apple Health and Health Connect), section 3.8 (AI-assisted features) and the account-deletion sentence in section 15 are that existing admin wording, kept word for word.
+- **Portal admin.** Published on 30 October 2026: Terms version 4, Privacy version 3, Refund version 6. The new text is what clients see at intake. No client notifications were sent; new and older notices still await a decision in the admin.
+- **Wix.** The new text is on all three pages. Section heights were reduced on desktop and phone to remove blank gaps. Headings are bold paragraphs, matching the old pages.
+- **Open, layout.** On phones the Privacy body sits 2px from the screen edge in small text. Terms and Privacy use different text widths on desktop.
+- **Open, CALIBRATE terms.** The new Terms and Refund text removes the 3-month minimum and Quarterly rules added on 5 October, while CALIBRATE marketing pages still advertise the minimum. Have a lawyer review this before notifying clients.
+- **Open, Section K.** Items 1 to 4 are closed. The other items still apply, including lawyer review.
+
 # GVNFIT legal policy upgrade: implementation report
 
 Prepared 30 October 2026. Branch `legal/policy-upgrade` (local worktree
