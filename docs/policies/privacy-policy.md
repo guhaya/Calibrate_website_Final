@@ -1,0 +1,150 @@
+Effective date: 30 October 2026
+Last updated: 30 October 2026
+
+## 1. Introduction
+
+GVNFIT / Guhayavarman Fitness ("GVNFIT", "we", "us" or "our") respects the privacy of clients and website visitors. This Policy explains how we collect, use, disclose, retain and protect personal information when you visit our website, contact us, purchase coaching, participate in a programme or use our applications and digital services.
+
+The business operating the brand is Lakchinna Digitals, an MSME-registered business. MSME registration alone does not specify the legal constitution of the business.
+
+## 2. Contact Details
+
+- **Brand:** GVNFIT / Guhayavarman Fitness
+- **Business name:** Lakchinna Digitals (MSME-registered business)
+- **Address:** Plot 13 A, 1st Street, Kuberan Nagar Extn, Madipakkam, Sami Nivasam, Chennai, Tamil Nadu 600091
+- **Phone/WhatsApp:** +91 98848 24064
+- **Website:** https://www.gvnfit.online
+- **Privacy contact:** admin@gvnfit.online
+- **Grievance contact:** Vikram, Fitness Director (vlvikram@outlook.com, +91 99626 87086)
+
+## 3. Information We May Collect
+
+The information collected depends on the Services you use and what is reasonably necessary for the relevant purpose.
+
+### 3.1 Identity and contact information
+
+Identity and contact information may include name, age or date of birth where needed, email address, telephone number, WhatsApp number, username, account identifier, profile photograph, address or location information where required for an in-person service.
+
+### 3.2 Fitness and body information
+
+Fitness and body information may include height, weight, body measurements, body-composition measurements where provided, training experience, fitness goals, strength measures, exercise performance, workout history, progress assessments, movement observations and progress photographs voluntarily submitted for coaching.
+
+### 3.3 Health-related information
+
+Health-related information may include injuries, exercise restrictions, relevant medical conditions, allergies, dietary restrictions, medications identified as relevant to training, previous surgeries and other information the client provides that may affect safe participation. Clients should provide only information reasonably necessary for coaching and seek professional medical advice where appropriate.
+
+### 3.4 Nutrition and lifestyle information
+
+Nutrition and lifestyle information may include dietary preferences, food logs, meal photographs, calorie or macronutrient records, sleep or recovery information and relevant lifestyle habits where included in the Service.
+
+### 3.5 Payment and transaction information
+
+Payment and transaction information may include invoice details, amount paid, payment date, transaction reference, payment status, payment method category and package or subscription information. Payment providers may process card or bank information directly. GVNFIT does not need to retain full card numbers, CVV values or banking authentication credentials for ordinary coaching administration.
+
+### 3.6 Account and technical information
+
+Account and technical information may include account identifiers, login timestamps, device or browser information, IP address, application usage, security logs, crash reports and session information, depending on the technologies actually used.
+
+### 3.7 Health and fitness data from your devices
+
+If you choose to connect Apple Health (HealthKit) on iPhone or Health Connect on Android, Vemisis reads only the data types you approve, such as steps, active calories, workouts, heart rate, heart rate variability, resting heart rate, sleep, blood oxygen, respiratory rate and body weight.
+
+- This data is used only to provide coaching features, such as your recovery score, trends and your coach's review of your progress.
+- It is never used for advertising or marketing, and it is never sold.
+- It is shared only with the service providers needed to run these features, as described in this policy.
+- You can disconnect access at any time in your phone's Health or Health Connect settings, and you can ask us to delete data that has already been synced.
+
+### 3.8 AI-assisted features
+
+Some features use AI service providers, including meal-photo analysis, lab report reading and A.L.F.R.E.D answers. When you use these features, the relevant content (for example the photo, the uploaded report, your question and related coaching context such as recovery or sleep trends) is sent to our AI providers, which currently include Google and Anthropic, to generate the result. AI results are estimates and coaching aids, not medical advice.
+
+## 4. How Information Is Collected
+
+Information may be collected directly through forms, questionnaires, consultations, messages, purchase and onboarding processes, coaching sessions, progress submissions, website or app operation, payment providers and other service providers. Information may also be collected from other sources where permitted by law and appropriately disclosed.
+
+## 5. Purposes of Processing
+
+GVNFIT may use personal information to create and administer accounts; assess training goals and exercise suitability; prepare and adjust programmes; deliver coaching and progress reviews; schedule sessions; communicate about appointments and renewals; issue invoices and verify payments; process refunds; maintain business records; provide app functionality and customer support; protect security; investigate complaints or fraud; improve services using appropriate analysis; comply with legal obligations; and establish, exercise or defend legal claims.
+
+Where consent is required, GVNFIT will seek it through an appropriate mechanism. Processing will be limited to purposes and legal grounds permitted under applicable law.
+
+## 6. Health and Fitness Information
+
+Health and fitness information may be necessary to personalise coaching and consider exercise safety. GVNFIT will explain relevant purposes and obtain consent or rely on another lawful basis where permitted and appropriate. Access should be limited to authorised persons who need the information for coaching or legitimate business functions.
+
+GVNFIT does not provide medical diagnosis or treatment. Information supplied for coaching does not replace medical advice. Clients may ask about the information held about them and may request correction or deletion where applicable, subject to lawful retention requirements.
+
+## 7. Progress Photos, Testimonials and Marketing
+
+Progress photographs, measurements, health information and workout records supplied for coaching are not automatically approved for public or marketing use. If GVNFIT wishes to use an identifiable photograph, testimonial, transformation story or other personal information for marketing, it will obtain separate permission where required by law.
+
+Consent to coaching is not consent to publish a client's photographs or personal information. Clients may contact GVNFIT to withdraw marketing permission for future use, subject to applicable law and the practical limitations of material already lawfully published or distributed.
+
+## 8. Communications and Session Recordings
+
+GVNFIT may retain relevant communications concerning appointments, programme changes, payment arrangements, service delivery and complaints. Coaching sessions will not be audio- or video-recorded without the required prior permission, subject to applicable law. If recording is proposed, GVNFIT will explain the purpose and obtain appropriate permission before recording.
+
+## 9. Cookies and Similar Technologies
+
+The website or apps may use cookies or similar technologies for functionality, preferences, security, analytics or performance measurement, depending on the technologies actually enabled. Where required, GVNFIT will provide notice and obtain consent for non-essential tracking. Browser settings or website controls may allow users to manage preferences, although disabling some technologies may affect functionality.
+
+## 10. Sharing with Service Providers
+
+GVNFIT may share relevant information with providers that help operate the Services, such as payment processors, hosting and cloud providers, database and authentication services, scheduling tools, email and messaging platforms, video-conferencing services, analytics, monitoring and security providers, and professional advisers where appropriate.
+
+Information shared should be limited to what is reasonably necessary for the assigned purpose. Where required, GVNFIT will use appropriate contractual, organisational or technical safeguards.
+
+## 11. Legal Disclosures and Business Changes
+
+Information may be disclosed where reasonably necessary to comply with applicable law or lawful requests, protect safety, investigate fraud, enforce agreements or establish or defend legal claims. If the business is reorganised or transferred, personal information may be transferred as part of that process where lawful and subject to appropriate protections.
+
+## 12. International Processing
+
+Some providers may store or process information outside India. Where cross-border processing occurs, GVNFIT will follow applicable Indian law and any relevant restrictions or safeguards. The specific providers and locations should be reviewed periodically as technology services change.
+
+## 13. Security
+
+GVNFIT will implement reasonable technical and organisational measures appropriate to the information handled. Depending on the systems used, these may include access controls, role-based permissions, secure authentication, password protection, encryption where appropriate, secure configuration, logging, backups, restricted administrative access and incident-response procedures.
+
+Passwords must not be stored in plaintext. No internet-based system can be guaranteed completely secure. GVNFIT will take reasonable steps to prevent unauthorised access, loss, misuse, alteration or disclosure and will respond to security incidents as required by applicable law.
+
+## 14. Data Retention
+
+GVNFIT will retain personal information only for as long as reasonably necessary for the purposes described in this Policy, subject to applicable law. Retention may depend on the coaching relationship, account administration, financial and tax recordkeeping obligations, complaints or disputes, security needs and applicable limitation periods.
+
+When information is no longer required, GVNFIT will take appropriate steps to delete, anonymise or securely dispose of it, subject to lawful retention requirements and technical constraints. A practical retention schedule should be maintained internally and followed in the systems actually used.
+
+## 15. Privacy Requests and Rights
+
+Subject to applicable law and exceptions, individuals may request access to information relating to them, correction or updating of inaccurate information, deletion where applicable, withdrawal of consent where consent is the basis for processing, and exercise of other rights available under law. You can delete your account from the Profile screen in the Vemisis app, or contact admin@gvnfit.online to make a request.
+
+Requests should be sent to the privacy contact listed in this Policy. GVNFIT may need to verify identity before responding and will respond within applicable legal timeframes. If consent is withdrawn for information necessary to deliver personalised coaching, some Services may no longer be possible; GVNFIT will explain the consequences and will not treat withdrawal as a blanket waiver of other rights.
+
+## 16. Children and Minors
+
+Where a minor may participate in a Service, GVNFIT will establish required parent or legal guardian involvement, consent and safeguards under applicable law before processing the child's personal data or providing the relevant Service. GVNFIT will not knowingly process a child's personal information in a manner that violates applicable legal requirements.
+
+## 17. Third-Party Websites and Platforms
+
+The website may link to payment gateways, social networks, video platforms, apps or other third-party services. Those providers operate under their own terms and privacy practices. This Policy applies to information processed by GVNFIT and does not replace the policies of independent providers.
+
+## 18. Changes to This Policy
+
+GVNFIT may update this Policy to reflect changes in services, technologies, operations or legal obligations. The revised version and effective date will be published on the website. Where a material change requires additional notice or consent, GVNFIT will take appropriate steps.
+
+## 19. Privacy Complaints and Grievance Contact
+
+For privacy questions, requests or complaints, contact:
+
+- **Brand:** GVNFIT / Guhayavarman Fitness
+- **Business:** Lakchinna Digitals (MSME-registered business)
+- **Email:** admin@gvnfit.online
+- **Phone/WhatsApp:** +91 98848 24064
+- **Address:** Plot 13 A, 1st Street, Kuberan Nagar Extn, Madipakkam, Sami Nivasam, Chennai, Tamil Nadu 600091
+- **Designated grievance contact:** Vikram, Fitness Director (vlvikram@outlook.com, +91 99626 87086)
+
+Please describe the request and provide sufficient information to identify the relevant records. GVNFIT will review and respond within the applicable legal timeframe.
+
+## 20. Applicable Law
+
+This Policy will be interpreted in accordance with applicable Indian law, including applicable data-protection and consumer-protection requirements. Nothing in this Policy limits rights or remedies that cannot lawfully be excluded.

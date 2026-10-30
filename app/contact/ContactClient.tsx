@@ -195,7 +195,8 @@ export default function ContactClient() {
                     Send message <Arrow />
                   </button>
                   <p className="ct-note">
-                    This opens your email client with a pre-filled message to Admin@gvnfit.online
+                    This opens your email client with a pre-filled message to Admin@gvnfit.online. Our{" "}
+                    <Link href="/privacy-policy" className="ct-inline">Privacy Policy</Link> explains how messages are handled.
                   </p>
                 </form>
               )}
