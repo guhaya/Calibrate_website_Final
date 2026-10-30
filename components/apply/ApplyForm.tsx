@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import type { FormField } from "@/lib/supabase";
 
 type Answers = Record<string, string | string[]>;
@@ -270,6 +271,11 @@ export default function ApplyForm() {
           </svg>
         )}
       </button>
+
+      <p style={{ marginTop: "-24px", fontSize: "13px", color: "#7E8395", fontFamily: "var(--font-body)", textAlign: "center" }}>
+        We use your answers to review your application and contact you about coaching. Our{" "}
+        <Link href="/privacy-policy" className="link-underline">Privacy Policy</Link> explains how this information is handled.
+      </p>
     </form>
   );
 }

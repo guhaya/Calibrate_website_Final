@@ -3,6 +3,7 @@ import AppStoreBadge from "@/components/shared/AppStoreBadge";
 import Image from "next/image";
 import Logo from "./Logo";
 import FooterWord from "./FooterWord";
+import { POLICIES } from "@/lib/policy-routes";
 
 const footerLinks: Record<string, { label: string; href: string }[]> = {
   Coaching: [
@@ -23,11 +24,7 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
   ],
 };
 
-const legal = [
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms of Service", href: "/terms" },
-  { label: "Refund Policy", href: "/refund" },
-];
+const legal = POLICIES.map((p) => ({ label: p.navLabel, href: p.path }));
 
 export default function Footer() {
   return (
@@ -74,11 +71,11 @@ export default function Footer() {
               © {new Date().getFullYear()} GVNFIT. CALIBRATE and Vemisis are part of Guhayavarman Fitness.
             </span>
           </div>
-          <div className="ft-legal">
+          <nav aria-label="Legal" className="ft-legal">
             {legal.map((item) => (
               <Link key={item.href} href={item.href} className="ft-link" style={{ fontSize: 13 }}>{item.label}</Link>
             ))}
-          </div>
+          </nav>
         </div>
       </div>
 

@@ -110,7 +110,7 @@ export default function Pricing({ fallback = FALLBACK_PLANS, showMoreLink = true
             <p className="body-sm">
               Follow the protocol for 30 days. If you don&apos;t see measurable progress in your check-in data, we rebuild your
               plan from scratch, free, until you do. Fees and cancellations follow our{" "}
-              <Link href="/refund" className="link-underline">refund policy</Link>.
+              <Link href="/refund-policy" className="link-underline">Refund, Cancellation &amp; Rescheduling Policy</Link>.
             </p>
           </div>
           <ul className="pr-g-list">
