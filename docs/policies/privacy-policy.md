@@ -1,11 +1,11 @@
-Effective date: [Insert actual publication date]
-Last updated: [Insert actual publication date]
+Effective date: 30 October 2026
+Last updated: 30 October 2026
 
 ## 1. Introduction
 
 GVNFIT / Guhayavarman Fitness ("GVNFIT", "we", "us" or "our") respects the privacy of clients and website visitors. This Policy explains how we collect, use, disclose, retain and protect personal information when you visit our website, contact us, purchase coaching, participate in a programme or use our applications and digital services.
 
-The business operating the brand is Lakchinna Digitals, an MSME-registered business. MSME registration alone does not specify the legal constitution of the business. [Drafting note: The precise legal identity should be confirmed for legal notices and invoices.]
+The business operating the brand is Lakchinna Digitals, an MSME-registered business. MSME registration alone does not specify the legal constitution of the business.
 
 ## 2. Contact Details
 
@@ -14,8 +14,8 @@ The business operating the brand is Lakchinna Digitals, an MSME-registered busin
 - **Address:** Plot 13 A, 1st Street, Kuberan Nagar Extn, Madipakkam, Sami Nivasam, Chennai, Tamil Nadu 600091
 - **Phone/WhatsApp:** +91 98848 24064
 - **Website:** https://www.gvnfit.online
-- **Privacy contact:** [Use the current business email displayed on the GVNFIT website]
-- **Grievance contact:** [Confirm the designated person or role and verified contact details before publication]
+- **Privacy contact:** admin@gvnfit.online
+- **Grievance contact:** Vikram, Fitness Director (vlvikram@outlook.com, +91 99626 87086)
 
 ## 3. Information We May Collect
 
@@ -79,7 +79,7 @@ The website or apps may use cookies or similar technologies for functionality, p
 
 GVNFIT may share relevant information with providers that help operate the Services, such as payment processors, hosting and cloud providers, database and authentication services, scheduling tools, email and messaging platforms, video-conferencing services, analytics, monitoring and security providers, and professional advisers where appropriate.
 
-Information shared should be limited to what is reasonably necessary for the assigned purpose. Where required, GVNFIT will use appropriate contractual, organisational or technical safeguards. [Drafting note: The actual vendors and data flows should be verified before publication.]
+Information shared should be limited to what is reasonably necessary for the assigned purpose. Where required, GVNFIT will use appropriate contractual, organisational or technical safeguards.
 
 ## 11. Legal Disclosures and Business Changes
 
@@ -125,10 +125,10 @@ For privacy questions, requests or complaints, contact:
 
 - **Brand:** GVNFIT / Guhayavarman Fitness
 - **Business:** Lakchinna Digitals (MSME-registered business)
-- **Email:** [Use the current business email displayed on the GVNFIT website]
+- **Email:** admin@gvnfit.online
 - **Phone/WhatsApp:** +91 98848 24064
 - **Address:** Plot 13 A, 1st Street, Kuberan Nagar Extn, Madipakkam, Sami Nivasam, Chennai, Tamil Nadu 600091
-- **Designated grievance contact:** [Confirm name or role and verified contact details before publication]
+- **Designated grievance contact:** Vikram, Fitness Director (vlvikram@outlook.com, +91 99626 87086)
 
 Please describe the request and provide sufficient information to identify the relevant records. GVNFIT will review and respond within the applicable legal timeframe.
 

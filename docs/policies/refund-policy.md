@@ -1,5 +1,5 @@
-Effective date: [Insert actual publication date]
-Last updated: [Insert actual publication date]
+Effective date: 30 October 2026
+Last updated: 30 October 2026
 
 ## 1. Purpose and Scope
 
@@ -130,7 +130,7 @@ Clients should promptly notify GVNFIT if they believe an invoice, payment record
 - **Address:** Plot 13 A, 1st Street, Kuberan Nagar Extn, Madipakkam, Sami Nivasam, Chennai, Tamil Nadu 600091
 - **Phone/WhatsApp:** +91 98848 24064
 - **Website:** https://www.gvnfit.online
-- **Email:** [Use the current business email displayed on the GVNFIT website]
+- **Email:** admin@gvnfit.online
 
 Please retain your invoice, package confirmation and relevant payment records when submitting a request.
 

@@ -1,5 +1,5 @@
-Effective date: [Insert actual publication date]
-Last updated: [Insert actual publication date]
+Effective date: 30 October 2026
+Last updated: 30 October 2026
 
 ## 1. Introduction and Acceptance
 
@@ -18,9 +18,7 @@ Use of the website alone does not create a paid coaching relationship. If a clie
 - **Address:** Plot 13 A, 1st Street, Kuberan Nagar Extn, Madipakkam, Sami Nivasam, Chennai, Tamil Nadu 600091
 - **Phone/WhatsApp:** +91 98848 24064
 - **Website:** https://www.gvnfit.online
-- **Email:** [Use the current business email displayed on the GVNFIT website]
-
-[Drafting note: Before publication, confirm that the business name, legal constitution, address and contact details are accurate and consistent with invoices and registration records.]
+- **Email:** admin@gvnfit.online
 
 ## 3. Eligibility
 
@@ -151,4 +149,4 @@ These Terms are governed by applicable Indian law. Nothing in these Terms restri
 - **Address:** Plot 13 A, 1st Street, Kuberan Nagar Extn, Madipakkam, Sami Nivasam, Chennai, Tamil Nadu 600091
 - **Phone/WhatsApp:** +91 98848 24064
 - **Website:** https://www.gvnfit.online
-- **Email:** [Use the current business email displayed on the GVNFIT website]
+- **Email:** admin@gvnfit.online
