@@ -1,5 +1,5 @@
 Effective date: 30 October 2026
-Last updated: 30 October 2026
+Last updated: 31 October 2026
 
 ## 1. Introduction and Acceptance
 
@@ -78,9 +78,9 @@ Unused sessions do not automatically convert into cash or transfer to another pe
 
 ## 11. Cancellation and Rescheduling
 
-Clients must provide at least 16 hours' notice to request cancellation or rescheduling. Notice must be sent through the designated GVNFIT business WhatsApp number or business email address. Rescheduling is subject to coach availability and package validity; a specific replacement time is not guaranteed.
+Clients must provide at least 16 hours' notice to request cancellation or rescheduling. Notice must be sent through the designated GVNFIT business WhatsApp number or business email address. Rescheduling is subject to coach availability and package validity; a specific replacement time is not guaranteed. A session that has already been rescheduled cannot be rescheduled again and will be treated as a cancelled session.
 
-A late cancellation or no-show may be treated as a used session under the Refund, Cancellation and Rescheduling Policy, subject to its emergency provisions and applicable law. The policy includes one emergency cancellation allowance per active monthly coaching plan. The full procedures are set out in the Refund, Cancellation and Rescheduling Policy.
+A late cancellation or no-show may be treated as a used session under the Refund, Cancellation and Rescheduling Policy, subject to its emergency provisions and applicable law. The policy includes one emergency cancellation allowance per active monthly coaching plan. Sunday slots with the Head Coach, Exercise Physiologist or Dietician are planned only based on availability and do not come under the cancellation rules or cancellation windows. The full procedures are set out in the Refund, Cancellation and Rescheduling Policy.
 
 ## 12. Payment Delays and Pausing Future Sessions
 
