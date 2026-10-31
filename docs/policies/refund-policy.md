@@ -1,5 +1,5 @@
 Effective date: 30 October 2026
-Last updated: 30 October 2026
+Last updated: 31 October 2026
 
 ## 1. Purpose and Scope
 
@@ -53,7 +53,7 @@ A late cancellation does not automatically create a right to a refund or replace
 
 ## 9. Rescheduling an Already-Rescheduled Session
 
-Once a replacement appointment has been confirmed, a further rescheduling request may be declined where reasonably necessary to protect scheduling commitments. If the client subsequently cancels or fails to attend the confirmed replacement appointment, the session may be treated as used, subject to the emergency provisions and applicable law.
+Once a replacement appointment has been confirmed, it cannot be rescheduled again. A request to reschedule an already-rescheduled session will not be accepted, and the session will be treated as a cancelled session, subject to the emergency provisions and applicable law.
 
 Genuine emergencies and changes caused by GVNFIT will be considered separately and fairly.
 
@@ -63,41 +63,45 @@ Each active monthly coaching plan includes one emergency cancellation allowance 
 
 GVNFIT may reasonably request supporting information where appropriate. An accepted emergency cancellation may permit a replacement booking or other reasonable scheduling accommodation. It does not automatically entitle the client to a cash refund. The allowance does not accumulate or transfer to another client. Exceptional circumstances may be considered separately, subject to applicable law.
 
-## 11. No-Shows
+## 11. Sunday Slots
+
+Sunday slots with the Head Coach, Exercise Physiologist or Dietician are planned only based on availability. They do not come under the cancellation rules or cancellation windows in this Policy, and once a Sunday slot is cancelled it is treated as cancelled. For further details, please check with your coach.
+
+## 12. No-Shows
 
 A no-show occurs when a client fails to attend a scheduled session without providing the required notice or making themselves available for the agreed appointment. A no-show session may be deducted from the package, subject to emergency provisions and applicable law. No replacement session or refund is automatic.
 
 Where a genuine emergency or technical issue arises, GVNFIT may review the circumstances before determining the treatment of the session.
 
-## 12. Late Arrival
+## 13. Late Arrival
 
 Clients are expected to join online sessions or arrive at the agreed venue on time. If a client arrives late, the session may still end at its originally scheduled time. For example, a session booked from 7:00 PM to 7:45 PM may still end at 7:45 PM if the client joins at 7:20 PM.
 
 The remaining time may be used for coaching, subject to safe exercise execution and the planned workout. Client lateness does not automatically create a right to a refund, replacement session or additional time. If the coach is responsible for the delay, the client will not be treated as having missed the session.
 
-## 13. Standard Session Duration
+## 14. Standard Session Duration
 
 Standard online one-to-one coaching sessions generally last 30–45 minutes. Some sessions may occasionally extend up to 60 minutes depending on the planned workout, client performance, safety and coaching requirements. An occasional extension does not entitle the client to a 60-minute session for every appointment. A consistently 60-minute service must be expressly included in the package or separately agreed in writing.
 
-## 14. Coach-Initiated Cancellation
+## 15. Coach-Initiated Cancellation
 
 If GVNFIT or the assigned coach cancels a session, GVNFIT will make reasonable efforts to notify the client and arrange a replacement appointment. A session cancelled by GVNFIT will not be deducted from the client's package.
 
 If a replacement session cannot reasonably be provided within the package validity period, GVNFIT will offer an appropriate extension, carry-forward arrangement or pro-rata refund for the undelivered session, as appropriate under the package agreement and applicable law. A client will not be charged twice for a replacement session arising from a coach-caused cancellation.
 
-## 15. Technical Failures
+## 16. Technical Failures
 
-If a technical problem on GVNFIT's side prevents an agreed online session from being delivered, the session will be treated as a coach-caused cancellation and an appropriate remedy will be offered under Section 14.
+If a technical problem on GVNFIT's side prevents an agreed online session from being delivered, the session will be treated as a coach-caused cancellation and an appropriate remedy will be offered under Section 15.
 
 If a client-side internet, device or platform issue prevents participation, GVNFIT will consider the circumstances under the attendance rules. Where a failure is outside either party's reasonable control, GVNFIT will seek a fair and practical resolution rather than automatically treating every incident as a client no-show.
 
-## 16. Package Validity and Expiry
+## 17. Package Validity and Expiry
 
 The package validity period, start date and expiry date will be communicated before purchase or confirmed in writing at activation. Clients are responsible for scheduling and attending sessions within that period.
 
 Unused sessions do not automatically carry forward or convert into cash unless the package terms, an agreed extension or applicable law provide otherwise. Coach-caused cancellations and approved extensions will be handled under this Policy. Expiry terms will not be applied in a way that removes rights the client has under applicable law.
 
-## 17. Monthly Plans and CALIBRATE Programmes
+## 18. Monthly Plans and CALIBRATE Programmes
 
 For monthly plans, the service period, price, session allowance and renewal arrangements will be stated in the package description. Unused sessions do not automatically carry forward unless the package expressly provides otherwise.
 
@@ -105,7 +109,7 @@ CALIBRATE will not impose a blanket three-month minimum commitment or a blanket 
 
 Where a recurring plan is offered, the purchase confirmation must clearly state whether the client is purchasing a monthly service, a fixed-term programme paid monthly, or a fixed-term programme paid upfront. Those arrangements must not be described interchangeably. Cancellation and refund rights will be assessed under the agreed plan and applicable law.
 
-## 18. Refund Request Procedure
+## 19. Refund Request Procedure
 
 Refund requests should be submitted in writing through the designated business email or WhatsApp channel and should include the client name, package or programme, invoice or transaction reference if available, purchase date, reason for the request and relevant information about services delivered or remaining.
 
@@ -113,17 +117,17 @@ GVNFIT may request reasonable additional information to review the request. GVNF
 
 Where a refund is approved, it will ordinarily be processed through the original payment method where feasible, subject to payment provider procedures and applicable law.
 
-## 19. Refund Calculation and Deductions
+## 20. Refund Calculation and Deductions
 
 A refund calculation will be based on the applicable package agreement, services already delivered, the undelivered portion of the service and any deductions permitted by applicable law. Deductions must be transparent, relevant to the transaction and legally permissible. GVNFIT will not impose arbitrary administrative penalties or retain amounts merely because a client requested a refund.
 
 The time taken for a refund to appear in the client's account may depend on the payment provider or financial institution. GVNFIT will communicate the processing status where appropriate.
 
-## 20. Invoice Errors and Payment Disputes
+## 21. Invoice Errors and Payment Disputes
 
 Clients should promptly notify GVNFIT if they believe an invoice, payment record or session balance is incorrect. GVNFIT will review relevant invoices, transaction records, attendance records and written agreements. Confirmed errors will be corrected and the client informed of the outcome. A legitimate dispute will not automatically be treated as misconduct or grounds for an arbitrary penalty.
 
-## 21. Contact
+## 22. Contact
 
 - **Brand:** GVNFIT / Guhayavarman Fitness
 - **Business:** Lakchinna Digitals (MSME-registered business)
@@ -134,7 +138,7 @@ Clients should promptly notify GVNFIT if they believe an invoice, payment record
 
 Please retain your invoice, package confirmation and relevant payment records when submitting a request.
 
-## 22. Policy Updates and Applicable Law
+## 23. Policy Updates and Applicable Law
 
 GVNFIT may update this Policy to reflect changes in Services, operations or applicable law. The current version and effective date will be published on the website. Updates will not retroactively remove rights or alter the agreed terms of an existing package except where required by law or expressly agreed.
 
