@@ -1,14 +1,16 @@
-# Status update, 30 October 2026
+# Status update, 31 October 2026
 
 This section replaces anything below that it contradicts. The report below describes the state before these decisions.
 
-- **Filled in.** Effective and last-updated dates are 30 October 2026, the email is admin@gvnfit.online, and the grievance contact is Vikram, Fitness Director (vlvikram@outlook.com, +91 99626 87086). Drafting notes are removed. No placeholders remain.
+- **Filled in.** All three policies are effective 30 October 2026. Terms and Refund were last updated on 31 October 2026, and Privacy on 30 October 2026. The email is admin@gvnfit.online, and the grievance contact is Vikram, Fitness Director (vlvikram@outlook.com, +91 99626 87086). Drafting notes are removed. No placeholders remain.
 - **Privacy merge.** The portal admin Privacy Policy described the Vemisis app in ways the draft did not. Privacy section 3.7 (Apple Health and Health Connect), section 3.8 (AI-assisted features) and the account-deletion sentence in section 15 are that existing admin wording, kept word for word.
-- **Portal admin.** Published on 30 October 2026: Terms version 4, Privacy version 3, Refund version 6. The new text is what clients see at intake. No client notifications were sent; new and older notices still await a decision in the admin.
-- **Wix.** The new text is on all three pages. Section heights were reduced on desktop and phone to remove blank gaps. Headings are bold paragraphs, matching the old pages.
-- **Open, layout.** On phones the Privacy body sits 2px from the screen edge in small text. Terms and Privacy use different text widths on desktop.
+- **New rules, 31 October 2026.** Refund section 9 covers rescheduling a session that was already rescheduled. Refund section 11 covers Sunday slots, and the emergency exception is kept. Terms section 11 carries matching additions. Later Refund sections are renumbered, up to section 23.
+- **Portal admin.** Published versions are Terms 5, Privacy 3 and Refund 7, and calibrate.gvnfit.online shows them. No client notifications were sent. Eight notices are pending: Terms 5, 4 and 3; Refund 7, 6 and 4; Privacy 3 and 2. Terms 3 and 4, Refund 4 and 6, and Privacy 2 are superseded.
+- **Wix.** Revision 121 is live with the new text on all three pages. The earlier layout issues are closed, including the Privacy body 2px from the screen edge on phones and the different Terms and Privacy text widths on desktop. Refund was last measured live at 375, 768 and 1440px, with no sideways scroll. Its heading sits 5px above the body on desktop, which is tight but clean.
+- **Code.** PR #22 and PR #27 are merged into `main`. Review copies in `docs/policies/` match the published wording.
 - **Open, CALIBRATE terms.** The new Terms and Refund text removes the 3-month minimum and Quarterly rules added on 5 October, while CALIBRATE marketing pages still advertise the minimum. Have a lawyer review this before notifying clients.
-- **Open, Section K.** Items 1 to 4 are closed. The other items still apply, including lawyer review.
+- **Open, Section K.** Items 1 to 4 and 16 are closed. The other items still apply, including lawyer review.
+- **Separate from this work.** GitHub reports 39 Dependabot vulnerabilities on the default branch: 5 critical, 20 high, 13 moderate and 1 low. They have not been reviewed.
 
 # GVNFIT legal policy upgrade: implementation report
 
